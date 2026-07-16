@@ -46,7 +46,7 @@ Differencing (1), $\Delta\alpha_n \approx -\frac{90}{\pi}\cdot\frac{\Delta g_n}{
 - **Net drift $\approx 0$.** The signed changes telescope to $(\alpha_{\text{last}}-\alpha_{\text{first}})/N$; over the first 1000 pairs the mean change is $+0.0113°$ — negligible next to typical steps of $\sim0.15°$.
 - **Runs.** Given the angle just moved up, it moves up again only $\approx 1/3$ of the time — the **universal runs constant** for differences of any near-independent sequence (two of six orderings of three values are monotone). Equivalently, the next block of a few pairs *undoes* the last block $\approx 2/3$ of the time. Shuffling the gaps into random order reproduces both to within ~1%.
 
-None of §3 is special to primes; it is what differences of a random-ish, bounded sequence always look like.
+None of §3 is special to primes; it is what differences of a random-ish, bounded sequence always look like. The hard core of this universality is exact: the first difference of *any* i.i.d. sequence has lag-1 autocorrelation $-\tfrac12$ (it shares the term $g_n$ with its neighbor), which *is* the "spike-and-return" recoil — no prime memory required. The companion note [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md) isolates what the wobble carries *beyond* this artifact, using the transform-matched null (shuffle the gaps, **then** difference).
 
 ## 4. The 1% signal is Hardy–Littlewood
 
@@ -66,6 +66,8 @@ $$\mathrm{corr}(g_n, g_{n+1}) \approx -0.05 \quad (\text{shuffled}: \approx 0),$
 | **real primes** | **−0.050** | 100% |
 
 Each prime added to the wheel deepens the anti-correlation with steps that show no decay; through prime 19 the pure-wheel model already reaches three-quarters of the real value, and the tail supplies the rest. **[known-mechanism]** This is the Hardy–Littlewood singular series: the gaps anti-correlate exactly as much as the divisibility rules force — no secret memory. The effect weakens with scale ($-0.10$ near $10^{3.5}$ to $-0.05$ near $10^6$), as the small-prime constraints matter relatively less on larger gaps.
+
+The lag-1 correlation understates the accessible signal. A *windowed* read is sharper: regressing $\Delta g_n$ on its last five values retains $\approx +2$ percentage points of $R^2$ **beyond** the transform-matched null — roughly six times the raw-gap memory — so the wheel's fingerprint on consecutive gaps is most visible in the windowed wobble, exactly the object this note is built from. The separation of that genuine residual from the $-\tfrac12$ differencing pedestal is carried out in [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md).
 
 ## 5. Two imperfections, one wheel
 
