@@ -8,7 +8,7 @@ July 2026
 
 ## Abstract
 
-The Prime Triangle assigns each consecutive prime pair $(p_n, p_{n+1})$ an angle $\alpha_n = \arctan(p_n/p_{n+1})$. This note shows that the angle is, to leading order, a **rescaled prime gap**, and reads the entire behavior of the angle sequence off of the gaps. Three things fall out: (i) $\alpha_n \approx 45° - \frac{90}{\pi}\cdot\frac{g_n}{p_{n+1}}$, so the angle sequence rises to $45°$ in **gap-family arcs** — twins on top — and $45°$ is a ceiling it approaches from below but never reaches; (ii) the *wobble* of the angle is ~99% what any random sequence does (a $\log p/p$ envelope, a $1/3$ run constant, a $2/3$ self-cancellation); (iii) the one genuine prime signal — a ~1% excess self-correction — is exactly the **Hardy–Littlewood gap anti-correlation**, which we reproduce by building the primorial wheel up prime-by-prime. The angle picture thus has two named imperfections: a *geometric* ceiling and an *arithmetic* wheel — the latter the same wheel behind jumping champions, the Seven Sisters, and the forbidden gap-widths $\{2,4,6,10\}$.
+The Prime Triangle assigns each consecutive prime pair $(p_n, p_{n+1})$ an angle $\alpha_n = \arctan(p_n/p_{n+1})$. This note shows that the angle is, to leading order, a **rescaled prime gap**, and reads the entire behavior of the angle sequence off of the gaps. Three things fall out: (i) $\alpha_n \approx 45° - \frac{90}{\pi}\cdot\frac{g_n}{p_{n+1}}$, so the angle sequence rises to $45°$ in **gap-family arcs** — twins on top — and $45°$ is a ceiling it approaches from below but never reaches; (ii) the *wobble* of the angle is ~99% what any random sequence does (a $\log p/p$ envelope, a $1/3$ run constant, a $2/3$ self-cancellation — the last being the exact $-\tfrac12$ recoil that differencing forces on any sequence); (iii) the one genuine prime signal — a ~1% excess self-correction — is a **wheel-driven consecutive-gap anti-correlation**, reproduced by building the primorial wheel up prime-by-prime. (This is the *derived* form of the wheel's structure, consistent with but not identical to the Hardy–Littlewood pair-correlation, which is a separate, *positive* object; §4 keeps the two apart.) The angle picture thus has two named imperfections: a *geometric* ceiling and an *arithmetic* wheel — the latter the same wheel behind jumping champions, the Seven Sisters, and the forbidden gap-widths $\{2,4,6,10\}$.
 
 ---
 
@@ -48,9 +48,9 @@ Differencing (1), $\Delta\alpha_n \approx -\frac{90}{\pi}\cdot\frac{\Delta g_n}{
 
 None of §3 is special to primes; it is what differences of a random-ish, bounded sequence always look like. The hard core of this universality is exact: the first difference of *any* i.i.d. sequence has lag-1 autocorrelation $-\tfrac12$ (it shares the term $g_n$ with its neighbor), which *is* the "spike-and-return" recoil — no prime memory required. The companion note [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md) isolates what the wobble carries *beyond* this artifact, using the transform-matched null (shuffle the gaps, **then** difference).
 
-## 4. The 1% signal is Hardy–Littlewood
+## 4. The 1% signal: a wheel-driven gap anti-correlation
 
-The one place the primes deviate from a random-ordered surrogate is a **~1% excess self-correction**, and it is exactly a real gap statistic: consecutive prime gaps are **anti-correlated**,
+The one place the primes deviate from a random-ordered surrogate is a **~1% excess self-correction**, and it is a real gap statistic: consecutive prime gaps are **anti-correlated**,
 
 $$\mathrm{corr}(g_n, g_{n+1}) \approx -0.05 \quad (\text{shuffled}: \approx 0),$$
 
@@ -65,7 +65,31 @@ $$\mathrm{corr}(g_n, g_{n+1}) \approx -0.05 \quad (\text{shuffled}: \approx 0),$
 | 19 | −0.037 | 74% |
 | **real primes** | **−0.050** | 100% |
 
-Each prime added to the wheel deepens the anti-correlation with steps that show no decay; through prime 19 the pure-wheel model already reaches three-quarters of the real value, and the tail supplies the rest. **[known-mechanism]** This is the Hardy–Littlewood singular series: the gaps anti-correlate exactly as much as the divisibility rules force — no secret memory. The effect weakens with scale ($-0.10$ near $10^{3.5}$ to $-0.05$ near $10^6$), as the small-prime constraints matter relatively less on larger gaps.
+Each prime added to the wheel deepens the anti-correlation with steps that show no decay; through prime 19 the pure-wheel model already reaches three-quarters of the real value, and the tail supplies the rest. The effect weakens with scale ($-0.10$ near $10^{3.5}$ to $-0.05$ near $10^6$), as the small-prime constraints matter relatively less on larger gaps.
+
+**A caution on the label.** Three things are easily — and were, in an earlier draft — collapsed into the word "Hardy–Littlewood"; they must be kept apart:
+
+- **Hardy–Littlewood proper** is a statement about prime *pairs at a fixed offset* — the singular series $\mathfrak S(g)$, which is *positive* and offset-dependent (offset 6 twice baseline, offset 30 higher still). That is the object measured directly in the [Offset-Correlation Curve](Offset_Correlation_Curve.md), and it is what "HL" actually asserts.
+- **This $-0.05$** is a *derived consecutive-gap* statistic: it requires "next prime" (nothing prime in between), so it follows from the tuple structure only through inclusion–exclusion, not from $\mathfrak S(g)$ directly. It is *reproduced by the wheel* (the table above), hence **wheel-consistent** — but it is not the direct HL prediction and should not be written "$=$ Hardy–Littlewood."
+- **The change-space recoil** — "a big *change* is followed by a big opposite *change*," $\mathrm{corr}(\Delta g_n,\Delta g_{n-1})\approx-0.51$ — is neither. It is the $-\tfrac12$ differencing artifact of §3 (any sequence) plus a tiny wheel excess; that excess, $\approx-0.01$, is the *same* $-0.05$ seen in change-coordinates. See [Prime-Gap Memory and the Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md).
+
+So the honest statement is: the 1% self-correction is the **wheel's fingerprint on consecutive gaps, consistent with — but not the direct form of — the Hardy–Littlewood singular series.** Whether the full HL/wheel prediction lands *exactly* on the measured $-0.05$ is an empirical match to model, tested in §4.1.
+
+### 4.1 Does the wheel actually predict the measured value? (test)
+
+To check the attribution without circularity, build exactly the model the label claims — **small-prime divisibility exact, everything else independent random** — and read off its consecutive-gap correlation. Concretely: keep the integers coprime to all primes $\le Q$ (the exact wheel through $Q$), thin them independently to prime density, and measure $\mathrm{corr}(g_n,g_{n+1})$. The question is *where the correlation is built, and whether the wheel-only model lands on the real value.*
+
+| wheel to $Q$ | model $\mathrm{corr}(g_n,g_{n+1})$ | share of the effect |
+|---|---|---|
+| 7 | $-0.016$ | 39% |
+| 19 | $-0.031$ | 74% |
+| 43 | $-0.038$ | 87% |
+| 317 | $-0.044$ | ~100% |
+| $1732\ (\approx\!\sqrt{3\times10^6})$ | $-0.044$ | ~100% |
+
+The model climbs and **plateaus at $-0.044$ by $Q\approx300$** (three random seeds, $\pm0.0005$). The real value, measured over three decades near $10^6$, is $-0.057,\,-0.041,\,-0.047$ (band-to-band scatter $\approx\pm0.006$). So the wheel-only model lands **squarely inside the real range**: to measurement precision, the wheel *fully* accounts for the consecutive-gap anti-correlation, with no detectable residual. **[emp]**
+
+Two things this settles. (i) The $-0.05$ is genuinely the **wheel** — a model with *no* structure but small-prime divisibility reproduces it — so the attribution holds; the earlier draft's "through prime 19 reaches 74%, the tail supplies the rest" is confirmed and completed (the bulk is the small primes; it finishes by $Q\sim$ a few hundred and stops). (ii) It is **not** a deviation-from-HL story: the primes are neither more nor less gap-correlated than the wheel predicts. What was wrong was only the *word* — this is the wheel's derived consecutive-gap signature, not the direct Hardy–Littlewood pair-correlation — not the mechanism.
 
 The lag-1 correlation understates the accessible signal. A *windowed* read is sharper: regressing $\Delta g_n$ on its last five values retains $\approx +2$ percentage points of $R^2$ **beyond** the transform-matched null — roughly six times the raw-gap memory — so the wheel's fingerprint on consecutive gaps is most visible in the windowed wobble, exactly the object this note is built from. The separation of that genuine residual from the $-\tfrac12$ differencing pedestal is carried out in [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md).
 
@@ -74,7 +98,7 @@ The lag-1 correlation understates the accessible signal. A *windowed* read is sh
 The Prime-Triangle angle is therefore **random-looking jitter pinned under a $45°$ ceiling, corrected by the wheel at the ~5% level, tightening like $\log p/p$**. Its only two prime-specific features are:
 
 1. a **geometric imperfection** — the untouchable $45°$ ceiling (the $52/48$ lean), because the smaller prime is always the shorter leg; and
-2. an **arithmetic imperfection** — the ~1% self-correction, i.e. Hardy–Littlewood gap anti-correlation, i.e. the **primorial wheel**.
+2. an **arithmetic imperfection** — the ~1% self-correction, i.e. a consecutive-gap anti-correlation reproduced by the **primorial wheel** (the derived form of the wheel's structure, consistent with — not identical to — the Hardy–Littlewood pair-correlation).
 
 The second is the load-bearing one, and it is not new here: it is the *same* wheel that makes $6, 30, 210$ the jumping champions, that decides which Seven-Sisters offsets survive, and that forbids two consecutive-prime sums from a gap of width $\{2,4,6,10\}$. The reason gaps cannot cluster (this anti-correlation) is the reason small gaps cannot repeat (forbidden widths) is the reason primorial gaps dominate (jumping champions). **One mechanism, four shadows** — the angle wobble is the newest of them.
 
