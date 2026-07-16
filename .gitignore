@@ -1,0 +1,14 @@
+# This repo tracks only the reading collection: Series/, RESULTS, PRIMES_MAP, README.
+# Everything else in the Primes folder — the three standalone project repos
+# (Factor Skyline, Twin Bertrand, X5D EXPDB Framework), the NotebookLM one-pagers,
+# the loose root notes (their copies live under Series/), scratch, etc. — is left out.
+
+# ignore everything at the root...
+/*
+
+# ...except these
+!/.gitignore
+!/README.md
+!/RESULTS.md
+!/PRIMES_MAP.md
+!/Series
