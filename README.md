@@ -8,13 +8,13 @@ Allen Proxmire's prime-number research — several strands that turn out to be *
 
 ## How this collection is organized
 
-The papers are grouped into reading series in [`Series/`](Series/):
+The papers are grouped into five numbered reading series:
 
-1. **[The Factor Skyline](Series/1_Factor_Skyline/)** — the coordinate system and its four-part theory (the foundation).
-2. **[One Wheel, Many Shadows](Series/2_One_Wheel_Many_Shadows/)** — the wheel and its six shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc).
-3. **[Twin Bertrand / Prime Geometry](Series/3_Twin_Bertrand_Prime_Geometry/)** — the Twin-Prime Bertrand Postulate and the prime-triangle work.
-4. **[Philosophy & Ontology](Series/4_Philosophy_Ontology/)** — finitism, the sieve as a hunt, the quantum-mechanical reading.
-5. **[X5D / EXPDB](Series/5_X5D_EXPDB/)** — the exponent-database strand (a separate analytic-number-theory subject).
+1. **[The Factor Skyline](1_Factor_Skyline/)** — the coordinate system and its four-part theory (the foundation).
+2. **[One Wheel, Many Shadows](2_One_Wheel_Many_Shadows/)** — the wheel and its six shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc).
+3. **[Twin Bertrand / Prime Geometry](3_Twin_Bertrand_Prime_Geometry/)** — the Twin-Prime Bertrand Postulate and the prime-triangle work.
+4. **[Philosophy & Ontology](4_Philosophy_Ontology/)** — finitism, the sieve as a hunt, the quantum-mechanical reading.
+5. **[X5D / EXPDB](5_X5D_EXPDB/)** — the exponent-database strand (a separate analytic-number-theory subject).
 
 - **Every result, tagged** ([thm]/[conj]/[emp]/[deriv]): [`RESULTS.md`](RESULTS.md)
 - **Full inventory** (what's compiled, what's a draft, what's on Zenodo): [`PRIMES_MAP.md`](PRIMES_MAP.md)
