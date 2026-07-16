@@ -64,6 +64,20 @@ Both point at the same source. Consecutive gaps are not independent because the 
 
 This note corrects an over-eager reading (my own, made and caught while writing it): that the jitter's clustering and recoil were prime "weather," and that amplitude was the knowable structure while sign was noise. The null reverses both halves. The **amplitude** persistence is the artifact; the small **genuine** memory lives in the *ordering of the gap levels* and surfaces most in the windowed wobble. The honest one-line model of "how far to the next prime" is therefore: **the base rate $\ln p$ sets the scale, the wheel sets the admissible slots, and the last few gaps shift the odds by about two points of variance — no more.** Everything past that is the pseudo-random residual the structure factor already isolated as diffuse background; here it is the same residual in the time domain.
 
+## 7. The key collapses to the wheel
+
+If the surviving memory is that small, can it help you *find* the next prime? Build the predictor and measure it. From a prime $p$, the candidates are the **wheel-open slots** $p+g$ (positions coprime to the small primes); rank them by probability of being the next prime and test in that order. Three rankers, on $26{,}\!723$ primes near $3\times10^6$ (trained on $[10^6,3\times10^6]$):
+
+| ranker | mean tests to find | top-1 | top-3 |
+|---|---|---|---|
+| walk up the open slots | $3.99$ | $23.5\%$ | $56.8\%$ |
+| $+$ gap-frequency reweighting | $3.99$ | $23.5\%$ | $56.8\%$ |
+| $+$ the regime/history lever | $3.99$ | $23.5\%$ | $56.8\%$ |
+
+The regime lever — given maximum generosity (the full next-gap distribution conditioned nonparametrically on the recent-regime tercile) — moves the mean rank by **$+0.0007$**. Gap-frequency reweighting never puts a different slot first than "walk up" ($0.0\%$ of cases). The reason is exact: to land on the $k$-th open slot, every earlier open slot must be composite, so $P(\text{next prime}=k\text{-th slot})$ **strictly decreases in $k$** — walking up the wheel is Bayes-optimal, and a frequency-trained ranker merely rediscovers it. The rank distribution is a clean geometric decay ($23.5, 18.8, 14.5, 11.2, 8.1,\dots\%$) — Cramér-on-the-wheel: given the wheel, each escape is memoryless.
+
+So the whole "how to find the next prime" key collapses to one line: **go to the next wheel-open slot.** The wheel is $100\%$ of the exploitable structure, the order within it is forced, and the genuine $+2$ pp of windowed memory — real as it is — sits below the threshold that could reorder even the first test. This is the sharpest form of the collection's thesis: the order is entirely the wheel, and the residual is not merely hard to predict but **provably useless** for locating the next escape.
+
 ---
 
 ## Appendix. Reproduction
