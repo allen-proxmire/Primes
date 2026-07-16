@@ -6,7 +6,7 @@ A running list of what this work actually shows. Scan it, jump to what interests
 
 ## Headlines
 
-- **[conj] A Bertrand postulate for twins.** Every dyadic interval $(x,2x]$ past $x=11$ contains a twin prime: $\pi_2(2x)-\pi_2(x)\ge1$. Verified to $10^{10}$ (27.4M twins), one exception ever. → [Twin Bertrand / PG II](Twin%20Bertrand/papers/PG_II_AngleRecord.pdf)
+- **[conj] A Bertrand postulate for twins.** Every dyadic interval $(x,2x]$ past $x=11$ contains a twin prime: $\pi_2(2x)-\pi_2(x)\ge1$. Verified to $10^{10}$ (27.4M twins). → [Twin Bertrand / PG II](Twin%20Bertrand/papers/PG_II_AngleRecord.pdf)
 - **[thm] Forbidden gap-widths $\{2,4,6,10\}$.** These are exactly the prime-gap widths that can *never* contain two consecutive-prime sums. → [FS / Consecutive-Prime Sums](Factor%20Skyline/papers/FS_Consecutive_Prime_Sums_In_Gaps.pdf)
 - **[thm] One polytope generates the Exponent Database.** Every EXPDB output is a projection/envelope of a single $\mathcal{P}\subset\mathbb{R}^5$. → [X5D](X5D%20EXPDB%20Framework/papers/X5D_Polyhedral-Reinterpretation.pdf)
 - **[deriv] Two operations run the primes:** *doubling* ($p\mapsto2p$) and *the wheel* (primorials). On the Factor Skyline, doubling is the top ray and the wheel is the fan; primes are what escape both. → [FS / Synthesis](Factor%20Skyline/papers/FS_Synthesis_Doubling_and_Wheel.pdf)
