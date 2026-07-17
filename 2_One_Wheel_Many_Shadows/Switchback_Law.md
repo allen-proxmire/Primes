@@ -63,18 +63,29 @@ Within the sign-law lives an arithmetic fingerprint. Look at the size of the gap
 |---|---|---|---|---|---|---|---|
 | frequency | 16.8% | 13.3% | **5.1%** | 11.4% | 8.8% | **3.0%** | 6.6% |
 
-**[emp]** The multiples of 6 are **suppressed** — sharp local minima at 6 and 12. Since gaps are even, $|\Delta g|\equiv 0 \pmod 6$ means two consecutive gaps are *congruent* $\bmod 6$; the dip says **consecutive gaps avoid repeating their residue $\bmod 6$.** Quantitatively the avoidance is nearly 2-to-1: the same-residue rate is $0.176$ against $0.348$ if consecutive gaps were independent.
+**[emp]** The multiples of 6 are **suppressed** — sharp local minima at 6 and 12. And most of that suppression is not a soft statistical bias at all: it is a **hard combinatorial rule.**
 
-**Does Hardy–Littlewood predict it? Yes — to the digit.** Build the leading-order singular-series local model (the wheel-Cramér surrogate: small-prime divisibility exact, everything else independent random) and read off its $|\Delta g|$ distribution:
+**The rule.** Every prime past 3 sits in one of two residue classes mod 3 — call them the two *teams*. A gap is the step between consecutive primes, so it either **stays** on a team (gap $\equiv 0 \bmod 6$) or **switches** — up ($1\!\to\!2$, gap $\equiv 4$) or down ($2\!\to\!1$, gap $\equiv 2$). You cannot make the same switch twice running: after a down-switch you are *on* team 1, so the next step must start from team 1, and it can stay or switch up — but it can never switch down again. So **two consecutive gaps can never both be $\equiv 2$, nor both $\equiv 4 \pmod 6$.** The transition matrix carries the zeros exactly:
 
-| $|\Delta g|$ | 4 | **6** | 8 | 10 | **12** | 14 |
-|---|---|---|---|---|---|---|
-| real primes $>10^6$ | 12.70% | **5.09%** | 10.94% | 8.62% | **2.99%** | 6.62% |
-| wheel model | 12.66% | **5.09%** | 10.85% | 8.59% | **3.01%** | 6.63% |
+| current gap | → next $\equiv 0$ | → next $\equiv 2$ | → next $\equiv 4$ |
+|---|---|---|---|
+| $\equiv 0$ (stay) | 40.4% | 29.8% | 29.8% |
+| $\equiv 2$ (switch down) | 44.8% | **0.0%** | 55.2% |
+| $\equiv 4$ (switch up) | 44.7% | 55.2% | **0.0%** |
 
-The model reproduces the whole distribution — **including the dip depths at 6 ($5.09$ vs $5.09$) and 12 ($2.99$ vs $3.01$)** — to within $0.1$ point. So the $\bmod 6$ suppression is a **leading-order Hardy–Littlewood effect**, exactly: the singular series forces consecutive gaps to avoid a shared residue, and the wheel model that encodes it lands on the measured depths.
+This *is* the dip: $|\Delta g|=6$ needs two same-residue gaps differing by 6, and the $(2,2)$ and $(4,4)$ routes to it (e.g. $2\&8$, $4\&10$) are forbidden — every observed $|\Delta g|=6$ comes through the one surviving $(0,0)$ channel ($6\&12$, $12\&18$). One clean consequence: **the only gaps that can appear twice in a row are the multiples of 6** ($6,12,18,\dots$ — the stays); $2,4,8,10$ *never* immediately repeat (measured: $0.00\%$).
 
-**[resolved, with a small tail]** On top of the leading term sits a **Lemke Oliver–Soundararajan lower-order correction.** The same-residue bias runs slightly deeper at small scale and fades toward the wheel's asymptotic value — $-0.193$ at $10^4$, $-0.180$ at $10^5$, $-0.174$ at $10^6$, $-0.171$ at $10^7$ — the characteristic slow ($\sim 1/\log$) decay of the LOS secondary bias (the "unexpected biases in consecutive primes," 2016). So the dip is Hardy–Littlewood to leading order (matched to the digit) plus a decaying LOS tail. The thread closes where it should: it *is* the wheel.
+**The rule tiers with the modulus.** Finer clocks forbid more repeats, from the same team logic applied to $5,7,\dots$:
+
+| clock | gap-sizes that occur | can repeat | **forbidden to repeat** | same-residue rate vs chance |
+|---|---|---|---|---|
+| mod 6 | 3 | 1 | **2** | 17% vs 35% |
+| mod 30 | 15 | 5 | **10** | 4% vs 9% |
+| mod 210 | 66 | 23 | **43** | 3.3% vs 7.5% |
+
+**Hardy–Littlewood captures it — to the digit.** The wheel-Cramér surrogate (small-prime divisibility exact, else independent random) reproduces the whole $|\Delta g|$ distribution, dip depths and all — $6$: $5.09$ vs $5.09\%$; $12$: $2.99$ vs $3.01\%$ — to within $0.1$ point, precisely *because* it respects divisibility by 3 and so inherits the hard zeros for free.
+
+**[resolved, hard rule + soft tail]** On top of the hard skeleton rides a **Lemke Oliver–Soundararajan** soft bias: among the *allowed* moves, primes prefer to keep switching teams over staying (the $55/45$ split in the matrix above), and the residual same-residue deficit fades slowly with scale — $-0.193$ at $10^4$ to $-0.171$ at $10^7$ (the $\sim 1/\log$ LOS decay). So the $\bmod 6$ suppression is **mostly a hard mod-3 traffic law, with the LOS lean layered over it** — and the wheel model, respecting both, lands on the measured depths.
 
 ## 6. Where it lands, and what it's good for
 
