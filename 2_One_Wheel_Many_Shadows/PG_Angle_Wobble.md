@@ -24,7 +24,7 @@ Consequently the angle sequence, plotted in order, rises to $45°$ along **gap-f
 
 ## 2. The ceiling
 
-Because $p_n < p_{n+1}$ always, $\alpha_n < 45°$ **strictly, for every pair** — the angle approaches $45°$ from below and never reaches or crosses it. This is a one-sided ceiling, not a center. The band of angles lives entirely underneath it, at mean distance
+Because $p_n < p_{n+1}$ always, $\alpha_n < 45°$ **strictly, for every pair** — the angle approaches $45°$ from below and never reaches or crosses it. This is a one-sided ceiling, not a center. That the ceiling — and the tight change-cancellation beneath it (§3) — is *structural*, not a statistical accident, has a one-line proof: shuffle the gaps and it survives (they stay positive, so the sequence still climbs); but shuffle the *changes* and let them free-float, and the reconstructed angle wanders straight through $45°$ (and far below). The balancing is held in place only by the primes being a genuine increasing, bounded-gap sequence — which is why on the ordinary number line, where that sign-structure of successive gaps is invisible, the effect cannot be seen at all; the triangle is what renders it. The band of angles lives entirely underneath it, at mean distance
 
 $$45° - \overline{\alpha} \;\approx\; \frac{90}{\pi}\cdot\frac{\overline{g}}{p} \;\approx\; \frac{90}{\pi}\cdot\frac{\log p}{p} \;\to\; 0,$$
 

@@ -26,6 +26,8 @@ The primes' program already carries the right reflex — the [ED negative contro
 
 > **The trap, stated once.** Shuffling $\Delta g$ *directly* destroys the differencing structure you are trying to account for, and so credits the artifact to the primes. The jitter must be **re-formed from shuffled gaps**: $\Delta g^{\text{null}} = \operatorname{diff}(\text{shuffle}(g))$.
 
+**Two nulls, two layers.** *Which* thing you shuffle decides *which* structure you are testing, and the two are easy to conflate. Shuffling the **gaps** keeps them positive, so the reconstructed sequence still increases with bounded steps: the monotonic *skeleton* — and everything it forces, including the $45°$ angle ceiling and the tight change-cancellation of [*The Prime-Triangle Angle*](PG_Angle_Wobble.md) — **survives**; only the fine wheel *order* is destroyed. So **gap-shuffle tests "is it the wheel."** To interrogate the skeleton itself you must shuffle the **changes** and let them free-float: that walk wanders straight through the ceiling (the angle crosses $45°$ and sags far below), which proves the cancellation is *not* a free property of the change-values but is held in place by the primes being a genuine monotonic, bounded-gap sequence. So **change-shuffle tests "is it the skeleton."** Match the null to the layer, or a real structural fact reads as "generic noise."
+
 ## 3. What the null reveals
 
 | statistic (window of 5, or lag 1) | real primes | correct null | genuinely prime |
