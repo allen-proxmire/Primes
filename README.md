@@ -11,7 +11,7 @@ Allen Proxmire's prime-number research — several strands that turn out to be *
 The papers are grouped into five numbered reading series:
 
 1. **[The Factor Skyline](1_Factor_Skyline/)** — the coordinate system and its four-part theory (the foundation).
-2. **[One Wheel, Many Shadows](2_One_Wheel_Many_Shadows/)** — the wheel and its six shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc) — plus the angle's scale-invariant *switchback law* and the differencing-trap null-model notes.
+2. **[One Wheel, Many Shadows](2_One_Wheel_Many_Shadows/)** — the wheel and its six shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc) — plus the angle's scale-invariant *switchback law*, the differencing-trap null-model notes, and the *prime prediction budget* (how far structure gets you, and the wall).
 3. **[Twin Bertrand / Prime Geometry](3_Twin_Bertrand_Prime_Geometry/)** — the Twin-Prime Bertrand Postulate and the prime-triangle work.
 4. **[Philosophy & Ontology](4_Philosophy_Ontology/)** — finitism, the sieve as a hunt, the quantum-mechanical reading.
 5. **[X5D / EXPDB](5_X5D_EXPDB/)** — the exponent-database strand (a separate analytic-number-theory subject).
