@@ -1,6 +1,6 @@
 # Primes
 
-Allen Proxmire's prime-number research — several strands that turn out to be **one story**: the primes seen through *doubling* ($p \mapsto 2p$) and *the wheel* (the primorials $2,3,5,7,\dots$), on a coordinate system that gives the number line back a dimension it was hiding.
+Allen Proxmire's prime-number research — several strands that turn out to be **one story**: the primes seen through *doubling* ($p \mapsto 2p$) and *the wheel* (the primorials $2,3,5,7,\dots$), on a coordinate system that gives the number line back a dimension it was hiding. [![DOI](https://zenodo.org/badge/1302667725.svg)](https://doi.org/10.5281/zenodo.21626683)
 
 ## The idea in one paragraph
 
