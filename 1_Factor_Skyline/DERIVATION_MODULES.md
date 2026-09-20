@@ -2,7 +2,7 @@
 
 **Read this before drafting anything new.** The five FS papers in this folder are the canon. They cite **18 derivation modules** as supporting documents, and those modules sit in `Archive/` — the **discontinued** Factor Skyline repo, kept as reference while it was unclear what in it was worth keeping. `Archive/` is untracked and not public; **this repository and folders 1–5 are the canon.**
 
-> **Resolved 2026-09-20 — all 17 are now here.** The [Archive Survey](../ARCHIVE_SURVEY.md) promoted the whole derivation layer into [`modules/`](modules/), so the collection no longer cites documents it does not contain. **This page is now an index of what is present, not a pointer into a dead repo.** The rule that produced it — *when something in the Archive matters, promote it, don't cite it* — still stands for anything found later.
+> **Resolved 2026-09-20 — all 17 are now here.** The [Archive Survey](../meta/ARCHIVE_SURVEY.md) promoted the whole derivation layer into [`modules/`](modules/), so the collection no longer cites documents it does not contain. **This page is now an index of what is present, not a pointer into a dead repo.** The rule that produced it — *when something in the Archive matters, promote it, don't cite it* — still stands for anything found later.
 
 > **2026-09-20.** A note was drafted deriving "the wheel's period outgrows the window in which it is the operative rule," presented as a new structural result. It was already in `FS_primorial_epochs.md` §2.2 — stated earlier, with a better-chosen denominator (the activation epoch rather than cumulative territory), and put to work explaining why gap-6 dominates for so long. The draft was deleted. **The search that would have prevented it takes one command.**
 

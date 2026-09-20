@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: "Primes: prime-number research on the Factor Skyline"
+message: "If you use this collection, please cite it."
+type: dataset
+authors:
+  - family-names: Proxmire
+    given-names: Allen
+repository-code: "https://github.com/allen-proxmire/Primes"
+abstract: >-
+  A curated collection of prime-number research organised as five reading
+  series. Several strands turn out to be one story: the primes seen through
+  doubling and through the wheel (the primorials), on a coordinate system
+  that gives the number line back a dimension it was hiding. Includes the
+  Factor Skyline framework, the Twin-Prime Bertrand Postulate, a polyhedral
+  reinterpretation of the Tao-Trudgian-Yang Exponent Database, and a
+  null-model discipline with reproduction scripts for every measured table.
+keywords:
+  - number theory
+  - prime numbers
+  - prime gaps
+  - twin primes
+  - sieve theory
+  - reproducible research
+license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21626683
+    description: "Concept DOI — always resolves to the latest release"

@@ -8,7 +8,7 @@ The geometry: draw a right triangle from each consecutive prime pair. The angles
 
 **Start with [the Field Guide](PG_FieldGuide.md)** — a plain-language narrative tour of PG I–III, no notation required. Then [PG II](PG_II_AngleRecord.md), which carries the conjecture and the angle-record theorem; [PG I](PG_I_PrimeTriangle.md) builds the triangle and its identities; [PG III](PG_III_GBP.md) extends to cousins and sexy primes.
 
-**Also here, recovered from the Archive in September 2026** (see the [survey](../ARCHIVE_SURVEY.md)):
+**Also here, recovered from the Archive in September 2026** (see the [survey](../meta/ARCHIVE_SURVEY.md)):
 
 - **[The Twin-Slope Ceiling](FS_twin_prime_geometry.md)** — a complete paper, and a *different* geometry from the PG trilogy: it works on the Factor Skyline, where the twin slope arctan(2/3) is an absolute ceiling. It isolates **the Filling Condition** as the one conjectural step between FS structure and the twin prime conjecture. **Read, assessed and reframed 2026-09-20:** the geometry holds — Theorem 4.2 verified to 10⁶ with zero exceptions, though its proof needed repair — but **the Filling Condition turns out to be TPB itself**, Form 3 being verbatim PG II's Conjecture 2, reached independently from the skyline side. The parity-barrier claim was withdrawn. **The paper has been rewritten around what survives** — a second, independent geometric route to TPB — and [PG II](PG_II_AngleRecord.md) now carries the cross-reference back. Two unrelated geometries, one conjecture: the triangle angle rising to 45°, the skyline slope capped at arctan(2/3).
 - **[Literature review](literature_review.md)** — where TPB and GBP sit against Ramanujan primes, Zhang–Maynard, and Heath-Brown. The support for calling any of this new.

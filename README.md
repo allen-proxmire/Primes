@@ -10,7 +10,7 @@ Prime-number research. Several strands that turn out to be **one story**: the pr
 | [**What We Found**](WHAT_WE_FOUND.md) | the results, with honest labels: proven / verified / measured / retracted |
 | [**How We Know**](HOW_WE_KNOW.md) | why any of it should be believed — and the two times it shouldn't have been |
 
-Each of the five series folders also has a short README saying what's in it and where to start.
+Each of the five series folders also has a short README saying what's in it and where to start. How the collection was made — the worklog, the archive survey, the corrections — is in [`meta/`](meta/).
 
 ## Headlines
 
@@ -37,6 +37,7 @@ The papers are grouped into five numbered reading series:
 
 - **Every result, tagged** ([thm]/[conj]/[emp]/[deriv]/[mirage]): [`RESULTS.md`](RESULTS.md) — the technical version of [What We Found](WHAT_WE_FOUND.md)
 - **Full inventory** (what's compiled, what's a draft, what's on Zenodo): [`PRIMES_MAP.md`](PRIMES_MAP.md)
+- **Licence:** writing under [CC BY 4.0](LICENSE), code under MIT · **Citation:** [`CITATION.cff`](CITATION.cff) · **DOI:** [10.5281/zenodo.21626683](https://doi.org/10.5281/zenodo.21626683)
 
 ## One move, twice
 

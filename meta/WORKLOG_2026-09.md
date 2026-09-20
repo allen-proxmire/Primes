@@ -1,6 +1,6 @@
 # Worklog — September 2026
 
-*A running list of routes, results, and dead ends. Not a paper. Started 2026-09-20 with Claude, poking at [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md).*
+*A running list of routes, results, and dead ends. Not a paper. Started 2026-09-20 with Claude, poking at [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md).*
 
 > **This file is just the log** — what was tried, on what range, against what null, and what came out. **The keepers live in [NOTES_Carry_Forward.md](NOTES_Carry_Forward.md)**, one entry per durable finding, each tagged with the note it should eventually be folded into. If something here is worth remembering, it should have an N-number over there.
 
@@ -51,7 +51,7 @@ Verified as an exact rational identity (no floating point) on 2-3-5, 3-5-7, 5-7-
 
 **Idea.** The note asks whether the leftover, after detrending, carries the wheel's fingerprints. Because of R1 the answer is computable in advance: the mean of K−1/3 depends on the gaps only through E[g1² + g1·g2 + g2²], and the only term a gap-shuffle can change is the cross-term. So the shift from the null is **exactly cov(g_n, g_n+1)**. **Note (corrected later the same day): that is the definition of covariance, so this is a reduction, not a prediction** — it holds for any sequence, and the measurement below checks the arithmetic rather than testing a hypothesis.
 
-**Test.** All 270,014 consecutive-prime gaps in [10^6, 5×10^6]. Mean gap 14.814, sd 12.292. Null = shuffle the gaps, then re-form the triples (the transform-matched null from the [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md)), 5 runs.
+**Test.** All 270,014 consecutive-prime gaps in [10^6, 5×10^6]. Mean gap 14.814, sd 12.292. Null = shuffle the gaps, then re-form the triples (the transform-matched null from the [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md)), 5 runs.
 
 | quantity | value |
 |---|---|
@@ -63,7 +63,7 @@ Verified as an exact rational identity (no floating point) on 2-3-5, 3-5-7, 5-7-
 
 **Result [emp].** Predicted and measured agree to well inside the null's own run-to-run spread.
 
-**Verdict.** The balance ratio does carry the wheel — and it is the *same* −0.05 consecutive-gap anti-correlation already established and fully attributed to the wheel in [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md). **Not a new signal: a fifth shadow.** This is the deflationary, unifying shape the rest of the collection has.
+**Verdict.** The balance ratio does carry the wheel — and it is the *same* −0.05 consecutive-gap anti-correlation already established and fully attributed to the wheel in [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md). **Not a new signal: a fifth shadow.** This is the deflationary, unifying shape the rest of the collection has.
 
 **Notes.**
 - Worth stating out loud when this is written up: K is a **level** statistic on the gaps, not a difference of them. The exact −1/2 differencing pedestal that ate 42 of the 44 points in the wobble **does not apply here at all.** The balance ratio is a cleaner instrument than Δg. It needs the gap-shuffle null and nothing more.
@@ -81,7 +81,7 @@ Verified as an exact rational identity (no floating point) on 2-3-5, 3-5-7, 5-7-
 
 The plan said "use the gap-shuffle null." **That null is wrong for a residue-resolved question, and I nearly ran it.** Shuffled gaps do not respect residue consistency — a gap of 4 cannot follow p ≡ 5 (mod 6), since 5+4 = 9 is divisible by 3 — so the shuffled triples are arithmetically *impossible*, and any per-class comparison against them is meaningless. The gap-shuffle is fine for the pooled question (R2) and breaks the moment you condition on residue.
 
-**The correct null is generative, not a shuffle:** the wheel-only surrogate from [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md) — keep integers coprime to every prime ≤ 317, thin independently to prime density, no other structure. It respects residues automatically because it is built from them.
+**The correct null is generative, not a shuffle:** the wheel-only surrogate from [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md) — keep integers coprime to every prime ≤ 317, thin independently to prime density, no other structure. It respects residues automatically because it is built from them.
 
 *Filed as a rule for this log: a shuffle null is only valid where the shuffle preserves every hard constraint the statistic conditions on.*
 
@@ -112,7 +112,7 @@ The plan said "use the gap-shuffle null." **That null is wrong for a residue-res
 
 **Result [emp]. No class carries an excess.** Folding in the surrogate's own seed-to-seed uncertainty (which the ± columns above exclude), the largest deviation anywhere is **1.3σ** — the (1,1) pair — across 14 classes tested. Two or three readings near 1σ is what 14 comparisons produce by chance. **The prediction holds: the wheel accounts for the residue-resolved balance ratio with no detectable residual.**
 
-Pooled, as a consistency check against R2: real mean Q 953.633, wheel surrogate 950.876, +0.29%; real cov(g1,g2) −6.903 against wheel −6.605, i.e. the surrogate reproduces **96%** of the covariance. That is the same conclusion as [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md), reached through a different statistic.
+Pooled, as a consistency check against R2: real mean Q 953.633, wheel surrogate 950.876, +0.29%; real cov(g1,g2) −6.903 against wheel −6.605, i.e. the surrogate reproduces **96%** of the covariance. That is the same conclusion as [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md), reached through a different statistic.
 
 ### Power check — the instrument can detect things
 
@@ -152,7 +152,7 @@ So the instrument has plenty of power, it finds the known bias in the counts, an
 
 **Idea.** This is where the note's generation-time half lands, and it may be the most original thing in the note.
 
-[The Prime Prediction Budget](Prime_Prediction_Budget.md) is an honest ledger of **payoff**: the wheel is worth ≈1.70 bits of the ≈2.48-bit local uncertainty, ≈0.26 bits are irreducible escape, and you pin the next prime to ~7–8 candidates at 90%. It says the wheel kills 73–77% of positions **"for free, with no test."**
+[The Prime Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) is an honest ledger of **payoff**: the wheel is worth ≈1.70 bits of the ≈2.48-bit local uncertainty, ≈0.26 bits are irreducible escape, and you pin the next prime to ~7–8 candidates at 90%. It says the wheel kills 73–77% of positions **"for free, with no test."**
 
 **That "for free" is doing work.** The wheel through Q is free only because you already know every prime up to Q. The new note's generation-time section is exactly the missing cost accounting:
 
@@ -240,13 +240,13 @@ g1² + g1·g2 + g2² is the norm form of the triangular lattice / Eisenstein int
 
 **Wheel surrogate** (pool ratios per N8): 17.457% at Q=30, 17.400% at Q=100, 17.465% at Q=317, 17.512% at Q=600. Fully reproduced at every depth, including a very shallow one — as expected once the effect is known to be a mod-6 statement.
 
-**Verdict.** The prettiest thing found today, and still not new physics: the form's one arithmetic invariant is a doubled LOS event, and the rate is the wheel. Filed into [the balance-ratio paper §2.1](PG_Balance_Ratio_And_Koide.md).
+**Verdict.** The prettiest thing found today, and still not new physics: the form's one arithmetic invariant is a doubled LOS event, and the rate is the wheel. Filed into [the balance-ratio paper §2.1](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md).
 
 ---
 
 ## R7 — Is the windowed memory fully the wheel? · **done**
 
-**Idea.** [Angle Wobble §4.1](PG_Angle_Wobble.md) verified the *lag-1* covariance is 100% wheel. The [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md) left the *windowed* +1.97pp at "plausibly the wheel." Nobody had run §4.1's test on the windowed statistic. **The one open route today whose answer I did not know in advance.**
+**Idea.** [Angle Wobble §4.1](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md) verified the *lag-1* covariance is 100% wheel. The [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md) left the *windowed* +1.97pp at "plausibly the wheel." Nobody had run §4.1's test on the windowed statistic. **The one open route today whose answer I did not know in advance.**
 
 **Method.** For real primes and for wheel-only surrogates at several depths Q, compute the excess of each series *against its own matched null*: R2(diff(g)) − R2(diff(shuffle(g))). Compare excesses. Real primes [10^6, 5×10^6], three seeds per Q, four shuffles per series.
 
@@ -274,11 +274,11 @@ Real: +1.969 pp. Seed-to-seed scatter ≈0.13 pp (≈±6% of the excess).
 
 ## Running log
 
-**2026-09-20** — Read the new note plus [PG_Angle_Wobble](PG_Angle_Wobble.md), [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md), [Prediction Budget](Prime_Prediction_Budget.md). Opened R1–R6.
+**2026-09-20** — Read the new note plus [PG_Angle_Wobble](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md), [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md), [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md). Opened R1–R6.
 
 R1, R2, R3 all closed the same day, and they close in the same direction: **the balance ratio is the wheel, entirely.** R1 made it an exact gap identity, R2 predicted the pooled wheel signal to within the null's own noise, R3 found nothing left over in any residue class while demonstrating the test could see LOS.
 
-R3 also produced the one genuinely transferable thing so far — the null had to be swapped, because a gap-shuffle produces arithmetically impossible triples once you condition on residue. That rule (a shuffle null is only valid where it preserves every hard constraint the statistic conditions on) is a sharpening of the [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md) discipline and probably belongs in that note rather than here.
+R3 also produced the one genuinely transferable thing so far — the null had to be swapped, because a gap-shuffle produces arithmetically impossible triples once you condition on residue. That rule (a shuffle null is only valid where it preserves every hard constraint the statistic conditions on) is a sharpening of the [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md) discipline and probably belongs in that note rather than here.
 
 Then ran R5 the same day. It did produce something new — but by **refuting the premise I opened it with**, not by confirming it. The claim "structure is cheap to use and expensive to carry" is backwards: the program is linear, the territory quadratic, so the wheel is a compression that improves with scale, and the Budget's "for free" survives intact. What survives from the note's generation-time section is sharper than what I was chasing — the period overtakes the territory at p = 7 and never comes back, so the wheel is never seen to repeat inside its own domain. Logged as N6, with the wrong version preserved as N7 so it does not get re-derived.
 
@@ -290,7 +290,7 @@ Then wrote five documents filing N1–N7 (all new files; originals untouched), a
 
 **Finally ran the prior-art check on N6 — and it failed.** [`FS_primorial_epochs` §2.2](../1_Factor_Skyline/FS_primorial_epochs.md), in the Archive, already has the period-outgrows-the-window result with a "periods per epoch" table and the same reading, measured against the **activation epoch** rather than cumulative territory — the better denominator, crossover at p = 5 rather than p = 7. And [`FSPapers_02.1` §13.2–13.3](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md) already has the cheap-rule/random-output gap in the stronger form K = O(log N) vs H ~ 0.26N, under the heading "the randomness paradox resolved."
 
-So the drafted note was a restatement, and it was **deleted** the same day. The dependent sections in [Budget §5](Prime_Prediction_Budget.md) and [balance ratio §8](PG_Balance_Ratio_And_Koide.md) were rewritten to cite the Factor Skyline papers instead. [`FS_primorial_epochs.md`](../1_Factor_Skyline/FS_primorial_epochs.md) was promoted out of the untracked Archive into the curated collection, and [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md) written to index the other 17 upstream modules so the next grep finds them.
+So the drafted note was a restatement, and it was **deleted** the same day. The dependent sections in [Budget §5](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) and [balance ratio §8](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md) were rewritten to cite the Factor Skyline papers instead. [`FS_primorial_epochs.md`](../1_Factor_Skyline/FS_primorial_epochs.md) was promoted out of the untracked Archive into the curated collection, and [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md) written to index the other 17 upstream modules so the next grep finds them.
 
 **Lesson, and it is the useful output of the day:** run the prior-art check against your own collection *before* drafting. The check cost one search; the note cost a draft. The collection is now large enough that "is this already written down here?" is a real question — the thing rediscovered was in the Archive, not in the active folders.
 

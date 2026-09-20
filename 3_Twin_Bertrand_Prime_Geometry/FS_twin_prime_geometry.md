@@ -6,7 +6,7 @@ April 2026
 
 > ## Revised 2026-09-20 — reframed around what survives
 >
-> Recovered from the discontinued Factor Skyline repo during the [Archive Survey](../ARCHIVE_SURVEY.md), read for the first time since writing, and **rewritten.** The geometry was sound; the framing overreached. The abstract, §1, §6 and §9 have been rewritten, and §4's proof repaired. This box records what changed and why; the sections below are the corrected text.
+> Recovered from the discontinued Factor Skyline repo during the [Archive Survey](../meta/ARCHIVE_SURVEY.md), read for the first time since writing, and **rewritten.** The geometry was sound; the framing overreached. The abstract, §1, §6 and §9 have been rewritten, and §4's proof repaired. This box records what changed and why; the sections below are the corrected text.
 >
 > ### 1. The Filling Condition is the Twin-Prime Bertrand Postulate
 >
