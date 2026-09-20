@@ -8,7 +8,7 @@
 - Every route gets a status: **open** / **running** / **done** / **dead**.
 - Record the number, the range it was measured on, and the null it was measured against. A number without a null is not a result.
 - Tags as elsewhere: **[fact]** exact · **[emp]** measured · **[approx]** · **[conj]** · **[interp]** reading.
-- **Prior-art check before drafting, not after.** The collection is large enough to rediscover itself, and the upstream repos in `Archive/` are untracked so an ordinary repo grep misses them. Run:
+- **Prior-art check before drafting, not after.** The collection is large enough to rediscover itself, and `Archive/` — discontinued repos kept as reference, not canon — is untracked, so an ordinary repo grep misses it. Run:
   `grep -rn -i "phrase" "Archive/Factor Skyline/modules/" "Archive/Factor Skyline/archive/" 1_Factor_Skyline/`
   See [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md). This rule exists because 2026-09-20 cost a full draft.
 - When a route turns into something worth keeping, it graduates to its own doc and gets linked from here.

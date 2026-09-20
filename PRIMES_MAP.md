@@ -8,7 +8,7 @@
 
 ## 0. Current inventory (2026-09-20)
 
-**Structure.** Five numbered reading series, tracked; three upstream project repos in `Archive/`, deliberately untracked (see [`.gitignore`](.gitignore)).
+**Structure.** Five numbered reading series — **these plus the root files are the canon, and the only thing public.** `Archive/` holds three **discontinued** project repos (Factor Skyline, Twin Bertrand, X5D EXPDB), kept as reference while it was unclear what in them was worth saving. They are untracked by design (see [`.gitignore`](.gitignore)), not authoritative, and nothing in them should be cited as canon. **When something in there matters, promote it into folders 1–5** — as was done with `FS_primorial_epochs.md`, the PG trilogy's LaTeX, seven figures and six analysis scripts in September 2026.
 
 ```
 GitHub/Primes/
@@ -20,7 +20,7 @@ GitHub/Primes/
 ├── 3_Twin_Bertrand_Prime_Geometry/
 ├── 4_Philosophy_Ontology/
 ├── 5_X5D_EXPDB/
-└── Archive/                       upstream repos — UNTRACKED, and grep misses them
+└── Archive/                       DISCONTINUED repos — reference only, not canon
 ```
 
 ### 1_Factor_Skyline
@@ -96,7 +96,8 @@ GitHub/Primes/
 1. **~~PDFs~~ — resolved by going markdown-native (2026-09).** The 13 PDFs that merely mirrored a markdown source were removed; git retains them. Remaining PDFs are the ones that are the *only* copy of something: the PG trilogy's typeset version, `Prime_Structure_Factor.pdf`, and the two X5D papers. **No new PDFs are generated.**
 2. **X5D is still pdf-only** — `X5D_Polyhedral-Reinterpretation.pdf` and `Theta_Gap2_Refinement.pdf` have no markdown and, unlike the PG trilogy, **no recoverable `.tex`** in the upstream repo. Converting them means transcription, with the attendant risk of silent formula errors.
 3. **Reproducibility** — series 2 is fully covered (`2_One_Wheel_Many_Shadows/repro/`, every table regenerated and checked). Series 1 has `repro/entropy_budget.py` for the headline numbers only. Series 3 now ships the upstream scripts, **unverified**. Series 5 has a note saying what reproduction would require and why it is not a script. The remaining gap is series 1 beyond the entropy budget, and series 3 verification.
-4. **Prior art** — the Archive is untracked, so an ordinary repo grep misses 18 derivation modules that the live papers cite. Search it explicitly before drafting; see [`DERIVATION_MODULES.md`](1_Factor_Skyline/DERIVATION_MODULES.md). This has already cost one draft.
+4. **Prior art** — an ordinary repo grep misses the Archive, where 18 derivation modules the live papers cite still sit. Search it explicitly before drafting; see [`DERIVATION_MODULES.md`](1_Factor_Skyline/DERIVATION_MODULES.md). This has already cost one draft. **Reference, not canon** — if something in there proves load-bearing, promote it rather than cite it.
+5. **The Archive has not been surveyed.** It was kept because *something* in it was worth saving, without a decision on what. Four promotions happened in September 2026 by accident, each because a live paper turned out to need something. A deliberate pass has never been made.
 
 ---
 

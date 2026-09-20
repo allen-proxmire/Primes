@@ -1,8 +1,10 @@
 # The derivation modules — where they are, and why grep misses them
 
-**Read this before drafting anything new.** The five FS papers in this folder are the polished layer. Underneath them sit **18 derivation modules** that the papers cite as supporting documents — and they live in the **upstream Factor Skyline repo, which this repository deliberately does not track** (see [`.gitignore`](../.gitignore): the Archive holds the three standalone project repos, each with its own git history, and is excluded by design).
+**Read this before drafting anything new.** The five FS papers in this folder are the canon. They cite **18 derivation modules** as supporting documents, and those modules sit in `Archive/` — the **discontinued** Factor Skyline repo, kept as reference while it was unclear what in it was worth keeping. `Archive/` is untracked and not public; **this repository and folders 1–5 are the canon.**
 
-**Consequence: a repo-wide grep will not find them unless you point it at the Archive path explicitly.** That is not a filing error — it is the intended separation of the curated reading collection from its sources. But it has a cost, and the cost has already been paid once.
+**So the modules are reference, not dependency.** Nothing in them is authoritative, and nothing in them should be cited as canon. But they contain worked derivations that the live papers lean on, and **a repo-wide grep will not find them** unless you point at the Archive path explicitly — which has already cost one wasted draft.
+
+**The rule when something in there matters: promote it, don't cite it.** That is what happened to [`FS_primorial_epochs.md`](FS_primorial_epochs.md) in September 2026 — copied into this folder, where it became canon. The upstream copy is now irrelevant.
 
 > **2026-09-20.** A note was drafted deriving "the wheel's period outgrows the window in which it is the operative rule," presented as a new structural result. It was already in `FS_primorial_epochs.md` §2.2 — stated earlier, with a better-chosen denominator (the activation epoch rather than cumulative territory), and put to work explaining why gap-6 dominates for so long. The draft was deleted. **The search that would have prevented it takes one command.**
 

@@ -12,7 +12,7 @@ X5D is not that. Its claims are about a **polytope in ℝ⁵** derived from the 
 - a **vendored copy of Tao's `expdb`**, which the upstream repo carries at `compute/vendor/expdb/`
 - exact rational / polyhedral arithmetic, not floating-point sieving
 
-All of it lives in the untracked `Archive/X5D EXPDB Framework/`, which is the upstream repo with its own git history.
+All of it lives in `Archive/X5D EXPDB Framework/` — a **discontinued** repo kept only as reference. It is not canon and not public. **So reproducing X5D is not a matter of pointing a script at existing infrastructure; it would mean reviving a retired codebase**, which is a real project rather than a session's work. That is the honest reason there is no script here, and it is a stronger reason than the one first given.
 
 ## The claims that would need checking
 

@@ -236,7 +236,7 @@ Reproduce: [`check_angle_records.py`](../3_Twin_Bertrand_Prime_Geometry/scripts/
 
 ---
 
-## N13 — X5D's historical comparison is wrong · **OPEN — not fixable from this repo** · → upstream `Archive/X5D EXPDB Framework/examples/GuthMaynard/`
+## N13 — X5D's historical comparison is wrong · **CLOSED — reference material, not canon** · → upstream `Archive/X5D EXPDB Framework/examples/GuthMaynard/`
 
 Found 2026-09-20 while drawing the cusp figure.
 
@@ -249,7 +249,7 @@ Found 2026-09-20 while drawing the cusp figure.
 
 **Scope checked, and it is contained.** The error appears in four files, all in `Archive/X5D EXPDB Framework/examples/GuthMaynard/` (`BindingConstraints.md`, `_v2.md`, `_v2.tex`, `Pipeline_Report.txt`). It is **not** in the curated `X5D_EXPDB_Reinterpretation.md`, and **not** in the published `X5D_Polyhedral-Reinterpretation.pdf` — whose only Huxley references concern *Huxley subdivision*, an unrelated unimplemented EXPDB technique. So nothing tracked or published here carries it.
 
-**Why it is open rather than closed.** `Archive/` is untracked by design ([.gitignore](../.gitignore)): it holds the three upstream project repos, each with its own git history and its own Zenodo DOI. Correcting the sentence means committing to `expdb-5d-polyhedral`, a different repository — Allen's call, not something to do in passing.
+**Why it is closed.** `Archive/` holds **discontinued** repos, kept as reference while it was still unclear what in them was worth saving. They are not canon and are not public. The canon is this repository — `README`, `RESULTS`, `PRIMES_MAP` and folders 1–5 — and none of it carries the error. **So there is nothing to fix.** If the historical comparison is ever wanted in the live collection, the correct statement is σ = 3/4 with height 12/5 via A_Hux(σ) = 3/(3σ−1), and it should be written fresh into a canon document rather than corrected in a dead one.
 
 **The main chain is unaffected** and was verified exactly: cusp at σ = 7/10, ‖A‖∞ = 30/13, θ = 17/30, dθ/d‖A‖ = 169/900. Neither figure draws the Huxley curve.
 
