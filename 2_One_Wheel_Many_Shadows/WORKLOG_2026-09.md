@@ -1,0 +1,254 @@
+# Worklog — September 2026
+
+*A running list of routes, results, and dead ends. Not a paper. Started 2026-09-20 with Claude, poking at [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md).*
+
+> **This file is just the log** — what was tried, on what range, against what null, and what came out. **The keepers live in [NOTES_Carry_Forward.md](NOTES_Carry_Forward.md)**, one entry per durable finding, each tagged with the note it should eventually be folded into. If something here is worth remembering, it should have an N-number over there.
+
+**House rules for this log**
+- Every route gets a status: **open** / **running** / **done** / **dead**.
+- Record the number, the range it was measured on, and the null it was measured against. A number without a null is not a result.
+- Tags as elsewhere: **[fact]** exact · **[emp]** measured · **[approx]** · **[conj]** · **[interp]** reading.
+- **Prior-art check before drafting, not after.** The collection is large enough to rediscover itself, and the upstream repos in `Archive/` are untracked so an ordinary repo grep misses them. Run:
+  `grep -rn -i "phrase" "Archive/Factor Skyline/modules/" "Archive/Factor Skyline/archive/" 1_Factor_Skyline/`
+  See [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md). This rule exists because 2026-09-20 cost a full draft.
+- When a route turns into something worth keeping, it graduates to its own doc and gets linked from here.
+
+---
+
+## Status board
+
+| # | route | status | one-line verdict |
+|---|---|---|---|
+| R1 | K reduces exactly to a gap form | **done** | Exact identity. K is the hexagonal norm of the gap pair. |
+| R2 | The balance ratio's wheel signal is the known −0.05 | **done** | Predicted −0.719%, measured −0.708%. Inside null noise. |
+| R3 | Residuals sorted mod 6 / mod 30 | **done** | Null result, and a clean one. No class exceeds 1.3σ. |
+| R4 | The two prime angles share one driver | **open** | Both linear in g/p. Note currently implies otherwise. |
+| R5 | The Budget is a payoff ledger with no cost column | **done** | Cost column exists and is *cheap*. My framing was backwards; see N6, N7. |
+| R6 | Is the hexagonal norm meaningful or a coincidence? | **open** | Low priority, high charm. |
+| — | "What picks Koide's midpoint?" | **parked** | Not our problem. Physics, and unresolved there. |
+
+---
+
+## R1 — K reduces exactly to a gap form · **done**
+
+**Idea.** The note calls K "a gap measure in disguise." Make that exact.
+
+**Result [fact].** For any three numbers a < b < c with gaps g1 = b−a, g2 = c−b and mean m = (a+b+c)/3:
+
+> **K − 1/3 = (2/27) · (g1² + g1·g2 + g2²) / m²**
+
+Verified as an exact rational identity (no floating point) on 2-3-5, 3-5-7, 5-7-11, 11-13-17, 101-103-107, 547-557-563, and the deliberately lopsided 7-100-1000. Exact in every case, including the lopsided one — so it is not a small-spread approximation, it is the thing itself.
+
+**Notes.**
+- This is strictly better than "squared relative spread" because it is written in gaps, which is the currency the rest of the folder trades in. It moves the balance ratio into the gap program instead of alongside it.
+- g1² + g1·g2 + g2² is the **hexagonal norm** (the Loeschian form, the norm form of the Eisenstein integers). See R6.
+- The cross-term g1·g2 is the only place prime-specific information can enter. That observation is what makes R2 work.
+
+---
+
+## R2 — The wheel signal in the balance ratio is the known −0.05 · **done**
+
+**Idea.** The note asks whether the leftover, after detrending, carries the wheel's fingerprints. Because of R1 the answer is computable in advance: the mean of K−1/3 depends on the gaps only through E[g1² + g1·g2 + g2²], and the only term a gap-shuffle can change is the cross-term. So the shift from the null should be **exactly cov(g_n, g_n+1)** — no free parameters, no fitting.
+
+**Test.** All 270,014 consecutive-prime gaps in [10^6, 5×10^6]. Mean gap 14.814, sd 12.292. Null = shuffle the gaps, then re-form the triples (the transform-matched null from the [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md)), 5 runs.
+
+| quantity | value |
+|---|---|
+| E[g1² + g1·g2 + g2²], real primes | 953.633 |
+| E[g1² + g1·g2 + g2²], gap-shuffled null | 960.436 (spread across 5 runs: 0.937) |
+| **measured shift** | **−6.802  (−0.708%)** |
+| cov(g_n, g_n+1) | −6.903  (corr −0.0457) |
+| **predicted shift** | **−6.903  (−0.719%)** |
+
+**Result [emp].** Predicted and measured agree to well inside the null's own run-to-run spread.
+
+**Verdict.** The balance ratio does carry the wheel — and it is the *same* −0.05 consecutive-gap anti-correlation already established and fully attributed to the wheel in [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md). **Not a new signal: a fifth shadow.** This is the deflationary, unifying shape the rest of the collection has.
+
+**Notes.**
+- Worth stating out loud when this is written up: K is a **level** statistic on the gaps, not a difference of them. The exact −1/2 differencing pedestal that ate 42 of the 44 points in the wobble **does not apply here at all.** The balance ratio is a cleaner instrument than Δg. It needs the gap-shuffle null and nothing more.
+- This closes the note's open question with a matched prediction rather than an exploration, which is a stronger result than the note asked for.
+
+---
+
+## R3 — Residuals sorted mod 6 and mod 30 · **done**
+
+**Idea (the note's own).** Sort the balance-ratio statistic by residue class mod 6 and mod 30, and see whether the leftover looks random or carries the wheel. Lemke Oliver–Soundararajan says the second is worth a look.
+
+**Prediction registered before looking [conj].** Per the Budget's Tier-2 argument, the LOS bias is the wheel wearing another hat, so the residue-resolved values should also be reproduced by a wheel-only surrogate with no residual.
+
+### The null had to be changed, and this is the methodological point of the route
+
+The plan said "use the gap-shuffle null." **That null is wrong for a residue-resolved question, and I nearly ran it.** Shuffled gaps do not respect residue consistency — a gap of 4 cannot follow p ≡ 5 (mod 6), since 5+4 = 9 is divisible by 3 — so the shuffled triples are arithmetically *impossible*, and any per-class comparison against them is meaningless. The gap-shuffle is fine for the pooled question (R2) and breaks the moment you condition on residue.
+
+**The correct null is generative, not a shuffle:** the wheel-only surrogate from [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md) — keep integers coprime to every prime ≤ 317, thin independently to prime density, no other structure. It respects residues automatically because it is built from them.
+
+*Filed as a rule for this log: a shuffle null is only valid where the shuffle preserves every hard constraint the statistic conditions on.*
+
+**Test.** Real primes in [10^6, 5×10^6] (270,015 primes) against three surrogate seeds matched to the same density (thin-keep 0.6995). Statistic per triple: Q = g1² + g1·g2 + g2².
+
+| class (p mod 6) | n | mean Q real | mean Q wheel | diff |
+|---|---|---|---|---|
+| 1 | 134,957 | 970.15 ± 3.30 | 964.67 (spread 9.52) | +0.57% |
+| 5 | 135,056 | 937.13 ± 3.25 | 937.08 (spread 0.78) | +0.00% |
+
+| class (p mod 30) | n | mean Q real | mean Q wheel | diff |
+|---|---|---|---|---|
+| 1 | 33,714 | 974.51 ± 6.59 | 966.39 | +0.84% |
+| 7 | 33,767 | 898.10 ± 6.47 | 892.39 | +0.64% |
+| 11 | 33,731 | 899.25 ± 6.36 | 901.60 | −0.26% |
+| 13 | 33,787 | 990.32 ± 6.72 | 983.91 | +0.65% |
+| 17 | 33,790 | 939.54 ± 6.42 | 942.88 | −0.35% |
+| 19 | 33,689 | 1017.79 ± 6.63 | 1016.13 | +0.16% |
+| 23 | 33,763 | 994.21 ± 6.60 | 993.90 | +0.03% |
+| 29 | 33,772 | 915.47 ± 6.61 | 909.90 | +0.61% |
+
+| LOS pair (p, p′ mod 6) | n | mean Q real | mean Q wheel | diff |
+|---|---|---|---|---|
+| (1, 1) | 58,006 | 1038.67 ± 5.22 | 1029.20 | +0.92% |
+| (1, 5) | 76,951 | 918.51 ± 4.24 | 915.66 | +0.31% |
+| (5, 1) | 76,951 | 891.16 ± 4.19 | 890.54 | +0.07% |
+| (5, 5) | 58,105 | 998.00 ± 5.12 | 998.37 | −0.04% |
+
+**Result [emp]. No class carries an excess.** Folding in the surrogate's own seed-to-seed uncertainty (which the ± columns above exclude), the largest deviation anywhere is **1.3σ** — the (1,1) pair — across 14 classes tested. Two or three readings near 1σ is what 14 comparisons produce by chance. **The prediction holds: the wheel accounts for the residue-resolved balance ratio with no detectable residual.**
+
+Pooled, as a consistency check against R2: real mean Q 953.633, wheel surrogate 950.876, +0.29%; real cov(g1,g2) −6.903 against wheel −6.605, i.e. the surrogate reproduces **96%** of the covariance. That is the same conclusion as [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md), reached through a different statistic.
+
+### Power check — the instrument can detect things
+
+A null result is worth nothing if the test is blind. So: does this setup see the LOS bias at all?
+
+| pair (p, p′ mod 6) | real | wheel surrogate | even odds |
+|---|---|---|---|
+| (1, 1) | 21.48% | 21.58% | 25% |
+| (1, 5) | 28.50% | 28.42% | 25% |
+| (5, 1) | 28.50% | 28.42% | 25% |
+| (5, 5) | 21.52% | 21.58% | 25% |
+
+**The LOS residue-repetition bias is enormous and unmissable** — consecutive primes repeat their mod-6 residue 14% less often than even odds. The test sees it instantly. **And the wheel-only surrogate reproduces it to within 0.1 percentage point**, which is Budget Tier 2 confirmed on its own terms: LOS *is* the wheel.
+
+So the instrument has plenty of power, it finds the known bias in the counts, and it finds nothing extra in Q.
+
+**Verdict.** R3 closes the note's open question. Combined with R2: the balance ratio carries the wheel, the wheel carries all of it, and there is nothing underneath — pooled or per residue class. **The balance ratio is a fifth shadow, fully accounted for.**
+
+---
+
+## R4 — The two prime angles share one driver · **open**
+
+**Idea.** The note says the prime-triangle 45° and Koide's 45° are "shared coordinates, not a shared cause." Correct about Koide. But it leaves the impression that the balance-ratio angle θ and the prime-triangle angle α are unrelated, and they are not — both are linear in g/p:
+
+- prime-triangle: α → 45° **from below**, distance = (90/π)·g/p ≈ 28.6·g/p degrees
+- balance-ratio: θ → 0° **from above**, size ≈ (27 to 47)·g/p degrees
+
+**Where the range comes from [approx].** Small-spread expansion gives θ ≈ sqrt(2(g1² + g1·g2 + g2²)) / (3m) radians. The coefficient depends on the *shape* of the gap pair: equal gaps give ≈46.8·g/m degrees, maximally lopsided gives ≈27.0·g/m. Spot-checked against the note's own table — predicted 0.0328° vs tabulated 0.03° for 17393-17401-17417 (good); predicted 18.64° vs tabulated 18.02° for 5-7-11 (small-spread approximation straining, as expected at tiny p).
+
+**The reading.** Same driver, opposite directions, because α measures one gap while θ measures the *asymmetry* of two. Koide is the genuine outsider. Worth a paragraph correcting the note.
+
+**To do.** Verify the coefficient range properly instead of by two spot checks.
+
+---
+
+## R5 — The Budget has a payoff column and no cost column · **open**
+
+**Idea.** This is where the note's generation-time half lands, and it may be the most original thing in the note.
+
+[The Prime Prediction Budget](Prime_Prediction_Budget.md) is an honest ledger of **payoff**: the wheel is worth ≈1.70 bits of the ≈2.48-bit local uncertainty, ≈0.26 bits are irreducible escape, and you pin the next prime to ~7–8 candidates at 90%. It says the wheel kills 73–77% of positions **"for free, with no test."**
+
+**That "for free" is doing work.** The wheel through Q is free only because you already know every prime up to Q. The new note's generation-time section is exactly the missing cost accounting:
+
+| | grows like | what it is |
+|---|---|---|
+| the decided region | p_k² | how far the first k primes settle the line |
+| the state describing the rule | p_1·p_2·…·p_k (primorial) | the wheel's period |
+
+The territory decided grows **quadratically**; the state needed to describe the rule grows **exponentially**. To decide primality below x you need the wheel through sqrt(x), whose period is astronomically larger than x.
+
+**The claim I went in with [wrong].** "The structure is cheap to *use* and exponentially expensive to *carry*, and that gap is where the apparent randomness lives."
+
+**That is backwards, and the measurement says so.** The error was counting the *unrolled pattern* as the cost when the thing you actually carry is the *program*: the list of primes up to p_k. Three different scales were being collapsed into one word, "state."
+
+### The three scales, measured
+
+| | size | in p_k |
+|---|---|---|
+| **program** — bits to write the rule (= log2 of the primorial = Σ log2 p_i) | 1.4427 · p_k bits | **linear** |
+| **territory** — integers the rule decides (everything below p_{k+1}²) | p_k² | **quadratic** |
+| **period** — length of the unrolled pattern (the primorial itself) | 2^(1.4427 · p_k) | **exponential** |
+
+The program slope converges to 1/ln2 = 1.4427 exactly as it must (θ(x) ~ x):
+
+| p_k | program (bits) | program / p_k |
+|---|---|---|
+| 541 | 729.7 | 1.3489 |
+| 7,919 | 11,270.7 | 1.4233 |
+| 104,729 | 150,606.1 | 1.4381 |
+| 611,953 | 881,836.2 | 1.4410 |
+| 1,999,993 | 2,883,352.6 | 1.4417 |
+
+**So the program is linear and the territory is quadratic — the wheel is a compression, and it gets better with scale.** Cost per decided integer is 1.4427/p_k bits and falls to zero:
+
+| p_k | cost to learn one more prime | new integers thereby decided | integers per bit |
+|---|---|---|---|
+| 29 | 4.95 bits | 408 | 82 |
+| 541 | 9.10 bits | 11,040 | 1,213 |
+| 7,919 | 12.95 bits | 95,160 | 7,346 |
+| 104,729 | 16.68 bits | 3,352,032 | 201,003 |
+| 1,299,709 | 20.31 bits | 57,188,208 | 2,815,797 |
+
+**Result [fact].** The return on the wheel grows without bound. The Budget's phrase "for free, with no test" is *more* defensible than I claimed, not less. There is no missing cost column in the sense I meant: the cost exists, it is tiny, and it shrinks.
+
+### What survives, and it is the sharp part
+
+The exponential scale is real — it is just not a *cost*. It is the **period**, and it has a consequence that is exact:
+
+**The wheel's period exceeds the territory it decides, from p = 7 onward, forever.** [fact]
+
+| k | p_k | primorial (period) | territory (p_{k+1}²) | |
+|---|---|---|---|---|
+| 1 | 2 | 2 | 9 | period < territory |
+| 2 | 3 | 6 | 25 | period < territory |
+| 3 | 5 | 30 | 49 | period < territory |
+| **4** | **7** | **210** | **121** | **period > territory** |
+| 5 | 11 | 2,310 | 169 | period > territory |
+| 8 | 19 | 9,699,690 | 529 | period > territory |
+
+After the crossover at p = 7 the gap never closes again — by p_k = 7,919 the period exceeds the territory by a factor of 2^11,245.
+
+**So the wheel never completes a single period inside the region where it is the operative rule.** The pattern is always in its first period, always partial, never seen to repeat. That is a fully determined, cheaply described object that is *structurally incapable of looking periodic in its own domain of validity* — and that is a real mechanism for apparent randomness, stated exactly. It is the defensible core of the note's generation-time section.
+
+**Verdict.** The note's intuition survives; its accounting does not. Not "expensive to carry" but **"cheap to carry, and it never repeats where you can see it."** Carried forward as N6 and N7.
+
+**Still to do.**
+- Check whether the three-scale framing is already somewhere in [Factor Skyline](../1_Factor_Skyline/) in other words.
+- Decide: own note, or an appendix to the Budget. Leaning own note — the Budget is finished and this reframes rather than extends it.
+
+---
+
+## R6 — Hexagonal norm: meaningful or coincidence? · **open**
+
+g1² + g1·g2 + g2² is the norm form of the triangular lattice / Eisenstein integers. The wheel's first real filter is mod 6, which is also hexagonal. Probably a coincidence — the form falls out of the algebra of three points on a line and has no obvious reason to know about mod 6 — but it is cheap to check whether the form's value distribution over real prime gaps differs from the null in a way that references 6. Low priority, filed so it is not lost.
+
+---
+
+## Running log
+
+**2026-09-20** — Read the new note plus [PG_Angle_Wobble](PG_Angle_Wobble.md), [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md), [Prediction Budget](Prime_Prediction_Budget.md). Opened R1–R6.
+
+R1, R2, R3 all closed the same day, and they close in the same direction: **the balance ratio is the wheel, entirely.** R1 made it an exact gap identity, R2 predicted the pooled wheel signal to within the null's own noise, R3 found nothing left over in any residue class while demonstrating the test could see LOS.
+
+R3 also produced the one genuinely transferable thing so far — the null had to be swapped, because a gap-shuffle produces arithmetically impossible triples once you condition on residue. That rule (a shuffle null is only valid where it preserves every hard constraint the statistic conditions on) is a sharpening of the [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md) discipline and probably belongs in that note rather than here.
+
+Then ran R5 the same day. It did produce something new — but by **refuting the premise I opened it with**, not by confirming it. The claim "structure is cheap to use and expensive to carry" is backwards: the program is linear, the territory quadratic, so the wheel is a compression that improves with scale, and the Budget's "for free" survives intact. What survives from the note's generation-time section is sharper than what I was chasing — the period overtakes the territory at p = 7 and never comes back, so the wheel is never seen to repeat inside its own domain. Logged as N6, with the wrong version preserved as N7 so it does not get re-derived.
+
+Set up [NOTES_Carry_Forward.md](NOTES_Carry_Forward.md) and moved the keepers there (N1–N7). This file is the log from here on.
+
+Remaining open: R4 (verify the angle coefficient range), R6 (hexagonal norm, charm only), and N6's placement — own note or Budget appendix.
+
+Then wrote five documents filing N1–N7 (all new files; originals untouched), and verified N5's coefficient before filing — **the "27 to 47" range recorded earlier was wrong**, mixed normalizations; correct range 46.78–54.02, measured median 48.01 over 70,433 triples.
+
+**Finally ran the prior-art check on N6 — and it failed.** [`FS_primorial_epochs` §2.2](../Archive/Factor%20Skyline/modules/FS_primorial_epochs.md), in the Archive, already has the period-outgrows-the-window result with a "periods per epoch" table and the same reading, measured against the **activation epoch** rather than cumulative territory — the better denominator, crossover at p = 5 rather than p = 7. And [`FSPapers_02.1` §13.2–13.3](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md) already has the cheap-rule/random-output gap in the stronger form K = O(log N) vs H ~ 0.26N, under the heading "the randomness paradox resolved."
+
+So the drafted note was a restatement, and it was **deleted** the same day. The dependent sections in [Budget v2 §5](Prime_Prediction_Budget_v2.md) and [balance ratio v2 §8](PG_Balance_Ratio_And_Koide_v2.md) were rewritten to cite the Factor Skyline papers instead. [`FS_primorial_epochs.md`](../1_Factor_Skyline/FS_primorial_epochs.md) was promoted out of the untracked Archive into the curated collection, and [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md) written to index the other 17 upstream modules so the next grep finds them.
+
+**Lesson, and it is the useful output of the day:** run the prior-art check against your own collection *before* drafting. The check cost one search; the note cost a draft. The collection is now large enough that "is this already written down here?" is a real question — the thing rediscovered was in the Archive, not in the active folders.
+
+No existing files changed; nothing committed. Scratch code lives outside the repo.
