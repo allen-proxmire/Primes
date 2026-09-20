@@ -29,7 +29,7 @@ Each of these is a genuine, measured regularity; none of them *adds* predictive 
 |---|---|---|
 | jumping champions $6,30,210$ | the wheel's favoured gaps | classical (Odlyzko–Rubinstein–Wolf) |
 | gap anti-correlation $-0.05$ | big gap → smaller next | wheel's consecutive-gap memory |
-| switchback sign-law (reversal $63\!\to\!82\%$) | runs die faster than a coin | [Switchback Law](Switchback_Law.md) |
+| mod-6 gap traffic law | two consecutive gaps can never both be $\equiv2$ or both $\equiv4$; $\lvert\Delta g\rvert\in\{6,12\}$ halved against a matched null | [Switchback Law](Switchback_Law.md) |
 | mod-6 / LOS bias | consecutive gaps avoid a shared residue | Lemke Oliver–Soundararajan |
 | Seven Sisters ($2p+k$, $\sim80\%$) | the wheel at the doubled scale | [Seven Sisters](FS_Seven_Sisters_Wheel_Asymptote.md) |
 | balance ratio $K\to1/3$ (v2) | the same $-0.05$, via $g_1^2+g_1g_2+g_2^2$ | [Balance Ratio v2](PG_Balance_Ratio_And_Koide.md) |
@@ -77,7 +77,7 @@ The thing you carry is the **program**, and it is linear against a quadratic ter
 
 **[emp]** So "for free, with no test" stands, and the ledger needed no correction.
 
-**But the exponential scale is real** — it is the *period*, not a cost, and it carries a sharp consequence, **which this collection already had**: from $p \ge 5$ the primorial period exceeds the activation epoch $[p_k^2, p_{k+1}^2)$ in which the coverage configuration is frozen, so the template **is never seen to complete a single period within the window where it is the operative rule** — it is a trans-epochal pattern ([`FS_primorial_epochs` §2.2](../Archive/Factor%20Skyline/modules/FS_primorial_epochs.md)). Together with $K = O(\log N)$ against $H \sim 0.26N$ ([`FSPapers_02.1` §13.2](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md)), that is the whole account of why the residual reads as noise while the rule is trivial to write down: the $\sim0.26$ irreducible bits of §2 and the period/epoch gap are one fact from two ends.
+**But the exponential scale is real** — it is the *period*, not a cost, and it carries a sharp consequence, **which this collection already had**: from $p \ge 5$ the primorial period exceeds the activation epoch $[p_k^2, p_{k+1}^2)$ in which the coverage configuration is frozen, so the template **is never seen to complete a single period within the window where it is the operative rule** — it is a trans-epochal pattern ([`FS_primorial_epochs` §2.2](../1_Factor_Skyline/FS_primorial_epochs.md)). Together with $K = O(\log N)$ against $H \sim 0.26N$ ([`FSPapers_02.1` §13.2](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md)), that is the whole account of why the residual reads as noise while the rule is trivial to write down: the $\sim0.26$ irreducible bits of §2 and the period/epoch gap are one fact from two ends.
 
 So the cost column changes nothing and was already implicit. **The only thing v2 adds here is the explicit rebuttal** — the "free lunch" objection is natural, and it is wrong for a reason worth recording once.
 

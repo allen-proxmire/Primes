@@ -47,7 +47,7 @@ GitHub/Primes/
 | Prime_Gap_Memory_Differencing_Trap | md, pdf |
 | PG_Angle_Wobble — *The Prime-Triangle Angle* | md ❌ |
 | PG_Balance_Ratio_And_Koide | md ❌ |
-| Switchback_Law | md, pdf |
+| Switchback_Law — *the mod-6 traffic law* (rewritten 2026-09) | md ❌ |
 | Prime_Structure_Factor | md ❌ (pdf lives in `3_`) |
 | Offset_Correlation_Curve | md ❌ |
 | ED_Negative_Control | md ❌ |

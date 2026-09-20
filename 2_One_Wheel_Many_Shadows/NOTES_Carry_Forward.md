@@ -77,11 +77,11 @@ Same driver, opposite directions, because α measures one gap while θ measures 
 
 ---
 
-## N6 — Three scales: program, territory, period · **PRIOR ART — NOT NEW** · → cite [`FS_primorial_epochs` §2.2](../Archive/Factor%20Skyline/modules/FS_primorial_epochs.md) and [`FSPapers_02.1` §13](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md)
+## N6 — Three scales: program, territory, period · **PRIOR ART — NOT NEW** · → cite [`FS_primorial_epochs` §2.2](../1_Factor_Skyline/FS_primorial_epochs.md) and [`FSPapers_02.1` §13](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md)
 
 > **Prior-art check run 2026-09-20, after N6 had been written up. It should have been run first.**
 >
-> **The result was already in the collection, stated earlier and better.** [`FS_primorial_epochs` §2.2](../Archive/Factor%20Skyline/modules/FS_primorial_epochs.md) has the period-versus-window comparison with a "periods per epoch" table and the identical reading: *"For p ≥ 5, the epoch is shorter than one full primorial period… The full primorial structure is never 'seen' within a single epoch… the coverage pattern's period outgrows the epoch length."* It also uses the fact to explain why gap-6 dominates so long (the 5#-template is the last where epoch ≈ period, 24 vs 30).
+> **The result was already in the collection, stated earlier and better.** [`FS_primorial_epochs` §2.2](../1_Factor_Skyline/FS_primorial_epochs.md) has the period-versus-window comparison with a "periods per epoch" table and the identical reading: *"For p ≥ 5, the epoch is shorter than one full primorial period… The full primorial structure is never 'seen' within a single epoch… the coverage pattern's period outgrows the epoch length."* It also uses the fact to explain why gap-6 dominates so long (the 5#-template is the last where epoch ≈ period, 24 vs 30).
 >
 > **And its comparison is the better one.** It measures the period against the **activation epoch** [p_k², p²_{k+1}) — where the coverage configuration is actually frozen — not against cumulative territory below p²_{k+1}, which spans epochs where coarser templates ruled. That is the right denominator, and it puts the crossover at **p = 5**, not the p = 7 recorded below.
 >
@@ -161,7 +161,7 @@ The [reproduction script](repro/) regenerates every measured table in the three 
 
 ---
 
-## N10 — The Switchback Law compares against the wrong null · **OPEN, and the biggest outstanding item** · → [Switchback_Law.md](Switchback_Law.md)
+## N10 — The Switchback Law compared against the wrong null · **CLOSED — paper revised 2026-09-20** · → [Switchback_Law.md](Switchback_Law.md)
 
 Found while closing N9, using the same machinery.
 
@@ -178,7 +178,9 @@ Reversal odds: real 64.0→75.7→82.1→85.5, null 64.7→77.3→83.9→87.6 �
 
 **What survives:** §5's mod-6 suppression (separately validated against wheel-Cramér, matched to 0.1 point) — the paper's real result. §3's scale-invariance is a genuine observation whose *explanation* inverts: it is scale-invariant because it is a universal differencing artifact. §6's betting rule works, but on any increasing bounded-gap sequence.
 
-**Needs a decision:** revise the paper to lead with §5 and reframe §2–§4 as "a property of monotone bounded-gap sequences, not of primes," or something narrower. Flagged in place, not rewritten. **Also update [RESULTS.md](../RESULTS.md), which still states the Switchback claim unqualified.**
+**CLOSED 2026-09-20 — paper revised.** The mod-6 rule is now §2 and leads; the run-length law is §3 and is explicitly demoted to "a property of any increasing, bounded-gap sequence." Title and abstract rewritten to match. RESULTS.md updated.
+
+**The revision strengthened the paper.** Tested against the *correct* null (gap-shuffle, then difference), §2 comes out decisively: the (2,2) and (4,4) transitions are exactly 0.0% in real primes against 28.4%/28.5% under the shuffle; $|\Delta g|=6$ is halved (5.14% vs 10.29%) and $|\Delta g|=12$ likewise (2.98% vs 6.57%), while every non-multiple of 6 is *elevated*. Zero gap-repeats by a gap not divisible by 6, exceptionless. The paper now has a hard rule with exact zeros where it used to have a sign-prediction table that any monotone sequence satisfies.
 
 ---
 
