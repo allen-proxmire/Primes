@@ -47,4 +47,6 @@ And the Huxley form coded in the upstream `gen_figures.py` — `A_huxley(s) = 12
 
 The textbook Ingham–Huxley crossover uses $A_{\mathrm{Hux}}(\sigma) = 3/(3\sigma-1)$, which meets $3/(2-\sigma)$ at exactly $\sigma = 3/4$ with height $12/5$ — consistent with the quoted peak and with the standard literature. **That is likely the intended statement**, but it is offered as a reading, not asserted as the author's meaning.
 
+**Scope checked 2026-09-20, and it is contained.** The sentence appears in four files, all under `Archive/X5D EXPDB Framework/examples/GuthMaynard/`. It is **not** in the curated `X5D_EXPDB_Reinterpretation.md` and **not** in the published `X5D_Polyhedral-Reinterpretation.pdf`, whose Huxley references all concern the unrelated *Huxley subdivision*. **Nothing tracked or published in this repository carries the error** — and it cannot be corrected from here, since `Archive/` is the untracked upstream repo with its own history and DOI. Logged as N13.
+
 **Scope:** peripheral. The main chain — cusp at 7/10, peak 30/13, θ = 17/30, sensitivity 169/900 — is unaffected and verifies exactly. What is wrong is the sentence describing the *previous* state of the art, and the σ value in the comparison table. Neither figure here depends on it, and neither draws the Huxley curve.

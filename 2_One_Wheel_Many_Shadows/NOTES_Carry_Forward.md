@@ -236,6 +236,25 @@ Reproduce: [`check_angle_records.py`](../3_Twin_Bertrand_Prime_Geometry/scripts/
 
 ---
 
+## N13 — X5D's historical comparison is wrong · **OPEN — not fixable from this repo** · → upstream `Archive/X5D EXPDB Framework/examples/GuthMaynard/`
+
+Found 2026-09-20 while drawing the cusp figure.
+
+`GuthMaynard_BindingConstraints.md` states that before Guth–Maynard *"the analogous cusp was at σ ≈ 5/7 ≈ 0.714, where Ingham met Huxley at ‖A‖∞ = 12/5."* **The two halves of that sentence contradict each other on the document's own Ingham curve:**
+
+- A_Ing(5/7) = 3/(2 − 5/7) = 3/(9/7) = **7/3 ≈ 2.333**, not 12/5 = 2.4.
+- If the peak height was 12/5, Ingham forces σ **exactly** 3/4: 3/(2−σ) = 12/5 ⟹ 2−σ = 5/4 ⟹ σ = 3/4.
+- The Huxley form coded in the upstream `gen_figures.py`, `A_huxley(s) = 12(1−s)/5`, **never crosses Ingham in (1/2, 1)** — solving gives σ = (3 ± √6)/2, i.e. 0.275 or 2.72. That expression equals 12/5 only at σ = 0.
+- The textbook Ingham–Huxley crossover uses A_Hux(σ) = 3/(3σ−1), which meets 3/(2−σ) at exactly σ = 3/4 with height 12/5 — consistent with the quoted peak. **Likely the intended statement, offered as a reading, not asserted.**
+
+**Scope checked, and it is contained.** The error appears in four files, all in `Archive/X5D EXPDB Framework/examples/GuthMaynard/` (`BindingConstraints.md`, `_v2.md`, `_v2.tex`, `Pipeline_Report.txt`). It is **not** in the curated `X5D_EXPDB_Reinterpretation.md`, and **not** in the published `X5D_Polyhedral-Reinterpretation.pdf` — whose only Huxley references concern *Huxley subdivision*, an unrelated unimplemented EXPDB technique. So nothing tracked or published here carries it.
+
+**Why it is open rather than closed.** `Archive/` is untracked by design ([.gitignore](../.gitignore)): it holds the three upstream project repos, each with its own git history and its own Zenodo DOI. Correcting the sentence means committing to `expdb-5d-polyhedral`, a different repository — Allen's call, not something to do in passing.
+
+**The main chain is unaffected** and was verified exactly: cusp at σ = 7/10, ‖A‖∞ = 30/13, θ = 17/30, dθ/d‖A‖ = 169/900. Neither figure draws the Huxley curve.
+
+---
+
 ## Still genuinely open
 
 Carried here so they are not lost when the worklog is archived.
