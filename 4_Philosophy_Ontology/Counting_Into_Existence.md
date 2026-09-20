@@ -51,4 +51,4 @@ Read together with the rest of this collection, the stance is not a separate phi
 
 ---
 
-*Companion (mechanism, not metaphysics): [`One_Wheel_Many_Shadows.md`](One_Wheel_Many_Shadows.md). Related prior work: the finite-memory-ceiling / parity-barrier memos in the author's ED and Twin-Bertrand notes.*
+*Companion (mechanism, not metaphysics): [`One_Wheel_Many_Shadows.md`](../2_One_Wheel_Many_Shadows/One_Wheel_Many_Shadows.md). Related prior work: the finite-memory-ceiling / parity-barrier memos in the author's ED and Twin-Bertrand notes.*

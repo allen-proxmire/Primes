@@ -12,7 +12,7 @@ Needs `numpy`. Nothing else. Default range is $[10^6, 5\times10^6)$ — 270,015 
 
 | section | reproduces | status |
 |---|---|---|
-| `trap3` | [Differencing Trap](../Prime_Gap_Memory_Differencing_Trap.md) §3 | ✅ 4 of 5 rows — **see below** |
+| `trap3` | [Differencing Trap](../Prime_Gap_Memory_Differencing_Trap.md) §3 | ✅ all 5 rows — one **corrected the paper**, see below |
 | `windowed` | [Differencing Trap](../Prime_Gap_Memory_Differencing_Trap.md) §5.1 | ✅ exact |
 | `lag1` | [Angle Wobble](../PG_Angle_Wobble.md) §4.1 | ✅ plateau confirmed |
 | `hexagon` | [Balance Ratio](../PG_Balance_Ratio_And_Koide.md) §2.1 | ✅ exact |
@@ -21,23 +21,25 @@ Needs `numpy`. Nothing else. Default range is $[10^6, 5\times10^6)$ — 270,015 
 
 **Not covered:** series 1, 3 and 5 have no reproducibility layer at all.
 
-## One row does not reproduce — the jitter recoil
+## One row did not reproduce — and the paper was wrong
 
-This is recorded rather than quietly adjusted, because catching it is the point of having the script.
+Recorded because catching this is the whole point of having the script.
 
-[Differencing Trap §3](../Prime_Gap_Memory_Differencing_Trap.md) publishes:
+[Differencing Trap §3](../Prime_Gap_Memory_Differencing_Trap.md) used to publish **81.8% real / 79.2% null / +2.7 pp genuine** for the jitter recoil. Measured consistently, there is **no genuine effect**.
 
-| | real | null | genuine |
-|---|---|---|---|
-| jitter recoil, big → opposite sign | 81.8% | 79.2% | **+2.7 pp** |
+**Thirty definitions were tested** — thresholds at the top decile, quintile, quartile and 5%; at one and two standard deviations; at fixed cutoffs |Δg| ≥ 12, 18, 24, 30 — each with three rules for exact zeros.
 
-This script gets **84.0% real, 84.5% null, −0.5 pp** — a different magnitude, and the genuine column changes sign, turning a small claimed effect into no effect.
+- Several reproduce the published **real** value (81.7% top quintile, 81.6% top quartile).
+- Several reproduce the published **null** value (79.2–79.3% at one sd, or |Δg| ≥ 12).
+- **None reproduces both**, and all thirty give a genuine column between −0.7 and +0.2 pp.
 
-**Most likely cause: the original implementation is unspecified.** "After a large jitter" needs three choices the paper does not state — the threshold (this script uses the top decile of $|\Delta g|$), whether "opposite sign" is measured against the triggering jitter or the previous one, and how exact zeros are handled. Different reasonable choices give materially different numbers.
+So the published pair was almost certainly computed at **two different thresholds** — likely the null added after the fact. The paper's row now reads ≈81.7% / ≈81.8% / ≈0 (artifact), and the script uses the top quintile.
 
-**What this does and does not cast doubt on.** The recoil row was never load-bearing: §4 shows that recoil is *forced* by the exact $-\tfrac12$ differencing identity, and §3's own conclusion calls it "almost entirely artifact." This script agrees more strongly than the paper did — it finds the recoil entirely artifact. **So the discrepancy pushes toward the paper's conclusion, not away from it.** Nothing downstream depends on the $+2.7$ pp.
+**This strengthened the paper.** §4 proves recoil is *forced* by the exact −½ identity; it should be pure artifact, and now it reports as one.
 
-**Open:** recover the original definition, or drop the row's "genuine" column in favour of "artifact, magnitude implementation-dependent." Logged in [`NOTES_Carry_Forward.md`](../NOTES_Carry_Forward.md).
+### The same check broke a second paper
+
+Running the matched null on the sign structure showed that [*The Switchback Law*](../Switchback_Law.md) compares its run-length distribution against **a fair coin** — the wrong baseline, for exactly the reason the Differencing Trap exists. Against the gap-shuffled null the effect vanishes: real 64.00/27.25/7.18/1.34% versus null 64.66/27.31/6.74/1.13%. That paper now carries a warning box and needs revision. Its §5 mod-6 result is unaffected.
 
 ## Notes on the numbers
 

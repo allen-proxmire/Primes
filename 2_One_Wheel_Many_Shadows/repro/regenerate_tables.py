@@ -111,13 +111,16 @@ def trap3(ctx):
     n = avg(lambda s: float(np.corrcoef(np.abs(diff(s))[:-1], np.abs(diff(s))[1:])[0,1]))
     print(f"{'jitter clustering  corr(|dg_n|,|dg_n-1|)':<46}{r:10.3f}{n:10.3f}{r-n:+12.3f}  <- artifact")
     def recoil(d):
-        thr = np.quantile(np.abs(d), 0.9); m = np.abs(d[:-1]) >= thr
+        # top quintile: the threshold that reproduces the published REAL value.
+        # See repro/README.md -- the published +2.7pp 'genuine' column was an
+        # artifact of real and null having been computed at different thresholds.
+        thr = np.quantile(np.abs(d), 0.8); m = np.abs(d[:-1]) >= thr
         return float(np.mean(np.sign(d[1:][m]) != np.sign(d[:-1][m]))) * 100
     r = recoil(dg); n = avg(lambda s: recoil(diff(s)))
     print(f"{'jitter recoil, big -> opposite sign':<46}{r:9.1f}%{n:9.1f}%{r-n:+11.1f}pp")
     r = R2(dg); n = avg(lambda s: R2(diff(s)))
     print(f"{'WINDOWED WOBBLE (regress dg_n on last 5)':<46}{r*100:9.2f}%{n*100:9.2f}%{(r-n)*100:+11.2f}pp")
-    print("\n  Published: clustering and most recoil are artifact; ~+1.97pp survives.")
+    print("\n  Published: clustering and recoil are artifact; ~+1.97pp survives.")
 
 
 def _excess(g, rng):

@@ -64,14 +64,14 @@ GitHub/Primes/
 
 | paper | formats |
 |---|---|
-| PG_I_PrimeTriangle | **pdf only** ⚠️ |
-| PG_II_AngleRecord_TBConjecture | **pdf only** ⚠️ |
-| PG_III_GBP | **pdf only** ⚠️ |
+| PG_I_PrimeTriangle — *The Prime Triangle* | md, pdf ✅ *converted from tex 2026-09* |
+| PG_II_AngleRecord — *Angle-Record Theorem & TPB* | md, pdf ✅ *converted from tex 2026-09* |
+| PG_III_GBP — *Generalized Bertrand Principle* | md, pdf ✅ *converted from tex 2026-09* |
 | Prime_Structure_Factor | pdf (md in `2_`) |
 | FS_TB_Bridge | md ❌ |
 | FS_TB_DeltaX_Analysis | md ❌ |
 
-⚠️ **The PG trilogy has no markdown source in the collection.** It is simultaneously the most publication-ready and the least editable work here — the standing asymmetry, and the reason a standalone-DOI pass (§5) would be awkward today.
+✅ **The PG trilogy now has markdown**, converted with pandoc from the author's own `.tex` in the upstream `twin-bertrand` repo — recovered from git, not retyped from the PDFs. The PDFs are kept as the authoritative typeset version (figures, layout). **This was the collection's last pdf-only-in-substance gap in series 3.**
 
 ### 4_Philosophy_Ontology
 
@@ -92,8 +92,8 @@ GitHub/Primes/
 
 ### Standing gaps
 
-1. **PDFs** — 14 markdown papers have no compiled PDF, including both September papers. The pandoc/xelatex pipeline (§4) still works.
-2. **PG trilogy is pdf-only** — see above.
+1. **~~PDFs~~ — resolved by going markdown-native (2026-09).** The 13 PDFs that merely mirrored a markdown source were removed; git retains them. Remaining PDFs are the ones that are the *only* copy of something: the PG trilogy's typeset version, `Prime_Structure_Factor.pdf`, and the two X5D papers. **No new PDFs are generated.**
+2. **X5D is still pdf-only** — `X5D_Polyhedral-Reinterpretation.pdf` and `Theta_Gap2_Refinement.pdf` have no markdown and, unlike the PG trilogy, **no recoverable `.tex`** in the upstream repo. Converting them means transcription, with the attendant risk of silent formula errors.
 3. **Reproducibility** — `2_One_Wheel_Many_Shadows/repro/` now covers the measured tables in the Differencing Trap, Angle Wobble and Balance Ratio papers. **Nothing covers series 1, 3 or 5.**
 4. **Prior art** — the Archive is untracked, so an ordinary repo grep misses 18 derivation modules that the live papers cite. Search it explicitly before drafting; see [`DERIVATION_MODULES.md`](1_Factor_Skyline/DERIVATION_MODULES.md). This has already cost one draft.
 

@@ -1,5 +1,8 @@
 # The Δx / Cascade Analysis
 
+> **Missing assets (noted 2026-09-20).** This note references `figures/*.png` and `scripts/pg_deltax_unified.py`, which were not carried over from the upstream `twin-bertrand` repository during the July consolidation. They still exist there (`Archive/Twin Bertrand/`, untracked). The figure links below will not render.
+
+
 *A structured study of the gap sequence underlying the π(2p)-versus-twin-rank plot, and why its macroscopic line coexists with microscopic irregularity.*
 
 Allen Proxmire, with Claude and GitHub Copilot · June 2026

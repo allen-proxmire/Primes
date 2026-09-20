@@ -50,7 +50,7 @@ Tighten "a prime resets it" to "a *twin* resets it" and you get $T_{k+1} < 2T_k$
 The honest scope, so the chase is real and not a wild goose:
 
 - **As a *generator* it is impossible** — the interruptions *are* the primes, so any rule that names the next reset has smuggled the primes in (self-reference). This is the same wall as "sieves survive but never generate." Do not chase a formula.
-- **As a *statistical* renewal it is real and half-built.** Model the reset points as a renewal process and ask for the law of the reset-gaps. That law is **not** memoryless — the gaps carry the $-0.05$ one-step memory (the [angle note](Twin%20Bertrand/papers/PG_Angle_Wobble.md)) and the full offset-correlation comb (the [offset note](Twin%20Bertrand/papers/Offset_Correlation_Curve.md)), both of which are **Hardy–Littlewood = the wheel.** So "chasing the renewal" concretely means: **characterize the interruption process** — its gap distribution, its (mild) memory, its scale-collapse — as a wheel-driven renewal. That is the Cramér/Hardy–Littlewood program, seen as a *process of interruptions* rather than a static conjecture, and pieces of it are already measured in this collection.
+- **As a *statistical* renewal it is real and half-built.** Model the reset points as a renewal process and ask for the law of the reset-gaps. That law is **not** memoryless — the gaps carry the $-0.05$ one-step memory (the [angle note](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md)) and the full offset-correlation comb (the [offset note](../2_One_Wheel_Many_Shadows/Offset_Correlation_Curve.md)), both of which are **Hardy–Littlewood = the wheel.** So "chasing the renewal" concretely means: **characterize the interruption process** — its gap distribution, its (mild) memory, its scale-collapse — as a wheel-driven renewal. That is the Cramér/Hardy–Littlewood program, seen as a *process of interruptions* rather than a static conjecture, and pieces of it are already measured in this collection.
 
 The target, stated plainly: **a renewal model of the primes in which the wolf-hunt (the sieve, at finite speed) is the driving process, the doubling clock is the thing being interrupted, Bertrand/TPB is the interruption guarantee, and the wheel is the statistics of the interruptions.** If the whole program has a next step that is *constructive without being a formula*, it is this.
 
@@ -59,6 +59,6 @@ The target, stated plainly: **a renewal model of the primes in which the wolf-hu
 ## Companions
 
 - [`Counting_Into_Existence.md`](Counting_Into_Existence.md) — the finitist ontology (sieve at the speed of influence; primality as event).
-- [`One_Wheel_Many_Shadows.md`](One_Wheel_Many_Shadows.md) — the wheel as the single generator behind the shadows.
+- [`One_Wheel_Many_Shadows.md`](../2_One_Wheel_Many_Shadows/One_Wheel_Many_Shadows.md) — the wheel as the single generator behind the shadows.
 - *Prime-Triangle Angle* and *Offset-Correlation Curve* (Twin Bertrand) — the measured statistics of the interruptions.
 - Twin Bertrand (PG II) — $T_{k+1} < 2T_k$, the strong interruption law.

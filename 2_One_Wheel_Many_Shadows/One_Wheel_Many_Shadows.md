@@ -23,7 +23,7 @@ Each of these is a facet of the same wheel. On the number line they read as diff
 | **Angle wobble's 1%** | consecutive prime gaps anti-correlate at $-0.05$ | the singular series, reproduced by building the wheel prime-by-prime | [TB / Angle Wobble](PG_Angle_Wobble.md) |
 | **Offset-correlation comb** | sample the primes against a copy shifted by $g$ → the count $C(g)$ | the correlation at lag $g$ *is* the singular series; jumping champions are its tallest teeth | [TB / Offset-Correlation Curve](Offset_Correlation_Curve.md) |
 | **The prime crystal** | the primes diffract like a quasicrystal | Bragg peaks at rationals $a/m$ of height $(\mu(m)/\varphi(m))^2$ — the wheel written in frequency space | [TB / Prime Structure Factor](Prime_Structure_Factor.md) |
-| **Twin Bertrand (TPB)** | a twin prime in every interval $(x, 2x]$ past 11 | twins are the tightest wheel-survivors; the doubling window $p\to2p$ always catches one | [TB / PG II](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord_TBConjecture.pdf) |
+| **Twin Bertrand (TPB)** | a twin prime in every interval $(x, 2x]$ past 11 | twins are the tightest wheel-survivors; the doubling window $p\to2p$ always catches one | [TB / PG II](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md) |
 | **Consecutive-sum density** | $\approx W/(2\ln(x/2))$ sums per gap of width $W$ | the "$2$" is doubling — sums live at the $2p$ scale | [FS / Consecutive-Prime Sums](FS_Consecutive_Prime_Sums_In_Gaps.md) |
 | **Escape ridge** | $x_{FS}(N)\sim 4e^{-\gamma}N^{3/2}/\ln^2 N$ | the extra $\sqrt N$ is the sieve's $p^2$ activation — the wheel switching on | [FS / Escape Ridge](FS_Escape_Ridge.md) |
 

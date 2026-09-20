@@ -149,7 +149,7 @@ Recorded so the wrong version does not get re-derived later.
 
 ---
 
-## N9 — An unreproduced published number · **OPEN** · → [Prime_Gap_Memory_Differencing_Trap.md](Prime_Gap_Memory_Differencing_Trap.md) §3
+## N9 — An unreproduced published number · **CLOSED — the paper was wrong** · → [Prime_Gap_Memory_Differencing_Trap.md](Prime_Gap_Memory_Differencing_Trap.md) §3
 
 The [reproduction script](repro/) regenerates every measured table in the three gap papers **except one row**: the jitter recoil. Published 81.8% real / 79.2% null / **+2.7 pp genuine**; the script gets 84.0% / 84.5% / **−0.5 pp** — the genuine column changes sign.
 
@@ -157,7 +157,28 @@ The [reproduction script](repro/) regenerates every measured table in the three 
 
 **Low stakes, but it must not be dropped quietly.** §4 proves recoil is forced by the exact −1/2 differencing identity; the script finding it *wholly* artifact agrees with the paper's own verdict more strongly than the paper did. Nothing downstream depends on the number. But an unreproduced published figure is precisely what this collection's honesty claim is about, so it carries a ⚠️ in the table rather than being edited away.
 
-**To close:** recover the original definition, or replace the row's "genuine" column with "artifact; magnitude implementation-dependent."
+**CLOSED 2026-09-20.** Thirty definitions tested (thresholds: top decile/quintile/quartile/5%, 1 and 2 sd, fixed |Δg| ≥ 12/18/24/30; three zero-handling rules each). Several reproduce the published *real* value, several the published *null* value, **none reproduces both**, and all thirty give a genuine column in [−0.7, +0.2] pp. Conclusion: the published pair was computed at two different thresholds, so the +2.7 pp was never a measurement. The row now reads ≈0 (artifact), which is what §4's exact −1/2 identity predicts.
+
+---
+
+## N10 — The Switchback Law compares against the wrong null · **OPEN, and the biggest outstanding item** · → [Switchback_Law.md](Switchback_Law.md)
+
+Found while closing N9, using the same machinery.
+
+**Switchback §2–§3 compare the run-length distribution to a fair coin.** Differencing forces corr = −1/2 on any sequence, so a coin was never the alternative. Against the transform-matched null (shuffle gaps, then difference), over [10⁶, 5×10⁶]:
+
+| | run 1 | run 2 | run 3 | run 4 |
+|---|---|---|---|---|
+| real primes | 64.00% | 27.25% | 7.18% | 1.34% |
+| gap-shuffled null | 64.66% | 27.31% | 6.74% | 1.13% |
+
+Reversal odds: real 64.0→75.7→82.1→85.5, null 64.7→77.3→83.9→87.6 — **the null is slightly higher.**
+
+**The error is the paper using the wrong one of its own two nulls.** §4 defends the law with the *change*-shuffle, which tests the monotone skeleton. "This is a prime fact" needs the *gap*-shuffle, which tests the wheel. This is failure mode 2 of [Null_Model_Discipline.md](Null_Model_Discipline.md), committed inside the collection that documents it.
+
+**What survives:** §5's mod-6 suppression (separately validated against wheel-Cramér, matched to 0.1 point) — the paper's real result. §3's scale-invariance is a genuine observation whose *explanation* inverts: it is scale-invariant because it is a universal differencing artifact. §6's betting rule works, but on any increasing bounded-gap sequence.
+
+**Needs a decision:** revise the paper to lead with §5 and reframe §2–§4 as "a property of monotone bounded-gap sequences, not of primes," or something narrower. Flagged in place, not rewritten. **Also update [RESULTS.md](../RESULTS.md), which still states the Switchback claim unqualified.**
 
 ---
 

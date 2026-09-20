@@ -10,6 +10,28 @@ Allen Proxmire · July 2026
 
 ---
 
+> ## ⚠️ The run-length law does not survive a matched null (flagged 2026-09-20)
+>
+> **§2 and §3 compare the run-length distribution against a fair coin. That is the wrong baseline**, and it is the wrong baseline for the exact reason this paper's own companion note is about. Differencing forces $\operatorname{corr} = -\tfrac12$ on *any* sequence, so a coin was never the alternative to beat.
+>
+> Measured against the **transform-matched null** — shuffle the gaps, then difference — over $[10^6, 5\times10^6]$:
+>
+> | | run 1 | run 2 | run 3 | run 4 |
+> |---|---|---|---|---|
+> | real primes | 64.00% | 27.25% | 7.18% | 1.34% |
+> | **gap-shuffled null** | **64.66%** | **27.31%** | **6.74%** | **1.13%** |
+> | a fair coin (as published) | 50% | 25% | 12.5% | 6.25% |
+>
+> and the reversal odds: real $64.0 \to 75.7 \to 82.1 \to 85.5$, null $64.7 \to 77.3 \to 83.9 \to 87.6$ — **the null is if anything slightly higher.**
+>
+> **So the switchback law is a property of any increasing, bounded-gap sequence, not of the primes.** §4's mechanism — the ceiling forcing overcorrection — is *correct*, but the ceiling survives a gap-shuffle, which is precisely why the null shows the same structure.
+>
+> **The methodological error is this paper using the wrong one of its own two nulls.** §4 defends the law with the *change*-shuffle, which tests the monotone skeleton. The claim "this is a prime fact" needs the *gap*-shuffle, which tests the wheel. See [*Prime-Gap Memory and the Differencing Trap* §2](Prime_Gap_Memory_Differencing_Trap.md) and [*The Null-Model Discipline* §2](Null_Model_Discipline.md).
+>
+> **What survives.** §5's $\bmod 6$ suppression, which was separately validated against a wheel-Cramér model and matched to $0.1$ point — that remains the paper's real result. The scale-invariance of §3 is also a genuine *observation*, but its explanation inverts: the distribution is the same at every scale **because it is a universal artifact of differencing**, not because the primes obey a law. And §6's betting rule still works — it simply works on any such sequence.
+>
+> **This paper needs revision, not deletion.** Left standing with this flag pending a decision on scope. Reproduce with [`repro/regenerate_tables.py`](repro/).
+
 ## 1. The object: switchbacks
 
 For consecutive primes, the Prime-Triangle angle is $\alpha_n = \arctan(p_n/p_{n+1}) \approx 45° - \tfrac{90}{\pi}\,g_n/p_{n+1}$ — a rescaled gap, pinned just under $45°$. Its **change** $\Delta\alpha_n = \alpha_n-\alpha_{n-1}$ carries a sign: **up** (the gap shrank, the angle rose toward the ceiling) or **down** (the gap grew). Reading only that sign, the sequence is a string of switchbacks: $-\,-\,+\,-\,+\,+\,-\,\dots$

@@ -4,7 +4,7 @@
 
 Allen Proxmire · July 2026
 
-> **What this is.** A synthesis — an honest ledger, not a discovery. It stacks *every* usable regularity for locating a prime, sorts what actually pays from what is the same fact in disguise, and reads off the information-theoretic ceiling that caps the whole game. **Every ingredient is classical** — the prime number theorem, the Hardy–Littlewood wheel, the Cramér model, the parity barrier (Sarnak's Möbius randomness). What this note adds is the *assembly*: one calibrated budget, anchored to the Factor Skyline entropy numbers, that says precisely how far you can get and where you provably stop. Tags: **[deriv]** from known theory · **[emp]** measured here · **[interp]** synthesis. Companions: [*Switchback Law*](Switchback_Law.md), [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md), [*The Prime-Triangle Angle*](PG_Angle_Wobble.md), [*Seven Sisters*](FS_Seven_Sisters_Wheel_Asymptote.md).
+> **What this is.** A synthesis — an honest ledger, not a discovery. It stacks *every* usable regularity for locating a prime, sorts what actually pays from what is the same fact in disguise, and reads off the information-theoretic ceiling that caps the whole game. **Every ingredient is classical** — the prime number theorem, the Hardy–Littlewood wheel, the Cramér model, the parity barrier (Sarnak's Möbius randomness). What this note adds is the *assembly*: one calibrated budget, anchored to the Factor Skyline entropy numbers, that says precisely how far you can get and where you provably stop. Tags: **[deriv]** from known theory · **[emp]** measured here · **[interp]** synthesis. Companions: [*Switchback Law*](../Switchback_Law.md), [*Prime-Gap Memory and the Differencing Trap*](../Prime_Gap_Memory_Differencing_Trap.md), [*The Prime-Triangle Angle*](../PG_Angle_Wobble.md), [*Seven Sisters*](../FS_Seven_Sisters_Wheel_Asymptote.md).
 
 ---
 
@@ -27,9 +27,9 @@ Each of these is a genuine, measured regularity; none of them *adds* predictive 
 |---|---|---|
 | jumping champions $6,30,210$ | the wheel's favoured gaps | classical (Odlyzko–Rubinstein–Wolf) |
 | gap anti-correlation $-0.05$ | big gap → smaller next | wheel's consecutive-gap memory |
-| switchback sign-law (reversal $63\!\to\!82\%$) | runs die faster than a coin | [Switchback Law](Switchback_Law.md) |
+| switchback sign-law (reversal $63\!\to\!82\%$) | runs die faster than a coin | [Switchback Law](../Switchback_Law.md) |
 | mod-6 / LOS bias | consecutive gaps avoid a shared residue | Lemke Oliver–Soundararajan |
-| Seven Sisters ($2p+k$, $\sim80\%$) | the wheel at the doubled scale | [Seven Sisters](FS_Seven_Sisters_Wheel_Asymptote.md) |
+| Seven Sisters ($2p+k$, $\sim80\%$) | the wheel at the doubled scale | [Seven Sisters](../FS_Seven_Sisters_Wheel_Asymptote.md) |
 
 **Tier 3 — the wall.**
 

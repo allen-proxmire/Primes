@@ -39,16 +39,20 @@ The primes' program already carries the right reflex — the [ED negative contro
 | raw-gap memory — regress $g_n$ on last 5 | $0.32\%$ | $0.00\%$ | $\mathbf{+0.32}$ pp |
 | gap autocorrelation, lag 1 | $-0.046$ | $-0.001$ | $\mathbf{-0.045}$ |
 | jitter clustering, $\operatorname{corr}(|\Delta g_n|,|\Delta g_{n-1}|)$ | $+0.315$ | $+0.319$ | $-0.004$ *(artifact)* |
-| jitter recoil, big $\to$ opposite sign | $81.8\%$ | $79.2\%$ | $+2.7$ pp ⚠️ |
+| jitter recoil, big $\to$ opposite sign | $\approx81.7\%$ | $\approx81.8\%$ | $\approx0$ *(artifact)* |
 | **windowed wobble — regress $\Delta g_n$ on last 5** | $43.67\%$ | $41.69\%$ | $\mathbf{+1.97}$ pp |
 
-> **⚠️ The recoil row does not reproduce (flagged 2026-09).** The [reproduction script](repro/) gets $84.0\%$ real against $84.5\%$ null — **no genuine effect** — where this table reports $+2.7$ pp. The likely cause is that the original implementation was never written down: *"after a large jitter"* needs a threshold (the script uses the top decile of $|\Delta g|$), a reference point for "opposite" (the triggering jitter, or the one before it), and a zero-handling rule. None is stated here, the appendix code does not cover recoil, and reasonable choices differ materially.
+> **Correction (2026-09-20): the recoil row previously read $81.8\%$ / $79.2\%$ / $+2.7$ pp genuine. That $+2.7$ pp was spurious.**
 >
-> **The discrepancy strengthens this section's conclusion rather than weakening it.** §4 proves recoil is *forced* by the exact $-\tfrac12$ identity, and the script finds it **entirely** artifact where this table still allowed a sliver of signal. Nothing downstream uses the $+2.7$ pp. Read the row as "artifact; magnitude implementation-dependent" until the original definition is recovered.
+> Thirty candidate definitions were tested — thresholds at the top decile, quintile, quartile and 5%, at one and two standard deviations, and at fixed cutoffs of $|\Delta g| \ge 12, 18, 24, 30$; each with three rules for handling exact zeros. Several reproduce the published *real* value ($81.7\%$ at the top quintile, $81.6\%$ at the top quartile). Several reproduce the published *null* value ($79.2$–$79.3\%$ at one sd, or $|\Delta g| \ge 12$). **None reproduces both** — and every one of the thirty gives a genuine column between $-0.7$ and $+0.2$ pp.
+>
+> The most likely explanation is that the real and null figures were computed under **different thresholds**, probably because the null was added after the fact — making the published pair an apples-to-oranges comparison rather than a measurement.
+>
+> **The correction strengthens this section rather than weakening it.** §4 proves recoil is *forced* by the exact $-\tfrac12$ identity; it should be pure artifact, and measured consistently it is. The row now reports it as such. Reproduce with [`repro/regenerate_tables.py`](repro/).
 
 Two clean verdicts:
 
-- **The clustering and most of the recoil are artifact.** The null reproduces them to within a hair. They are not prime weather; they are what differencing does to *any* spread-out sequence (§5).
+- **The clustering and the recoil are artifact.** The null reproduces them to within a hair. They are not prime weather; they are what differencing does to *any* spread-out sequence (§5).
 - **A genuine residual survives, and it concentrates in the window of the wobble.** The raw gaps carry $+0.32$ pp of memory; the windowed jitter carries **$+1.97$ pp** — six times more — none of it reproduced by the null. On $2.7\times10^5$ samples this is overwhelmingly significant.
 
 The lesson for the whole gap program: the interesting quantity is not how predictable the wobble *looks* ($44\%$) but how much of that survives the transform-matched null ($+2\%$).

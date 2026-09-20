@@ -40,7 +40,7 @@ Put the three numbers in a vector and compare it with the "all equal" direction 
 
 - **Koide's 2/3 is exactly the 45° condition,** and it sits at the midpoint of K's allowed range [1/3, 1].
 - **With measured lepton masses:** Q = 0.666661 and the angle is **44.9997°**.
-- **This is the same 45° that shows up in the prime-triangle angles** ([PG_Angle_Wobble.md](PG_Angle_Wobble.md)), for a different reason: both are built from the same comparison of a sum of squares with a square of a sum. Shared coordinates, not a shared cause.
+- **This is the same 45° that shows up in the prime-triangle angles** ([PG_Angle_Wobble.md](../PG_Angle_Wobble.md)), for a different reason: both are built from the same comparison of a sum of squares with a square of a sum. Shared coordinates, not a shared cause.
 
 ## Consecutive primes, computed
 
