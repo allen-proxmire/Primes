@@ -1,5 +1,17 @@
 # Uniform Envelope Fits Across Constellations
 
+> ## ⚠️ Checked 2026-09-20 — the stated envelope does not hold
+>
+> **The envelope $G < 0.1709(\log P)^{3.2210}$ is violated 204 times below $10^8$** (twins, $T > 1000$), worst by a factor of **1.87** at $T = 850{,}349$, where $G = 1452$ against a bound of $775$. Not a marginal miss.
+>
+> **The cause is a mismatch of extremals.** The fit below is performed on $\sup(r_k - 1) = \sup(G/T)$ over nested tails. But $\sup(G/T)$ is attained at **small** $T$ — over the whole range its maximum is at $T = 5$ — while the stated envelope bounds $G$, whose extreme sits at **large** $T$ ($G = 2868$ at $T = 96{,}894{,}041$). Fitting one extremal statistic does not bound the other, and here it does not.
+>
+> **The exponent is also not determined by the data.** Forcing $\delta$ and refitting $C$ gives an arguable envelope for anything in $[2.5, 4.0]$; only $\delta = 4.0$ is violation-free at $10^8$. And $R^2$ stays above $0.98$ for every subset of tails tried while $C$ moves by **63%** — the high $R^2$ comes from fitting two parameters to five **nested, hence strongly dependent** points, not from the model being right. Five nested running suprema are close to one data point with error bars.
+>
+> **What survives:** the *shape* of the observation — extreme twin gaps grow faster than the typical $(\log T)^2$, and the three constellations behave alike. The specific constants do not survive, and neither does $R^2 = 0.982$ as evidence.
+>
+> Reproduce: [`scripts/check_envelope_fits.py`](../scripts/check_envelope_fits.py).
+
 Data: all constellation pairs (p, p+g) with both prime, p ≤ 10^10.
 - twins (g=2):   27,412,679
 - cousins (g=4): 27,409,999
