@@ -24,7 +24,7 @@
 | R3 | Residuals sorted mod 6 / mod 30 | **done** | Null result, and a clean one. No class exceeds 1.3σ. |
 | R4 | The two prime angles share one driver | **open** | Both linear in g/p. Note currently implies otherwise. |
 | R5 | The Budget is a payoff ledger with no cost column | **done** | Cost column exists and is *cheap*. My framing was backwards; see N6, N7. |
-| R6 | Is the hexagonal norm meaningful or a coincidence? | **open** | Low priority, high charm. |
+| R6 | Is the hexagonal norm meaningful or a coincidence? | **done** | **Meaningful.** 3 divides the form ⟺ three consecutive primes share a residue mod 6. |
 | R7 | Is the +1.97pp windowed memory fully the wheel? | **done** | Yes. 99% at Q=100; Q=30 gives 76%, so the test has resolution. |
 | — | "What picks Koide's midpoint?" | **parked** | Not our problem. Physics, and unresolved there. |
 
@@ -230,6 +230,20 @@ g1² + g1·g2 + g2² is the norm form of the triangular lattice / Eisenstein int
 
 ---
 
+## R6 — Is the hexagonal norm meaningful? · **done**
+
+**Answer: meaningful, and exactly so.** Above p = 3 all gaps are even; with half-gaps h = g/2 the form is h1²+h1h2+h2² = (h1−h2)² + 3h1h2, so **3 divides the form ⟺ h1 ≡ h2 (mod 3) ⟺ g1 ≡ g2 (mod 6)**. Enumerating the eight residue transitions for p, p′, p″ ∈ {1,5} mod 6 shows the patterns (4,4) and (2,2) are impossible, so the *only* way to get g1 ≡ g2 mod 6 is both ≡ 0 — i.e. neither prime changed class. Hence:
+
+> **3 divides the Eisenstein norm of the half-gap pair ⟺ three consecutive primes lie in the same class mod 6.** [fact]
+
+**Measured** [10⁶, 5×10⁶]: P = 17.408%, against 18.492% for independent transitions and 12.500% for even odds. So repeats are strongly favoured over even odds (LOS) *and* mildly anti-cluster with each other.
+
+**Wheel surrogate** (pool ratios per N8): 17.457% at Q=30, 17.400% at Q=100, 17.465% at Q=317, 17.512% at Q=600. Fully reproduced at every depth, including a very shallow one — as expected once the effect is known to be a mod-6 statement.
+
+**Verdict.** The prettiest thing found today, and still not new physics: the form's one arithmetic invariant is a doubled LOS event, and the rate is the wheel. Filed into [the balance-ratio paper §2.1](PG_Balance_Ratio_And_Koide.md).
+
+---
+
 ## R7 — Is the windowed memory fully the wheel? · **done**
 
 **Idea.** [Angle Wobble §4.1](PG_Angle_Wobble.md) verified the *lag-1* covariance is 100% wheel. The [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md) left the *windowed* +1.97pp at "plausibly the wheel." Nobody had run §4.1's test on the windowed statistic. **The one open route today whose answer I did not know in advance.**
@@ -283,5 +297,9 @@ So the drafted note was a restatement, and it was **deleted** the same day. The 
 **Then ran R7**, the one question whose answer I did not know going in — and it came back the same way as everything else: the wheel, in full. The +1.97pp windowed memory is now measured rather than presumed, which closes the Differencing Trap's last loose end. Two process catches on the way: a circular surrogate at deep Q (N8), and a 2-sd "residual" that evaporated when swept properly.
 
 Also corrected the balance-ratio paper's §5 framing across four documents. It had been written up as "predicted in advance and confirmed"; the agreement is forced by the definition of covariance, so it is a *reduction* (the statistic is redundant), not a prediction. The measurement checks arithmetic, not a hypothesis.
+
+**Then R6**, which had been parked as "low priority, high charm." It turned out to be the one genuinely pretty result of the day: the hexagonal form's divisibility by 3 is *exactly* the event that three consecutive primes share a residue mod 6. Not a pun — an equivalence, provable in two lines. The rate is, of course, the wheel.
+
+**Day's tally: eight statistics, one mechanism, no residual anywhere.**
 
 Scratch code lives outside the repo.

@@ -35,8 +35,43 @@ The older form is the first-order shadow of this one: writing the three numbers 
 Three consequences, and the third is the one that does all the work later:
 
 - **K knows nothing about primality.** Any three numbers that get relatively closer together march toward 1/3.
-- **The quadratic form g₁² + g₁g₂ + g₂² is the Loeschian form** — the norm form of the Eisenstein integers, the quadratic form of the triangular lattice. The wheel's first real filter is mod 6, also hexagonal. *Whether that is a connection or a pun is open, and nothing in this note rests on it.*
+- **The quadratic form g₁² + g₁g₂ + g₂² is the Loeschian form** — the norm form of the Eisenstein integers, the quadratic form of the triangular lattice. The wheel's first real filter is mod 6, also hexagonal. **That is not a coincidence, and §2.1 says exactly what it is.**
 - **The cross-term g₁g₂ is the only place prime-specific information can enter.** Squares of gaps are blind to ordering; a product of *consecutive* gaps is not. This is what lets §5 reduce the whole statistic to a single known quantity.
+
+### 2.1 Why the hexagonal form is the right one: its 3-divisibility *is* the mod-6 repeat
+
+Above p = 3 every gap is even, so write hᵢ = gᵢ/2 for the **half-gaps**; the form becomes 4(h₁² + h₁h₂ + h₂²) and the arithmetic lives in the half-gaps. Then, since h₁² + h₁h₂ + h₂² = (h₁ − h₂)² + 3h₁h₂:
+
+> **3 divides the form ⟺ h₁ ≡ h₂ (mod 3) ⟺ g₁ ≡ g₂ (mod 6).**   **[fact]**
+
+Now the wheel closes the loop. For consecutive primes above 3, each of p, p′, p″ is 1 or 5 mod 6, and enumerating all eight transitions shows that of the six reachable (g₁, g₂) patterns mod 6, **the only way to get g₁ ≡ g₂ is g₁ ≡ g₂ ≡ 0** — the patterns (4,4) and (2,2) are arithmetically impossible. And g ≡ 0 (mod 6) is exactly "the prime did not change residue class." Therefore:
+
+> **The Eisenstein norm of the half-gap pair is divisible by 3 exactly when three consecutive primes lie in the same class mod 6.**   **[fact]**
+
+So the hexagonal form is not decoration and not a pun. Its one arithmetic invariant — divisibility by 3 — is a precise readout of a **doubled Lemke Oliver–Soundararajan event**: not one residue repeat but two in a row.
+
+**Measured** over [10⁶, 5×10⁶]:
+
+| quantity | value |
+|---|---|
+| P(single repeat, p′ ≡ p mod 6) | 43.002% |
+| **P(3 divides the form) = P(triple repeat)** | **17.408%** |
+| if successive transitions were independent | 18.492% |
+| if residues were even odds | 12.500% |
+
+**[emp]** Two readings. The rate sits far above even odds (17.4% vs 12.5%) — that is the LOS suppression of *change*. And it sits **below** the independent-transitions baseline (17.4% vs 18.5%), so repeats themselves mildly **anti-cluster**: having just repeated, a prime is a little less likely to repeat again.
+
+And the wheel accounts for all of it, at every depth including a very shallow one — pool ratios per the rule in [*Differencing Trap* §5.1](Prime_Gap_Memory_Differencing_Trap.md):
+
+| wheel to Q | pool / π(x) | P(3 divides the form) |
+|---|---|---|
+| 30 | 2.34 | 17.457% |
+| 100 | 1.78 | 17.400% |
+| 317 | 1.43 | 17.465% |
+| 600 | 1.27 | 17.512% |
+| **real primes** | — | **17.408%** |
+
+Even the mod-30-ish wheel reproduces it, which is what one expects once the effect is known to be a mod-6 statement.
 
 ## 3. The geometric reading (why 45° turns up)
 
@@ -216,7 +251,7 @@ Crossover is at k = 4: primorial 210 against territory 121. The gap never closes
 
 **Caveats on Koide:** it holds to about one part in 10⁵ with measured pole masses and has no accepted explanation; masses run with energy scale, and the relation is not as clean at other scales, so whether 2/3 is fundamental is open.
 
-**Still open here:** whether the Loeschian/hexagonal form of §2 connects to the wheel's mod-6 filter or is a coincidence. Probably a coincidence — the form falls out of the algebra of three points on a line and has no obvious reason to know about 6 — but it is untested.
+**Resolved since v1:** the Loeschian/hexagonal form of §2 *does* connect to the wheel's mod-6 filter, exactly and not by coincidence — its divisibility by 3 is precisely the event that three consecutive primes share a residue mod 6 (§2.1). Like everything else here, the rate is then fully the wheel.
 
 ---
 
@@ -228,6 +263,7 @@ Crossover is at k = 4: primorial 210 against territory 121. The gap never closes
 | The v1 table | Computed 2026-09-18 (sieve to 20,000) |
 | Koide's value and angle | Pole masses m_e = 0.51099895, m_μ = 105.6583755, m_τ = 1776.86 MeV: Q = 0.666661, angle 44.9997° |
 | Range and geometry | cos²θ = 1/(3K); K = 1/3 at equality, 1 at full concentration (54.7356°) |
+| §2.1 congruence and rates | Exhaustive check of the form mod 3 and of all eight residue transitions; rates over [10⁶, 5×10⁶], wheel surrogates at four depths with pool ratios |
 | §5 reduction and check | 270,014 gaps in [10⁶, 5×10⁶]; gap-shuffle null, 5 runs |
 | §6 residue classes | Same range; wheel-only surrogate (coprime to primes ≤ 317, thinned to matched density), 3 seeds |
 | §7 coefficient range | Exact algebra via (3s²+d²)/4; checked against exact θ on 70,433 triples near 10⁶ |
