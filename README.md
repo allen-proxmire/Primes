@@ -55,6 +55,8 @@ The **engine** is classical — the wheel *is* the Hardy–Littlewood singular s
 What's contributed here is the **lens** (the Factor Skyline), the **unification** (unrelated-looking facts shown to be one wheel, confirmed by a negative control), a couple of **clean elementary results** — most notably the forbidden-width classification $\{2,4,6,10\}$ — and the **null-model discipline** that the empirical claims are measured against. 
 No new theory of the deep structure of primes is claimed; the hard directions remain open and are tagged as such.
 
+The unification is audited rather than asserted: of the ten statistics aimed at consecutive prime gaps here, **six are genuinely independent probes and four are provably the same quantity in different notation**. Both halves matter — the six are the evidence, and showing the four are one object *is* the thesis. Mirages and corrections are tagged **[mirage]** in [`RESULTS.md`](RESULTS.md) rather than quietly dropped.
+
 ## Elsewhere
 
 The individual projects are also published as standalone, citable repositories — **Factor Skyline** ([DOI](https://doi.org/10.5281/zenodo.18275273)) and **X5D EXPDB** ([DOI](https://doi.org/10.5281/zenodo.19454867)) carry Zenodo DOIs. Plain-language NotebookLM audio/video one-pagers are kept in a separate working folder.
