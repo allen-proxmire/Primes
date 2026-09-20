@@ -4,7 +4,7 @@ Allen Proxmire
 
 July 2026 · **v2, September 2026**
 
-> **What's new in v2.** §5.1 records a fifth shadow: the balance ratio of consecutive-prime triples turns out to be the §4 anti-correlation in different clothing, with its deviation from the null predicted in advance and no residue class carrying an excess. The original argument is unchanged.
+> **What's new in v2.** §5.1 records a fifth shadow: the balance ratio of consecutive-prime triples turns out to be the §4 anti-correlation in different clothing, its deviation from the null reducing by algebra to the §4 covariance, and no residue class carrying an excess. The original argument is unchanged.
 
 ---
 
@@ -93,7 +93,7 @@ The model climbs and **plateaus at $-0.044$ by $Q\approx300$** (three random see
 
 Two things this settles. (i) The $-0.05$ is genuinely the **wheel** — a model with *no* structure but small-prime divisibility reproduces it — so the attribution holds; the earlier draft's "through prime 19 reaches 74%, the tail supplies the rest" is confirmed and completed (the bulk is the small primes; it finishes by $Q\sim$ a few hundred and stops). (ii) It is **not** a deviation-from-HL story: the primes are neither more nor less gap-correlated than the wheel predicts. What was wrong was only the *word* — this is the wheel's derived consecutive-gap signature, not the direct Hardy–Littlewood pair-correlation — not the mechanism.
 
-The lag-1 correlation understates the accessible signal. A *windowed* read is sharper: regressing $\Delta g_n$ on its last five values retains $\approx +2$ percentage points of $R^2$ **beyond** the transform-matched null — roughly six times the raw-gap memory — so the wheel's fingerprint on consecutive gaps is most visible in the windowed wobble, exactly the object this note is built from. The separation of that genuine residual from the $-\tfrac12$ differencing pedestal is carried out in [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md).
+The lag-1 correlation understates the accessible signal. A *windowed* read is sharper: regressing $\Delta g_n$ on its last five values retains $\approx +2$ percentage points of $R^2$ **beyond** the transform-matched null — roughly six times the raw-gap memory — so the wheel's fingerprint on consecutive gaps is most visible in the windowed wobble, exactly the object this note is built from. **That windowed excess has since been run through this section's own test and is also fully the wheel** — a wheel-only surrogate reproduces it from $Q = 100$ upward, while $Q = 30$ reaches only $76\%$, confirming the test can see a shortfall ([*Differencing Trap* §5.1](Prime_Gap_Memory_Differencing_Trap.md)). Both surviving lines of gap memory, lag-1 and windowed, are therefore accounted for with no residual. The separation of that genuine residual from the $-\tfrac12$ differencing pedestal is carried out in [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md).
 
 ## 5. Two imperfections, one wheel
 
@@ -110,7 +110,7 @@ The $-0.05$ of §4 turned up again in September 2026, in a statistic built for a
 
 $$K - \tfrac13 \;=\; \frac{2}{27}\cdot\frac{g_1^2 + g_1g_2 + g_2^2}{m^2},$$
 
-so it is a gap statistic, and the cross-term $g_1g_2$ is the only place prime-specific information can enter. That makes its deviation from a gap-shuffled null **predictable with no free parameters**: it must equal $\mathrm{cov}(g_n, g_{n+1})$. Measured over $[10^6, 5\times10^6]$: predicted $-0.719\%$, measured $-0.708\%$, inside the null's own spread. Resolved by residue class mod 6 and mod 30 against the §4.1 wheel surrogate, **no class exceeds $1.3\sigma$** — while the same test detects the Lemke Oliver–Soundararajan bias immediately and finds the surrogate reproduces *it* to within $0.1$ percentage point.
+so it is a gap statistic, and the cross-term $g_1g_2$ is the only place prime-specific information can enter. That makes its deviation from a gap-shuffled null reduce, by the definition of covariance, to $\mathrm{cov}(g_n, g_{n+1})$ — so the statistic is **redundant** rather than independently informative. Measured over $[10^6, 5\times10^6]$: predicted $-0.719\%$, measured $-0.708\%$, inside the null's own spread. Resolved by residue class mod 6 and mod 30 against the §4.1 wheel surrogate, **no class exceeds $1.3\sigma$** — while the same test detects the Lemke Oliver–Soundararajan bias immediately and finds the surrogate reproduces *it* to within $0.1$ percentage point.
 
 So the balance ratio is not a new signal; it is this section's anti-correlation, reached by a different route, and the wheel accounts for all of it. Details in [*The balance ratio* v2](PG_Balance_Ratio_And_Koide.md); the methodological point about why the null had to change is in [*Differencing Trap* §8](Prime_Gap_Memory_Differencing_Trap.md).
 

@@ -4,9 +4,11 @@
 
 Allen Proxmire · July 2026 · **v2, September 2026**
 
-> **What's new in v2.** §8 adds the next layer of the null discipline, found while testing the balance ratio: *even the correct shuffle becomes invalid once you condition on something the shuffle destroys.* The original argument is unchanged.
+> **What's new in v2.** Two additions; the original argument is unchanged.
+> - **§5.1** closes the paper's one loose end: the $+1.97$ pp windowed excess, left at "plausibly the wheel," is now *measured* to be the wheel — a wheel-only surrogate reproduces it in full from $Q=100$ up, while a too-shallow wheel ($Q=30$) reaches only 76%, showing the test has resolution.
+> - **§8** adds the next layer of the null discipline, found while testing the balance ratio: *even the correct shuffle becomes invalid once you condition on something the shuffle destroys.*
 
-> **What this is.** A methodological result with a small genuine core. The eye-catching "prime weather" one sees in the *change* of the gaps — volatility clustering, big-jump recoil, a windowed wobble that looks nearly half-predictable — is **almost entirely an artifact of differencing**, reproduced by random data. The instrument that separates signal from artifact is a specific null: *shuffle the gaps, then apply the same transform.* Under that null a genuine residual survives — roughly **+2 points of R² in the windowed wobble**, about six times the memory in the raw gaps — and it is plausibly the wheel's fingerprint on consecutive gaps. Tags: **[emp]** measured · **[null]** shuffle-control · **[fact]** exact · **[interp]** reading. Companion negative control: [`ED_Negative_Control.md`](ED_Negative_Control.md); frequency-space dual: [`Prime_Structure_Factor.md`](Prime_Structure_Factor.md).
+> **What this is.** A methodological result with a small genuine core. The eye-catching "prime weather" one sees in the *change* of the gaps — volatility clustering, big-jump recoil, a windowed wobble that looks nearly half-predictable — is **almost entirely an artifact of differencing**, reproduced by random data. The instrument that separates signal from artifact is a specific null: *shuffle the gaps, then apply the same transform.* Under that null a genuine residual survives — roughly **+2 points of R² in the windowed wobble**, about six times the memory in the raw gaps — and it **is** the wheel's fingerprint on consecutive gaps, verified against a wheel-only surrogate in §5.1 (v2). Tags: **[emp]** measured · **[null]** shuffle-control · **[fact]** exact · **[interp]** reading. Companion negative control: [`ED_Negative_Control.md`](ED_Negative_Control.md); frequency-space dual: [`Prime_Structure_Factor.md`](Prime_Structure_Factor.md).
 
 All figures over the $269{,}\!991$ gaps between consecutive primes in $[10^6, 5\times10^6]$ (mean gap $\overline g = 14.81$, sd $12.29$).
 
@@ -62,7 +64,33 @@ Strip the pedestal and the residual is real. Two shuffle-proof facts remain:
 1. **Consecutive gaps are weakly anti-correlated**, $\operatorname{corr}(g_n,g_{n+1}) = -0.046$ (null $\approx 0$). A large gap is followed, a touch more often than chance, by a smaller one — a genuine reversion in the *levels*, not the differences.
 2. **A window of a few gaps constrains the next**, $+1.97$ pp beyond the differencing null.
 
-Both point at the same source. Consecutive gaps are not independent because the **wheel** forbids many gap-sequences outright and biases the rest: the residues mod $6, 30, 210$ that one gap lands on shape which gaps can follow. (That the wheel *quantitatively* accounts for the level anti-correlation — a small-primes-only model reproduces the measured value with no residual — is verified non-circularly in [*The Prime-Triangle Angle* §4.1](PG_Angle_Wobble.md).) This is the gap-space face of the **Lemke Oliver–Soundararajan** correlations (the "unexpected biases in consecutive primes," 2016), and the same coprimality template that casts every other shadow in this collection. The memory in the wobble is small, but it is the wheel — read through the correlations of successive escapes.
+Both point at the same source. Consecutive gaps are not independent because the **wheel** forbids many gap-sequences outright and biases the rest: the residues mod $6, 30, 210$ that one gap lands on shape which gaps can follow. (That the wheel *quantitatively* accounts for the level anti-correlation — a small-primes-only model reproduces the measured value with no residual — is verified non-circularly in [*The Prime-Triangle Angle* §4.1](PG_Angle_Wobble.md); that it also accounts for the **windowed** excess is verified in §5.1 below.) This is the gap-space face of the **Lemke Oliver–Soundararajan** correlations (the "unexpected biases in consecutive primes," 2016), and the same coprimality template that casts every other shadow in this collection. The memory in the wobble is small, but it is the wheel — read through the correlations of successive escapes.
+
+### 5.1 Is the windowed excess *fully* the wheel? Yes (v2)
+
+§4.1 of [*The Prime-Triangle Angle*](PG_Angle_Wobble.md) settled the **lag-1** covariance: a wheel-only surrogate reproduces $-0.05$ with no residual. The **windowed** $+1.97$ pp was left at "plausibly the wheel's fingerprint." Running §4.1's test on the windowed statistic closes it.
+
+**Method.** For each series — real primes and a wheel-only surrogate (integers coprime to all primes $\le Q$, thinned independently to prime density) — compute the excess *against its own matched null*: $R^2(\operatorname{diff}(g)) - R^2(\operatorname{diff}(\operatorname{shuffle}(g)))$. Then compare excesses. Real primes in $[10^6, 5\times10^6]$; three surrogate seeds per $Q$; four shuffles per series.
+
+| wheel to $Q$ | surrogate pool | pool / $\pi(x)$ | windowed excess | share of real | |
+|---|---|---|---|---|---|
+| 30 | 631,801 | 2.34 | $+1.496$ pp | 76.0% | |
+| **100** | **481,525** | **1.78** | $\mathbf{+1.950}$ **pp** | **99.0%** | |
+| 200 | 418,982 | 1.55 | $+1.916$ pp | 97.3% | |
+| 317 | 386,014 | 1.43 | $+1.803$ pp | 91.6% | |
+| 600 | 342,150 | 1.27 | $+1.936$ pp | 98.3% | borderline |
+| 1000 | 305,298 | 1.13 | $+2.021$ pp | 102.7% | **circular** |
+| 1732 | 274,556 | 1.02 | $+1.948$ pp | 98.9% | **circular** |
+
+Real primes: $+1.969$ pp (reproducing §3's $+1.97$). Seed-to-seed scatter is $\approx\!0.13$ pp, about $\pm6\%$ of the excess.
+
+**[emp] The wheel accounts for all of it.** From $Q = 100$ the surrogate matches the real excess within noise, and the $91.6$–$102.7\%$ scatter across $Q$ is consistent with the seed scatter alone — there is no trend and no residual.
+
+**The test has resolution.** The $Q = 30$ row is the power check: a wheel too shallow reproduces only $76\%$, so the method can see a shortfall when one exists. It simply does not see one past $Q = 100$.
+
+> **A trap in the deep-$Q$ rows, and it is the reason for the pool column.** As $Q \to \sqrt{x}$ the surrogate stops being a model and *becomes the primes*: an integer below $5\times10^6$ coprime to every prime $\le 1732$ is prime, or one of a thin sliver of semiprimes. At $Q = 1732$ the pool is only $1.7\%$ larger than $\pi(x)$ itself, so "the wheel explains $98.9\%$" is **circular** — it says the primes reproduce the primes. Those rows carry no evidence, and are shown only so the circularity is visible rather than hidden. **The load-bearing rows are $Q = 100$–$317$, where the pool is still $1.4$–$1.8\times$ the prime count.** Recorded as a null-model rule in its own right: *a generative null must stay strictly weaker than the thing it is modelling, and "coprime to primes up to $\sqrt{x}$" is not weaker — it is a definition of primality.*
+
+**Consequence for §3's ledger.** Both surviving lines are now fully attributed. The $-0.045$ lag-1 anti-correlation is the wheel (§4.1 of the Angle note); the $+1.97$ pp windowed excess is the wheel (here). **Nothing in the gap memory is left unexplained** — which strengthens §7's conclusion rather than weakening it: the residual is not merely useless for prediction, it is not there.
 
 ## 6. Reading the record straight
 

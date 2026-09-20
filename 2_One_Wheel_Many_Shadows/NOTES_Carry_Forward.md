@@ -44,9 +44,9 @@ This replaces the note's "K is a spread measure" with something stronger and bet
 
 ## N3 — The balance ratio is a fifth shadow, fully accounted for · **FILED** (§5–§6) · → [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md)
 
-The note ends by asking whether the leftover, after detrending, carries the wheel's fingerprints. **It does, and the amount is predictable with no free parameters.**
+The note ends by asking whether the leftover, after detrending, carries the wheel's fingerprints. **It does — and the amount is forced by algebra, not predicted.**
 
-By N2 the mean of K−1/3 depends on the gaps only through E[g1² + g1·g2 + g2²], and the only term a gap-shuffle can move is the cross-term. So the shift from the null must be **exactly cov(g_n, g_n+1)**.
+By N2 the mean of K−1/3 depends on the gaps only through E[g1² + g1·g2 + g2²], and the only term a gap-shuffle can move is the cross-term. So the shift from the null is **exactly cov(g_n, g_n+1)** — which is the *definition* of covariance, hence a reduction (the statistic is redundant), not a prediction. Corrected 2026-09-20 after the first write-up overstated it.
 
 Measured on all 270,014 gaps in [10^6, 5×10^6]: predicted −0.719%, measured −0.708%, inside the null's own run-to-run spread.
 
@@ -135,6 +135,20 @@ Recorded so the wrong version does not get re-derived later.
 
 ---
 
+## N8 — A generative null must stay strictly weaker than what it models · **FILED** (§5.1 box) · → [Prime_Gap_Memory_Differencing_Trap.md](Prime_Gap_Memory_Differencing_Trap.md)
+
+> **The companion to [N1]. N1 says when a *shuffle* null fails. This says when a *generative* null fails.**
+
+**The rule.** A wheel-only surrogate is built by keeping integers coprime to every prime ≤ Q. As Q approaches √x that construction stops being a model of the primes and **becomes** the primes: below 5×10⁶, an integer coprime to every prime ≤ 1732 is prime, or one of a thin sliver of semiprimes. At Q = 1732 the surrogate pool is only **1.7% larger than π(x)**. "The wheel explains 98.9% of the effect" then means only that the primes reproduce the primes.
+
+> **A generative null must stay strictly weaker than the thing it is modelling — and "coprime to all primes up to √x" is not weaker, it is a definition of primality.**
+
+**How to keep yourself honest.** Report the **pool ratio** (surrogate candidates ÷ π(x)) beside every surrogate result, and sweep Q rather than picking one value. At pool/π(x) ≈ 1.4–1.8 the model is genuinely weaker than the primes; below ≈1.25 it is not evidence. Sweeping is also what reveals whether a result is a trend or noise.
+
+**Why this matters beyond one test.** [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md) uses Q = 1732 as its top row. Its *conclusion* is safe because the lag-1 value already plateaued at Q ≈ 300, where the pool is still 1.43× — the deep row only confirms no further movement. But the row carries no independent weight, and the paper does not say so. **Worth a sentence there.**
+
+---
+
 ## Still genuinely open
 
 Carried here so they are not lost when the worklog is archived.
@@ -142,4 +156,5 @@ Carried here so they are not lost when the worklog is archived.
 - **R6 — is the hexagonal norm meaningful?** g1² + g1·g2 + g2² is the Eisenstein norm form; the wheel's first filter is mod 6, also hexagonal. Probably a pun. Cheap to test: does the form's value distribution over real gaps differ from the null in a way that references 6? Low priority. Flagged as open in [balance ratio §9](PG_Balance_Ratio_And_Koide.md).
 - **~~Does Factor Skyline already say N6?~~ CLOSED 2026-09-20 — yes, it does.** Draft deleted; [`FS_primorial_epochs.md`](../1_Factor_Skyline/FS_primorial_epochs.md) promoted into the curated collection, and [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md) added so the untracked upstream modules are findable next time.
 - **The v2 files are drafts, not replacements.** Five new documents sit alongside five originals. Deciding whether to supersede the originals, and updating [PRIMES_MAP.md](../PRIMES_MAP.md) and [RESULTS.md](../RESULTS.md) accordingly, is not done.
+- **Add the pool-ratio caveat to [PG_Angle_Wobble §4.1](PG_Angle_Wobble.md).** Its Q = 1732 row is circular by N8's standard. The conclusion survives (the plateau is reached at Q ≈ 300), but the table should say which rows carry evidence. Not yet done.
 - **"What picks Koide's midpoint?"** — parked. Physics, unresolved there, not ours.

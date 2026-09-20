@@ -4,7 +4,7 @@
 
 *Written 2026-09-18 with Claude, from Allen's Copilot exchange. Revised 2026-09-20 after the measurements the v1 draft called for. Everything below is checked arithmetic, measured against a stated null, or a standard result; the honest verdict is at the end.*
 
-> **What changed in v2.** v1 ended with a "measurable question" — detrend the balance ratio and look for the wheel in the residuals. That question has now been run, and the answer is complete: the statistic reduces to an **exact gap identity** (§2), its deviation from a matched null is **predictable with no free parameters** and lands within noise (§5), and **no residue class carries an excess** (§6). The balance ratio is not a new signal. It is a **fifth shadow of the wheel**, fully accounted for. v1's §"Generation time" also had its accounting backwards; §8 corrects it, and what survives is sharper than what it replaced. Tags: **[fact]** exact · **[emp]** measured · **[approx]** · **[interp]** reading.
+> **What changed in v2.** v1 ended with a "measurable question" — detrend the balance ratio and look for the wheel in the residuals. That question has now been run, and the answer is complete: the statistic reduces to an **exact gap identity** (§2), its deviation from a matched null **reduces exactly to the consecutive-gap covariance**, so the statistic is redundant (§5), and **no residue class carries an excess** (§6). The balance ratio is not a new signal. It is a **fifth shadow of the wheel**, fully accounted for. v1's §"Generation time" also had its accounting backwards; §8 corrects it, and what survives is sharper than what it replaced. Tags: **[fact]** exact · **[emp]** measured · **[approx]** · **[interp]** reading.
 
 ---
 
@@ -36,7 +36,7 @@ Three consequences, and the third is the one that does all the work later:
 
 - **K knows nothing about primality.** Any three numbers that get relatively closer together march toward 1/3.
 - **The quadratic form g₁² + g₁g₂ + g₂² is the Loeschian form** — the norm form of the Eisenstein integers, the quadratic form of the triangular lattice. The wheel's first real filter is mod 6, also hexagonal. *Whether that is a connection or a pun is open, and nothing in this note rests on it.*
-- **The cross-term g₁g₂ is the only place prime-specific information can enter.** Squares of gaps are blind to ordering; a product of *consecutive* gaps is not. This is what makes §5 predictable in advance rather than exploratory.
+- **The cross-term g₁g₂ is the only place prime-specific information can enter.** Squares of gaps are blind to ordering; a product of *consecutive* gaps is not. This is what lets §5 reduce the whole statistic to a single known quantity.
 
 ## 3. The geometric reading (why 45° turns up)
 
@@ -71,11 +71,17 @@ Put the three numbers in a vector and compare it with the "all equal" direction 
 
 **So the drift toward 1/3 is guaranteed and carries no information.** Everything of interest is in the deviation from a matched null — which is what §5 and §6 measure.
 
-## 5. The wheel signal, predicted before it was measured
+## 5. The statistic is redundant: it reduces to the gap covariance
 
-**The prediction.** By §2 the mean of K − 1/3 depends on the gaps only through E[g₁² + g₁g₂ + g₂²]. A null that shuffles the gaps preserves the two square terms exactly and can only move the cross-term. So the shift between real primes and a gap-shuffled null must be **exactly cov(gₙ, gₙ₊₁)** — no fitting, no free parameters.
+**The reduction, and it is algebra, not evidence.** By §2 the mean of K − 1/3 depends on the gaps only through E[g₁² + g₁g₂ + g₂²]. A gap-shuffle preserves the multiset of gaps, so it leaves the two square terms untouched and can move only the cross-term. Under the shuffle the two gaps are independent, so E[g₁g₂] becomes E[g]². Therefore
 
-**The test.** All 270,014 consecutive-prime gaps in [10⁶, 5×10⁶] (mean gap 14.814, sd 12.292). Null = shuffle the gaps, **then** re-form the triples — the transform-matched null of [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md). Five runs.
+> shift = E[g₁g₂] − E[g]² = **cov(gₙ, gₙ₊₁)**,
+
+**which is the definition of covariance.** This is not a prediction about primes — it holds for any sequence whatever, including random data. It is a *reduction*: it says the balance ratio carries **no information beyond the consecutive-gap covariance**, and therefore that mining it further is pointless.
+
+*(An earlier draft of this section presented the agreement below as "predicted in advance and confirmed." That was an overstatement — the agreement is forced by the algebra, and the measurement below verifies the arithmetic and the negligibility of finite-sample effects, not a hypothesis about primes.)*
+
+**The check.** All 270,014 consecutive-prime gaps in [10⁶, 5×10⁶] (mean gap 14.814, sd 12.292). Null = shuffle the gaps, **then** re-form the triples — the transform-matched null of [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md). Five runs.
 
 | quantity | value |
 |---|---|
@@ -83,9 +89,9 @@ Put the three numbers in a vector and compare it with the "all equal" direction 
 | E[g₁² + g₁g₂ + g₂²], gap-shuffled null | 960.436 (spread across 5 runs: 0.937) |
 | **measured shift** | **−6.802  (−0.708%)** |
 | cov(gₙ, gₙ₊₁) | −6.903  (corr −0.0457) |
-| **predicted shift** | **−6.903  (−0.719%)** |
+| **shift forced by the algebra** | **−6.903  (−0.719%)** |
 
-**[emp]** Prediction and measurement agree well inside the null's own run-to-run spread.
+**[emp]** Measurement and algebra agree well inside the null's own run-to-run spread — confirming the computation, as expected.
 
 **What this identifies.** The −0.0457 is the **consecutive-gap anti-correlation** already established and *fully* attributed to the wheel in [*The Prime-Triangle Angle* §4.1](PG_Angle_Wobble.md), where a wheel-only surrogate reproduces it with no detectable residual. So the balance ratio's entire deviation from chance is a quantity this collection had already measured and explained, arriving in new clothes.
 
@@ -198,12 +204,12 @@ Crossover is at k = 4: primorial 210 against territory 121. The gap never closes
 - The identity K − 1/3 = (2/27)(g₁² + g₁g₂ + g₂²)/m², exact.
 - Koide's 2/3 is the 45° condition, and the midpoint of the possible range.
 - Consecutive primes march to the equality end (1/3, inverse 3), and the rate is governed by the gaps.
-- **The balance ratio's entire deviation from a matched null is the wheel's consecutive-gap anti-correlation** — predicted with no free parameters, confirmed pooled and in every residue class.
+- **The balance ratio's entire deviation from a matched null reduces, by algebra, to the wheel's consecutive-gap anti-correlation** — and no residue class carries an excess beyond it.
 
 **What isn't:**
 - **There's no prime–lepton connection here.** The primes head to the "nothing distinguishes them" corner; the leptons sit far from it, at 45°.
 - **"2/3 is twice 1/3" isn't the meaningful fact.** The meaningful facts are the range [1/3, 1], the midpoint, and the angle.
-- **The balance ratio is not a new prime signal.** It is a fifth shadow of the wheel, and the wheel accounts for all of it.
+- **The balance ratio is not a new prime signal, and is not independent evidence for one.** It is the consecutive-gap covariance in other clothes; §5 is a redundancy proof, and §6 confirms the redundancy holds class by class.
 
 **The question worth keeping,** in Copilot's framing and sharpened:
 > 1/3 is where three quantities land when nothing distinguishes them. The leptons sit exactly halfway between that and "only one of them exists." **What picks the midpoint?**
@@ -222,7 +228,7 @@ Crossover is at k = 4: primorial 210 against territory 121. The gap never closes
 | The v1 table | Computed 2026-09-18 (sieve to 20,000) |
 | Koide's value and angle | Pole masses m_e = 0.51099895, m_μ = 105.6583755, m_τ = 1776.86 MeV: Q = 0.666661, angle 44.9997° |
 | Range and geometry | cos²θ = 1/(3K); K = 1/3 at equality, 1 at full concentration (54.7356°) |
-| §5 prediction and test | 270,014 gaps in [10⁶, 5×10⁶]; gap-shuffle null, 5 runs |
+| §5 reduction and check | 270,014 gaps in [10⁶, 5×10⁶]; gap-shuffle null, 5 runs |
 | §6 residue classes | Same range; wheel-only surrogate (coprime to primes ≤ 317, thinned to matched density), 3 seeds |
 | §7 coefficient range | Exact algebra via (3s²+d²)/4; checked against exact θ on 70,433 triples near 10⁶ |
 | §8 three scales | Program slope over primes to 2×10⁶; crossover by exact primorial arithmetic |

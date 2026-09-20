@@ -25,6 +25,7 @@
 | R4 | The two prime angles share one driver | **open** | Both linear in g/p. Note currently implies otherwise. |
 | R5 | The Budget is a payoff ledger with no cost column | **done** | Cost column exists and is *cheap*. My framing was backwards; see N6, N7. |
 | R6 | Is the hexagonal norm meaningful or a coincidence? | **open** | Low priority, high charm. |
+| R7 | Is the +1.97pp windowed memory fully the wheel? | **done** | Yes. 99% at Q=100; Q=30 gives 76%, so the test has resolution. |
 | — | "What picks Koide's midpoint?" | **parked** | Not our problem. Physics, and unresolved there. |
 
 ---
@@ -48,7 +49,7 @@ Verified as an exact rational identity (no floating point) on 2-3-5, 3-5-7, 5-7-
 
 ## R2 — The wheel signal in the balance ratio is the known −0.05 · **done**
 
-**Idea.** The note asks whether the leftover, after detrending, carries the wheel's fingerprints. Because of R1 the answer is computable in advance: the mean of K−1/3 depends on the gaps only through E[g1² + g1·g2 + g2²], and the only term a gap-shuffle can change is the cross-term. So the shift from the null should be **exactly cov(g_n, g_n+1)** — no free parameters, no fitting.
+**Idea.** The note asks whether the leftover, after detrending, carries the wheel's fingerprints. Because of R1 the answer is computable in advance: the mean of K−1/3 depends on the gaps only through E[g1² + g1·g2 + g2²], and the only term a gap-shuffle can change is the cross-term. So the shift from the null is **exactly cov(g_n, g_n+1)**. **Note (corrected later the same day): that is the definition of covariance, so this is a reduction, not a prediction** — it holds for any sequence, and the measurement below checks the arithmetic rather than testing a hypothesis.
 
 **Test.** All 270,014 consecutive-prime gaps in [10^6, 5×10^6]. Mean gap 14.814, sd 12.292. Null = shuffle the gaps, then re-form the triples (the transform-matched null from the [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md)), 5 runs.
 
@@ -229,6 +230,34 @@ g1² + g1·g2 + g2² is the norm form of the triangular lattice / Eisenstein int
 
 ---
 
+## R7 — Is the windowed memory fully the wheel? · **done**
+
+**Idea.** [Angle Wobble §4.1](PG_Angle_Wobble.md) verified the *lag-1* covariance is 100% wheel. The [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md) left the *windowed* +1.97pp at "plausibly the wheel." Nobody had run §4.1's test on the windowed statistic. **The one open route today whose answer I did not know in advance.**
+
+**Method.** For real primes and for wheel-only surrogates at several depths Q, compute the excess of each series *against its own matched null*: R2(diff(g)) − R2(diff(shuffle(g))). Compare excesses. Real primes [10^6, 5×10^6], three seeds per Q, four shuffles per series.
+
+| Q | pool | pool/π(x) | excess | share of real | |
+|---|---|---|---|---|---|
+| 30 | 631,801 | 2.34 | +1.496 pp | 76.0% | power check |
+| **100** | **481,525** | **1.78** | **+1.950 pp** | **99.0%** | |
+| 200 | 418,982 | 1.55 | +1.916 pp | 97.3% | |
+| 317 | 386,014 | 1.43 | +1.803 pp | 91.6% | |
+| 600 | 342,150 | 1.27 | +1.936 pp | 98.3% | borderline |
+| 1000 | 305,298 | 1.13 | +2.021 pp | 102.7% | **circular** |
+| 1732 | 274,556 | 1.02 | +1.948 pp | 98.9% | **circular** |
+
+Real: +1.969 pp. Seed-to-seed scatter ≈0.13 pp (≈±6% of the excess).
+
+**Result [emp].** From Q = 100 the wheel reproduces the excess within noise. The 91.6–102.7% spread across Q is consistent with seed scatter alone — no trend, no residual. Q = 30 reaching only 76% shows the test can detect a shortfall.
+
+**Verdict.** The windowed memory is the wheel, in full. **Both** surviving lines of gap memory are now attributed with nothing left over.
+
+**The methodological catch, and the reason for the pool column.** My first run used only Q = 317 and Q = 1732 and read the Q = 1732 row (99.9%) as the answer. **It is circular.** An integer below 5×10^6 coprime to every prime ≤ 1732 is prime, or one of a thin sliver of semiprimes — at that depth the surrogate pool is 1.7% larger than π(x), so the "wheel model" *is* the primes. Sweeping Q and printing the pool ratio is what exposed it. Carried forward as N8.
+
+*(The first run also showed a +2.1 sd residual at Q = 317 that vanished on the sweep — 5 seeds gave 93.9%, 3 seeds gave 91.6%. Noise. Worth remembering before calling 2 sd a finding.)*
+
+---
+
 ## Running log
 
 **2026-09-20** — Read the new note plus [PG_Angle_Wobble](PG_Angle_Wobble.md), [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md), [Prediction Budget](Prime_Prediction_Budget.md). Opened R1–R6.
@@ -251,4 +280,8 @@ So the drafted note was a restatement, and it was **deleted** the same day. The 
 
 **Lesson, and it is the useful output of the day:** run the prior-art check against your own collection *before* drafting. The check cost one search; the note cost a draft. The collection is now large enough that "is this already written down here?" is a real question — the thing rediscovered was in the Archive, not in the active folders.
 
-No existing files changed; nothing committed. Scratch code lives outside the repo.
+**Then ran R7**, the one question whose answer I did not know going in — and it came back the same way as everything else: the wheel, in full. The +1.97pp windowed memory is now measured rather than presumed, which closes the Differencing Trap's last loose end. Two process catches on the way: a circular surrogate at deep Q (N8), and a 2-sd "residual" that evaporated when swept properly.
+
+Also corrected the balance-ratio paper's §5 framing across four documents. It had been written up as "predicted in advance and confirmed"; the agreement is forced by the definition of covariance, so it is a *reduction* (the statistic is redundant), not a prediction. The measurement checks arithmetic, not a hypothesis.
+
+Scratch code lives outside the repo.
