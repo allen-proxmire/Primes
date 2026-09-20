@@ -36,6 +36,10 @@ Each of these is a genuine, measured regularity; none of them *adds* predictive 
 
 **Tier 3 — the wall.**
 
+> **Caveat on the entropy figures (added 2026-09-20).** The $2.48$ / $1.70$ / $0.26$ split is reproduced exactly — **at $N=10^4$, a range FSPapers_03 does not name.** The components do not scale alike: the **template stays at $1.70$** across three orders of magnitude (a genuine invariant), the escape peaks near $10^4$ and declines slowly, but **"activation" grows without bound** because there are more distinct least-prime-factors as $N$ rises. So $H(\mathrm{dx})$ grows with it, and "$1.70$ of $2.48$, about $68\%$ of everything knowable" is a statement about $10^4$; at $10^6$ it reads $59\%$ and keeps falling — *not because the wheel weakens but because the denominator does the moving.*
+>
+> **This section's argument is unaffected**, and arguably sharpened. Activation — *which* lpf a composite has — is irrelevant to locating the next prime, which needs only prime/not-prime. The quantity that bears on the question here is the binary one, and it is stable: **the wheel kills $73.3\%$ of positions for free, and an open slot still carries $pprox0.84$ bits.** Verify with [`1_Factor_Skyline/repro/entropy_budget.py`](../1_Factor_Skyline/repro/entropy_budget.py).
+
 - **The escape / parity barrier.** After the wheel, the residual — *which* open slot is actually prime — is genuinely random: the Möbius/Cramér noise, the parity barrier. In the FS entropy budget this irreducible core is only about **$0.26$ bits** (its peak). It is not hard to compute; it is *impossible* to predict. This is the wall, and it is what "the information theory of primes" means.
 
 ## 3. The number: ~7–8 candidates for 90%

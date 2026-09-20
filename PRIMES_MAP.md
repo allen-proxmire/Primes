@@ -94,7 +94,7 @@ GitHub/Primes/
 
 1. **~~PDFs~~ — resolved by going markdown-native (2026-09).** The 13 PDFs that merely mirrored a markdown source were removed; git retains them. Remaining PDFs are the ones that are the *only* copy of something: the PG trilogy's typeset version, `Prime_Structure_Factor.pdf`, and the two X5D papers. **No new PDFs are generated.**
 2. **X5D is still pdf-only** — `X5D_Polyhedral-Reinterpretation.pdf` and `Theta_Gap2_Refinement.pdf` have no markdown and, unlike the PG trilogy, **no recoverable `.tex`** in the upstream repo. Converting them means transcription, with the attendant risk of silent formula errors.
-3. **Reproducibility** — `2_One_Wheel_Many_Shadows/repro/` now covers the measured tables in the Differencing Trap, Angle Wobble and Balance Ratio papers. **Nothing covers series 1, 3 or 5.**
+3. **Reproducibility** — series 2 is fully covered (`2_One_Wheel_Many_Shadows/repro/`, every table regenerated and checked). Series 1 has `repro/entropy_budget.py` for the headline numbers only. Series 3 now ships the upstream scripts, **unverified**. Series 5 has a note saying what reproduction would require and why it is not a script. The remaining gap is series 1 beyond the entropy budget, and series 3 verification.
 4. **Prior art** — the Archive is untracked, so an ordinary repo grep misses 18 derivation modules that the live papers cite. Search it explicitly before drafting; see [`DERIVATION_MODULES.md`](1_Factor_Skyline/DERIVATION_MODULES.md). This has already cost one draft.
 
 ---
