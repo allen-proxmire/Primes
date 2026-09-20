@@ -184,6 +184,26 @@ Reversal odds: real 64.0→75.7→82.1→85.5, null 64.7→77.3→83.9→87.6 �
 
 ---
 
+## N11 — PG I Theorem 5.2 is off by one prime · **CLOSED — corrected in place** · → [PG_I_PrimeTriangle.md](../3_Twin_Bertrand_Prime_Geometry/PG_I_PrimeTriangle.md)
+
+**The first series-3 claim to be independently re-verified, and it came back with a correction.**
+
+PG I Theorem 5 states, for p_n >= 5: (1) PSD_n = (p_{n+2}^2 - p_n^2)/12 is an integer, and (2) its last decimal digit is in {0,4,6}.
+
+- **(1) confirmed**, and the threshold is sharp: (2,3,5) gives 7/4, (3,5,7) gives 10/3.
+- **(2) is FALSE at p_n = 5.** The triple (5,7,11) gives PSD = 96/12 = 8, last digit 8. It is the *only* counterexample among all 348,511 consecutive-prime triples below 5x10^6. **True for p_n >= 7.**
+- **Theorem 3 confirmed** — and it needs no primality whatever; the shared p_{n+1} terms cancel for any three numbers.
+
+**Where the proof slips.** The mod-6 step is sound and carries integrality. The last-digit claim additionally needs p^2 = +/-1 (mod 5), true for every prime *except 5 itself*. At p_n = 5 the mod-5 argument has nothing to stand on, so the threshold should have been 7.
+
+**Bonus observation, not in the original.** For p_n >= 7 the digits are far from equidistributed: 0 at 48.97%, 4 and 6 at 25.51% each. **4 and 6 are exactly equal** (measured difference: zero) — forced, since they count the two directions of one transition, which interleave. The 0-to-others ratio is 1.92, *not* the 2 a uniform model predicts; the shortfall is finite-range plus LOS residue correlations.
+
+*(I briefly wrote "exactly 2:1:1" in the script and caught it on the output — the same overclaim pattern as the rest of the day. Recorded because the habit is the point.)*
+
+Reproduce: [`check_psd.py`](../3_Twin_Bertrand_Prime_Geometry/scripts/check_psd.py). Corrections filed in PG I, RESULTS.md, WHAT_WE_FOUND.md and the series-3 README.
+
+---
+
 ## Still genuinely open
 
 Carried here so they are not lost when the worklog is archived.

@@ -146,6 +146,18 @@ C_2^{\,2} - C_1^{\,2}
 
 </div>
 
+> **⚠️ Correction to part 2 (verified 2026-09-20). The threshold is wrong by one prime.**
+>
+> Part 2 is **false at $`p_n = 5`$**: the triple $`(5, 7, 11)`$ gives $`\mathrm{PSD} = (121-25)/12 = 8`$, whose last digit is $`8`$. That is the **only** counterexample — checked over all 348,511 consecutive-prime triples below $`5\times10^6`$. **Part 2 holds for $`p_n \ge 7`$, with no exceptions found.**
+>
+> **Where the proof slips.** The mod-6 step is sound, and it gives integrality (part 1) for $`p_n \ge 5`$ correctly — that threshold *is* sharp, since $`(2,3,5)`$ gives $`7/4`$ and $`(3,5,7)`$ gives $`10/3`$. But the last-digit claim additionally needs $`p^2 \equiv \pm 1 \pmod 5`$, which holds for every prime **except 5 itself**. At $`p_n = 5`$ the mod-5 argument has nothing to stand on.
+>
+> **Part 1 and Theorem 3 are confirmed as stated.** (Theorem 3 in fact requires no primality at all — the shared $`p_{n+1}`$ terms cancel for any three numbers.)
+>
+> **A further observation, not in the original.** Among $`p_n \ge 7`$ the three last digits are far from equidistributed: $`0`$ appears $`48.97\%`$ of the time against $`25.51\%`$ each for $`4`$ and $`6`$. The equality of $`4`$ and $`6`$ is **exact** (they count the two directions of one transition, which interleave, so the counts differ by at most one — measured difference: zero). The ratio of $`0`$ to the others is $`1.92`$, close to but *not* the $`2`$ a uniform model predicts; the shortfall is finite-range plus Lemke Oliver–Soundararajan residue correlations.
+>
+> Reproduce: [`scripts/check_psd.py`](scripts/check_psd.py).
+
 <div class="proof">
 
 *Proof.* Every prime $`p \ge 5`$ satisfies $`p \equiv \pm 1 \pmod 6`$. Writing $`p_n = 6a \pm 1`$, $`p_{n+2} = 6b \pm 1`$, a four-case expansion gives

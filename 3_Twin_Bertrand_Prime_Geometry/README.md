@@ -10,6 +10,10 @@ The geometry: draw a right triangle from each consecutive prime pair. The angles
 
 **On the markdown:** PG I–III were converted from the author's original LaTeX in September 2026 — not retyped from the PDFs, so the mathematics is the original source. The PDFs remain authoritative for typesetting and figures.
 
-**Reproducibility — read this before trusting anything here.** [`scripts/`](scripts/) holds the original analysis code, carried over so the papers' citations resolve. **It has not been re-run or verified in this repository.** That is a weaker guarantee than series 1 and 2, where re-running found two errors. The cheapest first check is the Prime-Square-Difference identity in PG I, which is pure algebra.
+**Reproducibility — read this before trusting anything here.** [`scripts/`](scripts/) holds the original analysis code, carried over so the papers' citations resolve. **Apart from one check, it has not been re-run or verified in this repository.**
+
+That one check is [`check_psd.py`](scripts/check_psd.py), covering PG I's square-difference results — and it **found an off-by-one**. The last-digit theorem is published for $p_n \ge 5$ and is false there; $(5,7,11)$ is the sole counterexample and the statement should read $p_n \ge 7$. The identity itself and the integrality claim are confirmed. Details in [PG I](PG_I_PrimeTriangle.md), at Theorem 5.
+
+One claim checked, one correction. **The rest of this series — the 10-billion verification, the angle-record theorem, the gap exponents — remains unverified here.**
 
 *Plain-language versions: [The Movie](../4_Philosophy_Ontology/The_Movie.md) · [What We Found](../WHAT_WE_FOUND.md)*
