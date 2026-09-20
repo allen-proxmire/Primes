@@ -38,6 +38,16 @@ The papers are grouped into five numbered reading series:
 - **Every result, tagged** ([thm]/[conj]/[emp]/[deriv]/[mirage]): [`RESULTS.md`](RESULTS.md) — the technical version of [What We Found](WHAT_WE_FOUND.md)
 - **Full inventory** (what's compiled, what's a draft, what's on Zenodo): [`PRIMES_MAP.md`](PRIMES_MAP.md)
 
+## One move, twice
+
+The two halves of this collection were built years and a subject apart, and they run the same move.
+
+**The Factor Skyline** says a pile of unrelated-looking prime facts — the common gaps, the forbidden widths, the 45° angle, the crystal — are **one wheel seen from several angles**. **[X5D](5_X5D_EXPDB/)** says a pile of unrelated-looking exponent bounds, accumulated across a century of analytic number theory, are **one polytope seen from several angles**. Neither paper mentions the other, and the subjects have nothing in common.
+
+Even the machinery rhymes. X5D has an explicit *dimension ladder* — ℝ⁵ → ℝ³ → ℝ¹ → ℝ⁰ — where each step is a projection that discards information irreversibly, and the scattered results of the literature are what you get at the bottom. The Factor Skyline makes the same claim about the number line: it is the lossy 1-D shadow of a 2-D picture, and prime facts look unrelated *because* they have been flattened. Both say the mess is real and is what projection does to something simpler.
+
+**The shared instinct is: find the single object the mess is shadows of.** It is worth naming, because it is a method rather than a result — and because a method that always finds a single object is one that needs a way of telling a real shape from an expected one. That is what the nulls and the [reproduction scripts](2_One_Wheel_Many_Shadows/repro/) are for; [How We Know](HOW_WE_KNOW.md) is the account of the times they earned their keep.
+
 ## Honest ledger
 
 The **engine** is classical — the wheel *is* the Hardy–Littlewood singular series, and even the information-theoretic view of primes-as-structure-plus-randomness is an active field. 

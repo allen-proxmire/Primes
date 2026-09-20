@@ -17,4 +17,6 @@ Then: [X5D_EXPDB_Reinterpretation](X5D_EXPDB_Reinterpretation.md) (markdown) or 
 
 **Reproducibility:** [`repro/`](repro/) has no script, and a note explaining why a token one would misrepresent the situation — these claims need the EXPDB framework and a vendored copy of Tao's `expdb`, both of which live in the untracked upstream repo. It does identify the Guth–Maynard arithmetic as checkable by hand in an afternoon, which is the sensible first step if this series is ever brought up to the standard of series 2.
 
+**A note on method.** Nothing here is about primes — but the move is the one the [Factor Skyline](../1_Factor_Skyline/) makes: a pile of scattered results shown to be one object seen from several angles, with a dimension ladder explaining why they looked unrelated. See *One move, twice* in the [root README](../README.md).
+
 **DOI:** [10.5281/zenodo.19454867](https://doi.org/10.5281/zenodo.19454867)
