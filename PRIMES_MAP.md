@@ -77,6 +77,7 @@ GitHub/Primes/
 
 | paper | formats |
 |---|---|
+| **The_Movie** — *the plain-language picture of the whole collection* (new 2026-09) | md ❌ |
 | FS_TB_QM_Amplitude_Memo — *Template and Amplitude* | md ❌ |
 | OPEN_QUESTION_FS_TB_QM_AMP_02_Bilinearity | md ❌ |
 | Counting_Into_Existence | md ❌ |

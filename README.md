@@ -2,6 +2,8 @@
 
 Allen Proxmire's prime-number research — several strands that turn out to be **one story**: the primes seen through *doubling* ($p \mapsto 2p$) and *the wheel* (the primorials $2,3,5,7,\dots$), on a coordinate system that gives the number line back a dimension it was hiding. [![DOI](https://zenodo.org/badge/1302667725.svg)](https://doi.org/10.5281/zenodo.21626683)
 
+**New here?** Start with [**The Movie**](4_Philosophy_Ontology/The_Movie.md) — the whole picture in plain language, no notation.
+
 ## The idea in one paragraph
 
 **The lens is the contribution; the number line is hiding the picture.** The number line is a 1-D shadow that scrambles multiplicative structure — squash it flat and prime facts scatter into unrelated-looking messes. The **Factor Skyline** gives back the dimension that makes it legible: stand each integer up as a column, width set by its smallest prime factor. In that view, *doubling* is the top layer and *the wheel* (the small primes, foreclosing their multiples) is the fan of lower layers, and **primes are what escape both**. Everything else — the common gaps, the forbidden widths, the Seven Sisters, the twin postulate, the 45° angle, the prime "crystal" — is *consequence*. The lens is the thing.
@@ -13,7 +15,7 @@ The papers are grouped into five numbered reading series:
 1. **[The Factor Skyline](1_Factor_Skyline/)** — the coordinate system and its four-part theory (the foundation).
 2. **[One Wheel, Many Shadows](2_One_Wheel_Many_Shadows/)** — the wheel and its shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc) — plus the angle's scale-invariant *switchback law*, the *prime prediction budget* (how far structure gets you, and the wall), and two synthesis papers: **[The Wheel Is the Whole Story](2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md)** (ten probes, six of them independent, no residual anywhere — with the audit of which ones actually count) and **[The Null-Model Discipline](2_One_Wheel_Many_Shadows/Null_Model_Discipline.md)** (five ways to fool yourself with a null, each caught in the act).
 3. **[Twin Bertrand / Prime Geometry](3_Twin_Bertrand_Prime_Geometry/)** — the Twin-Prime Bertrand Postulate and the prime-triangle work.
-4. **[Philosophy & Ontology](4_Philosophy_Ontology/)** — finitism, the sieve as a hunt, the quantum-mechanical reading.
+4. **[Philosophy & Ontology](4_Philosophy_Ontology/)** — [**The Movie**](4_Philosophy_Ontology/The_Movie.md) (the plain-language picture of the whole thing), finitism, the sieve as a hunt, the quantum-mechanical reading.
 5. **[X5D / EXPDB](5_X5D_EXPDB/)** — the exponent-database strand (a separate analytic-number-theory subject).
 
 - **Every result, tagged** ([thm]/[conj]/[emp]/[deriv]): [`RESULTS.md`](RESULTS.md)

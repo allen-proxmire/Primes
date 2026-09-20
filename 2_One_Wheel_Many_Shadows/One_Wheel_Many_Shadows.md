@@ -2,6 +2,8 @@
 
 *The organizing thesis of the Primes collection. A manifesto with pointers — the full arguments live in the linked papers.*
 
+> **For the same thesis without the notation, see [The Movie](../4_Philosophy_Ontology/The_Movie.md)** — clocks joining the orchestra at their squares, a pattern that outruns the road it governs, and why that is what makes the primes look random.
+
 ## Thesis
 
 A single object — the **primorial wheel**, equivalently the **Hardy–Littlewood singular series** — generates a family of prime phenomena that look unrelated on the number line but are one picture on the **Factor Skyline**. Two operations run the whole program:

@@ -107,6 +107,7 @@ vert=6$ is halved ($5.14\%$ vs $10.29\%$) and $=12$ likewise ($2.98\%$ vs $6.57\
 
 ## Philosophy & Ontology
 
+- **[interp] The Movie — the whole picture in plain language.** Every prime is a clock; clocks join the orchestra at their own square; each new clock *multiplies* the pattern's length rather than adding a tooth; and from $p=7$ onward **the pattern is longer than the stretch of road where it applies**, so it can never be caught repeating. That — not rule complexity — is why the primes look random. The movie's sharp edge: it explains the *appearance* of randomness completely and the *actual* unpredictability not at all. → [The Movie](4_Philosophy_Ontology/The_Movie.md)
 - **[interp] The sieve as a hunt; counting into existence.** Finitist readings of the prime sequence, and the open debt: why infinite mathematics pays rent in a finite world. → [Counting Into Existence](4_Philosophy_Ontology/Counting_Into_Existence.md), [The Wolves and the Clock](4_Philosophy_Ontology/The_Wolves_and_the_Clock.md)
 - **[interp] The quantum-mechanical reading,** with its own open question on bilinearity. → [QM Amplitude Memo](4_Philosophy_Ontology/FS_TB_QM_Amplitude_Memo.md), [Open Question: Bilinearity](4_Philosophy_Ontology/OPEN_QUESTION_FS_TB_QM_AMP_02_Bilinearity.md)
 
