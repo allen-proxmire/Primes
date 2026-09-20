@@ -204,6 +204,30 @@ Reproduce: [`check_psd.py`](../3_Twin_Bertrand_Prime_Geometry/scripts/check_psd.
 
 ---
 
+## N12 — The angle-record theorem is clean · **CLOSED — confirmed, no correction** · → [PG_II_AngleRecord.md](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md)
+
+**The load-bearing claim of series 3, and the first thing today to come back needing nothing.**
+
+PG II Theorem 6 makes three statements equivalent: the Twin-Prime Bertrand Postulate in dyadic form, the twin-gap form T_{k+1} < 2·T_k, and the geometric form "every angle-record with p_n >= 3 is a twin pair." Because they are *equivalent*, checking the geometric one checks TPB.
+
+**Verified over every consecutive prime pair below 10^8**, with exact integer cross-multiplication (no floating point anywhere):
+
+| | |
+|---|---|
+| angle-records with p_n >= 3 | 440,312 |
+| of those, non-twin | **0** |
+| twin pairs with p >= 3 | 440,312 |
+| twins that fail to set a record | **0** |
+| violations of T_{k+1} < 2·T_k | **0** (worst ratio 1.7059, at T_k = 17) |
+
+**The result is stronger than the theorem states.** PG II claims records ⊆ twins. Measurement gives records **=** twins — the two sequences coincide exactly, element for element. Worth stating in the paper, since it is free: twin T sets a record iff it beats the previous record, the previous record is the previous twin, and T/(T+2) is increasing.
+
+**One definitional wrinkle, benign.** Def. 5 says "for all m < n" without excluding the pair (2,3), whose ratio 2/3 exceeds 3/5. Under the literal reading (3,5) is therefore *not* a record, and the proof's line "the first such record is (3,5)" presumes the record sequence starts at (3,5). Both readings were tested; neither produces a non-twin record. The only difference is whether (3,5) appears in the list. **Not an error — but one clarifying clause in Def. 5 would remove the ambiguity.**
+
+Reproduce: [`check_angle_records.py`](../3_Twin_Bertrand_Prime_Geometry/scripts/check_angle_records.py).
+
+---
+
 ## Still genuinely open
 
 Carried here so they are not lost when the worklog is archived.

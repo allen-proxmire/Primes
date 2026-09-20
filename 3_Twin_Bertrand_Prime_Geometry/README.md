@@ -12,8 +12,11 @@ The geometry: draw a right triangle from each consecutive prime pair. The angles
 
 **Reproducibility — read this before trusting anything here.** [`scripts/`](scripts/) holds the original analysis code, carried over so the papers' citations resolve. **Apart from one check, it has not been re-run or verified in this repository.**
 
-That one check is [`check_psd.py`](scripts/check_psd.py), covering PG I's square-difference results — and it **found an off-by-one**. The last-digit theorem is published for $p_n \ge 5$ and is false there; $(5,7,11)$ is the sole counterexample and the statement should read $p_n \ge 7$. The identity itself and the integrality claim are confirmed. Details in [PG I](PG_I_PrimeTriangle.md), at Theorem 5.
+**Two claims have now been checked:**
 
-One claim checked, one correction. **The rest of this series — the 10-billion verification, the angle-record theorem, the gap exponents — remains unverified here.**
+- [`check_angle_records.py`](scripts/check_angle_records.py) — PG II's **angle-record theorem**, which by Theorem 6 is *logically equivalent* to the Twin-Prime Bertrand Postulate and is therefore the load-bearing claim of the series. **Clean.** Exact integer arithmetic over every consecutive pair to $10^8$: 440,312 records, 440,312 twins, zero non-twin records — and the two sequences coincide exactly rather than one merely containing the other.
+- [`check_psd.py`](scripts/check_psd.py) — PG I's square-difference results. **Found an off-by-one.** The last-digit theorem is published for $p_n \ge 5$ and is false there; $(5,7,11)$ is the sole counterexample and the statement should read $p_n \ge 7$. The identity and integrality claims are confirmed. See [PG I](PG_I_PrimeTriangle.md) at Theorem 5.
+
+**Still unverified here:** the 10-billion twin verification, the twin-gap exponent, and the GBP envelope.
 
 *Plain-language versions: [The Movie](../4_Philosophy_Ontology/The_Movie.md) · [What We Found](../WHAT_WE_FOUND.md)*
