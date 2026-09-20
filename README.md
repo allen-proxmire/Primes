@@ -11,7 +11,7 @@ Allen Proxmire's prime-number research — several strands that turn out to be *
 The papers are grouped into five numbered reading series:
 
 1. **[The Factor Skyline](1_Factor_Skyline/)** — the coordinate system and its four-part theory (the foundation).
-2. **[One Wheel, Many Shadows](2_One_Wheel_Many_Shadows/)** — the wheel and its six shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc) — plus the angle's scale-invariant *switchback law*, the differencing-trap null-model notes, and the *prime prediction budget* (how far structure gets you, and the wall).
+2. **[One Wheel, Many Shadows](2_One_Wheel_Many_Shadows/)** — the wheel and its shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc) — plus the angle's scale-invariant *switchback law*, the *prime prediction budget* (how far structure gets you, and the wall), and two synthesis papers: **[The Wheel Is the Whole Story](2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md)** (ten probes, six of them independent, no residual anywhere — with the audit of which ones actually count) and **[The Null-Model Discipline](2_One_Wheel_Many_Shadows/Null_Model_Discipline.md)** (five ways to fool yourself with a null, each caught in the act).
 3. **[Twin Bertrand / Prime Geometry](3_Twin_Bertrand_Prime_Geometry/)** — the Twin-Prime Bertrand Postulate and the prime-triangle work.
 4. **[Philosophy & Ontology](4_Philosophy_Ontology/)** — finitism, the sieve as a hunt, the quantum-mechanical reading.
 5. **[X5D / EXPDB](5_X5D_EXPDB/)** — the exponent-database strand (a separate analytic-number-theory subject).
@@ -21,7 +21,9 @@ The papers are grouped into five numbered reading series:
 
 ## Honest ledger
 
-The **engine** is classical — the wheel *is* the Hardy–Littlewood singular series, and even the information-theoretic view of primes-as-structure-plus-randomness is an active field. What's contributed here is the **lens** (the Factor Skyline), the **unification** (six unrelated-looking facts shown to be one wheel, confirmed by a negative control), and a couple of **clean elementary results** — most notably the forbidden-width classification $\{2,4,6,10\}$. No new theory of the deep structure of primes is claimed; the hard directions remain open and are tagged as such.
+The **engine** is classical — the wheel *is* the Hardy–Littlewood singular series, and even the information-theoretic view of primes-as-structure-plus-randomness is an active field. What's contributed here is the **lens** (the Factor Skyline), the **unification** (unrelated-looking facts shown to be one wheel, confirmed by a negative control), a couple of **clean elementary results** — most notably the forbidden-width classification $\{2,4,6,10\}$ — and the **null-model discipline** that the empirical claims are measured against. No new theory of the deep structure of primes is claimed; the hard directions remain open and are tagged as such.
+
+The unification is audited rather than asserted: of the ten statistics aimed at consecutive prime gaps here, **six are genuinely independent probes and four are provably the same quantity in different notation**. Both halves matter — the six are the evidence, and showing the four are one object *is* the thesis. Mirages and corrections are tagged **[mirage]** in [`RESULTS.md`](RESULTS.md) rather than quietly dropped.
 
 ## Elsewhere
 

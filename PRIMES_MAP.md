@@ -123,16 +123,23 @@ The pandoc/xelatex pipeline in `factor-skyline` (`make papers`) works and can be
 
 ---
 
-## 5. Zenodo / DOI — open items (needs your input or a Zenodo lookup)
+## 5. Zenodo / DOI — resolved for this repo
 
-You said "a couple papers on Zenodo" — **which two aren't recorded here yet.** To resolve:
-- Search Zenodo for "Allen Proxmire" and list existing DOIs → tag each paper *on-Zenodo? / DOI*.
-- Decide **repo-level DOI** (GitHub→Zenodo release hook, one DOI per repo) vs **standalone paper DOI**.
+**Settled 2026-07:** this collection took a **repo-level DOI** via the GitHub→Zenodo release hook, tagged `v1.0`, badge in the README.
 
-**Standalone-DOI candidates (most publication-ready):**
-- Prime Geometry I / II / III (polished tex→pdf)
+- **Primes (this repo):** [10.5281/zenodo.21626683](https://doi.org/10.5281/zenodo.21626683) — tag `v1.0`
+- **Factor Skyline** (upstream repo): [10.5281/zenodo.18275273](https://doi.org/10.5281/zenodo.18275273)
+- **X5D EXPDB** (upstream repo): [10.5281/zenodo.19454867](https://doi.org/10.5281/zenodo.19454867)
+
+**What this settles.** The repo-level DOI snapshots the whole collection at a tag, so the archived record is frozen and reorganising the live repo cannot break it. Filenames were rearranged in September 2026 (v2 papers promoted to canonical names, originals to `2_One_Wheel_Many_Shadows/superseded/`) with no effect on the `v1.0` snapshot — which is the point of tagging.
+
+**Still open — standalone paper DOIs.** Not done, and not obviously needed while the repo DOI covers the collection. If pursued, the candidates remain:
+- Prime Geometry I / II / III (polished tex→pdf) — **note the asymmetry: these exist in the curated collection only as PDFs, with no markdown source.** They are the most citable and the least editable work here.
 - X5D Polyhedral Reinterpretation
 - FS Architectural Foundation (or the FS monograph as an umbrella)
+- *New candidate (Sept 2026):* [*The Null-Model Discipline*](2_One_Wheel_Many_Shadows/Null_Model_Discipline.md) — the only material here whose audience is plausibly outside number theory.
+
+**Cut a new tag before the next DOI pass.** `v1.0` predates the September work (balance ratio, the wheel-is-the-whole-story audit, the null discipline, the RESULTS.md rebuild).
 
 ---
 
@@ -155,5 +162,5 @@ You said "just one public." `gh` lookup returned empty this session — **verify
 - [ ] **Delete `expdb-env`** yourself (regenerable venv; Claude won't hard-delete): `Remove-Item -Recurse -Force "C:\Users\allen\GitHub\expdb-env"`.
 - [x] **Update path references** in memory (Twin Bertrand, Prime Geometry done; Factor Skyline pending its move).
 - [x] **Compile the PDF gaps** — FSPapers 02, 02.1, 03, 04 done. Remaining: FS_Framework_Explanatory, TB notes, GuthMaynard_v2 (§4).
-- [ ] **Zenodo pass** (§5) — deferred (you'll hide/republish later).
+- [x] **Zenodo pass** (§5) — repo-level DOI live (10.5281/zenodo.21626683, tag `v1.0`). Standalone paper DOIs still open; cut a new tag first, `v1.0` predates the September work.
 - [x] **Reconcile overlaps** (§3) — PG kept as precursor + in TB; Erdős-Tao stays archived; framework-doc dup left as-is.
