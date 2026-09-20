@@ -149,6 +149,18 @@ Recorded so the wrong version does not get re-derived later.
 
 ---
 
+## N9 — An unreproduced published number · **OPEN** · → [Prime_Gap_Memory_Differencing_Trap.md](Prime_Gap_Memory_Differencing_Trap.md) §3
+
+The [reproduction script](repro/) regenerates every measured table in the three gap papers **except one row**: the jitter recoil. Published 81.8% real / 79.2% null / **+2.7 pp genuine**; the script gets 84.0% / 84.5% / **−0.5 pp** — the genuine column changes sign.
+
+**Diagnosis, not yet confirmed.** The original implementation is unspecified. "After a large jitter, the next has the opposite sign" needs a threshold (script: top decile of |Δg|), a reference for "opposite" (against the trigger, or the one before), and a zero-handling rule. None appears in the paper, and the appendix code covers only the two R² statistics.
+
+**Low stakes, but it must not be dropped quietly.** §4 proves recoil is forced by the exact −1/2 differencing identity; the script finding it *wholly* artifact agrees with the paper's own verdict more strongly than the paper did. Nothing downstream depends on the number. But an unreproduced published figure is precisely what this collection's honesty claim is about, so it carries a ⚠️ in the table rather than being edited away.
+
+**To close:** recover the original definition, or replace the row's "genuine" column with "artifact; magnitude implementation-dependent."
+
+---
+
 ## Still genuinely open
 
 Carried here so they are not lost when the worklog is archived.

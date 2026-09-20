@@ -39,8 +39,12 @@ The primes' program already carries the right reflex — the [ED negative contro
 | raw-gap memory — regress $g_n$ on last 5 | $0.32\%$ | $0.00\%$ | $\mathbf{+0.32}$ pp |
 | gap autocorrelation, lag 1 | $-0.046$ | $-0.001$ | $\mathbf{-0.045}$ |
 | jitter clustering, $\operatorname{corr}(|\Delta g_n|,|\Delta g_{n-1}|)$ | $+0.315$ | $+0.319$ | $-0.004$ *(artifact)* |
-| jitter recoil, big $\to$ opposite sign | $81.8\%$ | $79.2\%$ | $+2.7$ pp |
+| jitter recoil, big $\to$ opposite sign | $81.8\%$ | $79.2\%$ | $+2.7$ pp ⚠️ |
 | **windowed wobble — regress $\Delta g_n$ on last 5** | $43.67\%$ | $41.69\%$ | $\mathbf{+1.97}$ pp |
+
+> **⚠️ The recoil row does not reproduce (flagged 2026-09).** The [reproduction script](repro/) gets $84.0\%$ real against $84.5\%$ null — **no genuine effect** — where this table reports $+2.7$ pp. The likely cause is that the original implementation was never written down: *"after a large jitter"* needs a threshold (the script uses the top decile of $|\Delta g|$), a reference point for "opposite" (the triggering jitter, or the one before it), and a zero-handling rule. None is stated here, the appendix code does not cover recoil, and reasonable choices differ materially.
+>
+> **The discrepancy strengthens this section's conclusion rather than weakening it.** §4 proves recoil is *forced* by the exact $-\tfrac12$ identity, and the script finds it **entirely** artifact where this table still allowed a sliver of signal. Nothing downstream uses the $+2.7$ pp. Read the row as "artifact; magnitude implementation-dependent" until the original definition is recovered.
 
 Two clean verdicts:
 
