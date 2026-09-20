@@ -4,9 +4,9 @@ Allen Proxmire
 
 April 2026
 
-> ## Assessment, 2026-09-20 — read before citing
+> ## Revised 2026-09-20 — reframed around what survives
 >
-> Recovered from the discontinued Factor Skyline repo during the [Archive Survey](../ARCHIVE_SURVEY.md) and read for the first time since writing. **The geometry is sound and worth keeping. The central framing is not.** Four findings, in order of importance.
+> Recovered from the discontinued Factor Skyline repo during the [Archive Survey](../ARCHIVE_SURVEY.md), read for the first time since writing, and **rewritten.** The geometry was sound; the framing overreached. The abstract, §1, §6 and §9 have been rewritten, and §4's proof repaired. This box records what changed and why; the sections below are the corrected text.
 >
 > ### 1. The Filling Condition is the Twin-Prime Bertrand Postulate
 >
@@ -53,7 +53,9 @@ We study twin primes through the geometry of the Factor Skyline (FS), a two-dime
 
 (iii) Under the Cramer independence model, the probability $R(p)$ that all twin-open positions in $[p, 2p]$ are unfilled decays super-exponentially: $R(p) \sim \exp(-C_2 \cdot p / (\ln p)^2)$ (Theorem 6.2).
 
-We isolate a single conjectural statement --- the Filling Condition --- as the only obstacle separating the FS structural guarantees from a proof of the twin prime conjecture. We formulate the Filling Condition in three equivalent forms (geometric, combinatorial, analytic), show it is strictly weaker than breaking the classical parity barrier, and place it precisely in the hierarchy of known results between the Maynard-Tao bounded gaps theorem and the full Hardy-Littlewood conjecture. Computational verification confirms that every interval $[p, 2p]$ for $3 \leq p \leq 200{,}000$ contains at least one twin prime pair, and that the twin-slope ceiling is achieved universally across $78{,}497$ consecutive-prime segments up to $10^6$.
+We then formulate the *Filling Condition* — the statement that at least one twin-open slot in $[p, 2p]$ is occupied for all large $p$ — in three equivalent forms, geometric, combinatorial and analytic, and show that **its analytic form is exactly the Twin-Prime Bertrand Postulate** conjectured independently in [PG II](PG_II_AngleRecord.md) from the unrelated geometry of the prime triangle. The contribution is therefore not a new conjecture but a **second, independent geometric route to the same one**: the prime triangle reaches TPB through an angle approaching $45°$ from below; the Factor Skyline reaches it through a slope ceiling at $\arctan(2/3)$ attained only by twins. Computational verification confirms that every interval $[p, 2p]$ for $3 \leq p \leq 200{,}000$ contains at least one twin prime pair, and that no consecutive-prime segment up to $10^6$ exceeds the twin slope.
+
+**What this paper does not claim.** It does not locate a new obstacle to the twin prime conjecture: TPB implies that conjecture unaided, so the structural results above do no work in that implication. It makes no claim about the parity barrier; the heuristics of §7 are stated as heuristics and a Cramér-model computation cannot bear on parity, since independence is its assumption.
 
 **MSC 2020:** 11N05, 11A41, 11N36
 
@@ -74,15 +76,15 @@ Our main contributions are:
 
 2. **Twin opportunities in Bertrand intervals** (Section 5). We define the twin opportunity function $O(p)$, counting twin-open template positions in $[p, 2p]$, and prove it diverges. Computational verification through $p = 200{,}000$ confirms that every such interval contains at least one twin pair.
 
-3. **The Filling Condition** (Section 6). We isolate a single conjectural statement --- that at least one of the $O(p) \to \infty$ twin-open slots in $[p, 2p]$ is occupied by actual twin primes --- and express it in three equivalent forms. We show this condition is strictly weaker than breaking the full parity barrier, analogous to the partial bypasses achieved by Friedlander-Iwaniec [FI98] and Maynard-Tao [May15].
+3. **The Filling Condition, and its identity with TPB** (Section 6). We isolate the statement that at least one of the $O(p) \to \infty$ twin-open slots in $[p, 2p]$ is occupied, express it in three equivalent forms, and observe that **its analytic form is precisely the Twin-Prime Bertrand Postulate** of [PG II](PG_II_AngleRecord.md). The two papers reach the same conjecture from unrelated geometries — a prime-triangle angle rising to $45°$, and a skyline slope capped at $\arctan(2/3)$ — and neither was aware of the other when written. **The convergence is the contribution here, not the conjecture.**
 
-4. **The information-theoretic perspective** (Section 7). We quantify the parity barrier as 0.26 bits per integer of irreducible entropy in the escape layer, and argue that systematic avoidance of $O(p)$ twin-open slots by the sub-Poisson escape process is information-theoretically implausible when $O(p) \to \infty$.
+4. **An information-theoretic reading** (Section 7). We quantify the escape layer as 0.26 bits per integer of irreducible entropy and observe that systematic avoidance of $O(p) \to \infty$ twin-open slots would require coordination the architecture does not supply. **This is heuristic, and §7 labels it so.** It is a reason the conjecture looks plausible, not evidence about the parity barrier — an independence-based model cannot see parity, because independence is precisely what parity denies.
 
 **Nature of the paper and relation to classical results.** This paper is primarily expository. Several of the results presented here --- coverage protection (Theorem 3.3), the Hardy-Littlewood constant $C_2 > 1$ (Theorem 3.4), template persistence (Theorem 3.6), and the divergence of twin-open positions (Theorem 5.2) --- are classical facts of sieve theory [HL23, Sel49] expressed in the geometric language of the Factor Skyline. The Filling Condition itself (Conjecture 6.3) can be stated purely on the number line as $\pi_2(2N) - \pi_2(N) \geq 1$, without reference to the FS.
 
-What the FS framework contributes beyond this classical content is threefold. First, the twin-slope ceiling (Theorem 4.2) is a structural invariant of the FS-x coordinate system: the fact that no consecutive-prime segment can exceed slope $\arctan(2/3)$ depends on the specific way composite widths accumulate in FS-x, and has no direct number-line analog. Second, the information-theoretic decomposition of the parity barrier into 0.26 bits of irreducible escape-layer entropy (Section 7) requires the FS increment sequence and its conditional entropy structure. Third, the FS provides a unified geometric framework in which the Filling Condition, its three equivalent forms, and its position in the hierarchy of known results emerge as natural consequences of a single architectural picture.
+What the FS framework contributes beyond this classical content is threefold. First, the twin-slope ceiling (Theorem 4.2) is a structural invariant of the FS-x coordinate system: the fact that no consecutive-prime segment can exceed slope $\arctan(2/3)$ depends on the specific way composite widths accumulate in FS-x, and has no direct number-line analog. Second, the information-theoretic decomposition of the parity barrier into 0.26 bits of irreducible escape-layer entropy (Section 7) requires the FS increment sequence and its conditional entropy structure. Third, the FS route arrives at TPB from a direction entirely unlike the prime-triangle route of [PG II](PG_II_AngleRecord.md), and two independent geometric derivations of one conjecture are worth more than either alone.
 
-We make no claim to have resolved the twin prime conjecture; rather, we offer a geometric language that clarifies the structure of the problem and pinpoints the exact location of the remaining obstacle. For the full development of the Factor Skyline framework, we refer to [Pro26].
+We make no claim to have resolved the twin prime conjecture, and none to have located a new obstacle to it — TPB implies the twin prime conjecture on its own, so the structural results here do no work in that implication. What we offer is a second geometric language in which the same conjecture appears naturally. For the full development of the Factor Skyline framework, we refer to [Pro26].
 
 
 ## 2. The Factor Skyline
@@ -353,9 +355,9 @@ The maximum twin desert grows as $O((\ln p)^3)$ --- far slower than the interval
 > *[Figure not recovered: fig3_twin_deserts.png — described as: fig 3: Growth of maximum twin deserts compared to the $(\ln p)^3 / C_2$ prediction.. Not present in the archived repo; the underlying numbers are in the tables above.]*
 
 
-## 6. The Filling Condition
+## 6. The Filling Condition, and its identity with TPB
 
-We now formalize the single remaining obstacle separating the FS structural guarantees from a proof of the twin prime conjecture.
+We now formalize the statement that the structural guarantees above stop short of, and identify it. **It is not a new conjecture:** its analytic form turns out to be the Twin-Prime Bertrand Postulate, conjectured independently in [PG II](PG_II_AngleRecord.md) from the geometry of the prime triangle. Neither paper knew of the other when written; both are dated April 2026. The value of this section is the *equivalence*, not the conjecture.
 
 **Definition 6.1 (Filling probability and obstruction).** For each twin-open template position in $[p, 2p]$, let $\delta(p)$ denote the probability that the position is occupied by an actual twin prime pair (i.e., both members escape all coverage layers with width $q > \sqrt{2p}$). Define the *twin obstruction probability*:
 
@@ -363,7 +365,11 @@ $$R(p) = (1 - \delta(p))^{O(p)},$$
 
 the probability that *all* $O(p)$ twin-open slots are unfilled.
 
-**Theorem 6.2 (Obstruction decay under Cramer model).** Under the Cramer independence model, $\delta(p)$ is bounded below by a positive constant as $p \to \infty$, and:
+**Proposition 6.2 (Obstruction decay under the Cramér model — heuristic).**
+
+> *A computation inside the Cramér model, not a statement about the primes. A model that assumes independence will always predict twins occur, because that is its assumption — in particular it is blind to the parity barrier and carries no evidence about it. Stated for what it is: a consistency check on the heuristic, not support for the conjecture. Note also that $\delta$ is defined as a probability but computed as a ratio of two estimates, and Table 5 accordingly shows $\delta(997) = 1.040 > 1$.*
+
+Under the Cramér independence model, $\delta(p)$ is bounded below by a positive constant as $p \to \infty$, and:
 
 $$R(p) \sim \exp\!\left(-C_2 \cdot \frac{p}{(\ln p)^2}\right) \to 0$$
 
@@ -396,13 +402,17 @@ super-exponentially.
 
 *Proof of equivalence:* Forms 1 and 2 are equivalent by Theorem 3.5 (twin pairs have FS-x gap exactly 3, the unique slope-maximizing configuration) and Theorem 4.2 (the slope ceiling is achieved only by twins). Forms 2 and 3 are equivalent by definition: a twin-open position $(r, r+2)$ where both are prime is exactly a twin prime pair in $[p, 2p]$. QED.
 
-**Theorem 6.5 (Strength of the Filling Condition).** The Filling Condition is strictly weaker than breaking the full parity barrier. The parity barrier prevents sieve methods from establishing a *counting* lower bound $\pi_2(x) \geq c \cdot x / (\ln x)^2$ for any $c > 0$. The Filling Condition requires only an *existential* lower bound: $\pi_2(2N) - \pi_2(N) \geq 1$.
+### 6.5 Where this sits — and a claim withdrawn
 
-The Filling Condition is analogous to known partial parity bypasses:
-- Friedlander-Iwaniec [FI98] proved infinitely many primes of the form $a^2 + b^4$ (existential, not counting).
-- Zhang [Zha14] and Maynard [May15] proved infinitely many prime pairs with gap $\leq 246$ (existential for *some* fixed gap, not specifically gap 2).
+> **Withdrawn 2026-09-20.** An earlier Theorem 6.5 asserted that the Filling Condition is *strictly weaker than breaking the parity barrier*, on the grounds that parity blocks **counting** bounds while the Filling Condition needs only an **existential** one. That argument does not work, and the claim is retracted.
+>
+> Existential is logically weaker than counting, but that is beside the point: **the parity barrier blocks sieve methods from the existential twin-prime statement as well.** That is the barrier's standard form, not a stronger version of it.
+>
+> The two precedents cited also pointed the wrong way. **Friedlander–Iwaniec** proved an asymptotic *count* for $a^2+b^4$, and the bypass came from bilinear structure particular to that form — not from being existential. **Zhang–Maynard** reaches gap $\le 246$ rather than gap $2$ *because of* parity; it is the canonical illustration of the barrier biting, and cannot serve as precedent for escaping it.
+>
+> **This paper makes no claim about the parity barrier.** Nothing else in it depends on the retracted theorem.
 
-The Filling Condition asks for the same type of result --- existential, not counting --- for the specific gap 2.
+What can be said about placement is inherited, not new. The Filling Condition equals TPB (§6.4), and TPB's position — implied by the twin prime conjecture, implying bounded gaps for gap 2, immediate under Hardy–Littlewood, open unconditionally — is established in [PG II](PG_II_AngleRecord.md) §1, with the prior-art search in the accompanying [literature review](literature_review.md).
 
 **Table 6.** Hierarchy of results and conjectures.
 
@@ -411,7 +421,7 @@ The Filling Condition asks for the same type of result --- existential, not coun
 | Infinitely many primes | Proved (Euclid) |
 | A prime in $[p, 2p]$ | Proved (Bertrand, 1845) |
 | Bounded prime gaps ($\leq 246$) | Proved (Zhang-Maynard-Tao, 2013--14) |
-| **Filling Condition** | **Conjectured (this paper)** |
+| **Filling Condition (= TPB)** | **Conjectured — same statement as [PG II](PG_II_AngleRecord.md) Conj. 2** |
 | Infinitely many twin primes | Conjectured |
 | $\pi_2(x) \sim C_2 \cdot \text{Li}_2(x)$ | Conjectured (Hardy-Littlewood) |
 | Positive sieve lower bound for twin primes | Blocked (parity barrier) |
@@ -485,11 +495,11 @@ The Factor Skyline provides a geometric framework in which the twin prime questi
 
 2. The number of twin-open template positions in any Bertrand interval $[p, 2p]$ diverges as $p \to \infty$ (Theorem 5.2), and the obstruction probability $R(p)$ decays super-exponentially under the Cramer model (Theorem 6.2).
 
-3. A single conjectural statement --- the Filling Condition (Conjecture 6.3) --- is the only obstacle separating the FS structural guarantees from the twin prime theorem. This condition is strictly weaker than breaking the parity barrier (Theorem 6.5).
+3. The Filling Condition (Conjecture 6.3) — the statement that at least one of those slots is filled — is, in its analytic form, **exactly the Twin-Prime Bertrand Postulate** conjectured independently in [PG II](PG_II_AngleRecord.md). It is not a new obstacle: TPB implies the twin prime conjecture on its own, so results 1 and 2 do no work in that implication. **What is new is the convergence** — two unrelated geometries, an angle rising to 45 degrees and a slope capped at arctan(2/3), arriving at one conjecture.
 
-4. The parity barrier, expressed in FS-information-theoretic terms, corresponds to 0.26 bits per integer of irreducible escape-layer entropy (Observation 7.2). Systematic avoidance of $O(p) \to \infty$ twin-open slots by the sub-Poisson escape process is information-theoretically implausible (Remark 7.4).
+4. The escape layer carries 0.26 bits per integer of irreducible entropy (Observation 7.2), and avoidance of all $O(p)$ slots would demand coordination the architecture does not supply (Remark 7.4). **Heuristic, and no claim about the parity barrier is intended or supported** — see the withdrawal at §6.5.
 
-The Filling Condition occupies a precise position in the hierarchy of number-theoretic results: it is stronger than the Maynard-Tao bounded gaps theorem (which guarantees gap $\leq 246$ but not gap 2) and weaker than the full Hardy-Littlewood asymptotic (which gives the exact twin prime density). Proving it would require a partial bypass of the parity barrier analogous to those achieved by Friedlander-Iwaniec [FI98] and Zhang-Maynard-Tao [Zha14, May15] --- an existential result about a specific arithmetic pattern, not a counting result with optimal constants.
+Its position in the hierarchy is inherited from TPB, not established here: stronger than bounded gaps (which gives gap $\leq 246$, not gap 2), weaker than the full Hardy–Littlewood asymptotic, immediate under Hardy–Littlewood, open unconditionally. That placement, and the prior-art search behind it, belong to [PG II](PG_II_AngleRecord.md) and the [literature review](literature_review.md).
 
 Possible approaches to the Filling Condition include:
 
@@ -499,7 +509,11 @@ Possible approaches to the Filling Condition include:
 
 - **Bombieri-Vinogradov type estimates.** Equidistribution of twin primes in arithmetic progressions to modulus $Q = N^{\theta}$ for any $\theta > 0$ would suffice.
 
-The conceptual arc of this paper can be summarized as follows. The Factor Skyline encodes every integer's multiplicative structure into a geometric column. Primes escape as tall, narrow spires; twin primes produce the steepest possible connections between consecutive spires. The coverage-protection mechanism guarantees that opportunities for twin primes grow without bound. The template persistence theorem guarantees that no finite set of sieve layers can close off all twin-open positions. What remains is a single question: among the superabundant twin-open slots that the architecture preserves, is at least one actually filled? The FS does not answer this question. What it provides is a geometric language that makes the structure of the problem --- and the exact location of the remaining obstacle --- visible.
+The conceptual arc of this paper can be summarized as follows. The Factor Skyline encodes every integer's multiplicative structure into a geometric column. Primes escape as tall, narrow spires; twin primes produce the steepest possible connections between consecutive spires. Coverage protection guarantees that opportunities for twin primes grow without bound, and template persistence that no finite set of sieve layers can close off all twin-open positions. What remains is one question: among those superabundant slots, is at least one actually filled?
+
+**The FS does not answer it — and the question turns out to be one already asked here.** Written on the number line it reads $\pi_2(2N) - \pi_2(N) \geq 1$, which is the Twin-Prime Bertrand Postulate of [PG II](PG_II_AngleRecord.md). Two geometries built for different purposes — a right triangle on consecutive primes, and a skyline of columns ordered by least prime factor — converge on the same statement, by routes with nothing in common. The prime triangle finds it by asking which pairs set records for approaching $45°$; the skyline finds it by asking whether a slope ceiling at $\arctan(2/3)$ is attained infinitely often.
+
+**That convergence is what this paper contributes.** Not a new obstacle — TPB implies the twin prime conjecture by itself, and the structure above adds nothing to that step — but a second, independent geometric language in which the same conjecture appears as the natural question to ask. A conjecture reached twice from unrelated directions is better motivated than one reached once.
 
 
 ## Acknowledgments

@@ -6,6 +6,8 @@ Allen Proxmire
 
 > **Converted from LaTeX, 2026-09-20.** This markdown was produced with `pandoc` from `papers/PG_II_AngleRecord.tex` in the upstream `twin-bertrand` repository (commit `ddc4cca`), not retyped from the PDF — so the mathematics is the author's own source, not a transcription. Two mechanical changes were made for GitHub's MathJax: `\label{...}` markers and nested `equation` environments were stripped. **[PG_II_AngleRecord_TBConjecture.pdf](PG_II_AngleRecord_TBConjecture.pdf) remains authoritative for typesetting**, figures and page layout.
 
+> **Cross-reference (2026-09-20).** The Twin-Prime Bertrand Postulate conjectured here was reached **independently, the same month, from an unrelated geometry** — the Factor Skyline's slope ceiling at $`\arctan(2/3)`$. See [*The Twin-Slope Ceiling*](FS_twin_prime_geometry.md), and the section *A second, independent route to the same conjecture* below. Neither paper knew of the other until September.
+
 ---
 
 # Introduction
@@ -183,6 +185,26 @@ A single non-twin angle-record would therefore be an explicit, finitely-checkabl
 > **Empirical status (2026-09-20).** Re-verified with exact integer arithmetic — comparisons by cross-multiplication, no floating point — over every consecutive prime pair below $`10^8`$: **440,312 angle-records with $`p_n\ge3`$, 440,312 twin pairs, and the two lists coincide exactly.** Zero non-twin records; zero twins failing to set a record. Reproduce with [`scripts/check_angle_records.py`](scripts/check_angle_records.py).
 
 > **A clarification to Definition 5.** The definition quantifies over *all* $`m<n`$, which includes the exceptional pair $`(2,3)`$ of gap $`1`$. Since $`\rho(2,3)=\tfrac23>\tfrac35=\rho(3,5)`$, read literally that would make $`(3,5)`$ not a record, whereas the proof of Theorem 6 takes "the first such record is $`(3,5)`$". The intended reading — and the one under which Proposition 6A is stated — restricts the record sequence to pairs with smaller member $`\ge3`$, consistent with the hypothesis $`g\ge2`$ of Lemma 4, which $`(2,3)`$ does not satisfy. **Both readings were tested and neither admits a non-twin record**; the sole difference is whether $`(3,5)`$ itself is listed. One clause in Definition 5 would settle it.
+
+## A second, independent route to the same conjecture
+
+*Added 2026-09-20.*
+
+$`(\mathrm{TPB})`$ was reached twice in this collection, in the same month, from geometries with nothing in common — and neither paper knew of the other until September.
+
+**This paper's route.** Attach a right triangle to each consecutive prime pair, take $`\alpha_n = \arctan(p_n/p_{n+1})`$, and ask which pairs set records for approaching $`45°`$. Theorem 6(iii): every record is a twin, if and only if $`(\mathrm{TPB})`$.
+
+**The other route.** [*The Twin-Slope Ceiling*](FS_twin_prime_geometry.md) works on the **Factor Skyline**, where each integer is a column of width $`\mathrm{lpf}(n)`$. There, consecutive primes are joined by a segment whose slope is capped at $`\arctan(2/3) \approx 33.69°`$, attained **iff** the pair is a twin (its Theorem 4.2 — verified over every consecutive-prime segment to $`10^6`$, zero exceptions). Asking whether that ceiling is attained in every Bertrand interval gives its *Filling Condition*, whose analytic form is
+
+``` math
+\pi_2(2N)-\pi_2(N)\ \ge\ 1 \quad\text{for all large } N,
+```
+
+which is Conjecture 2 above.
+
+**The two are not variants of one argument.** One is a *ceiling approached from below* by a trigonometric function of the ratio $`p_n/p_{n+1}`$; the other is a *ceiling attained exactly*, by a slope built from how composite widths accumulate between primes. Different coordinate systems, different extremal quantities, different proofs — and they meet at the same inequality.
+
+**What that is worth, and what it is not.** It is not further evidence that $`(\mathrm{TPB})`$ is *true*: two derivations of a statement do not confirm it. It is evidence that the statement is **natural** — that asking a sharp extremal question about consecutive primes tends to land here, whichever geometry you ask it in. A conjecture reached twice by unrelated routes is better motivated than one reached once.
 
 # Conditional Proof Under Hardy–Littlewood
 
