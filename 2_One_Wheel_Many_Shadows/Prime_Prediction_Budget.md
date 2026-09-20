@@ -2,7 +2,9 @@
 
 ### How far structure gets you toward the next prime, and the wall it hits
 
-Allen Proxmire · July 2026
+Allen Proxmire · July 2026 · **v2, September 2026**
+
+> **What's new in v2.** §2 gains one row (the balance ratio, a sixth Tier-2 disguise) and §6 adds the cost side of the ledger. The §3 numbers and the argument are unchanged — and the challenge that prompted the revision, that "for free, with no test" ignores what the wheel costs to carry, **was tested and failed**: the wheel's setup cost is linear against a quadratic territory, so it vanishes per integer decided. The phrase stands.
 
 > **What this is.** A synthesis — an honest ledger, not a discovery. It stacks *every* usable regularity for locating a prime, sorts what actually pays from what is the same fact in disguise, and reads off the information-theoretic ceiling that caps the whole game. **Every ingredient is classical** — the prime number theorem, the Hardy–Littlewood wheel, the Cramér model, the parity barrier (Sarnak's Möbius randomness). What this note adds is the *assembly*: one calibrated budget, anchored to the Factor Skyline entropy numbers, that says precisely how far you can get and where you provably stop. Tags: **[deriv]** from known theory · **[emp]** measured here · **[interp]** synthesis. Companions: [*Switchback Law*](Switchback_Law.md), [*Prime-Gap Memory and the Differencing Trap*](Prime_Gap_Memory_Differencing_Trap.md), [*The Prime-Triangle Angle*](PG_Angle_Wobble.md), [*Seven Sisters*](FS_Seven_Sisters_Wheel_Asymptote.md).
 
@@ -30,6 +32,7 @@ Each of these is a genuine, measured regularity; none of them *adds* predictive 
 | switchback sign-law (reversal $63\!\to\!82\%$) | runs die faster than a coin | [Switchback Law](Switchback_Law.md) |
 | mod-6 / LOS bias | consecutive gaps avoid a shared residue | Lemke Oliver–Soundararajan |
 | Seven Sisters ($2p+k$, $\sim80\%$) | the wheel at the doubled scale | [Seven Sisters](FS_Seven_Sisters_Wheel_Asymptote.md) |
+| balance ratio $K\to1/3$ (v2) | the same $-0.05$, via $g_1^2+g_1g_2+g_2^2$ | [Balance Ratio v2](PG_Balance_Ratio_And_Koide.md) |
 
 **Tier 3 — the wall.**
 
@@ -52,9 +55,37 @@ It is tempting to think the Tier-2 biases should tighten the list. They do not, 
 
 So the honest ceiling is not "predict the prime." It is: **pin it to ~7–8 candidates with $90\%$ confidence, and know that no cleverness — no bias, no history, no lens — does better, because the remainder is the parity barrier.** The wheel alone already touches that ceiling; the entire rest of this collection is the wheel proving, six different ways, that it is the whole story.
 
-## 5. Honest ledger
+## 5. The other side of the ledger: what the wheel costs (v2)
+
+§2 calls the wheel's $73$–$77\%$ kill rate free. The obvious objection: it is free only because you already know the small primes, so a ledger that counts the payoff and not the setup is not honest. **The objection was tested and does not survive.**
+
+Three quantities get collapsed into "the wheel," and they scale differently:
+
+| | what it is | size |
+|---|---|---|
+| **program** | bits to write the rule ($\sum \log_2 p_i = \log_2$ of the primorial) | $1.4427\,p_k$ — **linear** |
+| **territory** | integers the rule decides (everything below $p_{k+1}^2$) | $p_k^2$ — **quadratic** |
+| **period** | the unrolled pattern (the primorial itself) | $2^{1.4427\,p_k}$ — **exponential** |
+
+The thing you carry is the **program**, and it is linear against a quadratic territory. So cost per decided integer is $1.4427/p_k$ bits and falls to zero — the wheel is a compression that *improves* with scale. One more prime buys:
+
+| $p_k$ | cost | new integers decided | integers per bit |
+|---|---|---|---|
+| 29 | 4.95 bits | 408 | 82 |
+| 7,919 | 12.95 bits | 95,160 | 7,346 |
+| 1,299,709 | 20.31 bits | 57,188,208 | 2,815,797 |
+
+**[emp]** So "for free, with no test" stands, and the ledger needed no correction.
+
+**But the exponential scale is real** — it is the *period*, not a cost, and it carries a sharp consequence, **which this collection already had**: from $p \ge 5$ the primorial period exceeds the activation epoch $[p_k^2, p_{k+1}^2)$ in which the coverage configuration is frozen, so the template **is never seen to complete a single period within the window where it is the operative rule** — it is a trans-epochal pattern ([`FS_primorial_epochs` §2.2](../Archive/Factor%20Skyline/modules/FS_primorial_epochs.md)). Together with $K = O(\log N)$ against $H \sim 0.26N$ ([`FSPapers_02.1` §13.2](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md)), that is the whole account of why the residual reads as noise while the rule is trivial to write down: the $\sim0.26$ irreducible bits of §2 and the period/epoch gap are one fact from two ends.
+
+So the cost column changes nothing and was already implicit. **The only thing v2 adds here is the explicit rebuttal** — the "free lunch" objection is natural, and it is wrong for a reason worth recording once.
+
+## 6. Honest ledger
 
 Nothing here is new mathematics. The wheel is Hardy–Littlewood; the ceiling is Cramér and Sarnak; "primes are unpredictable past the density" is the working assumption of the whole field. The contribution of this note is **calibration and assembly** — one page that separates the load-bearing structure from its many disguises, attaches the FS entropy numbers ($1.70$ bits captured, $\sim0.26$ irreducible), and states the reachable target as a number ($\sim8$ candidates for $90\%$) rather than a hope. Its value is knowing *exactly* how far to trust structure, and exactly where to stop trying.
+
+**v2 adds nothing to the mathematics either.** §5's three scales are Eratosthenes, Mertens and the prime number theorem; a number theorist would call the crossover an exercise. What v2 adds is that the "free lunch" objection to §2 was raised properly and **settled against the objector** — the setup cost is linear, the territory quadratic, and the ledger survives intact. Recording a challenge that failed is part of the calibration.
 
 ---
 

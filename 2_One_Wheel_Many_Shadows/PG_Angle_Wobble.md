@@ -2,7 +2,9 @@
 
 Allen Proxmire
 
-July 2026
+July 2026 · **v2, September 2026**
+
+> **What's new in v2.** §5.1 records a fifth shadow: the balance ratio of consecutive-prime triples turns out to be the §4 anti-correlation in different clothing, with its deviation from the null predicted in advance and no residue class carrying an excess. The original argument is unchanged.
 
 ---
 
@@ -100,7 +102,17 @@ The Prime-Triangle angle is therefore **random-looking jitter pinned under a $45
 1. a **geometric imperfection** — the untouchable $45°$ ceiling (the $52/48$ lean), because the smaller prime is always the shorter leg; and
 2. an **arithmetic imperfection** — the ~1% self-correction, i.e. a consecutive-gap anti-correlation reproduced by the **primorial wheel** (the derived form of the wheel's structure, consistent with — not identical to — the Hardy–Littlewood pair-correlation).
 
-The second is the load-bearing one, and it is not new here: it is the *same* wheel that makes $6, 30, 210$ the jumping champions, that decides which Seven-Sisters offsets survive, and that forbids two consecutive-prime sums from a gap of width $\{2,4,6,10\}$. The reason gaps cannot cluster (this anti-correlation) is the reason small gaps cannot repeat (forbidden widths) is the reason primorial gaps dominate (jumping champions). **One mechanism, four shadows** — the angle wobble is the newest of them.
+The second is the load-bearing one, and it is not new here: it is the *same* wheel that makes $6, 30, 210$ the jumping champions, that decides which Seven-Sisters offsets survive, and that forbids two consecutive-prime sums from a gap of width $\{2,4,6,10\}$. The reason gaps cannot cluster (this anti-correlation) is the reason small gaps cannot repeat (forbidden widths) is the reason primorial gaps dominate (jumping champions). **One mechanism, five shadows** — the angle wobble, and now the balance ratio.
+
+### 5.1 The fifth shadow (v2)
+
+The $-0.05$ of §4 turned up again in September 2026, in a statistic built for an entirely different purpose. The **balance ratio** $K = (a^2+b^2+c^2)/(a+b+c)^2$ on consecutive-prime triples — the quantity that carries Koide's relation in particle physics — satisfies the exact identity
+
+$$K - \tfrac13 \;=\; \frac{2}{27}\cdot\frac{g_1^2 + g_1g_2 + g_2^2}{m^2},$$
+
+so it is a gap statistic, and the cross-term $g_1g_2$ is the only place prime-specific information can enter. That makes its deviation from a gap-shuffled null **predictable with no free parameters**: it must equal $\mathrm{cov}(g_n, g_{n+1})$. Measured over $[10^6, 5\times10^6]$: predicted $-0.719\%$, measured $-0.708\%$, inside the null's own spread. Resolved by residue class mod 6 and mod 30 against the §4.1 wheel surrogate, **no class exceeds $1.3\sigma$** — while the same test detects the Lemke Oliver–Soundararajan bias immediately and finds the surrogate reproduces *it* to within $0.1$ percentage point.
+
+So the balance ratio is not a new signal; it is this section's anti-correlation, reached by a different route, and the wheel accounts for all of it. Details in [*The balance ratio* v2](PG_Balance_Ratio_And_Koide.md); the methodological point about why the null had to change is in [*Differencing Trap* §8](Prime_Gap_Memory_Differencing_Trap.md).
 
 ---
 

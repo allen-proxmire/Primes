@@ -2,9 +2,7 @@
 
 ### The wobble looks 44% predictable; 42 of those points are an artifact — but the last 2 are the wheel
 
-Allen Proxmire · July 2026 · **v2, September 2026**
-
-> **What's new in v2.** §8 adds the next layer of the null discipline, found while testing the balance ratio: *even the correct shuffle becomes invalid once you condition on something the shuffle destroys.* The original argument is unchanged.
+Allen Proxmire · July 2026
 
 > **What this is.** A methodological result with a small genuine core. The eye-catching "prime weather" one sees in the *change* of the gaps — volatility clustering, big-jump recoil, a windowed wobble that looks nearly half-predictable — is **almost entirely an artifact of differencing**, reproduced by random data. The instrument that separates signal from artifact is a specific null: *shuffle the gaps, then apply the same transform.* Under that null a genuine residual survives — roughly **+2 points of R² in the windowed wobble**, about six times the memory in the raw gaps — and it is plausibly the wheel's fingerprint on consecutive gaps. Tags: **[emp]** measured · **[null]** shuffle-control · **[fact]** exact · **[interp]** reading. Companion negative control: [`ED_Negative_Control.md`](ED_Negative_Control.md); frequency-space dual: [`Prime_Structure_Factor.md`](Prime_Structure_Factor.md).
 
@@ -81,28 +79,6 @@ If the surviving memory is that small, can it help you *find* the next prime? Bu
 The regime lever — given maximum generosity (the full next-gap distribution conditioned nonparametrically on the recent-regime tercile) — moves the mean rank by **$+0.0007$**. Gap-frequency reweighting never puts a different slot first than "walk up" ($0.0\%$ of cases). The reason is exact: to land on the $k$-th open slot, every earlier open slot must be composite, so $P(\text{next prime}=k\text{-th slot})$ **strictly decreases in $k$** — walking up the wheel is Bayes-optimal, and a frequency-trained ranker merely rediscovers it. The rank distribution is a clean geometric decay ($23.5, 18.8, 14.5, 11.2, 8.1,\dots\%$) — Cramér-on-the-wheel: given the wheel, each escape is memoryless.
 
 So the whole "how to find the next prime" key collapses to one line: **go to the next wheel-open slot.** The wheel is $100\%$ of the exploitable structure, the order within it is forced, and the genuine $+2$ pp of windowed memory — real as it is — sits below the threshold that could reorder even the first test. This is the sharpest form of the collection's thesis: the order is entirely the wheel, and the residual is not merely hard to predict but **provably useless** for locating the next escape.
-
-## 8. The next layer: when a shuffle null is valid at all
-
-§2 says *which* thing to shuffle, and that the transform must be applied **after** the shuffle. There is a further condition, and it bites as soon as a statistic is broken out by residue class.
-
-> **The rule.** A shuffle null is only valid where the shuffle preserves **every hard constraint the statistic conditions on.**
-
-**The case that forced it.** Testing whether the balance ratio of consecutive-prime triples carries structure beyond the wheel, the natural move is to sort the statistic by p mod 6 and p mod 30 and compare each class against gap-shuffled primes. **That comparison is meaningless.** Shuffled gaps do not respect residue consistency: a gap of 4 cannot follow p ≡ 5 (mod 6), because 5 + 4 = 9 is divisible by 3. Conditioned on residue, the null's triples are not merely unlikely — they are **arithmetically impossible**, and a comparison against configurations that cannot exist has no referent.
-
-Note that the pooled version of the same test is *fine*. The gap-shuffle is a perfectly good null for the balance ratio's overall deviation; it fails only once you condition on the very thing the shuffle scrambles. **Validity is a property of the null and the statistic together, not of the null alone.**
-
-**The fix: go generative.** When the shuffle breaks a hard constraint, the null must stop being a permutation of the data and start being a *model that satisfies the constraint by construction*. Here that is the wheel-only surrogate of [*The Prime-Triangle Angle* §4.1](PG_Angle_Wobble.md) — keep the integers coprime to every prime ≤ Q, thin independently to prime density, impose nothing else. It respects residues because it is built out of them, and it is the same object that already settled the $-0.05$ attribution.
-
-**Always check the instrument has power.** A generative null can fail in the opposite direction — reproducing everything because it was over-specified. The cheap guard is to confirm the test still detects something known. In the balance-ratio case the same setup sees the Lemke Oliver–Soundararajan residue-repetition bias immediately (consecutive primes repeat their mod-6 residue 14% less often than even odds) *and* shows the wheel surrogate reproducing it to within 0.1 percentage point — so the instrument has power, and the null result that followed was real. Measurements in [*The balance ratio* v2 §6](PG_Balance_Ratio_And_Koide_v2.md).
-
-**The discipline, in three lines.**
-
-1. Shuffle the thing whose ordering you doubt, then apply the transform (§2).
-2. If the statistic conditions on a hard arithmetic constraint, a shuffle cannot be the null — **the null must be able to produce the data** (§8).
-3. Before believing a null result, show the test can find something you already know is there.
-
-A null that generates impossible configurations will credit arithmetic necessity to the primes. That is the same failure mode as §4, one level up: there, differencing manufactured structure; here, shuffling manufactures *impossibility*, and the excess reads as signal.
 
 ---
 

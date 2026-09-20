@@ -7,14 +7,14 @@
 > **2026-09-20: N1–N7 are all filed.** Five documents written, all new files — the originals are untouched:
 > | document | holds |
 > |---|---|
-> | [PG_Balance_Ratio_And_Koide_v2.md](PG_Balance_Ratio_And_Koide_v2.md) | N2, N3, N4, N5, N6/N7 (§8) |
-> | [Prime_Gap_Memory_Differencing_Trap_v2.md](Prime_Gap_Memory_Differencing_Trap_v2.md) | N1 (new §8) |
-> | [PG_Angle_Wobble_v2.md](PG_Angle_Wobble_v2.md) | N3 as the fifth shadow (new §5.1) |
-> | [Prime_Prediction_Budget_v2.md](Prime_Prediction_Budget_v2.md) | N7 (new §5), balance ratio added to the Tier-2 table |
+> | [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md) | N2, N3, N4, N5, N6/N7 (§8) |
+> | [Prime_Gap_Memory_Differencing_Trap.md](Prime_Gap_Memory_Differencing_Trap.md) | N1 (new §8) |
+> | [PG_Angle_Wobble.md](PG_Angle_Wobble.md) | N3 as the fifth shadow (new §5.1) |
+> | [Prime_Prediction_Budget.md](Prime_Prediction_Budget.md) | N7 (new §5), balance ratio added to the Tier-2 table |
 
 ---
 
-## N1 — When a shuffle null is valid · **FILED** (new §8) · → [Prime_Gap_Memory_Differencing_Trap_v2.md](Prime_Gap_Memory_Differencing_Trap_v2.md)
+## N1 — When a shuffle null is valid · **FILED** (new §8) · → [Prime_Gap_Memory_Differencing_Trap.md](Prime_Gap_Memory_Differencing_Trap.md)
 
 > **A shuffle null is only valid where the shuffle preserves every hard constraint the statistic conditions on.**
 
@@ -28,7 +28,7 @@ The Differencing Trap note already establishes *which* thing to shuffle (gaps vs
 
 ---
 
-## N2 — The balance ratio is exactly the hexagonal norm of the gap pair · **FILED** (§2) · → [PG_Balance_Ratio_And_Koide_v2.md](PG_Balance_Ratio_And_Koide_v2.md)
+## N2 — The balance ratio is exactly the hexagonal norm of the gap pair · **FILED** (§2) · → [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md)
 
 For any three numbers a < b < c with gaps g1 = b−a, g2 = c−b and mean m = (a+b+c)/3:
 
@@ -42,7 +42,7 @@ This replaces the note's "K is a spread measure" with something stronger and bet
 
 ---
 
-## N3 — The balance ratio is a fifth shadow, fully accounted for · **FILED** (§5–§6) · → [PG_Balance_Ratio_And_Koide_v2.md](PG_Balance_Ratio_And_Koide_v2.md)
+## N3 — The balance ratio is a fifth shadow, fully accounted for · **FILED** (§5–§6) · → [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md)
 
 The note ends by asking whether the leftover, after detrending, carries the wheel's fingerprints. **It does, and the amount is predictable with no free parameters.**
 
@@ -56,7 +56,7 @@ Residue-resolved (2 classes mod 6, 8 mod 30, 4 LOS residue pairs), against a whe
 
 ---
 
-## N4 — K is a level statistic, so the −1/2 pedestal does not apply · **FILED** (§5.1) · → [PG_Balance_Ratio_And_Koide_v2.md](PG_Balance_Ratio_And_Koide_v2.md), cross-ref [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md)
+## N4 — K is a level statistic, so the −1/2 pedestal does not apply · **FILED** (§5.1) · → [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md), cross-ref [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md)
 
 Worth saying out loud because the collection has been burned here before. The balance ratio is built from the gaps themselves, **not from differences of them.** So the exact corr = −1/2 differencing artifact — the one that accounted for 42 of the 44 apparent points in the windowed wobble — **has no analogue here at all.**
 
@@ -64,7 +64,7 @@ K needs the gap-shuffle null (pooled) or the wheel surrogate (per class), and no
 
 ---
 
-## N5 — The two prime angles share one driver · **FILED** (§7 of the v2) · → [PG_Balance_Ratio_And_Koide_v2.md](PG_Balance_Ratio_And_Koide_v2.md)
+## N5 — The two prime angles share one driver · **FILED** (§7 of the v2) · → [PG_Balance_Ratio_And_Koide.md](PG_Balance_Ratio_And_Koide.md)
 
 > **Corrected 2026-09-20 before filing.** The range first recorded here, "27 to 47," was **wrong** — it mixed normalizations, using one gap in one limit and the mean of two in the other. Redone consistently in terms of the mean gap ḡ = (g1+g2)/2, the coefficient runs **46.78 to 54.02**, and 70,433 real triples near 10⁶ measure min 46.78 / median 48.01 / max 53.62 — bracketed by the algebra. The true range is far *tighter* than the erroneous one, so θ ≈ 48·ḡ/p to about ±7%. The algebra: with s = g1+g2 and d = g1−g2, the Loeschian form is (3s²+d²)/4, giving 46.78 at d = 0 and 54.02 as d/s → 1.
 
@@ -87,7 +87,7 @@ Same driver, opposite directions, because α measures one gap while θ measures 
 >
 > **The cost half is subsumed too.** [`FSPapers_02.1` §13.2–13.3](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md) and `FSPapers_04` Thm 4.4 give **K = O(log N)** against H ~ 0.26N — stronger than the 1.4427·p_k program bound below, since O(log N) beats linear — under the heading "the randomness paradox resolved."
 >
-> **What is left:** the measured 1/ln 2 slope, the integers-per-bit table, and the link to the Budget's "for free" phrasing. A paragraph. **The draft note was deleted 2026-09-20**; the surviving paragraph lives in [Budget v2 §5](Prime_Prediction_Budget_v2.md).
+> **What is left:** the measured 1/ln 2 slope, the integers-per-bit table, and the link to the Budget's "for free" phrasing. A paragraph. **The draft note was deleted 2026-09-20**; the surviving paragraph lives in [Budget §5](Prime_Prediction_Budget.md).
 >
 > **Process lesson worth keeping:** run the prior-art check against your own collection *before* writing the note, not after. The check cost one search; the note cost a draft.
 
@@ -111,7 +111,7 @@ Crossover is at k = 4 — primorial 210 against territory 121 — and the gap ne
 
 **So the wheel never completes a single period inside the region where it is the operative rule.** It is always in its first period, always partial, never seen to repeat. A fully determined, cheaply described object that is *structurally incapable of looking periodic in its own domain of validity*. **That is a mechanism for apparent randomness, stated exactly** — and it is the defensible core of the note's generation-time section.
 
-**Placement:** none. The draft note was deleted; only the short §5 rebuttal in [Budget v2](Prime_Prediction_Budget_v2.md) survives, and it cites the Factor Skyline papers rather than restating them.
+**Placement:** none. The draft note was deleted; only the short §5 rebuttal in [Budget v2](Prime_Prediction_Budget.md) survives, and it cites the Factor Skyline papers rather than restating them.
 
 ---
 
@@ -139,7 +139,7 @@ Recorded so the wrong version does not get re-derived later.
 
 Carried here so they are not lost when the worklog is archived.
 
-- **R6 — is the hexagonal norm meaningful?** g1² + g1·g2 + g2² is the Eisenstein norm form; the wheel's first filter is mod 6, also hexagonal. Probably a pun. Cheap to test: does the form's value distribution over real gaps differ from the null in a way that references 6? Low priority. Flagged as open in [balance ratio v2 §9](PG_Balance_Ratio_And_Koide_v2.md).
+- **R6 — is the hexagonal norm meaningful?** g1² + g1·g2 + g2² is the Eisenstein norm form; the wheel's first filter is mod 6, also hexagonal. Probably a pun. Cheap to test: does the form's value distribution over real gaps differ from the null in a way that references 6? Low priority. Flagged as open in [balance ratio §9](PG_Balance_Ratio_And_Koide.md).
 - **~~Does Factor Skyline already say N6?~~ CLOSED 2026-09-20 — yes, it does.** Draft deleted; [`FS_primorial_epochs.md`](../1_Factor_Skyline/FS_primorial_epochs.md) promoted into the curated collection, and [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md) added so the untracked upstream modules are findable next time.
 - **The v2 files are drafts, not replacements.** Five new documents sit alongside five originals. Deciding whether to supersede the originals, and updating [PRIMES_MAP.md](../PRIMES_MAP.md) and [RESULTS.md](../RESULTS.md) accordingly, is not done.
 - **"What picks Koide's midpoint?"** — parked. Physics, unresolved there, not ours.
