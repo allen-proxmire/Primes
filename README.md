@@ -1,6 +1,6 @@
 # Primes
 
-Allen Proxmire's prime-number research — several strands that turn out to be **one story**: the primes seen through *doubling* ($p \mapsto 2p$) and *the wheel* (the primorials $2,3,5,7,\dots$), on a coordinate system that gives the number line back a dimension it was hiding. [![DOI](https://zenodo.org/badge/1302667725.svg)](https://doi.org/10.5281/zenodo.21626683)
+Prime-number research. Several strands that turn out to be **one story**: the primes seen through *doubling* ($p \mapsto 2p$) and *the wheel* (the primorials $2,3,5,7,\dots$), on a coordinate system that gives the number line back a dimension it was hiding. [![DOI](https://zenodo.org/badge/1302667725.svg)](https://doi.org/10.5281/zenodo.21626683)
 
 ## Start here — no notation required
 
@@ -10,9 +10,9 @@ Allen Proxmire's prime-number research — several strands that turn out to be *
 | [**What We Found**](WHAT_WE_FOUND.md) | the results, with honest labels: proven / verified / measured / retracted |
 | [**How We Know**](HOW_WE_KNOW.md) | why any of it should be believed — and the two times it shouldn't have been |
 
-Each of the five series folders also has a short README saying what's in it and where to start. [**Archive Survey**](ARCHIVE_SURVEY.md) records what was recovered from the discontinued repos in September 2026, and what was deliberately left there.
+Each of the five series folders also has a short README saying what's in it and where to start.
 
-## What's actually here
+## Headlines
 
 - **[conj] A Bertrand postulate for twins.** Every dyadic interval $(x,2x]$ past $x=11$ contains a twin prime: $\pi_2(2x)-\pi_2(x)\ge1$. Verified to $10^{10}$ (27.4M twins). Equivalent to a purely geometric statement — every record-setting prime-triangle angle is a twin — **independently re-verified 2026-09 over every consecutive prime pair below $10^8$: 440,312 records, 440,312 twins, the two lists identical.** → [PG II](3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md)
 - **[thm] Forbidden gap-widths $\{2,4,6,10\}$.** These are exactly the prime-gap widths that can *never* contain two consecutive-prime sums. → [Consecutive-Prime Sums](2_One_Wheel_Many_Shadows/FS_Consecutive_Prime_Sums_In_Gaps.md)
