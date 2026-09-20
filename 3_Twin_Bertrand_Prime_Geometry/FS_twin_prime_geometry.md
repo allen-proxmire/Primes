@@ -4,6 +4,43 @@ Allen Proxmire
 
 April 2026
 
+> ## Assessment, 2026-09-20 — read before citing
+>
+> Recovered from the discontinued Factor Skyline repo during the [Archive Survey](../ARCHIVE_SURVEY.md) and read for the first time since writing. **The geometry is sound and worth keeping. The central framing is not.** Four findings, in order of importance.
+>
+> ### 1. The Filling Condition is the Twin-Prime Bertrand Postulate
+>
+> Form 3 of Theorem 6.4 reads $\pi_2(2N) - \pi_2(N) \ge 1$ for all sufficiently large $N$. [PG II](PG_II_AngleRecord.md), Conjecture 2, reads $\pi_2(2x) - \pi_2(x) \ge 1$ for every real $x \ge 11$. **These are the same statement.** This paper never mentions PG II, TPB, or the Twin-Prime Bertrand Postulate — zero occurrences — and both papers are dated April 2026.
+>
+> So the Filling Condition is not a new conjecture. It is **the collection's own conjecture, reached independently from the Factor Skyline side.** That is genuinely interesting — two unrelated geometries converging on one statement — but it is a different and smaller claim than "a new named obstacle."
+>
+> ### 2. "The only obstacle separating the FS guarantees from a proof of the twin prime conjecture" is vacuous
+>
+> TPB implies the twin prime conjecture immediately: infinitely many dyadic intervals, each containing a twin, gives infinitely many twins. **The FS structure does no work in that implication.** Delete Theorems 4.2 and 5.2 and it still holds. The sentence is true and empty.
+>
+> ### 3. Theorem 6.5 does not establish what it claims
+>
+> The argument is that the parity barrier blocks *counting* bounds while the Filling Condition needs only an *existential* one. Existential is indeed logically weaker — but that does not address parity, which **blocks sieve methods from proving even the existential twin-prime statement.** That is the barrier's standard form.
+>
+> The two cited precedents do not support the claim:
+>
+> - **Friedlander–Iwaniec** proved an *asymptotic count* for $a^2+b^4$, not an existential result; the bypass came from bilinear structure specific to that form.
+> - **Zhang–Maynard** is the wrong way round. Bounded gaps stop at 246 rather than 2 *precisely because* of parity. It is the canonical example of the barrier biting, cited here as precedent for getting past it.
+>
+> ### 4. Theorem 6.2 cannot bear on the parity barrier, and Table 5 contains a probability above 1
+>
+> The computation is explicitly under the Cramér independence model — which the paper states honestly. But **a model that treats primes as independent is constitutionally unable to see the parity barrier**; it will always predict twins exist, because that is its assumption. Remark 6.2 then runs Borel–Cantelli and concedes in the same breath that the independence fails.
+>
+> Separately, Table 5 lists $\delta(997) = 1.040$. $\delta$ is defined as a probability; it is computed as a ratio of two heuristic estimates with nothing constraining it to $[0,1]$.
+>
+> ### What survives, and it is worth having
+>
+> **Theorem 4.2 is true.** Verified over all consecutive-prime segments to $10^6$: maximum ratio exactly $2/3$, **zero exceptions** for $p \ge 5$, 8,168 twin segments achieving it (the paper says 8,169 — an off-by-one in the count, not the claim).
+>
+> **Its proof, however, is broken in the general case** — see the note at Theorem 4.2. The result is fine; the argument needs repair, and the repair is given there.
+>
+> **The honest version of this paper is a better one:** *a geometric route from the Factor Skyline to TPB, independent of the prime-triangle route in PG II.* Two unrelated derivations of the same conjecture is a real contribution. It simply is not a new obstacle, and it says nothing about parity.
+
 ---
 
 ## Abstract
@@ -111,7 +148,7 @@ $$\pi(N) \sim N \cdot D(\sqrt{N}) \sim \frac{N}{\ln N}.$$
 
 *Proof:* By CRT, the events $q \mid n$ for distinct primes $q$ are independent modulo $p_k\#$. QED.
 
-![Figure 0: The Factor Skyline for $n = 1$ to $100$. Primes appear as narrow escape spires (dark, width 1) rising to height $n$. Composites occupy wider columns colored by their least prime factor. The red polyline connects consecutive prime spire tops.](FS_skyline_paper.png)
+![Figure 0: The Factor Skyline for $n = 1$ to $100$. Primes appear as narrow escape spires (dark, width 1) rising to height $n$. Composites occupy wider columns colored by their least prime factor. The red polyline connects consecutive prime spire tops.](figures/FS_skyline_paper.png)
 
 With these definitions in place, we turn to the specialization that is the focus of this paper.
 
@@ -224,6 +261,24 @@ The cases $g = 1$ (the pair $(2, 3)$, slope $45°$) and $g = 3$ (the pair $(2, 5
 
 Therefore the twin slope $\arctan(2/3)$ is the unique maximum for $p_i \geq 5$. QED.
 
+> **⚠️ The general case of this proof is broken (2026-09-20). The theorem is true; the argument is not.**
+>
+> The chain ends with *"For $g \geq 4$: $2g/(3(g-1)) \leq 8/9 < 2/3$."* But $8/9 = 0.889$ and $2/3 = 0.667$, so **$8/9 < 2/3$ is false** and the chain never reaches the claim. Two slips feed it:
+>
+> 1. For odd $p_i$ the composites $p_i+1, p_i+3, \dots$ are the *even* ones, so their count is $\lceil (g-1)/2 \rceil$, not $\lfloor (g-1)/2 \rfloor$.
+> 2. Odd composites contribute $\mathrm{lpf} \geq 3$, not $1$.
+>
+> **Repaired bound.** $\Delta x_{\text{FS}} \geq 1 + 2\lceil\tfrac{g-1}{2}\rceil + 3\lfloor\tfrac{g-1}{2}\rfloor$, giving
+>
+> | $g$ | 4 | 6 | 8 | 10 | 20 | 100 |
+> |---|---|---|---|---|---|---|
+> | $\Delta x_{\min}$ | 8 | 13 | 18 | 23 | 48 | 248 |
+> | $g/\Delta x_{\min}$ | 0.500 | 0.462 | 0.444 | 0.435 | 0.417 | 0.403 |
+>
+> all comfortably below $2/3$, decreasing in $g$, with limit $2/5$. The $g=4$ case computed separately above is correct and agrees ($1/2$).
+>
+> **Verified computationally:** over every consecutive-prime segment to $10^6$ with $p \geq 5$, the maximum ratio is exactly $2/3$ and **no segment exceeds it.** The twin-segment count is 8,168, not the 8,169 stated below.
+
 **Computational verification.** Among all 78,497 consecutive-prime segments up to $10^6$:
 
 - Maximum slope for $p \geq 5$: $33.6901°$ (twin slope), achieved 8,169 times.
@@ -242,9 +297,9 @@ Therefore the twin slope $\arctan(2/3)$ is the unique maximum for $p_i \geq 5$. 
 
 Twin segments constitute the entire upper tail of the slope distribution.
 
-![Figure 1: Twin-slope geometry on the Factor Skyline. Top: prime spire tops connected by segments, with twin-pair segments (red) achieving the maximum slope. Bottom: slope angle of each segment, showing the absolute ceiling at $\arctan(2/3)$.](FS_twin_slope_polyline.png)
+![Figure 1: Twin-slope geometry on the Factor Skyline. Top: prime spire tops connected by segments, with twin-pair segments (red) achieving the maximum slope. Bottom: slope angle of each segment, showing the absolute ceiling at $\arctan(2/3)$.](figures/FS_twin_slope_polyline.png)
 
-![Figure 2: Slope distribution of all consecutive-prime segments on the Factor Skyline up to $10^6$, showing the twin-slope ceiling at $\arctan(2/3) \approx 33.69°$.](fig1_slope_distribution.png)
+> *[Figure not recovered: fig1_slope_distribution.png — described as: fig 2: Slope distribution of all consecutive-prime segments on the Factor Skyline up to $10^6$, showing the. Not present in the archived repo; the underlying numbers are in the tables above.]*
 
 
 ## 5. Twin Primes in Bertrand Intervals
@@ -281,7 +336,7 @@ which also diverges.
 
 **Computational result.** For every prime $3 \leq p \leq 200{,}000$, the interval $[p, 2p]$ contains at least one twin prime pair. The only prime $p$ for which $[p, 2p]$ is twin-free is $p = 2$ (the interval $[2, 4]$ contains primes 2 and 3 but no twin pair). This was verified over all 17,984 primes in the range.
 
-![Figure 2: Twin coverage of Bertrand intervals $[p, 2p]$ for $p \leq 200{,}000$. Green indicates twin-covered; red indicates twin-free. Only $p = 2$ is twin-free.](fig2_twin_coverage.png)
+> *[Figure not recovered: fig2_twin_coverage.png — twin coverage of Bertrand intervals $[p, 2p]$ for $p \leq 200{,}000$, green twin-covered and red twin-free, with only $p=2$ twin-free. Not present in the archived repo; the underlying result is stated in the text above.]*
 
 **Twin desert growth.** The maximum gap between consecutive twin prime pairs grows slowly with scale:
 
@@ -295,7 +350,7 @@ which also diverges.
 
 The maximum twin desert grows as $O((\ln p)^3)$ --- far slower than the interval length $p$. The ratio of actual to predicted maximum shows no anomalous acceleration.
 
-![Figure 3: Growth of maximum twin deserts compared to the $(\ln p)^3 / C_2$ prediction.](fig3_twin_deserts.png)
+> *[Figure not recovered: fig3_twin_deserts.png — described as: fig 3: Growth of maximum twin deserts compared to the $(\ln p)^3 / C_2$ prediction.. Not present in the archived repo; the underlying numbers are in the tables above.]*
 
 
 ## 6. The Filling Condition
@@ -325,7 +380,7 @@ super-exponentially.
 | 99,991 | 1,101.7 | 0.904 | 996.0 | $-996.0$ | 936 |
 | 499,979 | 4,328.0 | 0.886 | 3,833.6 | $-3{,}833.6$ | 3,603 |
 
-![Figure 4: Obstruction probability $R(p)$ on a log scale, showing super-exponential decay.](fig4_obstruction.png)
+> *[Figure not recovered: fig4_obstruction.png — described as: fig 4: Obstruction probability $R(p)$ on a log scale, showing super-exponential decay.. Not present in the archived repo; the underlying numbers are in the tables above.]*
 
 **Remark 6.2.** The sum $\sum_{p\ \text{prime}} R(p) = \sum_p \exp(-E(p))$ converges, since $E(p) \to \infty$. If twin-free events for distinct intervals were independent, the Borel-Cantelli lemma would imply that only finitely many twin-free intervals $[p, 2p]$ exist. The events are not strictly independent, but their correlation decays rapidly with the separation between intervals.
 
@@ -393,7 +448,7 @@ $$\frac{\text{Var}(\pi(n, n+W))}{\text{E}[\pi(n, n+W)]} \approx 0.46$$
 
 across all tested window sizes $W$ (from $W = 20$ to $W = 200$). Escape events are *more regular* than a Poisson process.
 
-![Figure 5: Sub-Poisson variance ratio for prime counting across window sizes.](fig5_sub_poisson.png)
+> *[Figure not recovered: fig5_sub_poisson.png — described as: fig 5: Sub-Poisson variance ratio for prime counting across window sizes.. Not present in the archived repo; the underlying numbers are in the tables above.]*
 
 This regularity is structurally significant for the Filling Condition: a conspiracy to avoid all $O(p)$ twin-open slots would require the escape process to exhibit *anti-regular* clustering correlated with the template structure. Sub-Poisson regularity works against such clustering --- primes spread more uniformly among open positions than a random process would.
 
