@@ -220,7 +220,15 @@ PG II Theorem 6 makes three statements equivalent: the Twin-Prime Bertrand Postu
 | twins that fail to set a record | **0** |
 | violations of T_{k+1} < 2·T_k | **0** (worst ratio 1.7059, at T_k = 17) |
 
-**The result is stronger than the theorem states.** PG II claims records ⊆ twins. Measurement gives records **=** twins — the two sequences coincide exactly, element for element. Worth stating in the paper, since it is free: twin T sets a record iff it beats the previous record, the previous record is the previous twin, and T/(T+2) is increasing.
+**The result is stronger than the theorem states, and the gap is now closed.** PG II claimed records ⊆ twins. Measurement gives records **=** twins, element for element.
+
+**Written up as Proposition 6A + Corollary 6B (2026-09-20), and the converse turns out to be *unconditional*.** Let (T,T+2) be a twin, T ≥ 3, and (P,P+g) any earlier pair, so P < T. If g = 2 then P/(P+2) < T/(T+2) since x/(x+2) increases. If g ≥ 4 then Lemma 4 says the earlier pair wins only when P > (g/2)T ≥ 2T — impossible, since P < T. Either way the twin beats it. No conjecture used.
+
+**So the right framing is an asymmetry, and it is nicer than the original:** the angle-record sequence *always* contains every twin, and TPB is exactly the assertion that it contains nothing else —
+
+> TPB fails ⟺ some angle-record is not a twin pair.
+
+A single non-twin record would be a finitely-checkable witness against TPB, which is precisely what the verification searches for. Prop 6A also brute-forced independently: for the first 4,000 twins, all 67,686,681 twin-vs-earlier-pair comparisons go the right way.
 
 **One definitional wrinkle, benign.** Def. 5 says "for all m < n" without excluding the pair (2,3), whose ratio 2/3 exceeds 3/5. Under the literal reading (3,5) is therefore *not* a record, and the proof's line "the first such record is (3,5)" presumes the record sequence starts at (3,5). Both readings were tested; neither produces a non-twin record. The only difference is whether (3,5) appears in the list. **Not an error — but one clarifying clause in Def. 5 would remove the ambiguity.**
 

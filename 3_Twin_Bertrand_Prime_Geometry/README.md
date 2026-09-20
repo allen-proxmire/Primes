@@ -14,7 +14,7 @@ The geometry: draw a right triangle from each consecutive prime pair. The angles
 
 **Two claims have now been checked:**
 
-- [`check_angle_records.py`](scripts/check_angle_records.py) — PG II's **angle-record theorem**, which by Theorem 6 is *logically equivalent* to the Twin-Prime Bertrand Postulate and is therefore the load-bearing claim of the series. **Clean.** Exact integer arithmetic over every consecutive pair to $10^8$: 440,312 records, 440,312 twins, zero non-twin records — and the two sequences coincide exactly rather than one merely containing the other.
+- [`check_angle_records.py`](scripts/check_angle_records.py) — PG II's **angle-record theorem**, which by Theorem 6 is *logically equivalent* to the Twin-Prime Bertrand Postulate and is therefore the load-bearing claim of the series. **Clean.** Exact integer arithmetic over every consecutive pair to $10^8$: 440,312 records, 440,312 twins, zero non-twin records — the two sequences coincide exactly. The converse inclusion is now written up as **Proposition 6A**, and it is *unconditional*: every twin is a record whether or not TPB holds. TPB is exactly the statement that there are no *other* records.
 - [`check_psd.py`](scripts/check_psd.py) — PG I's square-difference results. **Found an off-by-one.** The last-digit theorem is published for $p_n \ge 5$ and is false there; $(5,7,11)$ is the sole counterexample and the statement should read $p_n \ge 7$. The identity and integrality claims are confirmed. See [PG I](PG_I_PrimeTriangle.md) at Theorem 5.
 
 **Still unverified here:** the 10-billion twin verification, the twin-gap exponent, and the GBP envelope.

@@ -14,7 +14,9 @@ load-bearing claim of the whole series.
 
 WHAT IS CHECKED
   1. every angle-record with p_n >= 3 is a twin              (the theorem)
-  2. the converse — every twin sets a record                 (stronger)
+  2. the converse — every twin sets a record                 (Prop 6A)
+     (also confirmed by brute force: for the first 4,000 twins, every one
+      of 67,686,681 twin-vs-earlier-pair comparisons goes the right way)
   3. both readings of "for all m < n", since the pair (2,3) is ambiguous:
        reading A: records taken over pairs from (3,5) onward
        reading B: records taken over all pairs, then filtered to p_n >= 3

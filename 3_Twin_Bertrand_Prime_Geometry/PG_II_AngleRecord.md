@@ -138,6 +138,52 @@ If $`T_k\ge 11`$ (and so (ii) applies), any non-twin consecutive-prime pair $`(P
 
 </div>
 
+## The converse inclusion, which is free
+
+*Added 2026-09-20. Lettered so as not to disturb the existing numbering. Theorem 6(iii) gives one inclusion — records are twins — at the full strength of $`(\mathrm{TPB})`$. The reverse inclusion costs nothing and was left unstated.*
+
+<div id="prop:twins-are-records" class="proposition">
+
+**Proposition 6A** (Twins are always records; unconditional). *Every twin pair $`(T,T+2)`$ with $`T\ge 3`$ is an angle-record. No conjecture is assumed.*
+
+</div>
+
+<div class="proof">
+
+*Proof.* Let $`(T,T+2)`$ be a twin pair with $`T\ge3`$ and let $`(P,P+g)`$ be any strictly earlier consecutive-prime pair, so $`3\le P<T`$.
+
+If $`g=2`$, then $`\rho(P,P+2)=\tfrac{P}{P+2}<\tfrac{T}{T+2}=\rho(T,T+2)`$, since $`x\mapsto x/(x+2)`$ is strictly increasing on $`x>0`$.
+
+If $`g\ge4`$, then by Lemma 4 we have $`\rho(P,P+g)>\rho(T,T+2)`$ if and only if $`P>\tfrac{g}{2}T\ge 2T`$. But $`P<T<2T`$, so the inequality fails and $`\rho(P,P+g)<\rho(T,T+2)`$.
+
+In either case $`(T,T+2)`$ strictly exceeds every earlier pair, hence is an angle-record. ◻
+
+</div>
+
+<div id="cor:equality" class="corollary">
+
+**Corollary 6B** (The record sequence *is* the twin sequence, exactly under TPB). *Write $`\mathcal R`$ for the set of angle-records with $`p_n\ge3`$ and $`\mathcal T`$ for the set of twin pairs with $`T\ge3`$. Then:*
+
+1.  *$`\mathcal T\subseteq\mathcal R`$ unconditionally (Proposition 6A);*
+
+2.  *$`\mathcal R\subseteq\mathcal T`$ if and only if $`(\mathrm{TPB})`$ holds (Theorem 6(iii));*
+
+3.  *hence $`\mathcal R=\mathcal T`$ if and only if $`(\mathrm{TPB})`$ holds.*
+
+</div>
+
+The asymmetry is the point. **The angle-record sequence always contains every twin; $`(\mathrm{TPB})`$ is exactly the assertion that it contains nothing else.** Equivalently, and in a form directly usable as a search:
+
+``` math
+(\mathrm{TPB})\ \text{fails}\iff\text{some angle-record is not a twin pair.}
+```
+
+A single non-twin angle-record would therefore be an explicit, finitely-checkable witness against $`(\mathrm{TPB})`$ — which is what the verification of §6 is in fact searching for.
+
+> **Empirical status (2026-09-20).** Re-verified with exact integer arithmetic — comparisons by cross-multiplication, no floating point — over every consecutive prime pair below $`10^8`$: **440,312 angle-records with $`p_n\ge3`$, 440,312 twin pairs, and the two lists coincide exactly.** Zero non-twin records; zero twins failing to set a record. Reproduce with [`scripts/check_angle_records.py`](scripts/check_angle_records.py).
+
+> **A clarification to Definition 5.** The definition quantifies over *all* $`m<n`$, which includes the exceptional pair $`(2,3)`$ of gap $`1`$. Since $`\rho(2,3)=\tfrac23>\tfrac35=\rho(3,5)`$, read literally that would make $`(3,5)`$ not a record, whereas the proof of Theorem 6 takes "the first such record is $`(3,5)`$". The intended reading — and the one under which Proposition 6A is stated — restricts the record sequence to pairs with smaller member $`\ge3`$, consistent with the hypothesis $`g\ge2`$ of Lemma 4, which $`(2,3)`$ does not satisfy. **Both readings were tested and neither admits a non-twin record**; the sole difference is whether $`(3,5)`$ itself is listed. One clause in Definition 5 would settle it.
+
 # Conditional Proof Under Hardy–Littlewood
 
 The Hardy–Littlewood prime-tuple conjecture specialized to twins asserts
