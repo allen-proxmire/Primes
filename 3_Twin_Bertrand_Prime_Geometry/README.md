@@ -6,7 +6,13 @@ The conjecture: past 11, every doubling window contains a twin prime pair. Verif
 
 The geometry: draw a right triangle from each consecutive prime pair. The angles climb toward 45° but never reach it, and **every record-setting angle is a twin pair** — which is the conjecture above, restated.
 
-**Start with:** [PG II](PG_II_AngleRecord.md), which carries both. [PG I](PG_I_PrimeTriangle.md) builds the triangle and its identities; [PG III](PG_III_GBP.md) extends the conjecture to cousins and sexy primes.
+**Start with [the Field Guide](PG_FieldGuide.md)** — a plain-language narrative tour of PG I–III, no notation required. Then [PG II](PG_II_AngleRecord.md), which carries the conjecture and the angle-record theorem; [PG I](PG_I_PrimeTriangle.md) builds the triangle and its identities; [PG III](PG_III_GBP.md) extends to cousins and sexy primes.
+
+**Also here, recovered from the Archive in September 2026** (see the [survey](../ARCHIVE_SURVEY.md)):
+
+- **[The Twin-Slope Ceiling](FS_twin_prime_geometry.md)** — a complete paper, and a *different* geometry from the PG trilogy: it works on the Factor Skyline, where the twin slope arctan(2/3) is an absolute ceiling. It isolates **the Filling Condition** as the one conjectural step between FS structure and the twin prime conjecture. **Unscrutinised — read it before citing it.**
+- **[Literature review](literature_review.md)** — where TPB and GBP sit against Ramanujan primes, Zhang–Maynard, and Heath-Brown. The support for calling any of this new.
+- **[`results/`](results/)** — the verification reports, including the 10¹⁰ run: 27,412,679 twins, zero exceptions.
 
 **On the markdown:** PG I–III were converted from the author's original LaTeX in September 2026 — not retyped from the PDFs, so the mathematics is the original source. The PDFs remain authoritative for typesetting and figures.
 
@@ -17,6 +23,6 @@ The geometry: draw a right triangle from each consecutive prime pair. The angles
 - [`check_angle_records.py`](scripts/check_angle_records.py) — PG II's **angle-record theorem**, which by Theorem 6 is *logically equivalent* to the Twin-Prime Bertrand Postulate and is therefore the load-bearing claim of the series. **Clean.** Exact integer arithmetic over every consecutive pair to $10^8$: 440,312 records, 440,312 twins, zero non-twin records — the two sequences coincide exactly. The converse inclusion is now written up as **Proposition 6A**, and it is *unconditional*: every twin is a record whether or not TPB holds. TPB is exactly the statement that there are no *other* records.
 - [`check_psd.py`](scripts/check_psd.py) — PG I's square-difference results. **Found an off-by-one.** The last-digit theorem is published for $p_n \ge 5$ and is false there; $(5,7,11)$ is the sole counterexample and the statement should read $p_n \ge 7$. The identity and integrality claims are confirmed. See [PG I](PG_I_PrimeTriangle.md) at Theorem 5.
 
-**Still unverified here:** the 10-billion twin verification, the twin-gap exponent, and the GBP envelope.
+**On "unverified."** The 10¹⁰ verification *evidence* now sits in [`results/`](results/) — it existed all along and had never been promoted. What remains un-*re-run* in this repository is the twin-gap exponent fit and the GBP envelope, both curve fits rather than exact checks.
 
 *Plain-language versions: [The Movie](../4_Philosophy_Ontology/The_Movie.md) · [What We Found](../WHAT_WE_FOUND.md)*

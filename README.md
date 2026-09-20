@@ -10,7 +10,7 @@ Allen Proxmire's prime-number research — several strands that turn out to be *
 | [**What We Found**](WHAT_WE_FOUND.md) | the results, with honest labels: proven / verified / measured / retracted |
 | [**How We Know**](HOW_WE_KNOW.md) | why any of it should be believed — and the two times it shouldn't have been |
 
-Each of the five series folders also has a short README saying what's in it and where to start.
+Each of the five series folders also has a short README saying what's in it and where to start. [**Archive Survey**](ARCHIVE_SURVEY.md) records what was recovered from the discontinued repos in September 2026, and what was deliberately left there.
 
 ## The idea in one paragraph
 
