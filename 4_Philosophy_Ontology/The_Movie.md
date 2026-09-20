@@ -2,6 +2,8 @@
 
 ### What is actually going on, in plain language
 
+*Companions: [What We Found](../WHAT_WE_FOUND.md) — the results. [How We Know](../HOW_WE_KNOW.md) — why to believe them.*
+
 *Written 2026-09-20, in conversation, in answer to Allen's question: "what is the plain language picture of what is really going on, from my papers and the work? I want to have the right movie in my mind of it all." Kept in the second person, as it was written — it is an answer to someone, not a paper. Every claim in it is carried by a technical document elsewhere in this collection; the pointers are at the end.*
 
 ---

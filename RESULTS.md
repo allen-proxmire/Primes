@@ -1,6 +1,6 @@
 # Primes — Results
 
-A running list of what this work actually shows. Scan it, jump to what interests you. Tags: **[thm]** proven · **[conj]** conjecture (verified far, open) · **[emp]** empirical law · **[deriv]** derivation from known theory · **[null]** result established against a stated null model · **[mirage]** looked like a result, wasn't.
+A running list of what this work actually shows. Scan it, jump to what interests you. **For the same content without notation, see [What We Found](WHAT_WE_FOUND.md); for why it should be believed, [How We Know](HOW_WE_KNOW.md).** Tags: **[thm]** proven · **[conj]** conjecture (verified far, open) · **[emp]** empirical law · **[deriv]** derivation from known theory · **[null]** result established against a stated null model · **[mirage]** looked like a result, wasn't.
 
 *(The organizing thesis: [`One_Wheel_Many_Shadows.md`](2_One_Wheel_Many_Shadows/One_Wheel_Many_Shadows.md). Folder/paper inventory: [`PRIMES_MAP.md`](PRIMES_MAP.md).)*
 
