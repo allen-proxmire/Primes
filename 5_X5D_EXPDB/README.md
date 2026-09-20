@@ -8,7 +8,12 @@ Nothing in this folder is about prime gaps, the wheel, or the Factor Skyline. It
 
 **A concrete consequence:** a cusp where a 1940 result of Ingham meets Guth–Maynard (2024) pins one exponent to exactly 17/30, and the sensitivity analysis shows the surrounding "attack surface" is only about 0.006 wide — a quantitative statement about how much room is left for improvement.
 
-**Start with:** [X5D_EXPDB_Reinterpretation](X5D_EXPDB_Reinterpretation.md) (markdown) or `X5D_Polyhedral-Reinterpretation.pdf` (typeset; no markdown source exists).
+**Start with the pictures.** [`figures/`](figures/) has two, both drawn September 2026:
+
+- **[The Guth–Maynard cusp](figures/fig2_guth_maynard_cusp.svg)** — where θ = 17/30 actually comes from. Two rational curves crossing at σ = 7/10; the height of that one point *is* the prime-gap exponent. The most communicative image in the series, and every value in it is exact rational arithmetic asserted at generation time.
+- **[The dimension ladder](figures/fig1_dimension_ladder.svg)** — the figure the paper specified in §1 and never had. Bounds flow *down* out of 𝒫 by projection, supremum and envelope; constraints flow *up* into it from objects that live in ℝ², below it.
+
+Then: [X5D_EXPDB_Reinterpretation](X5D_EXPDB_Reinterpretation.md) (markdown) or `X5D_Polyhedral-Reinterpretation.pdf` (typeset; no markdown source exists).
 
 **Reproducibility:** [`repro/`](repro/) has no script, and a note explaining why a token one would misrepresent the situation — these claims need the EXPDB framework and a vendored copy of Tao's `expdb`, both of which live in the untracked upstream repo. It does identify the Guth–Maynard arithmetic as checkable by hand in an afternoon, which is the sensible first step if this series is ever brought up to the standard of series 2.
 
