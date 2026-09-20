@@ -81,15 +81,21 @@ So the honest statement is: the 1% self-correction is the **wheel's fingerprint 
 
 To check the attribution without circularity, build exactly the model the label claims — **small-prime divisibility exact, everything else independent random** — and read off its consecutive-gap correlation. Concretely: keep the integers coprime to all primes $\le Q$ (the exact wheel through $Q$), thin them independently to prime density, and measure $\mathrm{corr}(g_n,g_{n+1})$. The question is *where the correlation is built, and whether the wheel-only model lands on the real value.*
 
-| wheel to $Q$ | model $\mathrm{corr}(g_n,g_{n+1})$ | share of the effect |
-|---|---|---|
-| 7 | $-0.016$ | 39% |
-| 19 | $-0.031$ | 74% |
-| 43 | $-0.038$ | 87% |
-| 317 | $-0.044$ | ~100% |
-| $1732\ (\approx\!\sqrt{3\times10^6})$ | $-0.044$ | ~100% |
+| wheel to $Q$ | pool $/\ \pi(x)$ | model $\mathrm{corr}(g_n,g_{n+1})$ | share of the effect | |
+|---|---|---|---|---|
+| 7 | 3.31 | $-0.016$ | 39% | |
+| 19 | 2.47 | $-0.031$ | 74% | |
+| 43 | 2.05 | $-0.038$ | 87% | |
+| **317** | **1.39** | $\mathbf{-0.044}$ | **~100%** | **last row that carries evidence** |
+| $1732\ (\approx\!\sqrt{3\times10^6})$ | **1.00** | $-0.044$ | ~100% | **circular — see below** |
 
-The model climbs and **plateaus at $-0.044$ by $Q\approx300$** (three random seeds, $\pm0.0005$). The real value, measured over three decades near $10^6$, is $-0.057,\,-0.041,\,-0.047$ (band-to-band scatter $\approx\pm0.006$). So the wheel-only model lands **squarely inside the real range**: to measurement precision, the wheel *fully* accounts for the consecutive-gap anti-correlation, with no detectable residual. **[emp]**
+The model climbs and **plateaus at $-0.044$ by $Q\approx300$** (three random seeds, $\pm0.0005$).
+
+> **Caveat on the bottom row (added v2).** A wheel surrogate is only a *model* of the primes while it admits materially more candidates than there are primes. As $Q\to\sqrt{x}$ it stops modelling and starts **coinciding**: over $[10^6, 3\times10^6)$ every integer coprime to all primes $\le 1732$ *is* prime, so the pool ratio is exactly $1.00$ and the $Q=1732$ row says only that the primes reproduce the primes. **It carries no independent evidence and should not be read as one.**
+>
+> **The conclusion of this section is unaffected**, because the plateau is already reached at $Q=317$, where the pool is still $1.39\times$ the prime count — a genuinely weaker model that nonetheless lands on the measured value. The deep row merely confirms nothing moves afterwards, which is what one would expect either way.
+>
+> The general rule, and the habit it implies — report the pool ratio beside every surrogate result, and sweep $Q$ rather than trusting a single depth — is stated in [*Prime-Gap Memory and the Differencing Trap* §5.1](Prime_Gap_Memory_Differencing_Trap.md), where the same trap was caught in the act. The real value, measured over three decades near $10^6$, is $-0.057,\,-0.041,\,-0.047$ (band-to-band scatter $\approx\pm0.006$). So the wheel-only model lands **squarely inside the real range**: to measurement precision, the wheel *fully* accounts for the consecutive-gap anti-correlation, with no detectable residual. **[emp]**
 
 Two things this settles. (i) The $-0.05$ is genuinely the **wheel** — a model with *no* structure but small-prime divisibility reproduces it — so the attribution holds; the earlier draft's "through prime 19 reaches 74%, the tail supplies the rest" is confirmed and completed (the bulk is the small primes; it finishes by $Q\sim$ a few hundred and stops). (ii) It is **not** a deviation-from-HL story: the primes are neither more nor less gap-correlated than the wheel predicts. What was wrong was only the *word* — this is the wheel's derived consecutive-gap signature, not the direct Hardy–Littlewood pair-correlation — not the mechanism.
 
