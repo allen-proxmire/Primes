@@ -2,13 +2,112 @@
 
 *Lives at `GitHub/Primes/PRIMES_MAP.md`.*
 
+> **Read §0 first.** Everything from §1 onward is the **July 2026 consolidation record** — how the four project repos were merged and what was decided. It describes a folder layout (`Primes/Factor Skyline/`, `Primes/Twin Bertrand/`, …) that **no longer exists**: the collection was reorganised into five numbered reading series, and the original repos now sit untracked in `Archive/`. The history is kept because the decisions in it still bind; the current inventory is §0.
+
+---
+
+## 0. Current inventory (2026-09-20)
+
+**Structure.** Five numbered reading series, tracked; three upstream project repos in `Archive/`, deliberately untracked (see [`.gitignore`](.gitignore)).
+
+```
+GitHub/Primes/
+├── README.md · RESULTS.md · PRIMES_MAP.md
+├── 1_Factor_Skyline/              the coordinate system and its theory
+├── 2_One_Wheel_Many_Shadows/      the main arc (most active)
+│   ├── repro/                     regenerates every measured table
+│   └── superseded/                pre-September versions of 4 papers
+├── 3_Twin_Bertrand_Prime_Geometry/
+├── 4_Philosophy_Ontology/
+├── 5_X5D_EXPDB/
+└── Archive/                       upstream repos — UNTRACKED, and grep misses them
+```
+
+### 1_Factor_Skyline
+
+| paper | formats |
+|---|---|
+| FSPapers_01_architectural_foundation — *The Architectural Foundation* | md, pdf |
+| FSPapers_02_correlation_theory — *The Correlation Theory* | md, pdf |
+| FSPapers_02.1_correlations_and_randomness — *Correlations and Randomness* | md, pdf |
+| FSPapers_03_information_dynamics_universality | md, pdf |
+| FSPapers_04_meta_structure — *The Meta-Structure* | md, pdf |
+| FS_Framework_Explanatory — *An Architectural Language for Dynamical Systems* | md ❌ |
+| FS_primorial_epochs — *Primorial Epochs and the Tiling Structure* | md ❌ · promoted from Archive 2026-09 |
+| DERIVATION_MODULES — 📄 index of the 18 untracked upstream modules | md |
+
+### 2_One_Wheel_Many_Shadows — the main arc
+
+| paper | formats |
+|---|---|
+| One_Wheel_Many_Shadows — 📄 the thesis | md |
+| **The_Wheel_Is_The_Whole_Story** — the claim, audited *(new 2026-09)* | md ❌ |
+| **Null_Model_Discipline** — five failure modes *(new 2026-09)* | md ❌ |
+| Prime_Prediction_Budget | md, pdf |
+| Prime_Gap_Memory_Differencing_Trap | md, pdf |
+| PG_Angle_Wobble — *The Prime-Triangle Angle* | md ❌ |
+| PG_Balance_Ratio_And_Koide | md ❌ |
+| Switchback_Law | md, pdf |
+| Prime_Structure_Factor | md ❌ (pdf lives in `3_`) |
+| Offset_Correlation_Curve | md ❌ |
+| ED_Negative_Control | md ❌ |
+| FS_Consecutive_Prime_Sums_In_Gaps | md, pdf |
+| FS_Seven_Sisters_Wheel_Asymptote | md, pdf |
+| FS_2p_Bracket_Construction | md, pdf |
+| FS_Synthesis_Doubling_and_Wheel | md, pdf |
+| FS_Escape_Ridge | md, pdf |
+| WORKLOG_2026-09, NOTES_Carry_Forward — 📄 working docs | md |
+| `repro/regenerate_tables.py` — regenerates every measured table | py |
+| `superseded/` — pre-September PG_Angle_Wobble, PG_Balance_Ratio, Differencing_Trap, Prediction_Budget | md, 2 pdf |
+
+### 3_Twin_Bertrand_Prime_Geometry
+
+| paper | formats |
+|---|---|
+| PG_I_PrimeTriangle | **pdf only** ⚠️ |
+| PG_II_AngleRecord_TBConjecture | **pdf only** ⚠️ |
+| PG_III_GBP | **pdf only** ⚠️ |
+| Prime_Structure_Factor | pdf (md in `2_`) |
+| FS_TB_Bridge | md ❌ |
+| FS_TB_DeltaX_Analysis | md ❌ |
+
+⚠️ **The PG trilogy has no markdown source in the collection.** It is simultaneously the most publication-ready and the least editable work here — the standing asymmetry, and the reason a standalone-DOI pass (§5) would be awkward today.
+
+### 4_Philosophy_Ontology
+
+| paper | formats |
+|---|---|
+| FS_TB_QM_Amplitude_Memo — *Template and Amplitude* | md ❌ |
+| OPEN_QUESTION_FS_TB_QM_AMP_02_Bilinearity | md ❌ |
+| Counting_Into_Existence | md ❌ |
+| The_Wolves_and_the_Clock | md ❌ |
+
+### 5_X5D_EXPDB
+
+| paper | formats |
+|---|---|
+| X5D_Polyhedral-Reinterpretation | **pdf only** ⚠️ (md is `X5D_EXPDB_Reinterpretation`) |
+| X5D_EXPDB_Reinterpretation | md ❌ |
+| Theta_Gap2_Refinement | **pdf only** ⚠️ |
+
+### Standing gaps
+
+1. **PDFs** — 14 markdown papers have no compiled PDF, including both September papers. The pandoc/xelatex pipeline (§4) still works.
+2. **PG trilogy is pdf-only** — see above.
+3. **Reproducibility** — `2_One_Wheel_Many_Shadows/repro/` now covers the measured tables in the Differencing Trap, Angle Wobble and Balance Ratio papers. **Nothing covers series 1, 3 or 5.**
+4. **Prior art** — the Archive is untracked, so an ordinary repo grep misses 18 derivation modules that the live papers cite. Search it explicitly before drafting; see [`DERIVATION_MODULES.md`](1_Factor_Skyline/DERIVATION_MODULES.md). This has already cost one draft.
+
+---
+
+## 1. The July 2026 consolidation (historical record)
+
 **Status (2026-07-13):** consolidation executed — **all four projects now in `Primes/`.** Twin Bertrand, Prime Geometry precursor, and X5D EXPDB Framework were *moved* in; **Factor Skyline was *copied* in** (full repo incl. `.git`, HEAD `536c72a`, same GitHub remote) because it was the live session cwd and can't be moved from within itself. The Claude Code memory folder was pre-staged to the new project key `C--Users-allen-GitHub-Primes-Factor-Skyline`, so continuity carries over when you open `Primes\Factor Skyline`. `expdb-env` (venv) and `expdb-fresh` (Tao contributor clone) intentionally left outside `Primes/`; `Archives/Erdos Tao` stays in the Archive. **Remaining manual step:** delete the old `C:\Users\allen\GitHub\Factor Skyline` once you've confirmed the copy (see §7).
 
 Legend: ✅ has PDF · ❌ needs PDF · ⚠️ source/issue to resolve · 📄 note/plan (not a standalone paper) · 🔗 duplicate/overlap
 
 ---
 
-## 1. The seven prime-related folders → nested target
+### 1a. The seven prime-related folders → nested target
 
 | folder | what it is | outcome |
 |---|---|---|

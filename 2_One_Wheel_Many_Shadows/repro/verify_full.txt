@@ -1,0 +1,99 @@
+range [1,000,000, 5,000,000)   seeds [11, 22, 33]
+sieving... 270,015 primes, 270,014 gaps
+
+==============================================================================
+  Differencing Trap §3 — real vs transform-matched null
+==============================================================================
+statistic                                           real      null     genuine
+raw-gap memory (regress g_n on last 5)             0.32%     0.00%      +0.32pp
+gap autocorrelation, lag 1                        -0.046    -0.001      -0.045
+jitter clustering  corr(|dg_n|,|dg_n-1|)           0.315     0.318      -0.004  <- artifact
+jitter recoil, big -> opposite sign                84.0%     84.5%       -0.5pp
+WINDOWED WOBBLE (regress dg_n on last 5)          43.67%    41.70%      +1.97pp
+
+  Published: clustering and most recoil are artifact; ~+1.97pp survives.
+
+==============================================================================
+  Differencing Trap §5.1 — is the windowed excess fully the wheel?
+==============================================================================
+  real primes: +1.969 pp
+
+     Q        pool   pool/pi      excess  % of real   status
+    30     631,801      2.34     +1.496pp      76.0%   ok
+   100     481,525      1.78     +1.950pp      99.0%   ok
+   317     386,014      1.43     +1.803pp      91.6%   ok
+   600     342,150      1.27     +1.936pp      98.3%   borderline
+  1000     305,298      1.13     +2.021pp     102.7%   CIRCULAR
+  1732     274,556      1.02     +1.948pp      98.9%   CIRCULAR
+
+  Published: ~99% from Q=100 up; Q=30 gives ~76% (the power check).
+
+==============================================================================
+  Angle Wobble §4.1 — lag-1 gap correlation vs wheel depth
+==============================================================================
+  real primes: corr(g_n, g_n+1) = -0.0457
+
+     Q   pool/pi   model corr  % of real   status
+    30      2.34      -0.0328      71.8%   ok
+   100      1.78      -0.0434      95.0%   ok
+   317      1.43      -0.0438      95.9%   ok
+   600      1.27      -0.0465     101.7%   borderline
+  1000      1.13      -0.0471     103.2%   CIRCULAR
+  1732      1.02      -0.0462     101.0%   CIRCULAR
+
+  Published: plateaus at -0.044 by Q~300. The Q~sqrt(x) row is CIRCULAR.
+
+==============================================================================
+  Balance Ratio §2.1 — 3-divisibility of the Eisenstein form
+==============================================================================
+  Identity: h1^2+h1h2+h2^2 = (h1-h2)^2 + 3h1h2, so mod 3 it is (h1-h2)^2.
+  Exhaustive check of the form mod 3:
+    3 | form  <=>  h1 == h2 (mod 3)   [counterexamples: 0]
+  Reachable (g1,g2) mod 6 for consecutive primes > 3:
+    g1 == g2 only for: [(1, 1, 1), (5, 5, 5)] — always g1=g2=0
+    => 3 | form  <=>  three consecutive primes share a residue mod 6
+
+  P(single repeat, p' = p mod 6)          = 43.002%
+  P(3 | form) = P(triple repeat)          = 17.408%
+  if transitions were independent          = 18.492%
+  if residues were even odds               = 12.500%
+
+     Q   pool/pi   P(3|form)   status
+    30      2.34     17.457%   ok
+   100      1.78     17.400%   ok
+   317      1.43     17.465%   ok
+   600      1.27     17.512%   borderline
+
+  Published: 17.408% real; reproduced by the wheel from Q=30 up.
+
+==============================================================================
+  Balance Ratio §5 — the pooled shift IS cov(g_n, g_n+1)
+==============================================================================
+  NOT a prediction: shuffling leaves the square terms alone and sends
+  E[g1g2] -> E[g]^2, so the shift is E[g1g2]-E[g]^2, the definition of cov.
+
+  E[g1^2+g1g2+g2^2] real     = 953.633
+  E[g1^2+g1g2+g2^2] shuffled = 960.396   (spread 0.436)
+  measured shift             = -6.763  (-0.704%)
+  cov(g_n, g_n+1)            = -6.903  (-0.719%)
+
+  Published: -0.708% measured against -0.719% forced by the algebra.
+
+==============================================================================
+  Balance Ratio §6 — per residue class, vs a GENERATIVE null
+==============================================================================
+  A gap-shuffle is INVALID here: a gap of 4 cannot follow p=5 mod 6,
+  so shuffled triples are arithmetically impossible. Wheel surrogate instead.
+
+  surrogate Q=317, pool/pi = 1.43 (ok)
+
+  p mod 6         n   mean Q real  mean Q wheel     diff
+        1   134,957        970.15        964.26   +0.61%
+        5   135,056        937.13        940.06   -0.31%
+
+  POWER CHECK — does the test see the known LOS bias?
+    residue repeat: real 43.00%   wheel 43.06%   even odds 50.00%
+    -> the bias is large and the wheel reproduces it: instrument has power.
+
+  Published: no class above 1.3 sigma.
+
