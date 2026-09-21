@@ -19,6 +19,8 @@ GitHub/Primes/
 │   └── superseded/                pre-September versions of 4 papers
 ├── 3_Twin_Bertrand_Prime_Geometry/
 ├── 4_Philosophy_Ontology/
+│   ├── figures/                   the rolling-wheels animation
+│   └── repro/                     regenerates The Ninety Percent Rule
 ├── 5_X5D_EXPDB/
 └── Archive/                       DISCONTINUED repos — reference only, not canon
 ```
@@ -78,6 +80,7 @@ GitHub/Primes/
 | paper | formats |
 |---|---|
 | **The_Movie** — *the plain-language picture of the whole collection* (new 2026-09) | md ❌ |
+| **The_Ninety_Percent_Rule** — *the prediction result: four wheels, slots for 90% by decade, the formula that predicts it* (new 2026-09) | md ❌ · reproduced by `repro/` |
 | FS_TB_QM_Amplitude_Memo — *Template and Amplitude* | md ❌ |
 | OPEN_QUESTION_FS_TB_QM_AMP_02_Bilinearity | md ❌ |
 | Counting_Into_Existence | md ❌ |

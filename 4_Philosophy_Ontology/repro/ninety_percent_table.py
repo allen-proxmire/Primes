@@ -164,6 +164,35 @@ def main():
               " ".join(f"{100*q*(1-q)**(k):>5.1f}" for k in range(7)))
 
 
+def budget_table(lo=10**6, hi=2 * 10**6):
+    """The Prediction Budget's section-3 table: mod-210 and mod-30 walkers on [lo, hi]."""
+    top = hi + 2000
+    isp = base_sieve_bytes(top)
+    primes = [p for p in range(lo, top + 1) if isp[p]]
+    print()
+    print(f"Prediction Budget section 3 -- caught within k open slots, primes in [{lo:.0e}, {hi:.0e}]")
+    print(f"  {'wheel':<8}" + "".join(f"{k:>6}" for k in range(1, 9)) + "   mean tests")
+    for name, wheel in [("mod-210", (2, 3, 5, 7)), ("mod-30", (2, 3, 5))]:
+        ks = []
+        for a, b in zip(primes, primes[1:]):
+            if a > hi:
+                break
+            k = sum(1 for n in range(a + 1, b + 1) if all(n % w for w in wheel))
+            ks.append(k)
+        row = [sum(k <= j for k in ks) / len(ks) for j in range(1, 9)]
+        print(f"  {name:<8}" + "".join(f"{100*v:>5.0f}%" for v in row) +
+              f"   {sum(ks)/len(ks):.2f}")
+
+
+def base_sieve_bytes(limit):
+    sieve = bytearray([1]) * (limit + 1)
+    sieve[0:2] = b"\x00\x00"
+    for i in range(2, int(limit**0.5) + 1):
+        if sieve[i]:
+            sieve[i * i:: i] = bytearray(len(sieve[i * i:: i]))
+    return sieve
+
+
 def wheels_vs_road(N=10**10):
     """Carry more wheels at fixed 90%: slots to test fall, road walked does not.
 
@@ -209,5 +238,6 @@ def far_out(exponent=136279841):
 
 if __name__ == "__main__":
     main()
+    budget_table()
     wheels_vs_road()
     far_out()
