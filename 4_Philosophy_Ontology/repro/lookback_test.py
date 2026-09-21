@@ -25,7 +25,15 @@ approaches 1 the fake stops containing any randomness and simply IS the
 primes, so agreement there is automatic and carries no evidence -- see
 Null_Model_Discipline.md. Read the rows with a real pool ratio.
 
-Window: every prime in [10^6, 2*10^6]. Requires numpy. Runtime ~1-2 minutes.
+Part 4 -- the non-circular version of part 3. Keep the REAL walks, and group
+them by exactly which of the next 12 open slots the wheels up to y strike.
+Compare big-last-gap against small-last-gap inside each group. Whatever
+difference survives the grouping is not carried by those wheels. No fakes,
+no chosen coin density, and a spread column shows the grouping has not
+simply rebuilt the primes. Run on [10^6, 2*10^6] and on [10^7, 2*10^7].
+
+Windows: parts 1-3 use every prime in [10^6, 2*10^6]. Requires numpy.
+Runtime a few minutes, most of it part 4 on the larger window.
 """
 import numpy as np
 
@@ -130,5 +138,83 @@ def main():
               f"{100*mu/d_real:>13.0f}% {pool/target:>11.2f}")
 
 
+def part4(lo, top, depths=(7, 11, 13, 31, 100, 300), ahead=12, boot=300):
+    """Group REAL walks by where the wheels up to y strike the road ahead.
+
+    For each starting prime, record which of the next `ahead` open slots (of
+    the four-wheel walker) survive every wheel up to y. Primes with the same
+    pattern face the same wheel-struck road. Inside each group, compare the
+    real slot count after a small last gap with that after a big one, and
+    average the differences (weighted by group size). What is left is the
+    part of the sliver NOT carried by the wheels up to y.
+
+    Nothing is simulated and no coin density is chosen: every outcome is a
+    real walk. The circularity check is the last column -- how much the real
+    walks still vary inside a group. If the grouping had simply rebuilt the
+    primes, that spread would collapse toward zero.
+    """
+    hi = top + 20000
+    n = hi + 1
+    xs = np.arange(n)
+
+    def surv(y):
+        a = np.ones(n, bool)
+        a[:2] = False
+        for q in range(2, y + 1):
+            if is_small_prime(q):
+                a[q * q::q] = False
+        return a
+
+    primes_bool = surv(int(hi**0.5) + 1)
+    slots = np.nonzero((xs % 2 != 0) & (xs % 3 != 0) & (xs % 5 != 0) & (xs % 7 != 0))[0]
+    P = np.nonzero(primes_bool)[0]
+    P = P[P > 11]
+    i = np.arange(2, len(P) - 1)
+    i = i[(P[i] >= lo) & (P[i] <= top)]
+    p = P[i]
+    g_last = p - P[i - 1]
+    k = np.searchsorted(slots, P[i + 1]) - np.searchsorted(slots, p)
+    med = np.median(g_last)
+    big, small = g_last > med, g_last < med
+    real_sliver = k[small].mean() - k[big].mean()
+
+    first = np.searchsorted(slots, p, side="right")
+    ahead_idx = slots[first[:, None] + np.arange(ahead)[None, :]]
+    bits = 1 << np.arange(ahead)
+
+    print(f"\nPART 4 -- group the real walks by the wheel pattern ahead, primes in "
+          f"[{lo:.0e}, {top:.0e}] (n = {len(k):,})")
+    print(f"  real sliver {real_sliver:+.3f};  spread of slot count with no grouping {k.std():.2f}")
+    print(f"  {'wheels to':>10} {'groups':>7} {'left over':>10} {'s.e.':>6} {'explained':>10} "
+          f"{'primes used':>12} {'spread left':>12}")
+    rng = np.random.default_rng(0)
+    for y in depths:
+        s = surv(y)
+        key = (s[ahead_idx].astype(np.int64) * bits).sum(1)
+        order = np.argsort(key, kind="stable")
+        ks, kk, bb, ss = key[order], k[order], big[order], small[order]
+        cuts = np.flatnonzero(np.diff(ks)) + 1
+        diffs, wts, used, var_sum = [], [], 0, 0.0
+        for grp in np.split(np.arange(len(ks)), cuts):
+            kb, ksm = kk[grp][bb[grp]], kk[grp][ss[grp]]
+            if len(kb) >= 2 and len(ksm) >= 2:
+                wt = 1 / (1 / len(kb) + 1 / len(ksm))
+                diffs.append(ksm.mean() - kb.mean())
+                wts.append(wt)
+                used += len(grp)
+                var_sum += kk[grp].var() * len(grp)
+        diffs, wts = np.array(diffs), np.array(wts)
+        left = (diffs * wts).sum() / wts.sum()
+        bs = []
+        for _ in range(boot):
+            j = rng.integers(0, len(diffs), len(diffs))
+            bs.append((diffs[j] * wts[j]).sum() / wts[j].sum())
+        print(f"  {y:>10} {len(diffs):>7} {left:>+10.3f} {np.std(bs):>6.3f} "
+              f"{100 * (1 - left / real_sliver):>9.0f}% {100 * used / len(k):>11.0f}% "
+              f"{np.sqrt(var_sum / used):>12.2f}")
+
+
 if __name__ == "__main__":
     main()
+    part4(10**6, 2 * 10**6)
+    part4(10**7, 2 * 10**7)

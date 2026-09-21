@@ -314,4 +314,8 @@ Then N15, found while sweeping for something else: five **invisible control byte
 
 Process note: the numbers quoted in conversation shifted slightly when the test was rewritten as a script (the big/small split moved from the median of the *next* gap to the median of the *last* gap, which is the right one). The 11 and 13 rows moved most, 24%→13% and 34%→23%. The conclusion didn't change. The note carries the script's numbers.
 
+**2026-09-21, later.** Closed N16's open 15%. Two tries. (1) Exact expectation instead of simulated fakes — real starting primes, wheels to y, coin flips for survivors: 82% at y = 100, 89% at 300, but it still climbs as the coin density goes to 1, so the same circularity in milder form. (2) Group the real walks by the wheel-struck pattern of the next 12 open slots and compare big vs small last gap within groups — no fakes, no chosen density. On [10⁷, 2×10⁷]: leftover **−0.001 ± 0.006** at y = 300 with the in-group spread still 2.56 of 3.11. The sliver is the wheel. Filed in The Ninety Percent Rule and as `lookback_test.py` part 4.
+
+**Method lesson:** when a generative null goes circular as it approaches the real thing, stop generating. Condition the *real* data on the structure instead, and show with a spread column that the conditioning hasn't reconstructed the answer.
+
 Scratch code lives outside the repo.

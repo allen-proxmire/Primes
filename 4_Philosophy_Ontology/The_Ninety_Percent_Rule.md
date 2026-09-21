@@ -253,13 +253,39 @@ What the table shows:
 
 1. **With your four wheels, the sliver is zero.** Those four have nothing to say about it.
 2. **Each wheel you add brings more of it back.** Wheel 11 gives an eighth, 13 about a quarter, 31 nearly two-thirds, and by 300 about 85%.
-3. **The last ~15% isn't settled here.** It only closes as the pool ratio heads to 1, when the fake is no longer fake: it simply *is* the primes, and matching them is automatic. That's the circular-row trap from [the Null-Model Discipline](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md). The last rows that carry evidence are 300 and 700, and they plateau at about 85%.
+3. **The fakes stall at about 85%.** They only get further as the pool ratio heads to 1, when the fake is no longer fake: it simply *is* the primes, and matching them is automatic. That's the circular-row trap from [the Null-Model Discipline](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md).
 
-So the honest statement is: **about 85% of the sliver is shown to be the bigger wheels, the ones you aren't carrying. The rest is probably the same thing, but this test can't show it.**
+The stall is partly the fakes' own fault. Throwing survivors away at random creates artificial big gaps that carry no wheel information, and those water the effect down. So the last 15% needs a test with no fakes in it.
+
+## Closing the gap: group the real walks
+
+Keep the real primes and their real walks. For each starting prime, write down exactly which of the next 12 open slots the wheels up to some limit strike. Primes with the same pattern face the same wheel-struck road ahead. Now compare big-last-gap against small-last-gap **inside each group**.
+
+If the sliver is carried by where those wheels strike, it should vanish inside the groups. Whatever survives the grouping is something the wheels don't explain.
+
+On the bigger window [10⁷, 2×10⁷], with 606,028 starting primes:
+
+| group by wheels up to | sliver left over | explained | spread of the walk left inside groups |
+|---|---|---|---|
+| — (no grouping) | 0.148 | 0% | 3.11 |
+| 7 | 0.148 | 0% | 3.11 |
+| 11 | 0.122 | 18% | 3.09 |
+| 13 | 0.097 | 34% | 3.07 |
+| 31 | 0.039 | 74% | 2.96 |
+| 100 | 0.011 | 92% | 2.79 |
+| 300 | **−0.001 ± 0.006** | **100%** | 2.56 |
+
+With wheels up to 300, **nothing is left over.** The leftover is −0.001, and the error bar is ±0.006.
+
+**The last column shows it isn't circular.** Inside each group the real walks still vary almost as much as before, 2.56 slots against 3.11. If the grouping had quietly rebuilt the primes, that spread would collapse toward zero. At this size you'd need wheels up to about 4,500 to rebuild the primes, and 300 is far short of that. Nothing is simulated and no coin density is chosen: every number is a real walk.
+
+The same test on [10⁶, 2×10⁶] agrees but is noisier, with 0.017 ± 0.017 left over at 300. That's consistent with zero, but the error bar there is as big as the leftover, which is why the bigger window was needed.
+
+So the answer is: **the sliver is the wheel.** All of it, within a margin of about 0.01 slots. It's specifically the wheels from 11 to about 300 that you aren't carrying, showing through the size of the last gap.
 
 ## Why the bigger wheels would do this
 
-This is the likely mechanism; the test above doesn't prove it. A big last gap means the stretch behind you was full of numbers struck by wheels you weren't carrying: 11, 13, 17 and up. Each of those strikes only once every p steps. If its mark came down just behind you, it's that much further from coming down in the next few slots. So after a long empty stretch, the road ahead is slightly less likely to be struck by the big wheels, and the next prime comes a little sooner.
+The grouping test shows *where* the sliver lives: in the pattern those wheels strike on the road ahead. This is the likely *why*, though it's an explanation rather than a separate test. A big last gap means the stretch behind you was full of numbers struck by wheels you weren't carrying: 11, 13, 17 and up. Each of those strikes only once every p steps. If its mark came down just behind you, it's that much further from coming down in the next few slots. So after a long empty stretch, the road ahead is slightly less likely to be struck by the big wheels, and the next prime comes a little sooner.
 
 The size of the last gap is a rough readout of where the uncarried wheels are in their turn.
 

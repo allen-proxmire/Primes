@@ -300,7 +300,7 @@ Tested 2026-09-21 from Allen's proposal: use the wobble of the last few primes t
 
 **Reading:** looking back is a cheap, blurry way of carrying more wheels. It can sharpen the forecast but never the search — walking the open slots in order stays optimal in every conditional group.
 
-**Open, if anyone wants it:** close the last 15% without the circular row — e.g. compute the conditional expectation directly from the Hardy–Littlewood singular series for (p−g, p, p+d), rather than by simulation.
+**~~Open: close the last 15%.~~ CLOSED 2026-09-21 — it is the wheel, all of it.** The fakes stalled because random thinning creates artificial big gaps that dilute the effect. The non-circular test keeps the real walks and groups them by which of the next 12 open slots the wheels up to y strike, then compares big vs small last gap *inside* each group. On [10⁷, 2×10⁷] (606,028 primes) the leftover is 0.148 → 0.039 (y = 31) → 0.011 (100) → **−0.001 ± 0.006 (300)**, while the walk's spread inside groups stays at 2.56 of 3.11 — so the grouping has not rebuilt the primes (√2×10⁷ ≈ 4,500). [10⁶, 2×10⁶] agrees, noisier (0.017 ± 0.017). Used real outcomes and no chosen coin density, which is what made it non-circular; the Hardy–Littlewood calculation proposed here was not needed. `lookback_test.py` part 4.
 
 ---
 
