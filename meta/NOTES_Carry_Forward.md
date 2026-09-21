@@ -290,6 +290,20 @@ Five had shipped: one `\approx` in [Prime_Prediction_Budget.md](../2_One_Wheel_M
 
 ---
 
+## N16 — Looking back: direction carries nothing, size carries a sliver, and the sliver is mostly the bigger wheels · **CLOSED — filed** · → [The Ninety Percent Rule, “Looking back”](../4_Philosophy_Ontology/The_Ninety_Percent_Rule.md)
+
+Tested 2026-09-21 from Allen's proposal: use the wobble of the last few primes to guess which way the next angle turns, and look there.
+
+- **Direction: nothing.** “Next move reverses the last” is right 68.6% on real gaps and 69.2% on the same gaps shuffled — the Differencing Trap again. A no-history guess (“moves back toward typical”) scores 77.1%. Up/down conditioning leaves the 90% slot count at 7.
+- **Size: a sliver.** After a big last gap the next prime needs 0.178 fewer slots on average, and 90% arrives at slot 6 instead of 7.
+- **The sliver vs wheel-only fakes** (sieve to y, thin at random to the real count; walker always carries four wheels): **1%** at y = 7, 13% at 11, 23% at 13, 63% at 31, 71% at 100, **85% at 300 and 84% at 700**. The 94% at y = 1000 has pool ratio 1.05 and is circular. So ~85% is shown to be the uncarried wheels; the last ~15% is unresolved by this test.
+
+**Reading:** looking back is a cheap, blurry way of carrying more wheels. It can sharpen the forecast but never the search — walking the open slots in order stays optimal in every conditional group.
+
+**Open, if anyone wants it:** close the last 15% without the circular row — e.g. compute the conditional expectation directly from the Hardy–Littlewood singular series for (p−g, p, p+d), rather than by simulation.
+
+---
+
 ## Still genuinely open
 
 Carried here so they are not lost when the worklog is archived.

@@ -4,7 +4,7 @@
 
 *Companion to [The Movie](The_Movie.md), which is the whole picture. This note is one piece of it, in full.*
 
-*Written 2026-09-20. Every number below comes from [`repro/ninety_percent_table.py`](repro/ninety_percent_table.py); run it and you get this page back.*
+*Written 2026-09-20; "Far out" and "Looking back" added 2026-09-21. Every number below comes from [`repro/ninety_percent_table.py`](repro/ninety_percent_table.py) or, for the look-back section, [`repro/lookback_test.py`](repro/lookback_test.py). Run them and you get this page back.*
 
 ---
 
@@ -133,7 +133,7 @@ Memoryless to within a few tenths of a point.
 
 Here is the sharpest thing in this note, and it is not obvious.
 
-At 10¹⁰, holding 90% fixed, here is what carrying more wheels does:
+At 10¹⁰, holding 90% fixed, here is what carrying more wheels does (computed from the formula above, which the eight-for-eight table vouches for, rather than walked):
 
 | wheels carried | killed for free | slots to test | **road covered** |
 |---|---|---|---|
@@ -157,6 +157,119 @@ The open fraction cancels. **The distance to the next prime is set by $\ln N$ an
 > **The wheels don't move the prime. They only decide how much of the road you have to look at.**
 
 Four wheels take you from testing 48 numbers to testing 11 — a **4.4× saving, for four wheels.** Carrying seven more (through 31) gets you from 11 down to 7. The first four do nearly all the work, and that is why four is the right number to hold in your head.
+
+---
+
+# Far out: the largest known prime
+
+*Added 2026-09-21. This is the formula carried far past anything measured. It's a prediction, not a result.*
+
+The largest known prime is $2^{136{,}279{,}841} - 1$. As a power of ten it's about $10^{41{,}024{,}319.9}$, a number with **41,024,320 digits**. The table above stops at ten digits.
+
+The formula doesn't care. Same two facts, same steps:
+
+- $\ln N = 136{,}279{,}841 \times \ln 2 \approx 94{,}461{,}988$
+- $q = 4.375/\ln N$: about **1 open slot in 21.6 million** is prime
+- slots for 90%: **49,715,831, about $10^{7.7}$**
+
+| standing near | slots for 90%, four wheels |
+|---|---|
+| 10¹⁰ | 11 |
+| $10^{41{,}024{,}320}$ | **~49.7 million** |
+
+The "one extra slot per decade" rule is only a small-$N$ approximation. In general the slot count grows like about $0.53 \times \ln N$, and here $\ln N$ is 94 million.
+
+**This is where the road result matters most.** The stretch you walk is $2.303 \ln N \approx$ **217 million numbers**, however many wheels you carry. Carrying more only cuts how much of it you test:
+
+| wheels carried | slots to test for 90% |
+|---|---|
+| 2, 3, 5, 7 | ~49.7 million |
+| every prime up to 10⁶ | ~8.8 million |
+| every prime up to 10⁹ | ~5.9 million |
+| every prime up to 10¹² | ~4.4 million |
+
+*(Deeper-sieve rows use Mertens' theorem for the fraction left open, so they're approximations too.)*
+
+At this size a million wheels are cheap to carry and well worth it. That's what real prime searches do: they sieve out small factors very deeply before running any expensive test.
+
+**Two honest caveats.**
+
+1. **Nobody can check this.** It extends the table across 41 million orders of magnitude. The two facts still hold out there: the wheel's 48/210 is exact arithmetic, and the Prime Number Theorem is proven. What's assumed is that open slots act like independent coin flips. That held to within a few tenths of a point up to 10¹⁰, but it's a heuristic (the Cramér model), not a theorem.
+2. **Each slot is a huge test.** A single primality test on a 41-million-digit number takes something like a day on a fast GPU (a rough figure). Even the best case above, ~4.4 million tests, would take thousands of GPU-years. The rule says how many candidates there are, not that anyone can afford to test them. That's why nobody knows the next prime after this one, even though we can say with some confidence that 9 times in 10 it's within the next ~217 million numbers.
+
+For scale: 217 million is about $10^{-41{,}024{,}312}$ of the prime itself. On that scale the next prime is practically touching it, and still nobody knows which number it is.
+
+---
+
+# Looking back: can the last few primes help?
+
+*Added 2026-09-21. Numbers from [`repro/lookback_test.py`](repro/lookback_test.py), over all 70,435 primes in [10⁶, 2×10⁶].*
+
+A natural extra heuristic. Before walking forward, look at the handful of primes *behind* you. The prime-triangle angle wobbles and changes direction often, so guess which way it turns next, and use that to decide where to look.
+
+It splits into two questions. Does the **direction** of the last step help? Does its **size** help?
+
+## Direction: no
+
+The guess "the next move reverses the last one" is right **68.6%** of the time. That sounds useful. But shuffle the same gaps into random order, make the same guess, and it's right **69.2%** of the time.
+
+Shuffled numbers zig-zag just as much, for a plain reason: after a big value the next is probably smaller, because big values are rare, and after a small one the next is probably bigger. Any random sequence reverses direction about two-thirds of the time. That's the [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md), and the zig-zag is arithmetic, not primes.
+
+A guess that uses *no history at all*, just "the next gap moves back toward a typical size," does better: **77.1%**.
+
+And direction doesn't change the walk:
+
+| what you know before walking | average slots | caught within 7 | 90% at |
+|---|---|---|---|
+| nothing | 3.25 | 92.9% | 7 |
+| last move was **up** | 3.22 | 92.9% | 7 |
+| last move was **down** | 3.27 | 92.8% | 7 |
+| last gap was **big** | 3.15 | 93.6% | **6** |
+| last gap was **small** | 3.32 | 92.3% | 7 |
+
+## Size: a sliver
+
+The last two rows are different. After a big gap, the next prime comes slightly sooner: **0.18 fewer slots on average**, and 90% arrives one slot earlier. It's small, but it's real in this data.
+
+## Is the sliver the wheel?
+
+To find out, build fake primes that contain *only* wheel structure. Strike the multiples of every prime up to some limit, then keep survivors at random, matched to the real prime count. Walk them with the same four wheels and measure the same sliver.
+
+| fake primes built from | sliver | share of the real one | pool ratio |
+|---|---|---|---|
+| **real primes** | **0.178** | 100% | — |
+| wheels 2, 3, 5, 7 | 0.001 | **1%** | 3.25 |
+| wheels up to 11 | 0.023 | 13% | 2.95 |
+| wheels up to 13 | 0.041 | 23% | 2.72 |
+| wheels up to 31 | 0.111 | 63% | 2.17 |
+| wheels up to 100 | 0.127 | 71% | 1.71 |
+| wheels up to 300 | 0.151 | **85%** | 1.38 |
+| wheels up to 700 | 0.150 | 84% | 1.15 |
+| wheels up to 1000 | 0.167 | 94% | 1.05 *(nearly the real primes, so it proves nothing)* |
+
+*Averaged over 12 random fakes per row; standard errors 0.003–0.008. The pool ratio is how many survivors the fake had to throw away at random. The nearer it is to 1, the less randomness the fake has left.*
+
+What the table shows:
+
+1. **With your four wheels, the sliver is zero.** Those four have nothing to say about it.
+2. **Each wheel you add brings more of it back.** Wheel 11 gives an eighth, 13 about a quarter, 31 nearly two-thirds, and by 300 about 85%.
+3. **The last ~15% isn't settled here.** It only closes as the pool ratio heads to 1, when the fake is no longer fake: it simply *is* the primes, and matching them is automatic. That's the circular-row trap from [the Null-Model Discipline](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md). The last rows that carry evidence are 300 and 700, and they plateau at about 85%.
+
+So the honest statement is: **about 85% of the sliver is shown to be the bigger wheels, the ones you aren't carrying. The rest is probably the same thing, but this test can't show it.**
+
+## Why the bigger wheels would do this
+
+This is the likely mechanism; the test above doesn't prove it. A big last gap means the stretch behind you was full of numbers struck by wheels you weren't carrying: 11, 13, 17 and up. Each of those strikes only once every p steps. If its mark came down just behind you, it's that much further from coming down in the next few slots. So after a long empty stretch, the road ahead is slightly less likely to be struck by the big wheels, and the next prime comes a little sooner.
+
+The size of the last gap is a rough readout of where the uncarried wheels are in their turn.
+
+## What it means
+
+> **Looking back is a cheap, blurry way of carrying more wheels.**
+
+Carry them for real, by sieving out 11, 13, 17 and so on, and you get that information directly and precisely. The look-back then has nothing left to add. It also never changes the *strategy*. Even after a big gap you still walk the open slots in order, because the first one is still the most likely. History can make the forecast slightly better. It never makes the search better.
+
+Direction carries nothing. Size carries a little, and that little is wheels you didn't bring.
 
 ---
 
@@ -211,7 +324,13 @@ And the formula that says so: $q = 4.375/\ln N$, then flip that coin until you a
 python 4_Philosophy_Ontology/repro/ninety_percent_table.py
 ```
 
-A couple of minutes, standard library only. It segments the sieve — base primes to $\sqrt{2N}$ — so the 10¹⁰ row needs a sieve to 150,000, not to ten billion.
+A couple of minutes, standard library only. It also prints the largest-known-prime extrapolation. It segments the sieve — base primes to $\sqrt{2N}$ — so the 10¹⁰ row needs a sieve to 150,000, not to ten billion.
+
+```bash
+python 4_Philosophy_Ontology/repro/lookback_test.py
+```
+
+The look-back section: the zig-zag test, the conditional walk, and the fake-primes comparison. A minute or two; needs numpy.
 
 ## Where the pieces come from
 
@@ -220,6 +339,8 @@ A couple of minutes, standard library only. It segments the sieve — base prime
 | the wheel, and why 48/210 | [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) §2–§4 |
 | four wheels exact below 121; activation at $p^2$ | [`FSPapers_01`](../1_Factor_Skyline/FSPapers_01_architectural_foundation.md) Def. 2.5 |
 | the walk is memoryless once the wheel is out | [The Wheel Is the Whole Story](../2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md) |
+| the zig-zag is what any random sequence does | [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md) |
+| fake primes, pool ratios, and the circular row | [Null-Model Discipline](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md) |
 | the doubling window $[N, 2N]$ as the natural unit | [Synthesis](../2_One_Wheel_Many_Shadows/FS_Synthesis_Doubling_and_Wheel.md) |
 | the wall | the parity barrier — [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) §2, Tier 3 |
 | the whole picture this is one piece of | [The Movie](The_Movie.md) |

@@ -164,5 +164,50 @@ def main():
               " ".join(f"{100*q*(1-q)**(k):>5.1f}" for k in range(7)))
 
 
+def wheels_vs_road(N=10**10):
+    """Carry more wheels at fixed 90%: slots to test fall, road walked does not.
+
+    Computed from the formula (q = prime density / open fraction), not walked.
+    """
+    ln_n = math.log(N)
+    print()
+    print(f"wheels vs road at N = 1e{round(math.log10(N))}, 90% fixed (from the formula)")
+    print(f"  {'wheels':>8} {'killed free':>12} {'slots':>6} {'road':>6}")
+    open_frac = 1.0
+    for p in [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]:
+        open_frac *= 1 - 1 / p
+        q = 1 / (open_frac * ln_n)
+        k = math.ceil(math.log(1 - TARGET) / math.log(1 - q))
+        print(f"  {'2..' + str(p):>8} {100 * (1 - open_frac):>11.1f}% {k:>6} {k / open_frac:>6.0f}")
+
+
+def far_out(exponent=136279841):
+    """The formula, extrapolated to the largest known prime 2^exponent - 1.
+
+    Nothing here is measured -- it is the same two facts (the wheel's 48/210,
+    the prime density 1/ln N) applied far beyond the verified range. The
+    deeper-sieve rows use Mertens' theorem, open fraction ~ e^-gamma / ln y,
+    for the fraction of integers surviving every prime up to y.
+    """
+    ln_n = exponent * math.log(2)
+    log10_n = exponent * math.log10(2)
+    q = MODULUS / (len(OPEN_RESIDUES) * ln_n)
+    k = math.ceil(math.log(1 - TARGET) / math.log(1 - q))
+    road = -math.log(1 - TARGET) * ln_n
+    print()
+    print(f"far out -- 2^{exponent:,} - 1  (extrapolated, not measured)")
+    print(f"  size          10^{log10_n:,.1f}   ({math.floor(log10_n) + 1:,} digits)")
+    print(f"  ln N          {ln_n:,.0f}")
+    print(f"  q             {q:.3e}   (1 open slot in {1/q:,.0f} is prime)")
+    print(f"  slots for 90% {k:,}   = 10^{math.log10(k):.2f}")
+    print(f"  road walked   {road:,.0f}   = 10^{math.log10(road):.2f}")
+    gamma = 0.5772156649015329
+    for y in (10**6, 10**9, 10**12):
+        frac = math.exp(-gamma) / math.log(y)
+        print(f"  sieve to 1e{round(math.log10(y))}: ~{road * frac:,.0f} slots")
+
+
 if __name__ == "__main__":
     main()
+    wheels_vs_road()
+    far_out()

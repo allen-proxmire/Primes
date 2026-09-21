@@ -310,4 +310,8 @@ The prettier half is the corollary: carrying more wheels cuts the slots you test
 
 Then N15, found while sweeping for something else: five **invisible control bytes** had shipped in tracked markdown — `\approx` and `\arctan` written through a non-raw Python string, where `\a` becomes BEL rather than a dropped backslash. Invisible in a diff. Third appearance of this bug class in one session, so it is now a check rather than a memory: [`check_repo_health.py`](check_repo_health.py), which also covers broken links and the `.gitignore`-allowlist trap. It found a fourth problem on its first run (a figure README linking into the untracked Archive) and **two bugs in itself** — Windows backslash paths and git's space-quoting silently made the ignore check pass on everything — before coming back clean.
 
+**2026-09-21.** Allen proposed a look-back heuristic: read the wobble of the last few primes and guess which way the next angle turns. Tested it directly. Direction is the differencing artifact (68.6% real vs 69.2% shuffled). Size carries a real sliver (0.18 slots), which is **zero** against four-wheel fakes and recovered to ~85% by fakes sieved to 300–700; the rest sits in the circular pool-ratio-to-1 zone and is left open. Filed as a “Looking back” section in The Ninety Percent Rule with [`lookback_test.py`](../4_Philosophy_Ontology/repro/lookback_test.py), logged as N16.
+
+Process note: the numbers quoted in conversation shifted slightly when the test was rewritten as a script (the big/small split moved from the median of the *next* gap to the median of the *last* gap, which is the right one). The 11 and 13 rows moved most, 24%→13% and 34%→23%. The conclusion didn't change. The note carries the script's numbers.
+
 Scratch code lives outside the repo.
