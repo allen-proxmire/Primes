@@ -38,20 +38,23 @@ Each of these is a genuine, measured regularity; none of them *adds* predictive 
 
 > **Caveat on the entropy figures (added 2026-09-20).** The $2.48$ / $1.70$ / $0.26$ split is reproduced exactly — **at $N=10^4$, a range FSPapers_03 does not name.** The components do not scale alike: the **template stays at $1.70$** across three orders of magnitude (a genuine invariant), the escape peaks near $10^4$ and declines slowly, but **"activation" grows without bound** because there are more distinct least-prime-factors as $N$ rises. So $H(\mathrm{dx})$ grows with it, and "$1.70$ of $2.48$, about $68\%$ of everything knowable" is a statement about $10^4$; at $10^6$ it reads $59\%$ and keeps falling — *not because the wheel weakens but because the denominator does the moving.*
 >
-> **This section's argument is unaffected**, and arguably sharpened. Activation — *which* lpf a composite has — is irrelevant to locating the next prime, which needs only prime/not-prime. The quantity that bears on the question here is the binary one, and it is stable: **the wheel kills $73.3\%$ of positions for free, and an open slot still carries $pprox0.84$ bits.** Verify with [`1_Factor_Skyline/repro/entropy_budget.py`](../1_Factor_Skyline/repro/entropy_budget.py).
+> **This section's argument is unaffected**, and arguably sharpened. Activation — *which* lpf a composite has — is irrelevant to locating the next prime, which needs only prime/not-prime. The quantity that bears on the question here is the binary one, and it is stable: **the wheel kills $73.3\%$ of positions for free, and an open slot still carries $\approx0.84$ bits.** Verify with [`1_Factor_Skyline/repro/entropy_budget.py`](../1_Factor_Skyline/repro/entropy_budget.py).
 
 - **The escape / parity barrier.** After the wheel, the residual — *which* open slot is actually prime — is genuinely random: the Möbius/Cramér noise, the parity barrier. In the FS entropy budget this irreducible core is only about **$0.26$ bits** (its peak). It is not hard to compute; it is *impossible* to predict. This is the wall, and it is what "the information theory of primes" means.
 
-## 3. The number: ~7–8 candidates for 90%
+## 3. The number: ~7–8 candidates for 90% near $10^6$ — and ~11 by $10^{10}$
 
 Put Tier 1 to work — from $p$, walk *up the wheel-open slots* and test them in order — and measure how many you need. Over the primes near $10^6$:
 
 | open slots tested | 1 | 2 | 3 | 4 | 5 | 6 | **7** | **8** |
 |---|---|---|---|---|---|---|---|---|
-| P(next prime caught), mod-210 | 30% | 52% | 67% | 77% | 85% | **90%** | 93% | 95% |
+| P(next prime caught), mod-210 | 30% | 51% | 66% | 77% | 84% | 89% | **93%** | 95% |
 | P(next prime caught), mod-30 | 25% | 45% | 60% | 71% | 79% | 85% | 89% | **92%** |
 
 **[emp]** So: **the next prime is within the next ~7 (mod-210) or ~8 (mod-30) wheel-open slots about $90\%$ of the time** — a mean of ~3.2–3.7 tests. That $90\%$ is bought *entirely* by base rate + wheel.
+
+**[emp, added 2026-09] The count is scale-dependent, and predictable.** Re-measured over the doubling window $[N,2N]$ at every decade from $10^3$ to $10^{10}$, the mod-210 slot count for $90\%$ runs **3, 4, 5, 7, 8, 9, 10, 11** — about one extra slot per decade. It is *derived*, not fitted: taking $q = 210/(48\ln N)$ as the per-open-slot prime probability, $k = \lceil \ln(0.1)/\ln(1-q)\rceil$ reproduces the measured integer at **all eight decades**. The walk is geometric to within a few tenths of a point — the no-residual result of [*The Wheel Is the Whole Story*](The_Wheel_Is_The_Whole_Story.md) arriving from another direction. Full table, derivation and caveats: [**The Ninety Percent Rule**](../4_Philosophy_Ontology/The_Ninety_Percent_Rule.md); script at [`ninety_percent_table.py`](../4_Philosophy_Ontology/repro/ninety_percent_table.py).
+
 
 ## 4. Why the rest of the list doesn't help — and why that's the point
 

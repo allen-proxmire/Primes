@@ -35,7 +35,7 @@ All four hold exactly, not numerically. The script asserts them at generation ti
 
 Not in the main result — in the historical before/after remark.
 
-[`GuthMaynard_BindingConstraints.md`](../../Archive/X5D%20EXPDB%20Framework/examples/GuthMaynard/) states that before Guth–Maynard, *"the analogous cusp was at σ ≈ 5/7 ≈ 0.714, where Ingham met Huxley at ‖A‖∞ = 12/5."*
+`GuthMaynard_BindingConstraints.md` (in the untracked upstream `Archive/X5D EXPDB Framework/examples/GuthMaynard/`, not published here) states that before Guth–Maynard, *"the analogous cusp was at σ ≈ 5/7 ≈ 0.714, where Ingham met Huxley at ‖A‖∞ = 12/5."*
 
 **Those two values are inconsistent with each other**, on the same document's own Ingham curve:
 

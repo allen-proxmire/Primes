@@ -22,3 +22,7 @@
 !/3_Twin_Bertrand_Prime_Geometry
 !/4_Philosophy_Ontology
 !/5_X5D_EXPDB
+
+# python scratch
+__pycache__/
+*.pyc

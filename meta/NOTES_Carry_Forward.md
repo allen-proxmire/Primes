@@ -255,6 +255,41 @@ Found 2026-09-20 while drawing the cusp figure.
 
 ---
 
+## N14 — The 90% slot count is scale-dependent, and derivable · **OPEN as a standing result** · → [The Ninety Percent Rule](../4_Philosophy_Ontology/The_Ninety_Percent_Rule.md)
+
+Measured 2026-09-20 in answer to a direct question: *four wheels, 90% — how many slots, by decade?*
+
+The Budget's "~7–8 candidates" was a **single-scale number** presented as if it were a constant. It is not. Over $[N, 2N]$ at each decade, the mod-210 slot count for 90% runs:
+
+| $N$ | 10³ | 10⁴ | 10⁵ | 10⁶ | 10⁷ | 10⁸ | 10⁹ | 10¹⁰ |
+|---|---|---|---|---|---|---|---|---|
+| slots | 3 | 4 | 5 | 7 | 8 | 9 | 10 | 11 |
+
+**It is predicted, not fitted.** With $q = 210/(48\ln N)$ the per-open-slot prime probability and $k = \lceil \ln(0.1)/\ln(1-q)\rceil$, the formula returns the measured integer at **all eight decades**. Caveat recorded in the note: the predicted $q$ runs 1–4 points high every time (the $x/\ln x$ slack), so the honest claim is *right integer*, not *exact probability* — the ceiling absorbs a consistent bias.
+
+**The corollary is the better result.** Holding 90% fixed at $10^{10}$ and varying how many wheels are carried, the *slots to test* falls (26 → 11 → 7) but the **stretch of number line walked does not move**: ~48 numbers, whatever you carry. It cannot, because slots × slot-spacing $= 2.303\ln N$ and the open fraction cancels. **The wheel decides how much of the road you test; it never moves the prime.**
+
+**Process notes from the same run.**
+
+- First attempt used a **fixed 1.5×10⁶-wide window at every decade**, so the "$10^4$" row actually averaged over everything up to 1.5 million — mean gap 13.2 instead of 9.2, and the count wrong by 2 at two decades. Caught because the user's own expectation (4 at $10^4$, 5 at $10^5$) disagreed. **Rule: a per-scale statistic needs a per-scale window.** $[N, 2N]$ is the right one here, and is the same doubling unit the rest of the collection uses.
+- The Budget's and The Movie's 10⁶ rows were measured on $[10^6, 1.5\times 10^6]$ and put 90% at slot **6**; on $[10^6, 2\times 10^6]$ slot 6 gives 89.4% and slot 7 gives 92.9%. Both were corrected to the doubling window so all three documents agree.
+
+---
+
+## N15 — Invisible control characters had been shipped in `RESULTS.md` · **CLOSED — fixed, and a guard added** · → [`check_repo_health.py`](check_repo_health.py)
+
+Found 2026-09-20 while sweeping for a *different* escaping bug.
+
+A scripted edit that builds LaTeX in a **non-raw Python string** does not drop the backslash — it *interprets* it. Writing `\a` plus `pprox` yields **BEL + pprox**: a literal 0x07 byte in the markdown, where `\approx` was meant. It renders as garbage and is invisible in `git diff`.
+
+Five had shipped: one `\approx` in [Prime_Prediction_Budget.md](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md), and `\approx`×2 plus `\arctan`×2 in [RESULTS.md](../RESULTS.md). All restored.
+
+**This is the third appearance of the same bug class** (after the `\t` → TAB sweep earlier in the session), so it is now checked rather than remembered. [`check_repo_health.py`](check_repo_health.py) tests three things this repository has actually got wrong: stray control bytes, broken relative links, and **links to files git is ignoring** — the last being the `.gitignore`-allowlist failure that left two "start here" documents 404 on GitHub across three releases while passing every filesystem link check. It found one live instance on its first run: a figure README linking into the untracked `Archive/`. De-linked.
+
+**Rule: when a bug class recurs, write the check, not the reminder.**
+
+---
+
 ## Still genuinely open
 
 Carried here so they are not lost when the worklog is archived.

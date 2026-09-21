@@ -302,4 +302,12 @@ Also corrected the balance-ratio paper's §5 framing across four documents. It h
 
 **Day's tally: eight statistics, one mechanism, no residual anywhere.**
 
+**2026-09-20, later.** Answered a direct question — *four wheels, 90%, how many slots by decade?* — and it turned into the session's cleanest result plus two bug fixes.
+
+The measurement went wrong first: a fixed 1.5M-wide window at every decade meant the $10^4$ row spanned to 1.5 million. The user's own expectation caught it. Redone over $[N, 2N]$, the counts are 3, 4, 5, 7, 8, 9, 10, 11 from $10^3$ to $10^{10}$ — and $k = \lceil \ln(0.1)/\ln(1-q)\rceil$ with $q = 210/(48\ln N)$ reproduces every one of them with nothing fitted. Written up as [The Ninety Percent Rule](../4_Philosophy_Ontology/The_Ninety_Percent_Rule.md), logged as N14, cross-referenced from the Budget, The Movie, What We Found and RESULTS. The Budget's “~7–8 candidates” had been a single-scale number reading as a constant; it now says so.
+
+The prettier half is the corollary: carrying more wheels cuts the slots you test but leaves the *road* fixed at $2.303\ln N$ numbers, because the open fraction cancels. The wheel never moves the prime.
+
+Then N15, found while sweeping for something else: five **invisible control bytes** had shipped in tracked markdown — `\approx` and `\arctan` written through a non-raw Python string, where `\a` becomes BEL rather than a dropped backslash. Invisible in a diff. Third appearance of this bug class in one session, so it is now a check rather than a memory: [`check_repo_health.py`](check_repo_health.py), which also covers broken links and the `.gitignore`-allowlist trap. It found a fourth problem on its first run (a figure README linking into the untracked Archive) and **two bugs in itself** — Windows backslash paths and git's space-quoting silently made the ignore check pass on everything — before coming back clean.
+
 Scratch code lives outside the repo.

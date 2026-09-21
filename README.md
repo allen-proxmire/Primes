@@ -7,6 +7,7 @@ Prime-number research. Several strands that turn out to be **one story**: the pr
 | | |
 |---|---|
 | [**The Movie**](4_Philosophy_Ontology/The_Movie.md) | what's actually going on — the whole picture in plain language |
+| [**The Ninety Percent Rule**](4_Philosophy_Ontology/The_Ninety_Percent_Rule.md) | the one prediction result, in full — four wheels, eleven guesses, ninety percent, ten billion |
 | [**What We Found**](WHAT_WE_FOUND.md) | the results, with honest labels: proven / verified / measured / retracted |
 | [**How We Know**](HOW_WE_KNOW.md) | why any of it should be believed — and the two times it shouldn't have been |
 
@@ -32,7 +33,7 @@ The papers are grouped into five numbered reading series:
 1. **[The Factor Skyline](1_Factor_Skyline/)** — the coordinate system and its four-part theory (the foundation).
 2. **[One Wheel, Many Shadows](2_One_Wheel_Many_Shadows/)** — the wheel and its shadows: jumping champions, forbidden widths, the Seven Sisters, the 45° angle, the offset comb, the prime crystal (the main arc) — plus the angle's scale-invariant *switchback law*, the *prime prediction budget* (how far structure gets you, and the wall), and two synthesis papers: **[The Wheel Is the Whole Story](2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md)** (ten probes, six of them independent, no residual anywhere — with the audit of which ones actually count) and **[The Null-Model Discipline](2_One_Wheel_Many_Shadows/Null_Model_Discipline.md)** (five ways to fool yourself with a null, each caught in the act).
 3. **[Twin Bertrand / Prime Geometry](3_Twin_Bertrand_Prime_Geometry/)** — the Twin-Prime Bertrand Postulate and the prime-triangle work.
-4. **[Philosophy & Ontology](4_Philosophy_Ontology/)** — [**The Movie**](4_Philosophy_Ontology/The_Movie.md) (the plain-language picture of the whole thing), finitism, the sieve as a hunt, the quantum-mechanical reading.
+4. **[Philosophy & Ontology](4_Philosophy_Ontology/)** — [**The Movie**](4_Philosophy_Ontology/The_Movie.md) (the plain-language picture of the whole thing) and [**The Ninety Percent Rule**](4_Philosophy_Ontology/The_Ninety_Percent_Rule.md) (the prediction result and the formula behind it), then finitism, the sieve as a hunt, the quantum-mechanical reading.
 5. **[X5D / EXPDB](5_X5D_EXPDB/)** — the exponent-database strand (a separate analytic-number-theory subject).
 
 - **Every result, tagged** ([thm]/[conj]/[emp]/[deriv]/[mirage]): [`RESULTS.md`](RESULTS.md) — the technical version of [What We Found](WHAT_WE_FOUND.md)

@@ -94,11 +94,13 @@ So the crystal isn't a generic feature of "things get blocked." **It takes divis
 
 → [The Prime Structure Factor](2_One_Wheel_Many_Shadows/Prime_Structure_Factor.md), [ED as the Negative Control](2_One_Wheel_Many_Shadows/ED_Negative_Control.md)
 
-## 7. You can narrow the next prime to about eight candidates — and no further
+## 7. You can narrow the next prime to a handful of candidates — and no further
 
 **Synthesis of known results, calibrated here.**
 
-Start from a known prime and walk forward, skipping every position the small primes have already ruled out. **The next prime is among the next seven or eight open slots about 90% of the time.**
+Start from a known prime and walk forward, skipping every position the small primes have already ruled out. **The next prime is among the next seven open slots about 90% of the time near a million — and among the next eleven near ten billion.**
+
+That count grows by about one slot per decade, and **it is predicted, not fitted.** Divide the prime density by the fraction of positions the wheel leaves open, treat each open slot as a coin flip, and the formula lands on the measured whole number at every decade from a thousand to ten billion — eight for eight.
 
 Two things make this worth stating:
 
@@ -106,7 +108,7 @@ Two things make this worth stating:
 
 **And then there's a wall.** Which of the remaining candidates is actually prime is not a hard problem — it's an *impossible* one, in a sense that's close to proven. That's the parity barrier, and nothing in this collection touches it.
 
-→ [The Prime Prediction Budget](2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md)
+→ [**The Ninety Percent Rule**](4_Philosophy_Ontology/The_Ninety_Percent_Rule.md) (the full table, the formula, and the honest limits) · [The Prime Prediction Budget](2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) (the technical ledger)
 
 ## 8. The lens — which is the actual contribution
 

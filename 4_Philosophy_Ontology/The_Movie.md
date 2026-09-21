@@ -100,23 +100,23 @@ So you never need every wheel; you need the ones up to √n. Near a million that
 
 Start at a prime and walk forward, testing only the open positions. How many before you hit the next prime?
 
-| open slots tested | 1 | 2 | 3 | 4 | 5 | 6 | **7** |
+| open slots tested, near 10⁶ | 1 | 2 | 3 | 4 | 5 | 6 | **7** |
 |---|---|---|---|---|---|---|---|
-| chance you have caught it (wheels 2·3·5·7) | 30% | 52% | 67% | 77% | 85% | 90% | **93%** |
+| chance you have caught it (wheels 2·3·5·7) | 30% | 51% | 66% | 77% | 84% | 89% | **93%** |
 
-**Seven tests, and nine times in ten the next prime is among them.**
+**Seven tests, and nine times in ten the next prime is among them.** That seven is scale-dependent — it is 4 near 10⁴ and 11 near 10¹⁰, growing by about one slot per decade. [The Ninety Percent Rule](The_Ninety_Percent_Rule.md) is that table in full, with the formula that predicts it.
 
 Read that carefully, because it is easy to get backwards. It does **not** say an open slot is 90% likely to be prime — any single one is about 30%. It says that after seven of them you have almost certainly *caught* the next prime.
 
 ## Why walking in order cannot be improved
 
-Look at the chance that the next prime is exactly the k-th open slot: **30.5%, 21.5%, 14.7%, 10.4%, 7.7%, 4.8%, 3.6%.** Strictly falling.
+Look at the chance that the next prime is exactly the k-th open slot: **30.0%, 21.3%, 14.9%, 10.5%, 7.7%, 5.0%, 3.5%.** Strictly falling.
 
 And it must fall, for an exact reason. For the seventh open slot to be the next prime, *all six before it have to be composite*. Every slot you pass makes the rest less likely, mechanically.
 
 **So walking forward in order is the best possible strategy.** No ordering is cleverer. Every other pattern in this collection — the traffic rule, the favoured gaps, all of it — is already spent the moment you respect the wheels. That is the [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) in one table.
 
-*(Verified over all 35,657 primes in [10⁶, 1.5×10⁶].)*
+*(Verified over all 70,434 primes in the doubling window [10⁶, 2×10⁶]. Every decade from 10³ to 10¹⁰ is in [The Ninety Percent Rule](The_Ninety_Percent_Rule.md).)*
 
 # Where doubling comes in
 
@@ -171,7 +171,7 @@ Nothing above is new. It is the collection restated in plain words, and every cl
 | **the pattern outruns the road** | [`FS_primorial_epochs`](../1_Factor_Skyline/FS_primorial_epochs.md) §2.2 |
 | simple rule, random-looking output | [`FSPapers_02.1`](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md) §13.2–13.3 ($K = O(\log N)$ against $H \sim 0.26N$) |
 | doubling as the natural window | [Twin Bertrand](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md), [Synthesis](../2_One_Wheel_Many_Shadows/FS_Synthesis_Doubling_and_Wheel.md) |
-| four wheels, and how far you walk | [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) §2–§4 · animation from [`figures/gen_rolling_wheels.py`](figures/gen_rolling_wheels.py) |
+| four wheels, and how far you walk | [The Ninety Percent Rule](The_Ninety_Percent_Rule.md) · [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) §2–§4 · animation from [`figures/gen_rolling_wheels.py`](figures/gen_rolling_wheels.py) |
 | the mod-6 traffic rule | [Switchback Law](../2_One_Wheel_Many_Shadows/Switchback_Law.md) §2 |
 | every gap rhythm is the orchestra | [The Wheel Is the Whole Story](../2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md) |
 | 73% killed free, 27% prime at open slots | [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md), [`repro/entropy_budget.py`](../1_Factor_Skyline/repro/entropy_budget.py) |
