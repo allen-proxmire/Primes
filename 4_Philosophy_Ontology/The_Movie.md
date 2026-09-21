@@ -70,6 +70,54 @@ This is your `FS_primorial_epochs` §2.2 and `FSPapers_02.1` §13, in one senten
 
 ---
 
+# The same picture, as wheels
+
+Clocks are accurate but they tick. Here is the version that rolls, which shows the one thing ticking hides — **phase**.
+
+Give each prime a wheel. Wheel 2 has circumference 2, wheel 3 has circumference 3, and so on. Each carries a single mark on its rim. Roll them along the number line and **wheel p's mark touches down every p steps.** Where a mark touches, the number is composite — that mark *is* a division.
+
+All the marks touch down together at zero. Then they drift apart, and the four smallest do not all coincide again until 2 × 3 × 5 × 7 = **210**. That drifting-apart is the independence from §1, made visible.
+
+**[See it rolling](figures/rolling_wheels.svg)** — four wheels, real phases, the stretch from 100 to 130.
+
+## Carry four
+
+You cannot carry every wheel. So carry the first few, and look down as you walk.
+
+If any mark is touching, skip — that position is definitely composite. If **no** mark is touching, the position is **open**: a candidate.
+
+Four wheels kill **77% of the number line for free**, no testing at all. Each further wheel buys less: adding 11 takes you from 77% to 79%, adding 13 to 81%, adding 17 to 82%. The first few do nearly all the work.
+
+## Open is not prime
+
+Here is the part the picture has to get right. **An open position is not a prime.** It is a position no wheel *you carry* has struck. The wheels you left behind — 11, 13, 17 — are still out there, and one of them may have its mark down exactly there.
+
+In the animation that is **121**. It is open to all four wheels, and it is not prime. It is 11², which is precisely the point at which the 11-wheel begins striking things the smaller wheels miss — the activation from §2, seen from the other side. Below 121, four wheels are *exact*. From 121 they are not.
+
+So you never need every wheel; you need the ones up to √n. Near a million that is 168 wheels, not the 78,498 primes below it.
+
+## How far you have to walk
+
+Start at a prime and walk forward, testing only the open positions. How many before you hit the next prime?
+
+| open slots tested | 1 | 2 | 3 | 4 | 5 | 6 | **7** |
+|---|---|---|---|---|---|---|---|
+| chance you have caught it (wheels 2·3·5·7) | 30% | 52% | 67% | 77% | 85% | 90% | **93%** |
+
+**Seven tests, and nine times in ten the next prime is among them.**
+
+Read that carefully, because it is easy to get backwards. It does **not** say an open slot is 90% likely to be prime — any single one is about 30%. It says that after seven of them you have almost certainly *caught* the next prime.
+
+## Why walking in order cannot be improved
+
+Look at the chance that the next prime is exactly the k-th open slot: **30.5%, 21.5%, 14.7%, 10.4%, 7.7%, 4.8%, 3.6%.** Strictly falling.
+
+And it must fall, for an exact reason. For the seventh open slot to be the next prime, *all six before it have to be composite*. Every slot you pass makes the rest less likely, mechanically.
+
+**So walking forward in order is the best possible strategy.** No ordering is cleverer. Every other pattern in this collection — the traffic rule, the favoured gaps, all of it — is already spent the moment you respect the wheels. That is the [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) in one table.
+
+*(Verified over all 35,657 primes in [10⁶, 1.5×10⁶].)*
+
 # Where doubling comes in
 
 The clocks are the **local** picture: at any spot, which slots are even eligible.
@@ -123,6 +171,7 @@ Nothing above is new. It is the collection restated in plain words, and every cl
 | **the pattern outruns the road** | [`FS_primorial_epochs`](../1_Factor_Skyline/FS_primorial_epochs.md) §2.2 |
 | simple rule, random-looking output | [`FSPapers_02.1`](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md) §13.2–13.3 ($K = O(\log N)$ against $H \sim 0.26N$) |
 | doubling as the natural window | [Twin Bertrand](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md), [Synthesis](../2_One_Wheel_Many_Shadows/FS_Synthesis_Doubling_and_Wheel.md) |
+| four wheels, and how far you walk | [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) §2–§4 · animation from [`figures/gen_rolling_wheels.py`](figures/gen_rolling_wheels.py) |
 | the mod-6 traffic rule | [Switchback Law](../2_One_Wheel_Many_Shadows/Switchback_Law.md) §2 |
 | every gap rhythm is the orchestra | [The Wheel Is the Whole Story](../2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md) |
 | 73% killed free, 27% prime at open slots | [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md), [`repro/entropy_budget.py`](../1_Factor_Skyline/repro/entropy_budget.py) |
