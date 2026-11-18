@@ -35,4 +35,4 @@ Reproduction scripts sit in each folder's `repro/` or `scripts/`.
 
 ---
 
-[Corrections](records/CORRECTIONS.md) · Writing under [CC BY 4.0](LICENSE), code under MIT · [Citation](CITATION.cff) · DOI [10.5281/zenodo.21626683](https://doi.org/10.5281/zenodo.21626683) · Standalone releases: Factor Skyline ([DOI](https://doi.org/10.5281/zenodo.18275273)), X5D EXPDB ([DOI](https://doi.org/10.5281/zenodo.19454867))
+[Corrections](records/CORRECTIONS.md) · Writing under [CC BY 4.0](LICENSE), code under MIT · [Citation](CITATION.cff)
