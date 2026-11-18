@@ -162,12 +162,19 @@ Five rules, each with an exact size on the primes. → [The Null-Model Disciplin
 
 ## 6. A separate subject: the Exponent Database
 
-**One polytope generates the Exponent Database.** [thm]
-Every output of the Tao–Trudgian–Yang Exponent Database is a projection or envelope of a single $\mathcal{P}\subset\mathbb{R}^5$, with an invariant, a monotone contraction flow and a fixed-point theorem. → [X5D](5_X5D_EXPDB/X5D_Polyhedral-Reinterpretation.pdf)
+**The Exponent Database as geometry.** [deriv]
+Every downstream bound of the Tao–Trudgian–Yang database comes from one computed region $\mathcal P\subset\mathbb R^5$ of exponent tuples $(\sigma,\tau,\rho,\rho^*,s)$ — their region $\mathcal E$, as the database currently bounds it — by three operations:
+$$\mathcal P \xrightarrow{\ \pi\ } R\subset\mathbb R^3 \xrightarrow{\ \sup_\tau \rho/\tau\ } f(\sigma) \xrightarrow{\ \mathrm{env}^-\ } A(\sigma) \xrightarrow{\ \sup_\sigma\ } \theta .$$
+The large value and energy regions are projections; $A$ and $A^*$ are lower envelopes of rational suprema of them, plus closed-form exponent-pair routes; the exponent-pair hull, $\beta^*$ and $\mu$ hull generate constraints on $\mathcal P$ rather than descending from it. The iteration descends monotonically and, with the code's truncations, stabilizes at the tightest bounds derivable from the given axioms. → [X5D §2–§5](5_X5D_EXPDB/X5D.md)
 
-**The Guth–Maynard cusp fixes $\theta = 17/30$.** [fact]
-$$\frac{3}{2-\sigma} = \frac{15}{5\sigma+3} = \frac{30}{13} \text{ at } \sigma = \tfrac{7}{10}, \qquad \theta = 1 - \frac{13}{30} = \frac{17}{30}, \qquad \frac{d\theta}{d\lVert A\rVert} = \left(\frac{13}{30}\right)^2 = \frac{169}{900}.$$
-All four values exact; the attack surface is about 0.006 wide. → [Reinterpretation](5_X5D_EXPDB/X5D_EXPDB_Reinterpretation.md), [figure](5_X5D_EXPDB/figures/fig2_guth_maynard_cusp.svg)
+**The Ingham–Guth–Maynard cusp.** [fact]
+$$\frac{3}{2-\sigma} = \frac{15}{5\sigma+3} = \frac{30}{13} \text{ at } \sigma = \tfrac{7}{10}, \qquad \theta_{\mathrm{PNT}} \le 1 - \frac{13}{30} = \frac{17}{30}, \qquad \frac{d\theta_{\mathrm{PNT}}}{d\lVert A\rVert_\infty} = \frac{169}{900}.$$
+Guth and Maynard's bound for primes in all short intervals, located as the peak of the zero-density envelope. → [X5D §6.1](5_X5D_EXPDB/X5D.md), [figure](5_X5D_EXPDB/figures/fig2_guth_maynard_cusp.svg)
+
+**The second-moment route is not monotone.** [fact]
+In the route $\theta_{\mathrm{gap},2} \le \max\bigl(2 - 2/\lVert A\rVert_\infty,\ \sup\max(\alpha,\beta)\bigr)$ with
+$$\alpha(\sigma) = 4\sigma - 2 + \frac{2\bigl(B(1-\sigma)-1\bigr)}{B - A}, \qquad \frac{\partial\alpha}{\partial A} = \frac{2\bigl(B(1-\sigma)-1\bigr)}{(B-A)^2} < 0 \ \text{ near } \sigma = 1,$$
+a weaker zero-density input does better: Bourgain's $A \le 6/(303\sigma - 290)$ with $B = 12/(4\sigma-1)$ gives $\lim\alpha = \frac{33}{23}$ against the route's $\frac32$. Not a new bound on $\theta_{\mathrm{gap},2}$ — the known bound is $\frac{123}{100}$ (Stadlmann). → [X5D §6.2](5_X5D_EXPDB/X5D.md), [`check_x5d_arithmetic.py`](5_X5D_EXPDB/repro/check_x5d_arithmetic.py)
 
 ---
 
@@ -187,4 +194,4 @@ Interpretation, never cited as evidence. → [Philosophy & Ontology](4_Philosoph
 - **The parity barrier** — which open slot is prime.
 - **Twin primes, Goldbach, Cramér, the Riemann Hypothesis** — untouched.
 - **Whether the forbidden-width theorem is new** — it is elementary enough that it may be known.
-- **Independent re-runs still owed:** the $10^{10}$ TPB computation; the series-3 analysis scripts other than `check_angle_records.py`, `check_psd.py` and `check_envelope_fits.py`; X5D beyond the cusp arithmetic.
+- **Independent re-runs still owed:** the $10^{10}$ TPB computation; the series-3 analysis scripts other than `check_angle_records.py`, `check_psd.py` and `check_envelope_fits.py`; the X5D region and envelopes, which need the database code.

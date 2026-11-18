@@ -35,6 +35,16 @@ It is a property of any increasing, bounded-gap sequence. The mod-6 traffic law 
 
 **Jitter recoil "+2.7 pp genuine".** Published as 81.8% real / 79.2% null. Of thirty threshold definitions, several reproduce each number, none reproduces both, and all give a genuine column between $-0.7$ and $+0.2$ pp. The pair was computed at two different thresholds; the effect is $\approx 0$, as the $-\tfrac12$ identity requires. → [Gap Correlations §4](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
+**"One polytope generates the Exponent Database" (X5D Theorem 4.9).** Stated as: every output of the database is uniquely determined by a single region $\mathcal P \subset \mathbb R^5$, newly identified as the central object. Three qualifications the theorem omitted: the exponent-pair hull, $\beta^*$ and $\mu$ hull generate constraints on $\mathcal P$ rather than descending from it; the Ivić and Bourgain closed-form routes to $A(\sigma)$ bypass $\mathcal P$; and the database builds a finite family $\mathcal P^{(i)}$, not one region. The five-dimensional region of tuples $(\sigma,\tau,\rho,\rho^*,s)$ is Tao–Trudgian–Yang's own $\mathcal E$. The "proof" was a correspondence with code paths. Now stated as a description of the downstream pipeline. → [X5D §3](../5_X5D_EXPDB/X5D.md)
+
+**Two different θ's conflated (X5D headline).** The headline paired the X5D pipeline with "the prime-gap exponent $\theta = 17/30$". The pipeline's $\theta$ (`compute_gap2`) is the second-moment exponent $\theta_{\mathrm{gap},2}$, whose database route gives $\frac32$; $\frac{17}{30}$ is $\theta_{\mathrm{PNT}}$, primes in all short intervals, and is Guth and Maynard's bound. The "attack surface about 0.006 wide" had no derivation in the paper and was dropped. → [X5D §6](../5_X5D_EXPDB/X5D.md)
+
+**X5D convergence and monotonicity.** The paper claimed the iteration would stabilize even without the code's truncation constants, and that every stage including $\theta$ is monotone. Without truncation the exponent-pair hull can keep gaining vertices; and the $\theta$ stage is not monotone in $A$ (see the next entry). Stabilization rests on the truncations and the finite pool of half-spaces. → [X5D §5](../5_X5D_EXPDB/X5D.md)
+
+**"Replacing $\mathcal P$ by its convex hull leaves every bound unchanged" (X5D §4.9).** A section of $\mathrm{conv}(\mathcal P)$ at fixed $\sigma$ can be larger than the section of $\mathcal P$, so the rational supremum $\sup_\tau \rho/\tau$ can change. → [X5D §3](../5_X5D_EXPDB/X5D.md)
+
+**The $\theta_{\mathrm{gap},2}$ refinement note.** Presented as improving the database's $\theta_{\mathrm{gap},2} \le \frac32$ to $\frac{33}{23}$. The arithmetic is right, but $\frac32$ is only the output of one route (Prop. 15.9); the database itself lists $\frac{23}{18}$ (Heath-Brown 1979) and $\frac{123}{100}$ (Stadlmann 2022), so $\frac{33}{23}$ is not a new bound. The note also defined $\theta_{\mathrm{gap},2}$ as the short-interval exponent (it is the second moment $\sum_{p_n\le x}(p_{n+1}-p_n)^2$); described $\alpha$ as increasing in $A$ (it decreases, which is why a weaker $A$ helps); and took $\lVert A\rVert_\infty = 2$ for the first term (with the envelope it is $\frac{30}{13}$, giving $\frac{17}{15}$). Now stated as an observation about the route. → [X5D §6.2](../5_X5D_EXPDB/X5D.md)
+
 ## Corrected
 
 **PSD last digit: $p_n \ge 7$, not $p_n \ge 5$.** $(5, 7, 11)$ gives $\mathrm{PSD} = 8$, the sole counterexample below $5\times10^6$; the mod-5 step fails at $p = 5$. → [Twin Bertrand §2.4](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md)
@@ -47,7 +57,9 @@ It is a property of any increasing, bounded-gap sequence. The mod-6 traffic law 
 
 **The escape-ridge constant.** $4e^{-\gamma}$ applies Mertens where Buchstab's function governs; the measured ratio is 3.2 at $10^7$ and still falling. The order $N^{3/2}/\ln^2 N$ stands; the constant is marked heuristic. → [The Factor Skyline §6](../1_Factor_Skyline/Factor_Skyline.md)
 
-**The pre-Guth–Maynard cusp.** The claim that it sat at $\sigma \approx 5/7$ with height $12/5$ is inconsistent: $A_{\mathrm{Ing}}(5/7) = 7/3$, and a peak of $12/5$ on Ingham's curve forces $\sigma = 3/4$. → [figures/README](../5_X5D_EXPDB/figures/README.md)
+**The pre-Guth–Maynard cusp.** The claim that it sat at $\sigma \approx 5/7$ with height $12/5$ is inconsistent: $A_{\mathrm{Ing}}(5/7) = 7/3$, and a peak of $12/5$ on Ingham's curve forces $\sigma = 3/4$ — the Ingham–Huxley crossing with $3/(3\sigma-1)$. → [X5D §6.1](../5_X5D_EXPDB/X5D.md)
+
+**Rational supremum breakpoints.** Stated as rational; two degree-$(1,1)$ rational functions meet at roots of a quadratic, so the breakpoints are algebraic. → [X5D §3](../5_X5D_EXPDB/X5D.md)
 
 **Upstream reproducibility stubs.** The Factor Skyline's original `reproducibility/tables/` scripts returned placeholder values; the entropy numbers were first re-derived by [`entropy_budget.py`](../1_Factor_Skyline/repro/entropy_budget.py).
 

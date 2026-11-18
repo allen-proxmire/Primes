@@ -3,9 +3,7 @@
 
     python gen_svg.py
 
-  fig1_dimension_ladder.svg   the schematic specified but never drawn in
-                              X5D_EXPDB_Reinterpretation.md ("[Figure 1: The
-                              dimension ladder and upstream generators.]")
+  fig1_dimension_ladder.svg   the dimension ladder of X5D.md section 4
   fig2_guth_maynard_cusp.svg  the binding constraint: Ingham (1940) meeting
                               Guth-Maynard (2024) at sigma = 7/10
 
@@ -13,7 +11,7 @@ Everything plotted is exact rational arithmetic, verified before drawing:
     A_Ingham(s) = 3/(2-s)          rising limb, binding on [1/2, 7/10)
     A_GM(s)     = 15/(5s+3)        falling limb, binding on [7/10, 19/25)
     A_Ing(7/10) = A_GM(7/10)       = 30/13          exactly
-    theta       = 1 - 1/||A||      = 17/30          exactly
+    theta_PNT   = 1 - 1/||A||      = 17/30          exactly
     dtheta/dA   = 1/||A||^2        = 169/900        exactly
 
 SVG is used rather than PNG so the figures are text, diffable, and render
@@ -111,7 +109,7 @@ def figure1():
     o.append(txt(gx + gw/2, 372, "these sit in ℝ², below 𝒫 — but they feed", 11, MUTE))
     o.append(txt(gx + gw/2, 388, "UP into it, not down from it", 11, MUTE, weight="bold"))
 
-    o.append(txt(W/2, 524, "Drawn 2026-09-20 from the figure specification in X5D_EXPDB_Reinterpretation.md §1.", 10, MUTE))
+    o.append(txt(W/2, 524, "The dimension ladder of X5D.md, section 4.", 10, MUTE))
     o.append('</svg>')
     return "\n".join(o)
 
@@ -185,10 +183,10 @@ def figure2():
     # the payoff
     y = 470
     o.append(f'<line x1="{L}" y1="{y-24}" x2="{R_}" y2="{y-24}" stroke="#dcdce6" stroke-width="1"/>')
-    o.append(txt(L, y, "θ = 1 − 1/‖A‖∞  =  1 − 13/30  =  17/30", 14, FG, anchor="start", weight="bold"))
+    o.append(txt(L, y, "θ_PNT = 1 − 1/‖A‖∞  =  1 − 13/30  =  17/30", 14, FG, anchor="start", weight="bold"))
     o.append(txt(L, y + 20, "the prime-gap exponent, fixed entirely by the height of that one point", 11, MUTE, anchor="start"))
-    o.append(txt(L, y + 44, "dθ/d‖A‖ = 1/‖A‖∞²  =  169/900 ≈ 0.188", 13, FG, anchor="start"))
-    o.append(txt(L, y + 62, "lower the peak by δ and θ improves by about 0.19 δ — the whole attack surface", 11, MUTE, anchor="start"))
+    o.append(txt(L, y + 44, "dθ_PNT/d‖A‖ = 1/‖A‖∞²  =  169/900 ≈ 0.188", 13, FG, anchor="start"))
+    o.append(txt(L, y + 62, "lower the peak by δ and θ_PNT improves by about 0.19 δ", 11, MUTE, anchor="start"))
 
     o.append(txt(W - 40, 524, "all values exact rational arithmetic, verified 2026-09-20", 10, MUTE, anchor="end"))
     o.append('</svg>')
