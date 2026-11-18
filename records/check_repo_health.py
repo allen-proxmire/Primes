@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Three checks for mistakes this repository has actually made.
 
-    python meta/check_repo_health.py        # exits non-zero if anything fails
+    python records/check_repo_health.py        # exits non-zero if anything fails
 
 1. STRAY CONTROL CHARACTERS.
    Scripted edits that build LaTeX in a non-raw string turn a backslash

@@ -2,7 +2,7 @@
 
 ### A simple rule that predicts primes, and the exact formula behind it
 
-*Companion to [The Movie](The_Movie.md), which is the whole picture. This note is one piece of it, in full.*
+*Companion to [The Movie](../4_Philosophy_Ontology/The_Movie.md), which is the whole picture. This note is one piece of it, in full.*
 
 *Written 2026-09-20; "Far out" and "Looking back" added 2026-09-21. Every number below comes from [`repro/ninety_percent_table.py`](repro/ninety_percent_table.py) or, for the look-back section, [`repro/lookback_test.py`](repro/lookback_test.py). Run them and you get this page back.*
 
@@ -26,7 +26,7 @@ Here is the whole thing.
 
 Carry four wheels: **2, 3, 5, 7.**
 
-Each wheel has one mark on its rim, and it rolls along the number line — wheel $p$'s mark touches down every $p$ steps. Where a mark touches, the number is divisible by that prime, so it is composite. ([See them rolling.](figures/rolling_wheels.svg))
+Each wheel has one mark on its rim, and it rolls along the number line — wheel $p$'s mark touches down every $p$ steps. Where a mark touches, the number is divisible by that prime, so it is composite. ([See them rolling.](../4_Philosophy_Ontology/figures/rolling_wheels.svg))
 
 A position no mark touches is **open**.
 
@@ -123,7 +123,7 @@ If the walk really is memoryless — each open slot an independent shot at $q$ �
 
 Memoryless to within a few tenths of a point.
 
-**This is the same result as everything else in the collection, arriving from a different direction.** Once the wheel has been taken out, what is left behaves like a fair coin — no further pattern to exploit, no cleverer place to look next. That is the [no-residual finding](../2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md), showing up here as the fact that a one-parameter coin-flip model fits the walk.
+**This is the same result as everything else in the collection, arriving from a different direction.** Once the wheel has been taken out, what is left behaves like a fair coin — no further pattern to exploit, no cleverer place to look next. That is the [no-residual finding](One_Wheel_Many_Shadows.md), showing up here as the fact that a one-parameter coin-flip model fits the walk.
 
 **And it is why walking forward in order cannot be improved on.** The per-slot chances strictly fall — 30.0, 21.3, 14.9, 10.5 — and they *must*, because for slot 7 to be the answer, all six before it have to fail. Every slot you pass makes the rest less likely, mechanically. No reordering beats it.
 
@@ -213,7 +213,7 @@ It splits into two questions. Does the **direction** of the last step help? Does
 
 The guess "the next move reverses the last one" is right **68.6%** of the time. That sounds useful. But shuffle the same gaps into random order, make the same guess, and it's right **69.2%** of the time.
 
-Shuffled numbers zig-zag just as much, for a plain reason: after a big value the next is probably smaller, because big values are rare, and after a small one the next is probably bigger. Any random sequence reverses direction about two-thirds of the time. That's the [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md), and the zig-zag is arithmetic, not primes.
+Shuffled numbers zig-zag just as much, for a plain reason: after a big value the next is probably smaller, because big values are rare, and after a small one the next is probably bigger. Any random sequence reverses direction about two-thirds of the time. That's the [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md), and the zig-zag is arithmetic, not primes.
 
 A guess that uses *no history at all*, just "the next gap moves back toward a typical size," does better: **77.1%**.
 
@@ -253,7 +253,7 @@ What the table shows:
 
 1. **With your four wheels, the sliver is zero.** Those four have nothing to say about it.
 2. **Each wheel you add brings more of it back.** Wheel 11 gives an eighth, 13 about a quarter, 31 nearly two-thirds, and by 300 about 85%.
-3. **The fakes stall at about 85%.** They only get further as the pool ratio heads to 1, when the fake is no longer fake: it simply *is* the primes, and matching them is automatic. That's the circular-row trap from [the Null-Model Discipline](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md).
+3. **The fakes stall at about 85%.** They only get further as the pool ratio heads to 1, when the fake is no longer fake: it simply *is* the primes, and matching them is automatic. That's the circular-row trap from [the Null-Model Discipline](Null_Model_Discipline.md).
 
 The stall is partly the fakes' own fault. Throwing survivors away at random creates artificial big gaps that carry no wheel information, and those water the effect down. So the last 15% needs a test with no fakes in it.
 
@@ -314,7 +314,7 @@ Two tests. You stepped over eight numbers and looked at two of them.
 
 And 7921 is the honest lesson in miniature: open to all four wheels, and equal to $89^2$ — struck by the 89-wheel, which you are not carrying. **Open is a candidate.** That is the 18-to-30% showing up in a single instance.
 
-*(This mirrors 121 = 11² in [the animation](figures/rolling_wheels.svg) — the smallest number open to four wheels and not prime.)*
+*(This mirrors 121 = 11² in [the animation](../4_Philosophy_Ontology/figures/rolling_wheels.svg) — the smallest number open to four wheels and not prime.)*
 
 ---
 
@@ -362,11 +362,11 @@ The look-back section: the zig-zag test, the conditional walk, and the fake-prim
 
 | in this note | in the work |
 |---|---|
-| the wheel, and why 48/210 | [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) §2–§4 |
+| the wheel, and why 48/210 | [Prediction Budget](Prime_Prediction_Budget.md) §2–§4 |
 | four wheels exact below 121; activation at $p^2$ | [`FSPapers_01`](../1_Factor_Skyline/FSPapers_01_architectural_foundation.md) Def. 2.5 |
-| the walk is memoryless once the wheel is out | [The Wheel Is the Whole Story](../2_One_Wheel_Many_Shadows/The_Wheel_Is_The_Whole_Story.md) |
-| the zig-zag is what any random sequence does | [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md) |
-| fake primes, pool ratios, and the circular row | [Null-Model Discipline](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md) |
-| the doubling window $[N, 2N]$ as the natural unit | [Synthesis](../2_One_Wheel_Many_Shadows/FS_Synthesis_Doubling_and_Wheel.md) |
-| the wall | the parity barrier — [Prediction Budget](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) §2, Tier 3 |
-| the whole picture this is one piece of | [The Movie](The_Movie.md) |
+| the walk is memoryless once the wheel is out | [One Wheel, Many Shadows](One_Wheel_Many_Shadows.md) |
+| the zig-zag is what any random sequence does | [Differencing Trap](Prime_Gap_Memory_Differencing_Trap.md) |
+| fake primes, pool ratios, and the circular row | [Null-Model Discipline](Null_Model_Discipline.md) |
+| the doubling window $[N, 2N]$ as the natural unit | [Synthesis](FS_Synthesis_Doubling_and_Wheel.md) |
+| the wall | the parity barrier — [Prediction Budget](Prime_Prediction_Budget.md) §2, Tier 3 |
+| the whole picture this is one piece of | [The Movie](../4_Philosophy_Ontology/The_Movie.md) |

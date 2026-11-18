@@ -14,7 +14,7 @@
 
 It proves the twin slope $\arctan(2/3) \approx 33.69°$ is an absolute ceiling on the Factor Skyline; that twin-open template positions in every Bertrand interval $[p, 2p]$ diverge like $C_2 p/(\ln p)^2$; and that under Cramér the probability all of them stay unfilled decays super-exponentially. It then isolates **the Filling Condition** as the single conjectural step between those structural guarantees and the twin prime conjecture, gives it in three equivalent forms, and places it in the hierarchy strictly between Maynard–Tao bounded gaps and full Hardy–Littlewood.
 
-**It is not a duplicate of the PG trilogy.** PG II is about the *triangle* angle $\arctan(p/q) \to 45°$. This is about the *skyline* slope $\arctan(2/3)$ as a ceiling. Different construction, different geometry, same subject. [`PRIMES_MAP.md`](../PRIMES_MAP.md) §7 flagged this exact question in July — *"confirm they're distinct papers, not divergent copies"* — and it was never resolved. **They are distinct.**
+**It is not a duplicate of the PG trilogy.** PG II is about the *triangle* angle $\arctan(p/q) \to 45°$. This is about the *skyline* slope $\arctan(2/3)$ as a ceiling. Different construction, different geometry, same subject. [`PRIMES_MAP.md`](../README.md) §7 flagged this exact question in July — *"confirm they're distinct papers, not divergent copies"* — and it was never resolved. **They are distinct.**
 
 ---
 

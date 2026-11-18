@@ -1,8 +1,8 @@
 # The July 2026 Consolidation — historical record
 
-*How four separate project repos became one collection, and what was decided along the way. Moved out of [`PRIMES_MAP.md`](../PRIMES_MAP.md) on 2026-09-20: it described a folder layout that no longer exists, and readers following "full inventory" kept landing on notes about moving folders around.*
+*How four separate project repos became one collection, and what was decided along the way. Moved out of [`PRIMES_MAP.md`](../README.md) on 2026-09-20: it described a folder layout that no longer exists, and readers following "full inventory" kept landing on notes about moving folders around.*
 
-**For what is actually in the collection, see [`PRIMES_MAP.md`](../PRIMES_MAP.md).** This record is kept because its decisions still bind — what was merged, what was deleted, what was deliberately left outside.
+**For what is actually in the collection, see [`PRIMES_MAP.md`](../README.md).** This record is kept because its decisions still bind — what was merged, what was deleted, what was deliberately left outside.
 
 ---
 

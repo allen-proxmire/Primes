@@ -2,7 +2,7 @@
 
 ### Why any of this should be believed — and the two times it shouldn't have been
 
-*Companion to [What We Found](WHAT_WE_FOUND.md). No notation.*
+*Companion to [What We Found](../RESULTS.md). No notation.*
 
 ---
 
@@ -40,7 +40,7 @@ So the storms, the reversals, and most of the 44% are what subtraction does to a
 
 **Of the 44%, about 42 points are arithmetic and 2 points are real.** Those 2 points are genuine and traceable to the small primes. But you would never have found them without asking what a shuffled version does first.
 
-→ [Prime-Gap Memory and the Differencing Trap](2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md)
+→ [Prime-Gap Memory and the Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md)
 
 ## Worked example 2: the coin that was never the opponent
 
@@ -66,7 +66,7 @@ So the switchback law describes **any increasing sequence with bounded steps.** 
 
 **The painful detail:** the paper defended itself with a shuffle. Just the wrong one. It shuffled the thing that tests whether the sequence increases (it does, that matters) rather than the thing that tests whether *the primes* matter (they don't, here). Two nulls, two different questions, and it reached for the wrong one — a distinction its own companion paper had already spelled out.
 
-→ [The Switchback Law](2_One_Wheel_Many_Shadows/Switchback_Law.md) §3
+→ [The Switchback Law](../2_One_Wheel_Many_Shadows/Switchback_Law.md) §3
 
 ---
 
@@ -84,7 +84,7 @@ Five, each learned the hard way:
 
 5. **Prove your test can find something before trusting it when it finds nothing.** A null result from a blind instrument is worthless. Before reporting "no effect," show the same setup detecting an effect you already know is there — or deliberately cripple the model and confirm the test notices.
 
-→ [The Null-Model Discipline](2_One_Wheel_Many_Shadows/Null_Model_Discipline.md) has all five with the technical detail.
+→ [The Null-Model Discipline](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md) has all five with the technical detail.
 
 ---
 
@@ -103,7 +103,7 @@ There's now a script that regenerates every measured table in the main papers fr
 
 None of it required new ideas. It required running the checks, which nobody had done, because until the script existed there was nothing to run.
 
-→ [`2_One_Wheel_Many_Shadows/repro/`](2_One_Wheel_Many_Shadows/repro/)
+→ [`2_One_Wheel_Many_Shadows/repro/`](../2_One_Wheel_Many_Shadows/repro/)
 
 ---
 
@@ -115,7 +115,7 @@ Fair question, and the honest answer has three parts.
 
 **Because the surviving results were checked the same way and held.** The traffic rule on consecutive gaps isn't "a tendency we noticed" — it survives the correct baseline by a factor of two, with exact zeros where the rule says there must be zeros. The crystal result has a genuine control that came out negative. The claims that survived, survived a process that killed two others on the same day.
 
-**And because the labels are honest.** [What We Found](WHAT_WE_FOUND.md) marks each item proven, verified-not-proven, measured, or a reading. The retractions are on the page. The unverified parts — series 3 and 5, which haven't had this treatment — are named as unverified rather than quietly included.
+**And because the labels are honest.** [What We Found](../RESULTS.md) marks each item proven, verified-not-proven, measured, or a reading. The retractions are on the page. The unverified parts — series 3 and 5, which haven't had this treatment — are named as unverified rather than quietly included.
 
 **Series 3 has since had the same scrutiny, and the guess was right.** Four claims checked: one clean, one clean-with-an-off-by-one, and **both curve fits failed** — an exponent that measures 2 rather than the published 1.866, and a bound violated 204 times because it was fitted to one extreme quantity and asserted about another.
 
