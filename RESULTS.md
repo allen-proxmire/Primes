@@ -171,10 +171,10 @@ The large value and energy regions are projections; $A$ and $A^*$ are lower enve
 $$\frac{3}{2-\sigma} = \frac{15}{5\sigma+3} = \frac{30}{13} \text{ at } \sigma = \tfrac{7}{10}, \qquad \theta_{\mathrm{PNT}} \le 1 - \frac{13}{30} = \frac{17}{30}, \qquad \frac{d\theta_{\mathrm{PNT}}}{d\lVert A\rVert_\infty} = \frac{169}{900}.$$
 Guth and Maynard's bound for primes in all short intervals, located as the peak of the zero-density envelope. → [X5D §6.1](5_X5D_EXPDB/X5D.md), [figure](5_X5D_EXPDB/figures/fig2_guth_maynard_cusp.svg)
 
-**The second-moment route is not monotone.** [fact]
-In the route $\theta_{\mathrm{gap},2} \le \max\bigl(2 - 2/\lVert A\rVert_\infty,\ \sup\max(\alpha,\beta)\bigr)$ with
-$$\alpha(\sigma) = 4\sigma - 2 + \frac{2\bigl(B(1-\sigma)-1\bigr)}{B - A}, \qquad \frac{\partial\alpha}{\partial A} = \frac{2\bigl(B(1-\sigma)-1\bigr)}{(B-A)^2} < 0 \ \text{ near } \sigma = 1,$$
-a weaker zero-density input does better: Bourgain's $A \le 6/(303\sigma - 290)$ with $B = 12/(4\sigma-1)$ gives $\lim\alpha = \frac{33}{23}$ against the route's $\frac32$. Not a new bound on $\theta_{\mathrm{gap},2}$ — the known bound is $\frac{123}{100}$ (Stadlmann). → [X5D §6.2](5_X5D_EXPDB/X5D.md), [`check_x5d_arithmetic.py`](5_X5D_EXPDB/repro/check_x5d_arithmetic.py)
+**The second-moment route is not monotone.** [fact/emp]
+In the route $\theta_{\mathrm{gap},2} \le \max\bigl(2 - 2/\lVert A\rVert_\infty,\ \sup\max(\alpha,\beta)\bigr)$, with
+$$\alpha = 4\sigma - 2 + \frac{2\bigl(B(1-\sigma)-1\bigr)}{B - A}, \qquad \beta = 4\sigma - 2 + \frac{B(1-\sigma)-1}{A},$$
+a weaker zero-density input can do better: near $\sigma = 1$, $\alpha$ falls and $\beta$ rises as $A$ grows, and they balance at $A_1 = B_1/3$, giving $2 - 3/B_1 = \frac54$. The code feeds in the pointwise-best $A$ and gets $\frac32$ there; Heath-Brown's $\frac{23}{18}$ comes from choosing $A$. Not a new bound — the known bound is $\frac{123}{100}$ (Stadlmann). → [X5D §6.2](5_X5D_EXPDB/X5D.md), [`check_x5d_arithmetic.py`](5_X5D_EXPDB/repro/check_x5d_arithmetic.py), [`gap2_free_choice.py`](5_X5D_EXPDB/repro/gap2_free_choice.py)
 
 ---
 

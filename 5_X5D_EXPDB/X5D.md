@@ -17,7 +17,7 @@ The Analytic Number Theory Exponent Database (EXPDB; Tao, Trudgian, Yang 2025) i
 - The iteration as a monotone descent on a product lattice that stabilizes at the tightest bounds derivable from the given axioms and transforms (§5).
 - Two worked numbers, both checked exactly by [`repro/check_x5d_arithmetic.py`](repro/check_x5d_arithmetic.py) (§6):
   - the Ingham / Guth–Maynard cusp at $\sigma = \frac{7}{10}$, which gives $\theta_{\mathrm{PNT}} \le \frac{17}{30}$ — Guth and Maynard's result, read off the picture;
-  - a property of the database's second-moment prime-gap route: its output is **not monotone** in the zero-density input, so a weaker input near $\sigma = 1$ lowers that route's output from $\frac32$ to $\frac{33}{23}$. The best known bound for that exponent is $\frac{123}{100}$ (Stadlmann), well below both.
+  - a property of the database's second-moment prime-gap route: its output is **not monotone** in the zero-density input, so near $\sigma = 1$ a chosen, weaker input does better than the pointwise-best one the code feeds in — $\frac54$ at best, against the code's $\frac32$. The best known bound for that exponent is $\frac{123}{100}$ (Stadlmann).
 
 ---
 
@@ -149,21 +149,28 @@ $$\alpha(\sigma) = 4\sigma - 2 + \frac{2\bigl(B(\sigma)(1-\sigma) - 1\bigr)}{B(\
 $$\frac{\partial\alpha}{\partial A} = \frac{2\bigl(B(1-\sigma) - 1\bigr)}{(B - A)^2} < 0 .$$
 As $\sigma \to 1$ with $B \to B_1$,
 $$A \to 0:\ \ \alpha \to 2 - \frac{2}{B_1}, \qquad A \to A_1 > 0:\ \ \alpha \to 2 - \frac{2}{B_1 - A_1} .$$
-The database feeds in the pointwise-best $A$, which near $\sigma = 1$ decays to zero (Heath-Brown, $A(\sigma) \le 6.42\sqrt{1-\sigma}$), and with Heath-Brown's energy bound $B(\sigma) = \frac{12}{4\sigma - 1}$, $B_1 = 4$, gets
+The database's code (`compute_gap2` in `prime_gap.py`) feeds in the pointwise-best $A$ from its envelope. If that $A$ decays to zero at $\sigma = 1$, then with Heath-Brown's energy bound $B(\sigma) = \frac{12}{4\sigma - 1}$, $B_1 = 4$, it gets
 $$\alpha \to 2 - \tfrac24 = \tfrac32 .$$
 
-**A weaker input does better.** Heath-Brown's exponent pair with $m = 6$,
+**Is "any upper bound" the lemma's real reading?** The database states the proposition for any upper bounds $A, B$, with no side conditions, and its own proofs use that freedom: under the Lindelöf hypothesis it takes $A(\sigma) = B(\sigma) = \varepsilon$ for $\sigma > \frac34$ (Cor. 15.10(ii), giving $\frac76$), and the unconditional $\frac{23}{18}$ (Cor. 15.10(iii), Heath-Brown) comes from the same proposition with chosen bounds on $A$. A consistency test supports that reading. With only the inputs available in 1979 — Ingham $\frac{3}{2-\sigma}$, Huxley $\frac{3}{3\sigma-1}$, a bound decaying like $\sqrt{1-\sigma}$, and Heath-Brown's energy bounds — choosing $A$ freely gives about $1.31$. That is no better than Heath-Brown's own $\frac{23}{18}$ and nowhere near beating today's $\frac{123}{100}$, so nothing too good to be true comes out. Feeding the pointwise-best $A$ instead gives about $1.49$. Heath-Brown's 1979 paper itself was not available to check line by line.
+
+**The best choice at the endpoint.** As $\sigma \to 1$ with $A \to A_1$ and $B \to B_1$,
+$$\alpha \to 2 - \frac{2}{B_1 - A_1}, \qquad \beta \to 2 - \frac{1}{A_1}.$$
+$\alpha$ falls and $\beta$ rises as $A_1$ grows, so the larger of the two is smallest where they meet:
+$$\frac{2}{B_1 - A_1} = \frac{1}{A_1} \iff A_1 = \frac{B_1}{3}, \qquad \lim \max(\alpha, \beta) = 2 - \frac{3}{B_1} = \frac54 \quad (B_1 = 4).$$
+$A = \frac43$ is a valid upper bound near $\sigma = 1$, because the database's own estimates fall below it: $\frac{3}{10\sigma - 7} \le \frac43$ for $\sigma \ge \frac{37}{40}$, and Bourgain's $\frac{6}{303\sigma - 290} \le \frac43$ for $\sigma \ge \frac{589}{606}$. Choosing $A$ freely on $[\frac{59}{60}, 1)$ gives a supremum of about $1.250$ (numerical).
+
+**The note's choice.** Heath-Brown's exponent pair with $m = 6$,
 $$(k, l) = \Bigl(\frac{2}{(m-1)^2(m+2)},\ 1 - \frac{3m-2}{m(m-1)(m+2)}\Bigr) = \Bigl(\frac{1}{100}, \frac{14}{15}\Bigr),$$
 meets Bourgain's conditions $k < \frac15$, $l > \frac35$, $15l + 20k = \frac{71}{5} > 13$, $k \le \frac{11}{85}$, so for $\sigma > \frac{l+1}{2(k+1)} = \frac{290}{303}$,
 $$A(\sigma) \le \frac{4k}{2(1+k)\sigma - 1 - l} = \frac{6}{303\sigma - 290}, \qquad A(1^-) = \frac{6}{13} .$$
 With this $A$ and $B = \frac{12}{4\sigma - 1}$ on $[\frac{59}{60}, 1)$:
 $$\alpha(\sigma) = \frac{2376\sigma^2 - 1981\sigma - 296}{3(602\sigma - 579)}, \qquad \beta(\sigma) = \frac{-4752\sigma^2 + 8507\sigma - 3758}{6(4\sigma - 1)} .$$
-$\alpha$ increases from $\alpha(\frac{59}{60}) = \frac{16043}{11670} \approx 1.375$ toward
-$$\lim_{\sigma \to 1^-}\alpha(\sigma) = \frac{2376 - 1981 - 296}{3(602 - 579)} = \frac{99}{69} = \frac{33}{23} = 2 - \frac{2}{4 - 6/13},$$
-and $\beta < \alpha$ throughout ($\beta(\frac{59}{60}) \approx 0.699$, $\beta \to -\frac16$). On $[\frac12, \frac{59}{60})$ the database's own envelope gives at most $\approx 1.375$ (on $[\frac{41}{42}, \frac{59}{60})$, as reported by the database run; not re-run here), and the first term is $2 - 2/\lVert A\rVert_\infty = 2 - \frac{13}{15} = \frac{17}{15}$. So this route gives
-$$\theta_{\mathrm{gap},2} \le \frac{33}{23} \approx 1.4348 \quad\text{in place of the route's } \frac32 .$$
+$\alpha$ rises from $\alpha(\frac{59}{60}) = \frac{16043}{11670} \approx 1.375$ to
+$$\lim_{\sigma \to 1^-}\alpha(\sigma) = \frac{33}{23} = 2 - \frac{2}{4 - 6/13} \approx 1.4348,$$
+with $\beta < \alpha$ throughout. That beats the code's $\frac32$ on this interval, but it is not the best choice: $A_1 = \frac{6}{13}$ is below the balancing value $\frac43$.
 
-**What this is and is not.** It is an observation about the route: since the proposition accepts *any* upper bounds and $\alpha$ is not monotone in $A$, the pointwise-best input is not the best input, and the route should be optimised over admissible inputs rather than fed the envelope. It is **not** a new bound on $\theta_{\mathrm{gap},2}$: the database's own table records $\frac{23}{18}$ (Heath-Brown 1979) and $\frac{123}{100}$ (Stadlmann 2022), both below $\frac{33}{23}$. The non-monotonicity also cuts the other way as a warning — pushing $A$ toward $B$ drives $\alpha$ toward $-\infty$ near $\sigma = 1$, at the cost of raising $\lVert A\rVert_\infty$ and the first term — so any optimisation over inputs must respect every condition in Heath-Brown's lemma, which should be checked against the original before the route is used this way. $\frac{33}{23}$ is not claimed to be optimal for the route.
+**What this is and is not.** The route rewards choosing the zero-density input rather than feeding in the pointwise-best one — Heath-Brown and the database's authors do this in their proofs, but the code's automatic run does not. Near $\sigma = 1$ the best choice gives $\frac54$. Nothing here is a new bound on $\theta_{\mathrm{gap},2}$. The full route depends on every interval of $[\frac12, 1]$; the database's interval values (about $1.375$ on $[\frac{41}{42}, \frac{59}{60})$, from a database run) were not recomputed with free $A$, because the code needs `sympy` and `pycddlib`, which are not installed here. The known bounds are $\frac{23}{18}$ (Heath-Brown) and $\frac{123}{100}$ (Stadlmann).
 
 All closed forms in this section are verified as exact rational arithmetic by [`repro/check_x5d_arithmetic.py`](repro/check_x5d_arithmetic.py).
 
@@ -171,7 +178,7 @@ All closed forms in this section are verified as exact rational arithmetic by [`
 
 ## 7. Directions
 
-- **Optimise the $\theta_{\mathrm{gap},2}$ route over admissible inputs** (§6.2), with the lemma's conditions made explicit.
+- **Optimise the $\theta_{\mathrm{gap},2}$ route over admissible inputs** (§6.2): choose $A(\sigma)$ on every interval, not only at the endpoint, and see whether the route reaches or passes $\frac{23}{18}$ with today's estimates.
 - **Huxley subdivision**, declared but unimplemented, would add a transform and could tighten the fixed point.
 - **Choose $\tau_0$ automatically.** The splitting parameter is set by hand in each `prove_zero_density` call; optimising it is a parametric linear-fractional program.
 - **Load-bearing hypotheses.** A hypothesis matters to $\theta$ only if it contributes an active half-space on the path to the critical $\sigma$; the dependency labels already identify these. The minimal such set — the essential axioms — is open.

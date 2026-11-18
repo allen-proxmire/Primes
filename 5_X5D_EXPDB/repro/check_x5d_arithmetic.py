@@ -57,6 +57,10 @@ check("lim alpha (s -> 1) = 33/23", F(2376 - 1981 - 296, 3 * (602 - 579)) == F(3
 check("lim alpha = 2 - 2/(B(1) - A(1)) = 33/23", 2 - 2 / (B(F(1)) - Aused(F(1))) == F(33, 23))
 check("with A(1-) = 0: lim alpha = 2 - 2/B(1) = 3/2", 2 - 2 / B(F(1)) == F(3, 2))
 check("beta < alpha on [59/60, 1)", all(beta(s) < alpha(s) for s in grid))
+check("endpoint balance: A1 = B1/3 = 4/3 gives alpha = beta = 5/4",
+      2 - 2 / (4 - F(4, 3)) == 2 - 1 / F(4, 3) == F(5, 4) == 2 - F(3, 4))
+check("3/(10s-7) <= 4/3 iff s >= 37/40", F(3) / (10 * F(37, 40) - 7) == F(4, 3))
+check("Bourgain 6/(303s-290) <= 4/3 iff s >= 589/606", F(6) / (303 * F(589, 606) - 290) == F(4, 3))
 check("first term 2 - 2/||A|| with ||A|| = 30/13 is 17/15 < 33/23", 2 - 2 / A == F(17, 15) < F(33, 23))
 
 print()
