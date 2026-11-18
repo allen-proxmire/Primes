@@ -1,7 +1,5 @@
 # Primes
 
-[![DOI](https://zenodo.org/badge/1302667725.svg)](https://doi.org/10.5281/zenodo.21626683)
-
 **The Factor Skyline** stands every integer $n$ up as a column: width $\mathrm{lpf}(n)$, its least prime factor, and height $n/\mathrm{lpf}(n)$. On that picture two operations run the primes. **Doubling** ($p\mapsto2p$) is the top ray. **The wheel** — the small primes $2,3,5,7,\dots$ blocking their multiples — is the fan of rays below it. **Primes are what escape both.** Facts that look unrelated on the flat number line — the common gaps, the forbidden widths, the $45°$ angle, the prime crystal — become one picture.
 
 **What goes in.** The engine is classical: the wheel *is* the Hardy–Littlewood singular series, and "gap statistics follow the singular series" is the field's working model. No new theory of the deep structure of the primes is claimed.
