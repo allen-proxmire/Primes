@@ -12,7 +12,7 @@ Each integer $n$ becomes a column of width $\mathrm{lpf}(n)$ and height $n/\math
 
 What the lens supplies:
 - an elementary account of prime constellations — survival factors, the singular series as a product of survival ratios, and candidates that never run out (§3);
-- the reason the wheel is never seen to repeat: from $p \ge 5$ its period outruns the window in which it applies (§4);
+- the reason the wheel is never seen to repeat: from $p \ge 5$ its period outruns the window in which it applies — and the measured leftover that no finished template copies (§4);
 - an information budget for the escape layer: simple to generate, random to look at (§5);
 - the escape ridge, of order $N^{3/2}/\ln^2 N$ (§6).
 
@@ -99,6 +99,32 @@ At activation threshold $p_k$ the governing template has period $p_k\#$, but the
 
 **From $p \ge 5$ the template never completes one period inside the epoch where it is the operative rule.** Each new width multiplies the period by $p_{k+1}$ while the epoch grows only like $p$. A fully determined, cheaply described pattern is structurally unable to look periodic where it applies.
 
+Each prime has two moments: it is **born** at $p$ (Bertrand places one in every $(p, 2p)$) and **activates** at $p^2$. The period grows like $e^{p}$, the epoch like $p$:
+$$\text{periods per epoch} = \frac{p_{k+1}^2 - p_k^2}{p_k\#} \qquad (0.8,\ 0.34,\ 0.02,\ 0.004,\ 1.4\times10^{-4},\ \dots \text{ from } p = 5).$$
+
+![The active template](figures/FS_active_template.png)
+
+**What no finished template copies.** A template finished at modulus $Q$ — integers coprime to every prime $\le Q$, thinned to prime density — is a fair model only while it stays weaker than the primes (pool ratio above $\approx 1.25$, [Null Model Discipline §4](../2_One_Wheel_Many_Shadows/Null_Model_Discipline.md)). The test: cut $[5\times10^6, 5\times10^7]$ into windows, take the total width of the wide columns ($p > N^{1/3}$, each a product $p\cdot q$ of two primes) in each window, remove the trend, and correlate neighbouring windows.
+
+| windows | primes | template to 13 | to 23 | to 31 | to 41 |
+|---|---|---|---|---|---|
+| pool ratio (near-square zone) | 1.00 | 1.62 | 1.38 | 1.27 | 1.19 |
+| $10^5$ | −0.26 | +0.05 | −0.02 | −0.06 | −0.08 |
+| $2\times10^5$ | −0.31 | +0.21 | +0.18 | +0.15 | +0.11 |
+
+Neighbouring windows alternate, 3 to 4.5σ beyond every fair template, with no convergence as $Q$ deepens; the template to 41, already past the fair line, still falls short.
+
+The alternation is inherited from the cofactors $q$: prime counts in neighbouring short intervals of length $L$ anticorrelate beyond the template, in sign and rough size as Montgomery and Soundararajan derive from the Hardy–Littlewood conjectures,
+$$\rho \approx -\frac{\ln 2}{2\bigl(\ln(q/L) + B\bigr)}, \qquad B = 1 - \gamma - \ln 2\pi.$$
+
+| cofactors $q$ | $L$ | primes | template to 31 | prediction |
+|---|---|---|---|---|
+| $[2000, 8000)$ | 200 | −0.30 | +0.05 | −0.22 |
+| $[8000, 40000)$ | 60 | −0.13 | −0.04 | −0.08 |
+| $[40000, 135000)$ | 200 | −0.12 | +0.04 | −0.08 |
+
+The singular series behind it is a product over every prime (§3). Each finished template holds only a finite part of it; the epoch moves on before any template completes. → [`active_template.py`](repro/active_template.py)
+
 ---
 
 ## 5. Simple to generate, random to look at
@@ -147,16 +173,19 @@ The template is proved; the escape is not. Every hard question becomes a stateme
 
 ## Ledger
 
-**Classical:** least prime factor, the sieve, the Chinese Remainder Theorem, the singular series, Mertens, the prime number theorem and everything in §7.
+**Classical:** least prime factor, Bertrand's postulate, the Montgomery–Soundararajan short-interval variance (conditional on Hardy–Littlewood), the sieve, the Chinese Remainder Theorem, the singular series, Mertens, the prime number theorem and everything in §7.
 
-**Contributed:** the coordinate system and its picture; the singular series read as a product of survival ratios, with template persistence; the epoch/period comparison of §4; the information budget of §5; the escape ridge.
+**Contributed:** the coordinate system and its picture; the singular series read as a product of survival ratios, with template persistence; the epoch/period comparison of §4 and the fair-template test of its leftover; the information budget of §5; the escape ridge.
 
 ## Reproduction
 
 [`repro/entropy_budget.py`](repro/entropy_budget.py) — the information budget at $10^3$ to $3\times10^6$ (standard library).
 
+[`repro/active_template.py`](repro/active_template.py) — the §4 figure and the fair-template test at $5\times10^7$ (numpy, matplotlib; under a minute).
+
 ## References
 
 - G. H. Hardy, J. E. Littlewood, *Partitio numerorum III*, Acta Math. **44** (1923).
+- H. L. Montgomery, K. Soundararajan, *Primes in short intervals*, Commun. Math. Phys. **252** (2004).
 - F. Mertens, *Ein Beitrag zur analytischen Zahlentheorie*, J. reine angew. Math. **78** (1874).
 - A. Proxmire, *The Factor Skyline*, Zenodo (2026), DOI [10.5281/zenodo.18275273](https://doi.org/10.5281/zenodo.18275273).
