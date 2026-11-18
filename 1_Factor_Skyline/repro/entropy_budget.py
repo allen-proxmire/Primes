@@ -140,7 +140,7 @@ def main():
           % (100 * (1 - hi["open_density"])))
     print("  at an open slot is %.4f bits of genuine uncertainty. THAT ratio is the"
           % hi["H_b"])
-    print("  Prediction Budget's real subject, and it is stable.")
+    print("  quantity that bears on prediction, and it is stable.")
 
 
 if __name__ == "__main__":

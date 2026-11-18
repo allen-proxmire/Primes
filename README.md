@@ -12,12 +12,12 @@
 
 | | result | |
 |---|---|---|
-| [thm] | **Forbidden widths.** A prime gap of width $W\in\{2,4,6,10\}$ never holds two consecutive-prime sums $p_k+p_{k+1}$; the list is complete. | [→](2_One_Wheel_Many_Shadows/FS_Consecutive_Prime_Sums_In_Gaps.md) |
-| [thm] | **A traffic law.** Two consecutive gaps are never both $\equiv2$ nor both $\equiv4 \pmod 6$ — measured $0.0\%$ against $28.4\%$ under a shuffle. | [→](2_One_Wheel_Many_Shadows/Switchback_Law.md) |
-| [conj] | **Twin Bertrand.** Every $(x,2x]$ with $x\ge11$ holds a twin prime, $\pi_2(2x)-\pi_2(x)\ge1$. Verified to $10^{10}$; equivalent to "every angle record of the prime triangle is a twin" — 440,312 records and 440,312 twins below $10^8$, the same list. | [→](3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md) |
+| [thm] | **Forbidden widths.** A prime gap of width $W\in\{2,4,6,10\}$ never holds two consecutive-prime sums $p_k+p_{k+1}$; the list is complete. | [→](2_One_Wheel_Many_Shadows/Consecutive_Prime_Sums.md) |
+| [thm] | **A traffic law.** Two consecutive gaps are never both $\equiv2$ nor both $\equiv4 \pmod 6$ — measured $0.0\%$ against $28.4\%$ under a shuffle. | [→](2_One_Wheel_Many_Shadows/Traffic_Law.md) |
+| [conj] | **Twin Bertrand.** Every $(x,2x]$ with $x\ge11$ holds a twin prime, $\pi_2(2x)-\pi_2(x)\ge1$. Verified to $10^{10}$. Under it the angle records of the prime triangle are exactly the twins — 440,312 of each below $10^8$, the same list. | [→](3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md) |
 | [emp/null] | **The wheel is the whole story of the gaps.** Ten gap statistics, six independent and four provably the same quantity in other notation; all reproduced by a wheel-only model, no residual. | [→](2_One_Wheel_Many_Shadows/One_Wheel_Many_Shadows.md) |
-| [emp] | **The primes are a crystal.** Bragg peaks at every $k=a/m$ of height $(\mu(m)/\varphi(m))^2$; a non-arithmetic exclusion process diffracts as a liquid. | [→](2_One_Wheel_Many_Shadows/Prime_Structure_Factor.md) |
-| [emp/deriv] | **The ninety percent rule.** Walking mod-210 open slots, the next prime is caught 90% of the time within $3, 4, 5, 7, 8, 9, 10, 11$ slots at $N=10^3\ldots10^{10}$ — predicted at every decade by $q=4.375/\ln N$, $k=\lceil\ln0.1/\ln(1-q)\rceil$. | [→](2_One_Wheel_Many_Shadows/The_Ninety_Percent_Rule.md) |
+| [emp] | **The primes are a crystal.** Bragg peaks at every $k=a/m$ of height $(\mu(m)/\varphi(m))^2$; a non-arithmetic exclusion process diffracts as a liquid. | [→](2_One_Wheel_Many_Shadows/Prime_Crystal.md) |
+| [emp/deriv] | **The ninety percent rule.** Walking mod-210 open slots, the next prime is caught 90% of the time within $3, 4, 5, 7, 8, 9, 10, 11$ slots at $N=10^3\ldots10^{10}$ — predicted at every decade by $q=4.375/\ln N$, $k=\lceil\ln0.1/\ln(1-q)\rceil$. | [→](2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md) |
 | [thm] | **One polytope generates the Exponent Database.** Every entry is a shadow of one $\mathcal P\subset\mathbb R^5$; Ingham meets Guth–Maynard at $\sigma=7/10$, height $30/13$, fixing $\theta=17/30$. | [→](5_X5D_EXPDB/) |
 
 **Every result, with formulas:** [RESULTS.md](RESULTS.md) · **The picture in plain language:** [The Movie](4_Philosophy_Ontology/The_Movie.md)
@@ -27,9 +27,9 @@
 | folder | contents |
 |---|---|
 | [`1_Factor_Skyline/`](1_Factor_Skyline/) | the lens — the coordinate system and its theory |
-| [`2_One_Wheel_Many_Shadows/`](2_One_Wheel_Many_Shadows/) | the wheel and the gaps, prediction, and the null-model method |
+| [`2_One_Wheel_Many_Shadows/`](2_One_Wheel_Many_Shadows/) | the wheel and the gaps, predicting the next prime, the null-model method |
 | [`3_Twin_Bertrand_Prime_Geometry/`](3_Twin_Bertrand_Prime_Geometry/) | the twin conjecture and the prime triangle |
-| [`4_Philosophy_Ontology/`](4_Philosophy_Ontology/) | readings — interpretation, never cited as evidence |
+| [`4_Philosophy_Ontology/`](4_Philosophy_Ontology/) | The Movie and the readings — interpretation, never cited as evidence |
 | [`5_X5D_EXPDB/`](5_X5D_EXPDB/) | the Exponent Database polytope — a separate subject |
 | [`records/`](records/) | corrections, worklogs, and the repo health check |
 

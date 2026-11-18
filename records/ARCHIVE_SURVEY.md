@@ -10,7 +10,7 @@
 
 **One complete, publishable paper was sitting in the Archive, uncited by anything in canon.**
 
-> **[The Twin-Slope Ceiling: Twin Prime Geometry on the Factor Skyline](../3_Twin_Bertrand_Prime_Geometry/FS_twin_prime_geometry.md)** — 5,700 words, nine sections, abstract, MSC codes, three theorems and a named conjecture.
+> **[The Twin-Slope Ceiling: Twin Prime Geometry on the Factor Skyline](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md)** — 5,700 words, nine sections, abstract, MSC codes, three theorems and a named conjecture.
 
 It proves the twin slope $\arctan(2/3) \approx 33.69°$ is an absolute ceiling on the Factor Skyline; that twin-open template positions in every Bertrand interval $[p, 2p]$ diverge like $C_2 p/(\ln p)^2$; and that under Cramér the probability all of them stay unfilled decays super-exponentially. It then isolates **the Filling Condition** as the single conjectural step between those structural guarantees and the twin prime conjecture, gives it in three equivalent forms, and places it in the hierarchy strictly between Maynard–Tao bounded gaps and full Hardy–Littlewood.
 
@@ -24,17 +24,17 @@ It proves the twin slope $\arctan(2/3) \approx 33.69°$ is an absolute ceiling o
 
 | promoted | what it is |
 |---|---|
-| [`modules/`](../1_Factor_Skyline/modules/) — 17 files | The derivation layer the five FS papers cite by name: PNT, sieve geometry, prime gaps, Cramér, Goldbach, Möbius, twin primes, constellations, residue classes, short intervals, Chebyshev, divisors, smooth numbers, explicit formula, RH analogue, zero geometry, ontology. Promoted as a block, so the collection no longer cites anything it does not contain. |
-| [`FS_glossary.md`](../1_Factor_Skyline/FS_glossary.md) | Definitions of the core terms. The collection had none. |
-| [`FS_architectural_map.md`](../1_Factor_Skyline/FS_architectural_map.md) | Navigational map of the architecture. |
+| [`modules/`](../1_Factor_Skyline/Factor_Skyline.md) — 17 files | The derivation layer the five FS papers cite by name: PNT, sieve geometry, prime gaps, Cramér, Goldbach, Möbius, twin primes, constellations, residue classes, short intervals, Chebyshev, divisors, smooth numbers, explicit formula, RH analogue, zero geometry, ontology. Promoted as a block, so the collection no longer cites anything it does not contain. |
+| [`FS_glossary.md`](../1_Factor_Skyline/Factor_Skyline.md) | Definitions of the core terms. The collection had none. |
+| [`FS_architectural_map.md`](../1_Factor_Skyline/Factor_Skyline.md) | Navigational map of the architecture. |
 
 ### Series 3 — Twin Bertrand
 
 | promoted | what it is |
 |---|---|
-| [`FS_twin_prime_geometry.md`](../3_Twin_Bertrand_Prime_Geometry/FS_twin_prime_geometry.md) | The Twin-Slope Ceiling — see above. |
-| [`PG_FieldGuide.md`](../3_Twin_Bertrand_Prime_Geometry/PG_FieldGuide.md) | **A plain-language narrative tour of PG I–III**, April 2026, 4,000 words. Series 3's equivalent of what [The Movie](../4_Philosophy_Ontology/The_Movie.md) does for the wheel work — and it already existed. *(It also already knew about the Definition 5 wrinkle rediscovered today: "the only exception across the first hundred million primes is the very first pair, (2,3).")* |
-| [`literature_review.md`](../3_Twin_Bertrand_Prime_Geometry/literature_review.md) | **The prior-art check for TPB and GBP.** Positions them against Ramanujan primes (Sondow), Zhang–Maynard bounded gaps, and Heath-Brown short intervals, and concludes the dyadic form does not appear in the literature as a named conjecture. This is the support for every "possibly new" in the collection, and it was not in canon. |
+| [`FS_twin_prime_geometry.md`](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md) | The Twin-Slope Ceiling — see above. |
+| [`PG_FieldGuide.md`](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md) | **A plain-language narrative tour of PG I–III**, April 2026, 4,000 words. Series 3's equivalent of what [The Movie](../4_Philosophy_Ontology/The_Movie.md) does for the wheel work — and it already existed. *(It also already knew about the Definition 5 wrinkle rediscovered today: "the only exception across the first hundred million primes is the very first pair, (2,3).")* |
+| [`literature_review.md`](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md) | **The prior-art check for TPB and GBP.** Positions them against Ramanujan primes (Sondow), Zhang–Maynard bounded gaps, and Heath-Brown short intervals, and concludes the dyadic form does not appear in the literature as a named conjecture. This is the support for every "possibly new" in the collection, and it was not in canon. |
 | [`results/`](../3_Twin_Bertrand_Prime_Geometry/results/) — 6 reports | **The verification evidence.** Including `comparison_1e9_vs_1e10.md`: 455,052,511 primes, 27,412,679 twin pairs, **zero TPB exceptions through 10¹⁰**, 285 seconds. Also the twin-Ramanujan computation, the uniform envelope fits across twins/cousins/sexy, the structural 10¹⁰ extension, and the QM-probe verdict. |
 
 **This last one matters for how the collection describes itself.** Series 3's README said the 10¹⁰ verification "remains unverified here." That was true of *re-running* it, but the evidence report existed and had simply never been promoted. Corrected.
@@ -61,7 +61,7 @@ It proves the twin slope $\arctan(2/3) \approx 33.69°$ is an absolute ceiling o
 
 **Series 3 is much better supported than it looked this morning.** It now has a plain-language field guide, a literature review establishing novelty, and six verification reports including the 10¹⁰ run. The "unverified" label was about re-running, not about evidence existing.
 
-**Series 1 is now self-contained.** It no longer cites 17 documents it does not contain. [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md) becomes an index of what is present rather than a pointer into a dead repo.
+**Series 1 is now self-contained.** It no longer cites 17 documents it does not contain. [`DERIVATION_MODULES.md`](../1_Factor_Skyline/Factor_Skyline.md) becomes an index of what is present rather than a pointer into a dead repo.
 
 **The Archive can probably be retired.** After this pass, what remains is superseded drafts, a separate methodology project, a retired codebase, vendored third-party code, and regenerable data. Nothing in it is load-bearing for anything in folders 1–5.
 
@@ -77,4 +77,4 @@ It proves the twin slope $\arctan(2/3) \approx 33.69°$ is an absolute ceiling o
 
 That makes "the only obstacle separating the FS guarantees from the twin prime conjecture" **vacuous** — TPB implies the twin prime conjecture on its own, with the FS structure doing no work. And the *strictly weaker than the parity barrier* argument does not hold: parity blocks the existential statement too, Friedlander–Iwaniec proved a count rather than an existence result, and Zhang–Maynard stops at 246 rather than 2 **because of** parity — the barrier biting, cited as precedent for escaping it.
 
-**Theorem 4.2 is true** (verified to 10⁶, zero exceptions), though its proof is broken in the general case and is repaired in place. **The honest version of the paper is a better one:** a geometric route from the Factor Skyline to TPB, independent of the prime-triangle route in PG II. Two unrelated derivations of one conjecture is a real result. **The paper has since been rewritten around that surviving claim** — abstract, §1, §6 and §9 reframed, §4's proof repaired, the parity theorem withdrawn — and [PG II](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md) now carries the cross-reference back. Full record at the head of [the paper](../3_Twin_Bertrand_Prime_Geometry/FS_twin_prime_geometry.md).
+**Theorem 4.2 is true** (verified to 10⁶, zero exceptions), though its proof is broken in the general case and is repaired in place. **The honest version of the paper is a better one:** a geometric route from the Factor Skyline to TPB, independent of the prime-triangle route in PG II. Two unrelated derivations of one conjecture is a real result. **The paper has since been rewritten around that surviving claim** — abstract, §1, §6 and §9 reframed, §4's proof repaired, the parity theorem withdrawn — and [PG II](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md) now carries the cross-reference back. Full record at the head of [the paper](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md).

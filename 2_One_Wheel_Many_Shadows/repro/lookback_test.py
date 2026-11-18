@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate the "Looking back" section of `The_Ninety_Percent_Rule.md`.
+"""Regenerate the "Looking back" section (§7) of `Predicting_the_Next_Prime.md`.
 
     python lookback_test.py
 

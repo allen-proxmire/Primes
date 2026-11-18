@@ -40,7 +40,7 @@ So the storms, the reversals, and most of the 44% are what subtraction does to a
 
 **Of the 44%, about 42 points are arithmetic and 2 points are real.** Those 2 points are genuine and traceable to the small primes. But you would never have found them without asking what a shuffled version does first.
 
-→ [Prime-Gap Memory and the Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md)
+→ [Prime-Gap Memory and the Differencing Trap](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
 ## Worked example 2: the coin that was never the opponent
 
@@ -66,7 +66,7 @@ So the switchback law describes **any increasing sequence with bounded steps.** 
 
 **The painful detail:** the paper defended itself with a shuffle. Just the wrong one. It shuffled the thing that tests whether the sequence increases (it does, that matters) rather than the thing that tests whether *the primes* matter (they don't, here). Two nulls, two different questions, and it reached for the wrong one — a distinction its own companion paper had already spelled out.
 
-→ [The Switchback Law](../2_One_Wheel_Many_Shadows/Switchback_Law.md) §3
+→ [The Switchback Law](../2_One_Wheel_Many_Shadows/Traffic_Law.md) §3
 
 ---
 

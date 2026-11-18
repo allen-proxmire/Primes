@@ -7,12 +7,12 @@
 
 Sections, and the table each one reproduces:
 
-  trap3      Differencing Trap  §3    real vs transform-matched null
-  windowed   Differencing Trap  §5.1  windowed excess vs wheel depth Q
-  lag1       Angle Wobble       §4.1  lag-1 gap correlation vs Q
-  hexagon    Balance Ratio      §2.1  3-divisibility of the Eisenstein form
-  reduction  Balance Ratio      §5    pooled shift == cov(g_n, g_n+1)
-  residue    Balance Ratio      §6    per-residue-class, vs wheel surrogate
+  trap3      Gap Correlations §4    real vs transform-matched null
+  windowed   Gap Correlations §4    windowed excess vs wheel depth Q
+  lag1       Gap Correlations §3    lag-1 gap correlation vs Q
+  hexagon    Gap Correlations §5.2  3-divisibility of the Eisenstein form
+  reduction  Gap Correlations §5.3  pooled shift == cov(g_n, g_n+1)
+  residue    Gap Correlations §5.3  per-residue-class, vs wheel surrogate
 
 Discipline enforced throughout (see ../Null_Model_Discipline.md):
   * transform AFTER shuffling, never before
@@ -93,7 +93,7 @@ class Wheel:
 # ------------------------------------------------------------------ sections
 
 def trap3(ctx):
-    print(hdr("Differencing Trap §3 — real vs transform-matched null"))
+    print(hdr("Gap Correlations §4 — real vs transform-matched null"))
     g, rng = ctx.gaps, random.Random(7)
     dg = diff(g)
     nulls = []
@@ -132,7 +132,7 @@ def _excess(g, rng):
 
 
 def windowed(ctx):
-    print(hdr("Differencing Trap §5.1 — is the windowed excess fully the wheel?"))
+    print(hdr("Gap Correlations §4 — is the windowed excess fully the wheel?"))
     er = _excess(ctx.gaps, random.Random(7))
     print(f"  real primes: {er:+.3f} pp\n")
     print(f"{'Q':>6}{'pool':>12}{'pool/pi':>10}{'excess':>12}{'% of real':>11}   status")
@@ -145,7 +145,7 @@ def windowed(ctx):
 
 
 def lag1(ctx):
-    print(hdr("Angle Wobble §4.1 — lag-1 gap correlation vs wheel depth"))
+    print(hdr("Gap Correlations §3 — lag-1 gap correlation vs wheel depth"))
     c = float(np.corrcoef(ctx.gaps[:-1], ctx.gaps[1:])[0, 1])
     print(f"  real primes: corr(g_n, g_n+1) = {c:+.4f}\n")
     print(f"{'Q':>6}{'pool/pi':>10}{'model corr':>13}{'% of real':>11}   status")
@@ -173,7 +173,7 @@ def _hexrate(seq):
 
 
 def hexagon(ctx):
-    print(hdr("Balance Ratio §2.1 — 3-divisibility of the Eisenstein form"))
+    print(hdr("Gap Correlations §5.2 — 3-divisibility of the Eisenstein form"))
     print("  Identity: h1^2+h1h2+h2^2 = (h1-h2)^2 + 3h1h2, so mod 3 it is (h1-h2)^2.")
     print("  Exhaustive check of the form mod 3:")
     bad = [(a, b) for a in range(3) for b in range(3)
@@ -212,7 +212,7 @@ def _loeschian(seq):
 
 
 def reduction(ctx):
-    print(hdr("Balance Ratio §5 — the pooled shift IS cov(g_n, g_n+1)"))
+    print(hdr("Gap Correlations §5.3 — the pooled shift IS cov(g_n, g_n+1)"))
     print("  NOT a prediction: shuffling leaves the square terms alone and sends")
     print("  E[g1g2] -> E[g]^2, so the shift is E[g1g2]-E[g]^2, the definition of cov.\n")
     g = ctx.gaps
@@ -232,7 +232,7 @@ def reduction(ctx):
 
 
 def residue(ctx):
-    print(hdr("Balance Ratio §6 — per residue class, vs a GENERATIVE null"))
+    print(hdr("Gap Correlations §5.3 — per residue class, vs a GENERATIVE null"))
     print("  A gap-shuffle is INVALID here: a gap of 4 cannot follow p=5 mod 6,")
     print("  so shuffled triples are arithmetically impossible. Wheel surrogate instead.\n")
     def by(seq, mod):

@@ -23,7 +23,7 @@ Two operations run the program:
 - **Doubling** ($p \mapsto 2p$) — geometrically the **top width-2 ray** of the Factor Skyline. Everything even lives here: $2p$, consecutive-prime sums, twin sums, the doubling ladders.
 - **The wheel** ($2, 3, 5, 7, \dots$ — the primorials) — geometrically the **fan of width-rays**. It decides which candidates survive.
 
-Primes are exactly what **escape both**: dodge every width-ray, reach the diagonal. The detailed geometry is in [Synthesis — Doubling and the Wheel](FS_Synthesis_Doubling_and_Wheel.md).
+Primes are exactly what **escape both**: dodge every width-ray, reach the diagonal. The geometry is set out in [The Factor Skyline](../1_Factor_Skyline/Factor_Skyline.md).
 
 ## 2. The shadows
 
@@ -32,19 +32,19 @@ Each is a facet of the same wheel. On the number line they read as different sub
 | shadow | in one line | the mechanism | where |
 |---|---|---|---|
 | **Jumping champions** | the commonest gap is $6$, then $30$, then $210$ | primorial gaps fit the wheel stencil — both ends dodge the small primes at once | classical (Odlyzko–Rubinstein–Wolf 1999) |
-| **Forbidden widths $\{2,4,6,10\}$** | the only gap widths that can never hold two consecutive-prime sums | the wheel forbids stacking small gaps | [Consecutive-Prime Sums](FS_Consecutive_Prime_Sums_In_Gaps.md) |
-| **Seven Sisters** | $2p+k$ lands on a prime ~2× as often when $3\mid k$ (or $15\mid k$) | those offsets can never be killed by 3 (or 5) | [Seven Sisters](FS_Seven_Sisters_Wheel_Asymptote.md) |
-| **Offset-correlation comb** | the count $C(g)$ of $n, n+g$ both prime | $C(g)/C(2)=\prod_{p\mid g,\,p>2}\frac{p-1}{p-2}$ — the singular series itself | [Offset-Correlation Curve](Offset_Correlation_Curve.md) |
-| **The prime crystal** | the primes diffract like a quasicrystal | Bragg peaks at $k=a/m$ of height $(\mu(m)/\varphi(m))^2$ — the wheel in frequency space | [Prime Structure Factor](Prime_Structure_Factor.md) |
-| **Lag-1 anti-correlation** | consecutive gaps anti-correlate at $-0.05$ | reproduced by building the wheel prime by prime | [Angle Wobble](PG_Angle_Wobble.md) |
-| **Mod-6 traffic law** | two consecutive gaps never both $\equiv2$ nor both $\equiv4 \pmod 6$ | the mod-3 lane structure | [Switchback Law](Switchback_Law.md) |
-| **Twin Bertrand** | a twin prime in every $(x,2x]$ past 11 | twins are the tightest wheel survivors; the doubling window always catches one | [PG II](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md) |
-| **Consecutive-sum density** | $\approx W/(2\ln(x/2))$ sums per gap of width $W$ | the "2" is doubling — sums live at the $2p$ scale | [Consecutive-Prime Sums](FS_Consecutive_Prime_Sums_In_Gaps.md) |
-| **Escape ridge** | $x_{FS}(N)\sim 4e^{-\gamma}N^{3/2}/\ln^2 N$ | the extra $\sqrt N$ is the sieve's $p^2$ activation | [Escape Ridge](FS_Escape_Ridge.md) |
+| **Forbidden widths $\{2,4,6,10\}$** | the only gap widths that can never hold two consecutive-prime sums | the wheel forbids stacking small gaps | [Consecutive-Prime Sums](Consecutive_Prime_Sums.md) |
+| **Seven Sisters** | $2p+k$ lands on a prime ~2× as often when $3\mid k$ (or $15\mid k$) | those offsets can never be killed by 3 (or 5) | [Seven Sisters](Seven_Sisters.md) |
+| **Offset-correlation comb** | the count $C(g)$ of $n, n+g$ both prime | $C(g)/C(2)=\prod_{p\mid g,\,p>2}\frac{p-1}{p-2}$ — the singular series itself | [The Prime Crystal](Prime_Crystal.md) |
+| **The prime crystal** | the primes diffract like a quasicrystal | Bragg peaks at $k=a/m$ of height $(\mu(m)/\varphi(m))^2$ — the wheel in frequency space | [The Prime Crystal](Prime_Crystal.md) |
+| **Lag-1 anti-correlation** | consecutive gaps anti-correlate at $-0.05$ | reproduced by building the wheel prime by prime | [Gap Correlations](Gap_Correlations.md) |
+| **Mod-6 traffic law** | two consecutive gaps never both $\equiv2$ nor both $\equiv4 \pmod 6$ | the mod-3 lane structure | [The Traffic Law](Traffic_Law.md) |
+| **Twin Bertrand** | a twin prime in every $(x,2x]$ past 11 | twins are the tightest wheel survivors; the doubling window always catches one | [Twin Bertrand](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md) |
+| **Consecutive-sum density** | $\approx W/(2\ln(x/2))$ sums per gap of width $W$ | the "2" is doubling — sums live at the $2p$ scale | [Consecutive-Prime Sums](Consecutive_Prime_Sums.md) |
+| **Escape ridge** | $x_{FS}(N)\sim 4e^{-\gamma}N^{3/2}/\ln^2 N$ | the extra $\sqrt N$ is the sieve's $p^2$ activation | [Factor Skyline §6](../1_Factor_Skyline/Factor_Skyline.md) |
 
 The through-line in one sentence: **the reason gaps can't cluster is the reason small gaps can't repeat is the reason primorial gaps dominate is the reason the primes diffract like a crystal is the reason $2p+3k$ keeps hitting primes.** One wheel, many shadows.
 
-And a **control**: a non-arithmetic exclusion process diffracts as a **liquid** — no Bragg peaks, flat exactly where the primes tower. The crystal takes *divisibility*, not merely exclusion ([ED as the Negative Control](ED_Negative_Control.md)).
+And a **control**: a non-arithmetic exclusion process diffracts as a **liquid** — no Bragg peaks, flat exactly where the primes tower. The crystal takes *divisibility*, not merely exclusion ([The Prime Crystal §3](Prime_Crystal.md)).
 
 ---
 
@@ -54,7 +54,7 @@ And a **control**: a non-arithmetic exclusion process diffracts as a **liquid** 
 
 Three qualifications, all load-bearing:
 
-- **"Consecutive prime gaps."** Not the primes. The *escape* — which wheel-open slot is actually prime — is untouched and remains the parity barrier, irreducible at $\approx 0.26$ bits ([Prime Prediction Budget](Prime_Prediction_Budget.md)).
+- **"Consecutive prime gaps."** Not the primes. The *escape* — which wheel-open slot is actually prime — is untouched and remains the parity barrier, irreducible at $\approx 0.26$ bits ([Predicting the Next Prime](Predicting_the_Next_Prime.md)).
 - **"Measured in this collection."** An empirical regularity over a specific catalogue, not a theorem about all statistics. Section 7 says what would break it.
 - **"To within the noise."** Every entry below has a stated null and a stated precision.
 
@@ -154,4 +154,4 @@ Entries 6–10 follow [The Null-Model Discipline](Null_Model_Discipline.md): tra
 - A. M. Odlyzko, M. Rubinstein, M. Wolf, *Jumping champions*, Experimental Math. **8** (1999).
 - R. J. Lemke Oliver, K. Soundararajan, *Unexpected biases in the distribution of consecutive primes*, PNAS (2016).
 - H. Cramér (1936); P. Sarnak, *Möbius randomness and dynamics* (2011).
-- This collection: [Synthesis](FS_Synthesis_Doubling_and_Wheel.md), [Prime Prediction Budget](Prime_Prediction_Budget.md), [Null-Model Discipline](Null_Model_Discipline.md), [ED as the Negative Control](ED_Negative_Control.md), [Results](../RESULTS.md).
+- This collection: [The Factor Skyline](../1_Factor_Skyline/Factor_Skyline.md), [Predicting the Next Prime](Predicting_the_Next_Prime.md), [Null-Model Discipline](Null_Model_Discipline.md), [The Prime Crystal §3](Prime_Crystal.md), [Results](../RESULTS.md).

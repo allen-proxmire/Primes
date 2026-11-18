@@ -7,14 +7,14 @@
 > **2026-09-20: N1–N7 are all filed.** Five documents written, all new files — the originals are untouched:
 > | document | holds |
 > |---|---|
-> | [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md) | N2, N3, N4, N5, N6/N7 (§8) |
-> | [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md) | N1 (new §8) |
-> | [PG_Angle_Wobble.md](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md) | N3 as the fifth shadow (new §5.1) |
-> | [Prime_Prediction_Budget.md](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) | N7 (new §5), balance ratio added to the Tier-2 table |
+> | [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md) | N2, N3, N4, N5, N6/N7 (§8) |
+> | [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md) | N1 (new §8) |
+> | [PG_Angle_Wobble.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md) | N3 as the fifth shadow (new §5.1) |
+> | [Prime_Prediction_Budget.md](../2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md) | N7 (new §5), balance ratio added to the Tier-2 table |
 
 ---
 
-## N1 — When a shuffle null is valid · **FILED** (new §8) · → [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md)
+## N1 — When a shuffle null is valid · **FILED** (new §8) · → [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
 > **A shuffle null is only valid where the shuffle preserves every hard constraint the statistic conditions on.**
 
@@ -22,13 +22,13 @@ The Differencing Trap note already establishes *which* thing to shuffle (gaps vs
 
 **The concrete case.** Sorting a gap statistic by residue class and comparing against gap-shuffled primes is meaningless, because shuffled gaps do not respect residue consistency — a gap of 4 cannot follow p ≡ 5 (mod 6), since 5 + 4 = 9 is divisible by 3. The shuffled triples are arithmetically *impossible*, so the per-class comparison has no referent.
 
-**The fix.** When the shuffle breaks a hard constraint, the null must become **generative rather than permutational** — build a surrogate that satisfies the constraint by construction. Here that is the wheel-only surrogate of [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md): integers coprime to all primes ≤ Q, thinned independently to prime density.
+**The fix.** When the shuffle breaks a hard constraint, the null must become **generative rather than permutational** — build a surrogate that satisfies the constraint by construction. Here that is the wheel-only surrogate of [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/Gap_Correlations.md): integers coprime to all primes ≤ Q, thinned independently to prime density.
 
 **Why it matters for the collection.** The Differencing Trap's lesson is "match the null to the layer." This is the sharper form: *the null must be able to produce the data.* A null that generates impossible configurations will credit arithmetic necessity to the primes.
 
 ---
 
-## N2 — The balance ratio is exactly the hexagonal norm of the gap pair · **FILED** (§2) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md)
+## N2 — The balance ratio is exactly the hexagonal norm of the gap pair · **FILED** (§2) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
 For any three numbers a < b < c with gaps g1 = b−a, g2 = c−b and mean m = (a+b+c)/3:
 
@@ -42,7 +42,7 @@ This replaces the note's "K is a spread measure" with something stronger and bet
 
 ---
 
-## N3 — The balance ratio is a fifth shadow, fully accounted for · **FILED** (§5–§6) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md)
+## N3 — The balance ratio is a fifth shadow, fully accounted for · **FILED** (§5–§6) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
 The note ends by asking whether the leftover, after detrending, carries the wheel's fingerprints. **It does — and the amount is forced by algebra, not predicted.**
 
@@ -52,11 +52,11 @@ Measured on all 270,014 gaps in [10^6, 5×10^6]: predicted −0.719%, measured �
 
 Residue-resolved (2 classes mod 6, 8 mod 30, 4 LOS residue pairs), against a wheel-only surrogate: **no class exceeds 1.3σ.** The same test sees the LOS residue-repetition bias immediately — consecutive primes repeat their mod-6 residue 14% less often than even odds — and the wheel surrogate reproduces that to within 0.1 percentage point. So the instrument has power; there is simply nothing left over.
 
-**The claim to write:** the balance ratio carries the wheel, the wheel carries all of it, pooled and per class. It is the *same* −0.05 consecutive-gap anti-correlation already attributed to the wheel in [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md) — **not a new signal, a fifth shadow.** Which also means the note's closing "measurable question" is answered and should be rewritten as a result rather than left open.
+**The claim to write:** the balance ratio carries the wheel, the wheel carries all of it, pooled and per class. It is the *same* −0.05 consecutive-gap anti-correlation already attributed to the wheel in [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/Gap_Correlations.md) — **not a new signal, a fifth shadow.** Which also means the note's closing "measurable question" is answered and should be rewritten as a result rather than left open.
 
 ---
 
-## N4 — K is a level statistic, so the −1/2 pedestal does not apply · **FILED** (§5.1) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md), cross-ref [Differencing Trap](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md)
+## N4 — K is a level statistic, so the −1/2 pedestal does not apply · **FILED** (§5.1) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md), cross-ref [Differencing Trap](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
 Worth saying out loud because the collection has been burned here before. The balance ratio is built from the gaps themselves, **not from differences of them.** So the exact corr = −1/2 differencing artifact — the one that accounted for 42 of the 44 apparent points in the windowed wobble — **has no analogue here at all.**
 
@@ -64,7 +64,7 @@ K needs the gap-shuffle null (pooled) or the wheel surrogate (per class), and no
 
 ---
 
-## N5 — The two prime angles share one driver · **FILED** (§7 of the v2) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md)
+## N5 — The two prime angles share one driver · **FILED** (§7 of the v2) · → [PG_Balance_Ratio_And_Koide.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
 > **Corrected 2026-09-20 before filing.** The range first recorded here, "27 to 47," was **wrong** — it mixed normalizations, using one gap in one limit and the mean of two in the other. Redone consistently in terms of the mean gap ḡ = (g1+g2)/2, the coefficient runs **46.78 to 54.02**, and 70,433 real triples near 10⁶ measure min 46.78 / median 48.01 / max 53.62 — bracketed by the algebra. The true range is far *tighter* than the erroneous one, so θ ≈ 48·ḡ/p to about ±7%. The algebra: with s = g1+g2 and d = g1−g2, the Loeschian form is (3s²+d²)/4, giving 46.78 at d = 0 and 54.02 as d/s → 1.
 
@@ -77,17 +77,17 @@ Same driver, opposite directions, because α measures one gap while θ measures 
 
 ---
 
-## N6 — Three scales: program, territory, period · **PRIOR ART — NOT NEW** · → cite [`FS_primorial_epochs` §2.2](../1_Factor_Skyline/FS_primorial_epochs.md) and [`FSPapers_02.1` §13](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md)
+## N6 — Three scales: program, territory, period · **PRIOR ART — NOT NEW** · → cite [`FS_primorial_epochs` §2.2](../1_Factor_Skyline/Factor_Skyline.md) and [`FSPapers_02.1` §13](../1_Factor_Skyline/Factor_Skyline.md)
 
 > **Prior-art check run 2026-09-20, after N6 had been written up. It should have been run first.**
 >
-> **The result was already in the collection, stated earlier and better.** [`FS_primorial_epochs` §2.2](../1_Factor_Skyline/FS_primorial_epochs.md) has the period-versus-window comparison with a "periods per epoch" table and the identical reading: *"For p ≥ 5, the epoch is shorter than one full primorial period… The full primorial structure is never 'seen' within a single epoch… the coverage pattern's period outgrows the epoch length."* It also uses the fact to explain why gap-6 dominates so long (the 5#-template is the last where epoch ≈ period, 24 vs 30).
+> **The result was already in the collection, stated earlier and better.** [`FS_primorial_epochs` §2.2](../1_Factor_Skyline/Factor_Skyline.md) has the period-versus-window comparison with a "periods per epoch" table and the identical reading: *"For p ≥ 5, the epoch is shorter than one full primorial period… The full primorial structure is never 'seen' within a single epoch… the coverage pattern's period outgrows the epoch length."* It also uses the fact to explain why gap-6 dominates so long (the 5#-template is the last where epoch ≈ period, 24 vs 30).
 >
 > **And its comparison is the better one.** It measures the period against the **activation epoch** [p_k², p²_{k+1}) — where the coverage configuration is actually frozen — not against cumulative territory below p²_{k+1}, which spans epochs where coarser templates ruled. That is the right denominator, and it puts the crossover at **p = 5**, not the p = 7 recorded below.
 >
-> **The cost half is subsumed too.** [`FSPapers_02.1` §13.2–13.3](../1_Factor_Skyline/FSPapers_02.1_correlations_and_randomness.md) and `FSPapers_04` Thm 4.4 give **K = O(log N)** against H ~ 0.26N — stronger than the 1.4427·p_k program bound below, since O(log N) beats linear — under the heading "the randomness paradox resolved."
+> **The cost half is subsumed too.** [`FSPapers_02.1` §13.2–13.3](../1_Factor_Skyline/Factor_Skyline.md) and `FSPapers_04` Thm 4.4 give **K = O(log N)** against H ~ 0.26N — stronger than the 1.4427·p_k program bound below, since O(log N) beats linear — under the heading "the randomness paradox resolved."
 >
-> **What is left:** the measured 1/ln 2 slope, the integers-per-bit table, and the link to the Budget's "for free" phrasing. A paragraph. **The draft note was deleted 2026-09-20**; the surviving paragraph lives in [Budget §5](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md).
+> **What is left:** the measured 1/ln 2 slope, the integers-per-bit table, and the link to the Budget's "for free" phrasing. A paragraph. **The draft note was deleted 2026-09-20**; the surviving paragraph lives in [Budget §5](../2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md).
 >
 > **Process lesson worth keeping:** run the prior-art check against your own collection *before* writing the note, not after. The check cost one search; the note cost a draft.
 
@@ -111,7 +111,7 @@ Crossover is at k = 4 — primorial 210 against territory 121 — and the gap ne
 
 **So the wheel never completes a single period inside the region where it is the operative rule.** It is always in its first period, always partial, never seen to repeat. A fully determined, cheaply described object that is *structurally incapable of looking periodic in its own domain of validity*. **That is a mechanism for apparent randomness, stated exactly** — and it is the defensible core of the note's generation-time section.
 
-**Placement:** none. The draft note was deleted; only the short §5 rebuttal in [Budget v2](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md) survives, and it cites the Factor Skyline papers rather than restating them.
+**Placement:** none. The draft note was deleted; only the short §5 rebuttal in [Budget v2](../2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md) survives, and it cites the Factor Skyline papers rather than restating them.
 
 ---
 
@@ -135,7 +135,7 @@ Recorded so the wrong version does not get re-derived later.
 
 ---
 
-## N8 — A generative null must stay strictly weaker than what it models · **FILED** (§5.1 box) · → [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md)
+## N8 — A generative null must stay strictly weaker than what it models · **FILED** (§5.1 box) · → [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md)
 
 > **The companion to [N1]. N1 says when a *shuffle* null fails. This says when a *generative* null fails.**
 
@@ -145,11 +145,11 @@ Recorded so the wrong version does not get re-derived later.
 
 **How to keep yourself honest.** Report the **pool ratio** (surrogate candidates ÷ π(x)) beside every surrogate result, and sweep Q rather than picking one value. At pool/π(x) ≈ 1.4–1.8 the model is genuinely weaker than the primes; below ≈1.25 it is not evidence. Sweeping is also what reveals whether a result is a trend or noise.
 
-**Why this matters beyond one test.** [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/PG_Angle_Wobble.md) uses Q = 1732 as its top row. Its *conclusion* is safe because the lag-1 value already plateaued at Q ≈ 300, where the pool is still 1.43× — the deep row only confirms no further movement. But the row carries no independent weight, and the paper does not say so. **Worth a sentence there.**
+**Why this matters beyond one test.** [PG_Angle_Wobble §4.1](../2_One_Wheel_Many_Shadows/Gap_Correlations.md) uses Q = 1732 as its top row. Its *conclusion* is safe because the lag-1 value already plateaued at Q ≈ 300, where the pool is still 1.43× — the deep row only confirms no further movement. But the row carries no independent weight, and the paper does not say so. **Worth a sentence there.**
 
 ---
 
-## N9 — An unreproduced published number · **CLOSED — the paper was wrong** · → [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Prime_Gap_Memory_Differencing_Trap.md) §3
+## N9 — An unreproduced published number · **CLOSED — the paper was wrong** · → [Prime_Gap_Memory_Differencing_Trap.md](../2_One_Wheel_Many_Shadows/Gap_Correlations.md) §3
 
 The [reproduction script](../2_One_Wheel_Many_Shadows/repro/) regenerates every measured table in the three gap papers **except one row**: the jitter recoil. Published 81.8% real / 79.2% null / **+2.7 pp genuine**; the script gets 84.0% / 84.5% / **−0.5 pp** — the genuine column changes sign.
 
@@ -161,7 +161,7 @@ The [reproduction script](../2_One_Wheel_Many_Shadows/repro/) regenerates every 
 
 ---
 
-## N10 — The Switchback Law compared against the wrong null · **CLOSED — paper revised 2026-09-20** · → [Switchback_Law.md](../2_One_Wheel_Many_Shadows/Switchback_Law.md)
+## N10 — The Switchback Law compared against the wrong null · **CLOSED — paper revised 2026-09-20** · → [Switchback_Law.md](../2_One_Wheel_Many_Shadows/Traffic_Law.md)
 
 Found while closing N9, using the same machinery.
 
@@ -184,7 +184,7 @@ Reversal odds: real 64.0→75.7→82.1→85.5, null 64.7→77.3→83.9→87.6 �
 
 ---
 
-## N11 — PG I Theorem 5.2 is off by one prime · **CLOSED — corrected in place** · → [PG_I_PrimeTriangle.md](../3_Twin_Bertrand_Prime_Geometry/PG_I_PrimeTriangle.md)
+## N11 — PG I Theorem 5.2 is off by one prime · **CLOSED — corrected in place** · → [PG_I_PrimeTriangle.md](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md)
 
 **The first series-3 claim to be independently re-verified, and it came back with a correction.**
 
@@ -204,7 +204,7 @@ Reproduce: [`check_psd.py`](../3_Twin_Bertrand_Prime_Geometry/scripts/check_psd.
 
 ---
 
-## N12 — The angle-record theorem is clean · **CLOSED — confirmed, no correction** · → [PG_II_AngleRecord.md](../3_Twin_Bertrand_Prime_Geometry/PG_II_AngleRecord.md)
+## N12 — The angle-record theorem is clean · **CLOSED — confirmed, no correction** · → [PG_II_AngleRecord.md](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md)
 
 **The load-bearing claim of series 3, and the first thing today to come back needing nothing.**
 
@@ -255,7 +255,7 @@ Found 2026-09-20 while drawing the cusp figure.
 
 ---
 
-## N14 — The 90% slot count is scale-dependent, and derivable · **OPEN as a standing result** · → [The Ninety Percent Rule](../2_One_Wheel_Many_Shadows/The_Ninety_Percent_Rule.md)
+## N14 — The 90% slot count is scale-dependent, and derivable · **OPEN as a standing result** · → [The Ninety Percent Rule](../2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md)
 
 Measured 2026-09-20 in answer to a direct question: *four wheels, 90% — how many slots, by decade?*
 
@@ -282,7 +282,7 @@ Found 2026-09-20 while sweeping for a *different* escaping bug.
 
 A scripted edit that builds LaTeX in a **non-raw Python string** does not drop the backslash — it *interprets* it. Writing `\a` plus `pprox` yields **BEL + pprox**: a literal 0x07 byte in the markdown, where `\approx` was meant. It renders as garbage and is invisible in `git diff`.
 
-Five had shipped: one `\approx` in [Prime_Prediction_Budget.md](../2_One_Wheel_Many_Shadows/Prime_Prediction_Budget.md), and `\approx`×2 plus `\arctan`×2 in [RESULTS.md](../RESULTS.md). All restored.
+Five had shipped: one `\approx` in [Prime_Prediction_Budget.md](../2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md), and `\approx`×2 plus `\arctan`×2 in [RESULTS.md](../RESULTS.md). All restored.
 
 **This is the third appearance of the same bug class** (after the `\t` → TAB sweep earlier in the session), so it is now checked rather than remembered. [`check_repo_health.py`](check_repo_health.py) tests three things this repository has actually got wrong: stray control bytes, broken relative links, and **links to files git is ignoring** — the last being the `.gitignore`-allowlist failure that left two "start here" documents 404 on GitHub across three releases while passing every filesystem link check. It found one live instance on its first run: a figure README linking into the untracked `Archive/`. De-linked.
 
@@ -290,7 +290,7 @@ Five had shipped: one `\approx` in [Prime_Prediction_Budget.md](../2_One_Wheel_M
 
 ---
 
-## N16 — Looking back: direction carries nothing, size carries a sliver, and the sliver is mostly the bigger wheels · **CLOSED — filed** · → [The Ninety Percent Rule, “Looking back”](../2_One_Wheel_Many_Shadows/The_Ninety_Percent_Rule.md)
+## N16 — Looking back: direction carries nothing, size carries a sliver, and the sliver is mostly the bigger wheels · **CLOSED — filed** · → [The Ninety Percent Rule, “Looking back”](../2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md)
 
 Tested 2026-09-21 from Allen's proposal: use the wobble of the last few primes to guess which way the next angle turns, and look there.
 
@@ -308,8 +308,8 @@ Tested 2026-09-21 from Allen's proposal: use the wobble of the last few primes t
 
 Carried here so they are not lost when the worklog is archived.
 
-- **~~R6 — is the hexagonal norm meaningful?~~ CLOSED 2026-09-20 — answered: divisibility of the form by 3 is exactly a mod-6 residue repeat, [balance ratio §2.1](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md). (Marked closed 2026-09-21.)** Original question: g1² + g1·g2 + g2² is the Eisenstein norm form; the wheel's first filter is mod 6, also hexagonal. Probably a pun. Cheap to test: does the form's value distribution over real gaps differ from the null in a way that references 6? Low priority. Flagged as open in [balance ratio §9](../2_One_Wheel_Many_Shadows/PG_Balance_Ratio_And_Koide.md).
-- **~~Does Factor Skyline already say N6?~~ CLOSED 2026-09-20 — yes, it does.** Draft deleted; [`FS_primorial_epochs.md`](../1_Factor_Skyline/FS_primorial_epochs.md) promoted into the curated collection, and [`DERIVATION_MODULES.md`](../1_Factor_Skyline/DERIVATION_MODULES.md) added so the untracked upstream modules are findable next time.
+- **~~R6 — is the hexagonal norm meaningful?~~ CLOSED 2026-09-20 — answered: divisibility of the form by 3 is exactly a mod-6 residue repeat, [balance ratio §2.1](../2_One_Wheel_Many_Shadows/Gap_Correlations.md). (Marked closed 2026-09-21.)** Original question: g1² + g1·g2 + g2² is the Eisenstein norm form; the wheel's first filter is mod 6, also hexagonal. Probably a pun. Cheap to test: does the form's value distribution over real gaps differ from the null in a way that references 6? Low priority. Flagged as open in [balance ratio §9](../2_One_Wheel_Many_Shadows/Gap_Correlations.md).
+- **~~Does Factor Skyline already say N6?~~ CLOSED 2026-09-20 — yes, it does.** Draft deleted; [`FS_primorial_epochs.md`](../1_Factor_Skyline/Factor_Skyline.md) promoted into the curated collection, and [`DERIVATION_MODULES.md`](../1_Factor_Skyline/Factor_Skyline.md) added so the untracked upstream modules are findable next time.
 - **~~The v2 files are drafts, not replacements.~~ CLOSED 2026-09-20.** The v2s were promoted to the canonical filenames and the pre-September originals of four papers moved to [`superseded/`](../2_One_Wheel_Many_Shadows/); PRIMES_MAP and RESULTS updated at the time. (Marked closed 2026-09-21; the item had gone stale.)
 - **~~Add the pool-ratio caveat to PG_Angle_Wobble §4.1~~ DONE 2026-09-20.** Pool ratios added to the table; the Q = 1732 row is marked circular (ratio exactly 1.00 over that range) and Q = 317 marked as the last row carrying evidence. The section's conclusion is unaffected.
 - **"What picks Koide's midpoint?"** — parked. Physics, unresolved there, not ours.

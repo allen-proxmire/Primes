@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate every number in `The_Ninety_Percent_Rule.md`.
+"""Regenerate every number in `Predicting_the_Next_Prime.md`.
 
     python ninety_percent_table.py
 
@@ -165,12 +165,12 @@ def main():
 
 
 def budget_table(lo=10**6, hi=2 * 10**6):
-    """The Prediction Budget's section-3 table: mod-210 and mod-30 walkers on [lo, hi]."""
+    """The mod-210 vs mod-30 table: mod-210 and mod-30 walkers on [lo, hi]."""
     top = hi + 2000
     isp = base_sieve_bytes(top)
     primes = [p for p in range(lo, top + 1) if isp[p]]
     print()
-    print(f"Prediction Budget section 3 -- caught within k open slots, primes in [{lo:.0e}, {hi:.0e}]")
+    print(f"mod-210 vs mod-30 -- caught within k open slots, primes in [{lo:.0e}, {hi:.0e}]")
     print(f"  {'wheel':<8}" + "".join(f"{k:>6}" for k in range(1, 9)) + "   mean tests")
     for name, wheel in [("mod-210", (2, 3, 5, 7)), ("mod-30", (2, 3, 5))]:
         ks = []

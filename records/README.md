@@ -10,4 +10,5 @@ Working documents — not results. The results are in [RESULTS.md](../RESULTS.md
 | [WORKLOG_2026-09.md](WORKLOG_2026-09.md) | session log: routes tried, ranges, nulls, outcomes |
 | [ARCHIVE_SURVEY.md](ARCHIVE_SURVEY.md) | what was recovered from the discontinued project repos |
 | [CONSOLIDATION_2026-07.md](CONSOLIDATION_2026-07.md) | how four project repos became one collection |
+| [uniform_envelope_fits.md](uniform_envelope_fits.md) | the GBP envelope check behind the CORRECTIONS entry |
 | [`check_repo_health.py`](check_repo_health.py) | checks for stray control characters, broken links, and links to git-ignored files |

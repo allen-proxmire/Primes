@@ -10,7 +10,7 @@
 >
 > **What survives:** the *shape* of the observation — extreme twin gaps grow faster than the typical $(\log T)^2$, and the three constellations behave alike. The specific constants do not survive, and neither does $R^2 = 0.982$ as evidence.
 >
-> Reproduce: [`scripts/check_envelope_fits.py`](../scripts/check_envelope_fits.py).
+> Reproduce: [`scripts/check_envelope_fits.py`](../3_Twin_Bertrand_Prime_Geometry/scripts/check_envelope_fits.py).
 
 Data: all constellation pairs (p, p+g) with both prime, p ≤ 10^10.
 - twins (g=2):   27,412,679
