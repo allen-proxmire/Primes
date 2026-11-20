@@ -14,6 +14,7 @@ $$\pi_2(2x) - \pi_2(x) \ge 1, \qquad \pi_2(x) = \#\{p \le x : p,\ p+2 \text{ bot
 - Equivalent to $T_{k+1} < 2T_k$ for every twin $T_k \ge 11$ (§1).
 - Verified to $10^{10}$: 27,412,679 twins, no exception past $T_k = 5$ (§1.3).
 - Immediate under Hardy–Littlewood; open unconditionally (§1.2).
+- **Epoch form:** a twin in every $[p^2, p'^2)$ between consecutive prime squares — the twin analogue of Brocard; implies TPB; verified for all 9,591 epochs below $10^{10}$ (§1.5).
 - **Prime triangle:** every twin is an angle record, unconditionally; under TPB the records are *exactly* the twins, so a single non-twin record would disprove TPB. Below $10^8$ the two lists coincide: 440,312 each (§2).
 - **Factor Skyline:** the slope between consecutive prime spires is capped at $\arctan\frac23$, attained iff the pair is a twin; asking that the cap be reached in every $[p,2p]$ is TPB again (§3).
 - **Other constellations:** the same factor-2 inequality holds for cousins $\{0,4\}$ and sexy primes $\{0,6\}$ to $10^{10}$, with thresholds 7 and 5 (§4).
@@ -75,6 +76,23 @@ and TPB is exactly the statement $R^{\mathrm{twin}}_1 = 11$.
 Every $R^{\mathrm{twin}}_n$ is a twin prime, since $f(x) = \pi_2(x) - \pi_2(x/2)$ rises only at twins (checked for all $n \le 10^6$). Heuristically, from Hardy–Littlewood,
 $$R^{\mathrm{twin}}_n \sim \frac{n(\log n)^2}{C_2}.$$
 The same construction gives $R^{\{0,4\}}_1 = 7$ and $R^{\{0,6\}}_1 = 5$ (§4).
+
+### 1.5 Epoch form
+
+On the epoch $[p^2, p'^2)$ between the squares of consecutive primes, the wheel of primes $\le p$ is exact: its open slots there are the primes, and its twin-open pairs are the twin primes. The epoch form asks that every such wheel fill at least one twin-open pair inside its own epoch:
+$$\pi_2(p'^2 - 2) - \pi_2(p^2 - 1) \ge 1 \qquad \text{for consecutive primes } p < p'.$$
+It is the twin analogue of Brocard's conjecture (at least four primes in every epoch) and appears as the "twin recursion conjecture" in Oehlschlägel (2014). For $x \ge 625$ the window $(x, 2x]$ contains a whole epoch (two consecutive primes lie in $[\sqrt x, \sqrt{2x}]$ once $\sqrt x \ge 25$), so the epoch form implies TPB.
+
+Verified for all 9,591 epochs below $99{,}989^2 \approx 10^{10}$ — none is empty. Against the Hardy–Littlewood count $2C_2(p'^2 - p^2)/\ln^2(p^2)$:
+
+| $p$ | epochs | fewest twins | worst ratio | at $p$ |
+|---|---|---|---|---|
+| $< 100$ | 25 | 1 | 0.29 | 2 |
+| $[10^2, 10^3)$ | 143 | 6 | 0.61 | 269 |
+| $[10^3, 10^4)$ | 1,061 | 21 | 0.69 | 1,151 |
+| $[10^4, 10^5)$ | 8,362 | 147 | 0.87 | 32,027 |
+
+The worst ratio climbs toward 1. A full turn of the wheel always contains twin-open pairs (Factor Skyline §3, template persistence); the open question is the fraction of a turn that lies inside the epoch.
 
 ---
 
@@ -268,11 +286,14 @@ The dyadic inequality $\pi_2(2x) - \pi_2(x) \ge 1$, its constellation extension,
 | [`check_envelope_fits.py`](scripts/check_envelope_fits.py) | §4.4 — mean twin-gap growth |
 | [`pg_extend_1e10.py`](scripts/pg_extend_1e10.py), [`pg_structural_1e10.py`](scripts/pg_structural_1e10.py) | §1.3, §4.2 — the $10^{10}$ sieve |
 | [`pg_twin_ramanujan.py`](scripts/pg_twin_ramanujan.py) | §1.4 — $R^{\mathrm{twin}}_n$ |
+| [`check_epoch_twins.py`](scripts/check_epoch_twins.py) | §1.5 — twins in every epoch $[p^2, p'^2)$ below $10^{10}$ (numpy, ~2 min) |
 | [`pg_twin_angle_analysis.py`](scripts/pg_twin_angle_analysis.py), [`pg_deltax_unified.py`](scripts/pg_deltax_unified.py) | §1.3, §5 |
 
 Verification reports: [`results/`](results/).
 
 ## References
+
+- J. Oehlschlägel, *Reasoning about Primes (II)*, arXiv:1411.6582 (2014) — Conjecture 4.1.
 
 - G. H. Hardy, J. E. Littlewood, *Some problems of 'Partitio numerorum' III*, Acta Math. **44** (1923).
 - S. Ramanujan, *A proof of Bertrand's postulate*, J. Indian Math. Soc. **11** (1919).
