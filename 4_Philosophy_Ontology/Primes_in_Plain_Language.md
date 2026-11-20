@@ -1,6 +1,6 @@
-# The Movie
+# The Primes in Plain Language
 
-### What is going on with the primes, in plain language
+### What is going on with the primes, without notation
 
 Every claim here is carried by a technical paper; the pointers are at the end. For every result with its formula, see [Results](../RESULTS.md).
 
@@ -78,11 +78,11 @@ The clocks are the local picture: which slots are eligible. Doubling is the scal
 
 ---
 
-## 7. What the movie does not explain
+## 7. What this picture does not explain
 
 The clocks say which slots are **eligible**. They do not say which eligible slot is **prime**. Near a million the clocks through 30 remove 73% of positions for free, and about 29% of what is left is prime — which ones is provably beyond reach of any method built from the clocks. That is the parity barrier.
 
-So the movie explains the *appearance* of randomness completely and the *actual* unpredictability not at all.
+So the picture explains the *appearance* of randomness completely and the *actual* unpredictability not at all.
 
 > **Simple rule, infinite pattern, finite view — and the pattern always outruns the view.**
 
@@ -90,7 +90,7 @@ So the movie explains the *appearance* of randomness completely and the *actual*
 
 ## Where each piece comes from
 
-| in the movie | in the work |
+| in this picture | in the work |
 |---|---|
 | clocks join at squares; the rule is fixed between squares | [Factor Skyline §2](../1_Factor_Skyline/Factor_Skyline.md) |
 | a new clock multiplies the period | [Factor Skyline §2](../1_Factor_Skyline/Factor_Skyline.md) |

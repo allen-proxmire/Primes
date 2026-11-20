@@ -272,7 +272,7 @@ The Budget's "~7–8 candidates" was a **single-scale number** presented as if i
 **Process notes from the same run.**
 
 - First attempt used a **fixed 1.5×10⁶-wide window at every decade**, so the "$10^4$" row actually averaged over everything up to 1.5 million — mean gap 13.2 instead of 9.2, and the count wrong by 2 at two decades. Caught because the user's own expectation (4 at $10^4$, 5 at $10^5$) disagreed. **Rule: a per-scale statistic needs a per-scale window.** $[N, 2N]$ is the right one here, and is the same doubling unit the rest of the collection uses.
-- The Budget's and The Movie's 10⁶ rows were measured on $[10^6, 1.5\times 10^6]$ and put 90% at slot **6**; on $[10^6, 2\times 10^6]$ slot 6 gives 89.4% and slot 7 gives 92.9%. Both were corrected to the doubling window so all three documents agree.
+- The Budget's and The Primes in Plain Language's 10⁶ rows were measured on $[10^6, 1.5\times 10^6]$ and put 90% at slot **6**; on $[10^6, 2\times 10^6]$ slot 6 gives 89.4% and slot 7 gives 92.9%. Both were corrected to the doubling window so all three documents agree.
 
 ---
 

@@ -10,7 +10,7 @@ Allen Proxmire
 >
 > **Nothing here is new deep mathematics.** "Gap statistics follow the singular series" is the field's working model. What is supplied is the lens, the unification with the identities written out, a catalogue with the nulls attached, and a negative control.
 >
-> For the same picture without notation, see [The Movie](../4_Philosophy_Ontology/The_Movie.md).
+> For the same picture without notation, see [The Primes in Plain Language](../4_Philosophy_Ontology/Primes_in_Plain_Language.md).
 
 Tags: **[fact]** exact · **[emp]** measured · **[null]** against a stated null · **[interp]**.
 

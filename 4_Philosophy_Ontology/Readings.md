@@ -56,4 +56,4 @@ $$T_{k+1} < 2T_k \qquad\text{(the Twin-Prime Bertrand Postulate)}.$$
 
 ---
 
-See also: [The Movie](The_Movie.md) — the plain-language picture of the whole collection.
+See also: [The Primes in Plain Language](Primes_in_Plain_Language.md) — the plain-language picture of the whole collection.
