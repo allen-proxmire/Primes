@@ -28,14 +28,14 @@ Three features are exact:
 
 ---
 
-## 2. The clock
+## 2. The doubling cycle
 
-**[stance]** The primes are not produced by a rule. They are the **reset points of a clock that keeps trying to double** and keeps being interrupted. The window $(P, 2P)$ would complete one octave if it ran out; it never does, because a prime always arrives first:
+**[stance]** The primes are not produced by a rule. They are the **reset points of a cycle that keeps trying to double** and keeps being interrupted. The window $(P, 2P)$ would complete one octave if it ran out; it never does, because a prime always arrives first:
 $$p_{n+1} < 2p_n \qquad\text{(Bertrand)}.$$
 Ask that a *twin* always arrives first and it is
 $$T_{k+1} < 2T_k \qquad\text{(the Twin-Prime Bertrand Postulate)}.$$
 
-**What can be chased, and what cannot.** As a *generator* the picture is empty: a rule naming the next reset would already contain the primes. As a *statistical renewal* it is real: the reset gaps are not memoryless — they carry the $-0.05$ lag-1 anti-correlation and the offset comb, both the wheel ([Gap Correlations](../2_One_Wheel_Many_Shadows/Gap_Correlations.md), [The Prime Crystal](../2_One_Wheel_Many_Shadows/Prime_Crystal.md)). **[open]** A renewal model in which the sieve drives, the doubling clock is interrupted, Bertrand and TPB are the interruption guarantees, and the wheel is the statistics of the interruptions.
+**What can be chased, and what cannot.** As a *generator* the picture is empty: a rule naming the next reset would already contain the primes. As a *statistical renewal* it is real: the reset gaps are not memoryless — they carry the $-0.05$ lag-1 anti-correlation and the offset comb, both the wheel ([Gap Correlations](../2_One_Wheel_Many_Shadows/Gap_Correlations.md), [The Prime Crystal](../2_One_Wheel_Many_Shadows/Prime_Crystal.md)). **[open]** A renewal model in which the sieve drives, the doubling cycle is interrupted, Bertrand and TPB are the interruption guarantees, and the wheel is the statistics of the interruptions.
 
 ---
 

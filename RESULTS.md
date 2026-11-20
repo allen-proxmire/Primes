@@ -182,8 +182,8 @@ a weaker zero-density input can do better: near $\sigma = 1$, $\alpha$ falls and
 
 Interpretation, never cited as evidence. → [Philosophy & Ontology](4_Philosophy_Ontology/)
 
-- **[The Primes in Plain Language](4_Philosophy_Ontology/Primes_in_Plain_Language.md)** [interp] — every prime is a clock joining at its own square; from $p = 7$ the pattern is longer than the road it governs, so it is never seen to repeat. It explains the appearance of randomness completely and the actual unpredictability not at all.
-- **[Readings](4_Philosophy_Ontology/Readings.md)** [interp] — the sieve as a hunt; the primes as interruptions of a doubling clock; numbers counted into existence.
+- **[The Primes in Plain Language](4_Philosophy_Ontology/Primes_in_Plain_Language.md)** [interp] — every prime is a wheel joining at its own square; from $p = 7$ the pattern is longer than the road it governs, so it is never seen to repeat. It explains the appearance of randomness completely and the actual unpredictability not at all.
+- **[Readings](4_Philosophy_Ontology/Readings.md)** [interp] — the sieve as a hunt; the primes as interruptions of a doubling cycle; numbers counted into existence.
 
 ---
 
