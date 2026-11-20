@@ -108,6 +108,21 @@ $$\frac{\#\{\text{twins in } [p^2, p'^2)\}}{(p'^2-p^2)\,d_p} \;\to\; \frac{e^{2\
 
 By position $n = p^u$ the ratio is $e^{2\gamma}/u^2$: the start of the turn is rich (3.2 just past $p$), crosses the average at $u = e^\gamma = 1.78$, and the epoch sits just beyond, at $0.79$ — the twin form of Mertens' paradox ($2e^{-\gamma} = 1.123$ for single primes).
 
+**The first roll.** In each epoch, take the largest wheel whose turn fits inside it ($w\# \le p'^2 - p^2$) and roll it once from $p^2$. A full turn is exact, so the roll holds a guaranteed stock of $\prod_{3\le q\le w}(q-2)$ twin-open slots; the twin primes are the slots that survive the spokes in $(w, p]$:
+$$\text{found} \approx \prod_{3\le q\le w}(q-2)\;\prod_{w<q\le p}\Bigl(1-\frac2q\Bigr)\;\frac{e^{2\gamma}}{4},$$
+the Hardy–Littlewood count for one roll. Over all 9,591 epochs below $10^{10}$:
+
+| wheel that fits | epochs | stock per roll | twins found: min / mean | worst found ÷ expected |
+|---|---|---|---|---|
+| to 5 (turn 30) | 7 | 3 | 0 / 1 | 0 |
+| to 7 (turn 210) | 46 | 15 | 0 / 3 | 0 |
+| to 11 (turn 2,310) | 377 | 135 | 3 / 15 | 0.30 |
+| to 13 (turn 30,030) | 3,665 | 1,485 | 54 / 103 | 0.67 |
+| to 17 (turn 510,510) | 5,491 | 22,275 | 1,167 / 1,410 | 0.90 |
+| to 19 (turn 9,699,690) | 2 | 378,675 | 24,431 / 24,631 | 0.99 |
+
+The first roll comes up empty only at $p = 19, 157, 347$, epochs too short for any wheel past 7 (a later roll in the same epoch holds a twin each time). Every epoch that fits the 11-wheel's turn has twins in its first roll, and the worst case tightens toward the expected count as the wheel grows. The stock is proved; that some slot survives the spokes in $(w, p]$ is the open part. → [`check_first_roll.py`](scripts/check_first_roll.py)
+
 ---
 
 ## 2. The prime triangle
@@ -301,6 +316,7 @@ The dyadic inequality $\pi_2(2x) - \pi_2(x) \ge 1$, its constellation extension,
 | [`pg_extend_1e10.py`](scripts/pg_extend_1e10.py), [`pg_structural_1e10.py`](scripts/pg_structural_1e10.py) | §1.3, §4.2 — the $10^{10}$ sieve |
 | [`pg_twin_ramanujan.py`](scripts/pg_twin_ramanujan.py) | §1.4 — $R^{\mathrm{twin}}_n$ |
 | [`check_epoch_twins.py`](scripts/check_epoch_twins.py) | §1.5 — twins in every epoch $[p^2, p'^2)$ below $10^{10}$ (numpy, ~2 min) |
+| [`check_first_roll.py`](scripts/check_first_roll.py) | §1.5 — the first-roll rule below $10^{10}$ |
 | [`check_epoch_share.py`](scripts/check_epoch_share.py) | §1.5 — the epoch share $e^{2\gamma}/4$, the position profile, the quadruplet check (run after `check_epoch_twins.py`) |
 | [`pg_twin_angle_analysis.py`](scripts/pg_twin_angle_analysis.py), [`pg_deltax_unified.py`](scripts/pg_deltax_unified.py) | §1.3, §5 |
 
