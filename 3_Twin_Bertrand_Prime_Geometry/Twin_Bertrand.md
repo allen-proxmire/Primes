@@ -92,7 +92,21 @@ Verified for all 9,591 epochs below $99{,}989^2 \approx 10^{10}$ — none is emp
 | $[10^3, 10^4)$ | 1,061 | 21 | 0.69 | 1,151 |
 | $[10^4, 10^5)$ | 8,362 | 147 | 0.87 | 32,027 |
 
-The worst ratio climbs toward 1. A full turn of the wheel always contains twin-open pairs (Factor Skyline §3, template persistence); the open question is the fraction of a turn that lies inside the epoch.
+The worst ratio climbs toward 1.
+
+**Wheel equivalences.** Let $W_p$ be the wheel of primes $\le p$. A number below $p'^2$ with no factor $\le p$ is prime, so on $(p, p'^2)$ the twin-open pairs of $W_p$ are exactly the twin primes. Hence
+$$\text{TPB at } p \iff W_p \text{ has a twin-open pair in } (p, 2p], \qquad \text{epoch form} \iff W_p \text{ has a twin-open pair in } [p^2, p'^2).$$
+
+**Why the count per turn does not settle it.** $W_p$ has $\prod_{3\le q\le p}(q-2)$ twin-open pairs per turn of $p\#$ — never zero — but the epoch is a sliver at the start of the turn ($p'^2 < p\#$ from $p = 7$), and a turn holds stretches longer than the epoch with no twin-open pair at all (108 numbers for $W_{17}$, whose epoch has 72). The same two facts hold for prime quadruplets $\{0,2,6,8\}$ — open pairs in every turn, every one found by the active wheel — yet 78 of the 228 epochs below $2.1\times10^6$ contain no quadruplet. A proof has to place twin-open pairs inside the first sliver of the turn.
+
+**The epoch's share.** Measured against the turn-wide twin-open density $d_p = \tfrac12\prod_{3\le q\le p}(1-2/q)$, the epoch holds a fixed fraction of its wheel's average:
+$$\frac{\#\{\text{twins in } [p^2, p'^2)\}}{(p'^2-p^2)\,d_p} \;\to\; \frac{e^{2\gamma}}{4} = 0.793 \qquad \text{(Hardy–Littlewood with Mertens)}.$$
+
+| $p$ | $[10, 10^2)$ | $[10^2, 10^3)$ | $[10^3, 10^4)$ | $[10^4, 10^5)$ |
+|---|---|---|---|---|
+| pooled ratio | 0.831 | 0.798 | 0.795 | 0.794 |
+
+By position $n = p^u$ the ratio is $e^{2\gamma}/u^2$: the start of the turn is rich (3.2 just past $p$), crosses the average at $u = e^\gamma = 1.78$, and the epoch sits just beyond, at $0.79$ — the twin form of Mertens' paradox ($2e^{-\gamma} = 1.123$ for single primes).
 
 ---
 
@@ -287,6 +301,7 @@ The dyadic inequality $\pi_2(2x) - \pi_2(x) \ge 1$, its constellation extension,
 | [`pg_extend_1e10.py`](scripts/pg_extend_1e10.py), [`pg_structural_1e10.py`](scripts/pg_structural_1e10.py) | §1.3, §4.2 — the $10^{10}$ sieve |
 | [`pg_twin_ramanujan.py`](scripts/pg_twin_ramanujan.py) | §1.4 — $R^{\mathrm{twin}}_n$ |
 | [`check_epoch_twins.py`](scripts/check_epoch_twins.py) | §1.5 — twins in every epoch $[p^2, p'^2)$ below $10^{10}$ (numpy, ~2 min) |
+| [`check_epoch_share.py`](scripts/check_epoch_share.py) | §1.5 — the epoch share $e^{2\gamma}/4$, the position profile, the quadruplet check (run after `check_epoch_twins.py`) |
 | [`pg_twin_angle_analysis.py`](scripts/pg_twin_angle_analysis.py), [`pg_deltax_unified.py`](scripts/pg_deltax_unified.py) | §1.3, §5 |
 
 Verification reports: [`results/`](results/).
