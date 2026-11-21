@@ -73,7 +73,7 @@ and TPB is exactly the statement $R^{\mathrm{twin}}_1 = 11$.
 |---|---|---|---|---|
 | $R^{\mathrm{twin}}_n$ | 14,009 | 217,337 | 3,241,487 | 45,529,751 |
 
-Every $R^{\mathrm{twin}}_n$ is a twin prime, since $f(x) = \pi_2(x) - \pi_2(x/2)$ rises only at twins (checked for all $n \le 10^6$). Heuristically, from Hardy–Littlewood,
+This is OEIS [A186312](https://oeis.org/A186312) (Noe, 2011), whose first terms agree with the table. Every $R^{\mathrm{twin}}_n$ is a twin prime, since $f(x) = \pi_2(x) - \pi_2(x/2)$ rises only at twins (checked for all $n \le 10^6$). Heuristically, from Hardy–Littlewood,
 $$R^{\mathrm{twin}}_n \sim \frac{n(\log n)^2}{C_2}.$$
 The same construction gives $R^{\{0,4\}}_1 = 7$ and $R^{\{0,6\}}_1 = 5$ (§4).
 
@@ -81,7 +81,7 @@ The same construction gives $R^{\{0,4\}}_1 = 7$ and $R^{\{0,6\}}_1 = 5$ (§4).
 
 On the epoch $[p^2, p'^2)$ between the squares of consecutive primes, the wheel of primes $\le p$ is exact: its open slots there are the primes, and its twin-open pairs are the twin primes. The epoch form asks that every such wheel fill at least one twin-open pair inside its own epoch:
 $$\pi_2(p'^2 - 2) - \pi_2(p^2 - 1) \ge 1 \qquad \text{for consecutive primes } p < p'.$$
-It is the twin analogue of Brocard's conjecture (at least four primes in every epoch) and appears as the "twin recursion conjecture" in Oehlschlägel (2014). For $x \ge 625$ the window $(x, 2x]$ contains a whole epoch (two consecutive primes lie in $[\sqrt x, \sqrt{2x}]$ once $\sqrt x \ge 25$), so the epoch form implies TPB.
+It is the twin analogue of Brocard's conjecture (at least four primes in every epoch) and appears as the "twin recursion conjecture" in Oehlschlägel (2014); the counts per epoch are OEIS [A057767](https://oeis.org/A057767). For $x \ge 625$ the window $(x, 2x]$ contains a whole epoch (two consecutive primes lie in $[\sqrt x, \sqrt{2x}]$ once $\sqrt x \ge 25$), so the epoch form implies TPB.
 
 Verified for all 9,591 epochs below $99{,}989^2 \approx 10^{10}$ — none is empty. Against the Hardy–Littlewood count $2C_2(p'^2 - p^2)/\ln^2(p^2)$:
 
@@ -297,12 +297,12 @@ confirmed to 1–2% across five decades (aggregate $1/\overline{\Delta x}$ falls
 
 ## 6. Related work
 
-- **Ramanujan primes** — Ramanujan (1919), Sondow (2009, $R_n \sim p_{2n}$), Amersi–Beckwith–Miller–Ronan–Sondow ($c$-Ramanujan primes), Sondow–Nicholson–Noe (Ramanujan primes that happen to be twins — a different object from $R^{\mathrm{twin}}_n$). The closest prior art; no twin or constellation analogue of the dyadic threshold appears there.
+- **Ramanujan primes** — Ramanujan (1919), Sondow (2009, $R_n \sim p_{2n}$), Amersi–Beckwith–Miller–Ronan–Sondow ($c$-Ramanujan primes), Sondow–Nicholson–Noe (Ramanujan primes that happen to be twins — a different object from $R^{\mathrm{twin}}_n$). The twin analogue itself is OEIS [A186312](https://oeis.org/A186312) (Noe, 2011), and the count of twin pairs in $[n, 2n]$ is [A088018](https://oeis.org/A088018), whose entry notes that it appears positive for all $n > 6$.
 - **Bounded gaps** — Zhang (2013), Maynard, Polymath8 (gap $\le 246$; 12 under Elliott–Halberstam, 6 under its generalization). Short gaps at some scales, not a twin in every window.
 - **Short intervals** — Heath-Brown, Friedlander–Iwaniec, Tao–Teräväinen, Matomäki: twins in intervals $[x, x+y]$ only conditionally or for $y$ well beyond the dyadic scale.
 - **Sieve bounds** — $\pi_2(x) \ll x/(\log x)^2$ unconditionally (Brun, Selberg); no matching lower bound.
 
-The dyadic inequality $\pi_2(2x) - \pi_2(x) \ge 1$, its constellation extension, and the sequence $R^{\mathrm{twin}}_n$ do not appear to have been stated explicitly before.
+The dyadic inequality $\pi_2(2x) - \pi_2(x) \ge 1$ follows for large $x$ from the Hardy–Littlewood twin asymptotic and has no standard name. It is noted as an observation in OEIS [A088018](https://oeis.org/A088018) and [A186312](https://oeis.org/A186312), appears as a claimed theorem in arXiv:1405.2490 (whose argument would prove the twin prime conjecture and cannot be accepted as it stands), and in the stronger epoch form as Conjecture 4.1 of Oehlschlägel (2014). What is added here is the verification to $10^{10}$, the wheel and epoch framing, and the constellation extension (§4), which does not appear to have been stated before.
 
 ---
 
@@ -325,6 +325,7 @@ Verification reports: [`results/`](results/).
 ## References
 
 - J. Oehlschlägel, *Reasoning about Primes (II)*, arXiv:1411.6582 (2014) — Conjecture 4.1.
+- *Researches on the Twin Prime Problem*, arXiv:1405.2490 (2014) — Theorem 5 (claimed).
 
 - G. H. Hardy, J. E. Littlewood, *Some problems of 'Partitio numerorum' III*, Acta Math. **44** (1923).
 - S. Ramanujan, *A proof of Bertrand's postulate*, J. Indian Math. Soc. **11** (1919).

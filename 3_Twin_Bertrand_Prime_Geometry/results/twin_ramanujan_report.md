@@ -98,10 +98,10 @@ replaced by $\pi_2$.  Because twin primes are asymptotically twice as
 sparse as ordinary primes (by a factor of $\log x$), $R^{\mathrm{twin}}_n$
 grows faster with $n$ than $R_n$ does.  Under Hardy--Littlewood,
 the expected count of twins in $(x/2, x]$ is
-$\sim 2 C_2\,x/(\log x)^2$, so heuristically
-$R^{\mathrm{twin}}_n \sim n (\log(R^{\mathrm{twin}}_n))^2 / (2 C_2)$,
+$\sim C_2\,x/(\log x)^2$, so heuristically
+$R^{\mathrm{twin}}_n \sim n (\log(R^{\mathrm{twin}}_n))^2 / C_2$,
 yielding roughly
-$R^{\mathrm{twin}}_n \sim n (\log n)^2 / (2 C_2) \cdot (1 + o(1))$.
+$R^{\mathrm{twin}}_n \sim n (\log n)^2 / C_2 \cdot (1 + o(1))$.
 
 The observed first few values indicate $R^{\mathrm{twin}}_1 = 11$
 (equivalently, $(\mathrm{TPB})$ becomes binding exactly at $T_k = 11$).
@@ -118,8 +118,7 @@ $T_{k+1} < 2 T_k$ for all $T_k \ge 11$.
 For $n \ge 2$, $R^{\mathrm{twin}}_n$ quantifies the "higher-order"
 dyadic-density behavior: how large must $x$ be before every dyadic
 interval contains $n$ twin primes?  Analogous sequences for cousin
-and sexy primes can be defined (and likely submitted to OEIS as
-independent sequences).
+and sexy primes can be defined.
 
 ## Output files
 
@@ -127,19 +126,6 @@ independent sequences).
   for $n = 1, \ldots, 1,000,000$.
 - `results/twin_ramanujan_report.md` — this document.
 
-## OEIS submission sketch
+## OEIS
 
-**Name:** Twin-Ramanujan primes: $R^{\mathrm{twin}}_n$ is the
-least integer $R$ such that $\pi_2(x) - \pi_2(x/2) \ge n$ for all
-$x \ge R$, where $\pi_2$ counts twin primes.
-
-**First few terms:**
-11, 59, 101, 149, 179, 227, 569, 599, 641, 809, 821, 1019, 1049, 1061, 1289, 1319, 1427, 1451, 1481, 1667, 1787, 1871, 1877, 1931, 1949, 2081, 2129, 2237, 2657, 2687.
-
-**Comments.** Twin-prime analog of the classical Ramanujan primes
-(OEIS A104272).  $R^{\mathrm{twin}}_1 = 11$ is the threshold of
-the Twin-Prime Bertrand Postulate.  All terms are twin primes
-(by the jump-structure argument).
-
-**Cross-references.** A001359 (lesser of twin primes), A104272
-(Ramanujan primes), A001097 (twin primes, both members).
+This sequence is OEIS [A186312](https://oeis.org/A186312) (T. D. Noe, 2011): "There appear to be at least n lower twin primes between x/2 and x for all x >= a(n)." Its terms agree with the values above.

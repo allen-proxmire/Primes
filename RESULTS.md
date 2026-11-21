@@ -94,6 +94,9 @@ The direction of the last step carries nothing (zig-zag guess 68.6% real vs 69.2
 **The wheel is cheap to carry.** [emp]
 Program $\approx 1.4427\,p_k$ bits (linear) against a territory of $p_k^2$ (quadratic): the cost per decided integer, $1.4427/p_k$ bits, falls to zero. → [Predicting the Next Prime §6](2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md)
 
+**The next twin within one turn.** [emp]
+From a prime $p$, a wheel of size $W$ holds the next twin pair in its first turn with chance $1 - e^{-W\cdot2C_2/\ln^2 p}$; 90% needs $W \ge 1.74\ln^2 p$. The 210-wheel holds 90% to $\approx 6\times10^4$ (seen 90.6% at $5\times10^4$), the 2,310-wheel to $\approx 6\times10^{15}$; later turns follow $(1-f)f^{k-1}$. → [The Next Twin](2_One_Wheel_Many_Shadows/The_Next_Twin.md)
+
 ---
 
 ## 3. Twins in every doubling window
