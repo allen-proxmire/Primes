@@ -84,6 +84,16 @@ The wheels say which slots are **eligible**. They do not say which eligible slot
 
 So the picture explains the *appearance* of randomness completely and the *actual* unpredictability not at all.
 
+**Why this is not a proof that twin primes go on forever.** Every wheel has slots where a twin pair could sit, and each new wheel adds more than it removes: a wheel for the prime $q$ copies every slot $q$ times round its longer turn and strikes only two of the copies. The slots near the start of the turn, below the next wheel's square, are safe from every later wheel — those are the real twin primes. The rest are only candidates.
+
+Three things would have to hold:
+
+1. the stock of slots keeps growing — **proved**;
+2. each wheel, taken alone, strikes the safe stretch fairly — **proved**;
+3. all the wheels together still leave the safe stretch its share — **measured, never proved**.
+
+Measured, the third holds every time: the small wheels take exactly their fair share, the last few take more, and the stretch is left with a steady 79% of what fairness would give. The last wheels strike harder because, late on, the candidates that are not twins each contain a product of two big primes — and those primes are the wheels still to come. Until they arrive, a wheel cannot tell such a pair from a real twin. Nothing built from wheels can rule out the last wheels one day striking every candidate in some stretch.
+
 > **Simple rule, infinite pattern, finite view — and the pattern always outruns the view.**
 
 ---
@@ -101,3 +111,4 @@ So the picture explains the *appearance* of randomness completely and the *actua
 | the traffic rule | [The Traffic Law](../2_One_Wheel_Many_Shadows/Traffic_Law.md) |
 | every gap rhythm is the wheels | [One Wheel, Many Shadows](../2_One_Wheel_Many_Shadows/One_Wheel_Many_Shadows.md) |
 | the wall | the parity barrier — [Predicting the Next Prime §10](../2_One_Wheel_Many_Shadows/Predicting_the_Next_Prime.md) |
+| why twins are not proved | [Twin Bertrand §1.5](../3_Twin_Bertrand_Prime_Geometry/Twin_Bertrand.md) |

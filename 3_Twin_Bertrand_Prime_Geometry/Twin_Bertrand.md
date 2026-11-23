@@ -123,6 +123,24 @@ the Hardy–Littlewood count for one roll. Over all 9,591 epochs below $10^{10}$
 
 The first roll comes up empty only at $p = 19, 157, 347$, epochs too short for any wheel past 7 (a later roll in the same epoch holds a twin each time). Every epoch that fits the 11-wheel's turn has twins in its first roll, and the worst case tightens toward the expected count as the wheel grows. The stock is proved; that some slot survives the spokes in $(w, p]$ is the open part. → [`check_first_roll.py`](scripts/check_first_roll.py)
 
+**Spoke by spoke.** When spoke $q$ joins, every twin-open slot is copied $q$ times round the longer turn and two copies are struck, so the stock per turn grows by $(q-2)$ — accumulation beats striking, exactly. The slots below the next spoke's square are safe from every later wheel and are the twin primes; the rest are candidates. Whether the front $[p^2, p'^2)$ keeps its fair share, $L\cdot\tfrac12\prod_{3\le q\le w}(1-2/q)$, as the spokes up to $w = p^t$ are applied:
+
+| fronts near $p$ | $t = 0.2$ | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0 |
+|---|---|---|---|---|---|---|---|---|
+| 1,000 | 1.000 | 1.000 | 0.999 | 1.001 | 1.016 | 0.998 | 0.932 | 0.816 |
+| 10,000 | 1.000 | 1.000 | 1.001 | 1.000 | 1.020 | 1.005 | 0.928 | 0.798 |
+| 100,000 | 1.000 | 1.000 | 1.001 | 1.001 | 1.020 | 1.005 | 0.927 | 0.795 |
+
+(candidates left ÷ fair share, pooled over 40, 40 and 12 fronts.) Up to $p^{0.6}$ the front holds its fair share to three decimals. The last spokes strike harder than fair, and the total settles at $e^{2\gamma}/4 = 0.793$, the same at every size. The reason: from $p^{0.8}$ on, every candidate that is not a twin has a member that is a product of exactly two big primes, and those primes are the spokes still to come.
+
+| fronts near $p = 10^5$ | candidates | real twins | struck by the spokes in $(p^t, p]$ | ÷ fair share |
+|---|---|---|---|---|
+| at $p^{0.6}$ | 312,123 | 89,913 (29%) | 222,210 | 1.12 |
+| at $p^{0.8}$ | 177,240 | 89,913 (51%) | 87,327 | 1.37 |
+| at $p^{0.9}$ | 129,392 | 89,913 (70%) | 39,479 | 1.61 |
+
+So: the stock grows by $(q-2)$ per spoke — proved; each spoke alone strikes the front fairly — proved; all spokes together leave the front a fixed share — measured, and equivalent to the conjecture. The unproved part lives in the last spokes, $p^{0.6}$ to $p$, where a wheel cannot tell a twin from a pair with a two-big-prime member (the parity barrier). → [`check_spoke_by_spoke.py`](scripts/check_spoke_by_spoke.py)
+
 ---
 
 ## 2. The prime triangle
@@ -316,6 +334,7 @@ The dyadic inequality $\pi_2(2x) - \pi_2(x) \ge 1$ follows for large $x$ from th
 | [`pg_extend_1e10.py`](scripts/pg_extend_1e10.py), [`pg_structural_1e10.py`](scripts/pg_structural_1e10.py) | §1.3, §4.2 — the $10^{10}$ sieve |
 | [`pg_twin_ramanujan.py`](scripts/pg_twin_ramanujan.py) | §1.4 — $R^{\mathrm{twin}}_n$ |
 | [`check_epoch_twins.py`](scripts/check_epoch_twins.py) | §1.5 — twins in every epoch $[p^2, p'^2)$ below $10^{10}$ (numpy, ~2 min) |
+| [`check_spoke_by_spoke.py`](scripts/check_spoke_by_spoke.py) | §1.5 — the front's share spoke by spoke; twins against two-big-prime pairs |
 | [`check_first_roll.py`](scripts/check_first_roll.py) | §1.5 — the first-roll rule below $10^{10}$ |
 | [`check_epoch_share.py`](scripts/check_epoch_share.py) | §1.5 — the epoch share $e^{2\gamma}/4$, the position profile, the quadruplet check (run after `check_epoch_twins.py`) |
 | [`pg_twin_angle_analysis.py`](scripts/pg_twin_angle_analysis.py), [`pg_deltax_unified.py`](scripts/pg_deltax_unified.py) | §1.3, §5 |
