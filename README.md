@@ -28,7 +28,7 @@
 | [`2_One_Wheel_Many_Shadows/`](2_One_Wheel_Many_Shadows/) | the wheel and the gaps, predicting the next prime, the null-model method |
 | [`3_Twin_Bertrand_Prime_Geometry/`](3_Twin_Bertrand_Prime_Geometry/) | the twin conjecture and the prime triangle |
 | [`4_Philosophy_Ontology/`](4_Philosophy_Ontology/) | The plain-language picture and the readings — interpretation, never cited as evidence |
-| [`visuals/`](visuals/) | the 30- and 210-wheels: open spokes, twin-open pairs, the mirror |
+| [`visuals/`](visuals/) | the 30- and 210-wheels: open spokes, twin-open pairs, the mirror; each wheel's stretch and the rim it never uses |
 | [`5_X5D_EXPDB/`](5_X5D_EXPDB/) | the Exponent Database as geometry — a separate subject |
 | [`records/`](records/) | corrections, worklogs, and the repo health check |
 
